@@ -1,0 +1,99 @@
+/* =Editor popup
+-------------------------------------------------------------- */
+
+/* Helpers */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.row:before, .row:after {
+	content: '';
+	display: table;
+}
+.row:after {
+	clear: both;
+}
+.center {
+	text-align: center;
+}
+
+/* Styles */
+.shortcode {
+	color: #404040;
+	padding: 0 0.5em;
+	font-size: 0.9em;
+	font-weight: 400;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.shortcode h2 {
+    margin: 0.75em 0 1.5em;
+    padding-bottom: 0.25em;
+    font-weight: 600;
+    font-family: "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;
+    border-bottom: 1px solid #909090;
+}
+.shortcode a {
+	color: #606060;
+	font-size: 0.9em;
+	text-decoration: none;
+}
+.shortcode .row {
+	margin-bottom: 1.25em;
+}
+.shortcode .row .half {
+	width: 50%;
+	float: left;
+}
+.shortcode label {
+	width: 40%;
+    padding: 0.45em 0.4em;
+	font-size: 0.95em;
+    display: inline-block;
+	background-color: #eee;
+    border-bottom: 1px solid #CCCCCC;
+}
+.shortcode .field {
+	width: 52%;
+	color: #505050;
+	display: inline-block;
+	padding: 0.35em 0.4em;
+	line-height: 1.4;
+	border-bottom: 1px solid #CCCCCC;
+}
+.shortcode input[type=text], .shortcode select {
+	width: 100%;
+	margin: 0;
+	border: 1px solid #FFFFFF;
+}
+.shortcode input[type=radio] {
+	margin: 0 0.75em 0 0;
+}
+.shortcode .add-column {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    margin: 0 1em 0.5em 0;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    background-color: #EEEEEE;
+    background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
+}
+.shortcode .submit {
+    width: 100%;
+    color: #FFFFFF;
+	padding: 1em;
+    margin: 3em 0 0;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+	background-color: #21759B;
+    background-image: linear-gradient(to bottom, #2A95C5, #21759B);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #21759B #21759B #1E6A8D;
+    box-shadow: 0 1px 0 rgba(120, 200, 230, 0.5) inset;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}

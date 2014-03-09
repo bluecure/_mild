@@ -1,0 +1,115 @@
+/* =Helpers
+----------------------------------------------- */
+
+/* Alignment */
+.alignleft {
+    display: inline;
+    float: left;
+    margin: 0 2.5em 1em 0;
+}
+.alignright {
+    display: inline;
+    float: right;
+    margin: 0 0 1em 2.5em;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto 1em auto;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.content-left {
+    text-align: left;
+}
+.content-right {
+    text-align: right;
+}
+.content-center {
+    text-align: center;
+}
+
+/* Responsive iframes */
+.fluid-iframe {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+.fluid-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Misc*/
+.a-wrap {
+    display: inline-block;
+}
+.no-margin {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+
+/* Visually Hidden */
+.hidden {
+    visibility: hidden;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+    &:hover, &:active, &:focus {
+        background-color: #f1f1f1;
+        border-radius: 3px;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+        clip: auto !important;
+        color: #21759b;
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        height: auto;
+        left: 5px;
+        line-height: normal;
+        padding: 15px 23px 14px;
+        text-decoration: none;
+        top: 5px;
+        width: auto;
+        z-index: 100000; /* Above WP toolbar */
+    }
+}
+
+/* Clearing */
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}

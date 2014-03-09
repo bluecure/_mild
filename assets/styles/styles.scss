@@ -1,0 +1,26 @@
+/*!
+Theme Name: _mild
+Theme URI: https://github.com/bluecure/_mild
+Author: David Fetaherston
+Author URI: https://github.com/bluecure/_mild
+Description: WordPress Theme Starter.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: _mild
+*/
+
+@import 'vendor/normalize.scss';
+@import 'vendor/font-awesome.scss';
+@import 'vendor/magnific-popup.scss';
+@import 'vendor/owl-carousel.scss';
+@import 'source/variables.scss';
+@import 'source/grid.scss';
+@import 'source/global.scss';
+@import 'source/helpers.scss';
+@import 'source/typography.scss';
+@import 'source/content.scss';
+@import 'source/menus.scss';
+@import 'source/shortcodes.scss';
+@import 'source/plugins.scss';
+@import 'source/main.scss';

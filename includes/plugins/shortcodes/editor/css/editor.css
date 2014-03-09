@@ -1,0 +1,6 @@
+/* =Editor
+-------------------------------------------------------------- */
+
+.mceToolbarRow3 a.mceButton:before {
+    content: none;
+}

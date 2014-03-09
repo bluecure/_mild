@@ -1,0 +1,45 @@
+/* =Typography
+----------------------------------------------- */
+body, button, input, select, textarea {
+    color: $color-grey;
+    font-family: $font-primary;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $font-height;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.25em 0 1em 0;
+}
+h1 {
+    font-size: 2em
+}
+h2 {
+    font-size: 1.8em
+}
+h3 {
+    font-size: 1.6em
+}
+h4 {
+    font-size: 1.4em
+}
+h5 {
+    font-size: 1.2em
+}
+h6 {
+    font-size: 1em
+}
+
+/* Links */
+a {
+    color: $color-blue;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    &:visited {
+        color: darken($color-blue, 5%);
+    }
+    &:hover, &:focus, &:active {
+        color: darken($color-blue, 10%);
+    }
+}

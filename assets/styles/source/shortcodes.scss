@@ -1,0 +1,137 @@
+/* =Shortcodes
+-------------------------------------------------------------- */
+
+/* Buttons */
+.button {
+    margin: 0.5em 0 1em 0;
+    padding: 0.4em 1em;
+    color: $color-black;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: $color-silver;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset;
+    &:hover {
+        color: $color-black;
+        border-color: rgba(0,0,0,0.25);
+        box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset, 0 0em 0.25em rgba(0, 0, 0, 0.15) inset;
+    }
+    &:active, &:visited, &:focus {
+        color: $color-black;
+        border-color: rgba(0,0,0,0.4);
+        box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0.4em rgba(0, 0, 0, 0.25) inset;
+    }
+}
+
+/* Panels */
+.panel {
+    color: $color-black;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 1em 2em;
+    margin: 0.5em 0 2em 0;
+    background-color: $color-silver;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* Background Colors */
+.bg-blue {
+    background-color: $color-blue;
+}
+.bg-green {
+    background-color: $color-green;
+}
+.bg-orange {
+    background-color: $color-orange;
+}
+.bg-yellow {
+    background-color: $color-yellow;
+}
+.bg-red {
+    background-color: $color-red;
+}
+.bg-silver {
+    background-color: $color-silver;
+}
+.bg-grey {
+    background-color: $color-grey;
+}
+.bg-black {
+    background-color: $color-black;
+}
+.bg-white {
+    background-color: $color-white;
+}
+.bg-black, .bg-red, .bg-orange {
+    color: $color-white;
+    &:hover, &:active, &:visited, &:focus {
+        color: $color-white;
+    }
+}
+
+/* Text Colors */
+.text-blue {
+    color: $color-blue;
+}
+.text-green {
+    color: $color-green;
+}
+.text-orange {
+    color: $color-orange;
+}
+.text-yellow {
+    color: $color-yellow;
+}
+.text-red {
+    color: $color-red;
+}
+.text-silver {
+    color: $color-silver;
+}
+.text-grey {
+    color: $color-grey;
+}
+.text-black {
+    color: $color-black;
+}
+.text-white {
+    color: $color-white;
+}
+
+/* Sizes */
+.small {
+    font-size: 0.85em;
+}
+.medium {
+    font-size: 1em;
+}
+.large {
+    font-size: 1.5em;
+}
+.huge {
+    font-size: 2.5em;
+}
+
+/* Accordion */
+.accordion {
+    padding: 1em;
+    .icon {
+        padding: 0.2em 0.5em;
+        font-size: 0.75em;
+    }
+    .icon-plus, .icon-minus {
+        float: right;
+    }
+    .accordion-title {
+        margin: 0;
+        line-height: 1;
+        cursor: pointer;
+        border-bottom: 1px solid;
+    }
+    .accordion-content {
+        margin-top: 1em;
+    }
+}
+
+/* Show */
+.show-posts .post {
+    margin-bottom: 1.5em;
+}

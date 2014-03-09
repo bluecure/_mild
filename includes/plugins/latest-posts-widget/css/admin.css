@@ -1,0 +1,14 @@
+/* Admin Styles */
+
+.latest-posts-widget-row {
+	margin: 1em 0;
+}
+.latest-posts-widget-container input[type=checkbox] {
+	margin-right: 0.5em;
+}
+.latest-posts-widget-container input[type=checkbox] + label {
+    font-style: italic;
+}
+.latest-posts-widget-container h4 {
+    border-bottom: 1px solid #BBBBBB;
+}

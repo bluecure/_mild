@@ -1,0 +1,22 @@
+/* =Main
+-------------------------------------------------------------- */
+
+body {
+    background-color: $color-white;
+}
+
+/* Layout */
+.site {
+	@extend .container;
+}
+#content {
+	@extend .row;
+}
+#primary {
+	@extend .col;
+	@extend .col-3-4;
+}
+#secondary {
+	@extend .col;
+	@extend .col-1-4;
+}
