@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _m
+ * @package Mild
  */
 
 get_header(); ?>
@@ -24,46 +24,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', '_m' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( 'Author: %s', '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', '_m' ), '<span>' . get_the_date() . '</span>' );
+							printf( 'Day: %s', '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', '_m' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', '_m' ) ) . '</span>' );
+							printf( 'Month: %s', '<span>' . get_the_date( 'F Y', 'monthly archives date format' ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', '_m' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', '_m' ) ) . '</span>' );
+							printf( 'Year: %s', 'mild', '<span>' . get_the_date( 'Y', 'yearly archives date format' ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', '_m' );
+							echo 'Asides';
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', '_m');
+							echo 'Galleries';
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', '_m');
+							echo 'Images';
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', '_m' );
+							echo 'Videos';
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', '_m' );
+							echo 'Quotes';
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', '_m' );
+							echo 'Links';
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', '_m' );
+							echo 'Statuses';
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', '_m' );
+							echo 'Audios';
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', '_m' );
+							echo 'Chats';
 
 						else :
-							_e( 'Archives', '_m' );
+							echo 'Archives';
 
 						endif;
 					?>
@@ -90,7 +90,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php _m_paging_nav(); ?>
+			<?php mild_paging_nav(); ?>
 
 		<?php else : ?>
 

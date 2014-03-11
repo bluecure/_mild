@@ -13,11 +13,11 @@ if ( ! empty( $title ) ) {
 	<?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 		<div class="latest-posts-widget-post">
 			<h4 class="latest-posts-widget-title">
-				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'latest-posts-widget' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php printf( 'Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h4>
 			<?php if ($lpw_image == true && has_post_thumbnail() ) { ?>
 				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'latest-posts-widget' ), the_title_attribute('echo=0' ) ); ?>" rel="bookmark">
-					<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'latest-posts-widget-image', 'alt' => esc_attr(get_the_title() ), 'title' => esc_attr( get_the_title() ) ) ); ?>
+					<?php the_post_thumbnail( 'thumbnail', [ 'class' => 'latest-posts-widget-image', 'alt' => esc_attr(get_the_title() ), 'title' => esc_attr( get_the_title() ) ] ); ?>
 				</a>
 			<?php } ?>
 			<?php if ( $lpw_date == true ) { ?>

@@ -2,14 +2,14 @@
 /**
  * Custom functions for this theme including:
  *
- * _m_pagination()           | Displays Pagination
- * _m_breadcrumbs()          | Displays Breadcrumbs
- * _m_page_menu()            | Displays Page Menu
- * _m_posts_menu()           | Displays Posts Menu
- * _m_get_attachment_image() | Gets Attachment Image from Source
- * _m_is_user                | Checks user role
+ * mild_pagination()           | Displays Pagination
+ * mild_breadcrumbs()          | Displays Breadcrumbs
+ * mild_page_menu()            | Displays Page Menu
+ * mild_posts_menu()           | Displays Posts Menu
+ * mild_get_attachment_image() | Gets Attachment Image from Source
+ * mild_is_user                | Checks user role
  *
- * @package _m
+ * @package Mild
  */
 
 /**
@@ -17,10 +17,10 @@
  *
  * @return String or array of page links
  */
-function _m_pagination( $post_type = 'post' ) {
+function mild_pagination( $post_type = 'post' ) {
 	global $wp_query;
 
-	$args = array(
+	$args = [
 		'base'      => str_replace( 999999, '%#%', esc_url( get_pagenum_link( 999999 ) ) ),
 		'format'    => '?paged=%#%',
 		'current'   => max( 1, get_query_var('paged') ),
@@ -28,7 +28,7 @@ function _m_pagination( $post_type = 'post' ) {
 		'prev_next' => True,
 		'prev_text' => '<i class="icon icon-angle-double-left"></i>',
 		'next_text' => '<i class="icon icon-angle-double-right"></i>'
-	);
+	];
 
 	$pagination = '<nav class="pagination">' . paginate_links( $args ) . '</nav>';
 
@@ -40,7 +40,7 @@ function _m_pagination( $post_type = 'post' ) {
  *
  * @return html or empty string
  */
-function _m_breadcrumbs() {
+function mild_breadcrumbs() {
 	$html = '';
 	global $post;
 
@@ -67,19 +67,19 @@ function _m_breadcrumbs() {
  *
  * @return html or empty string
  */
-function _m_page_menu() {
+function mild_page_menu() {
 	$html = '';
 	global $post;
 
 	$parent = ( $post->post_parent !== 0 ) ? $post->post_parent : $post->ID;
 
-	$args = array(
+	$args = [
 		'child_of'     => $parent,
 		'exclude'      => $parent,
 		'sort_column'  => 'menu_order',
 		'post_type'    => 'page',
 	    'post_status'  => 'publish'
-	);
+	];
 	$pages = get_pages( $args );
 
 	if ( $pages ) {
@@ -98,16 +98,16 @@ function _m_page_menu() {
  *
  * @return html or empty string
  */
-function _m_posts_menu() {
+function mild_posts_menu() {
 	$html = '';
 
-	$args = array(
+	$args = [
 		'posts_per_page'   => 10,
 		'orderby'          => 'post_date',
 		'order'            => 'DESC',
 		'post_type'        => 'post',
 		'post_status'      => 'publish'
-	);
+	];
 	$posts = get_posts( $args );
 
 	if ( $posts ) {
@@ -126,7 +126,7 @@ function _m_posts_menu() {
  *
  * @return html or empty string
  */
-function _m_get_attachment_image( $attachment_url ) {
+function mild_get_attachment_image( $attachment_url ) {
 	$html = '';
 	global $wpdb;
 
@@ -141,7 +141,7 @@ function _m_get_attachment_image( $attachment_url ) {
 		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
 
 		if ( $attachment_id )
-			$html = wp_get_attachment_image( $attachment_id, 'slider', 'false', array( 'class' => 'slide-image' ) );
+			$html = wp_get_attachment_image( $attachment_id, 'slider', 'false', [ 'class' => 'slide-image' ] );
 
 	}
 
@@ -153,7 +153,7 @@ function _m_get_attachment_image( $attachment_url ) {
  *
  * @return boolean
  */
-function _m_is_user( $role ) {
+function mild_is_user( $role ) {
 	$user = wp_get_current_user();
 	return ( in_array( $role, $user->roles ) );
 }

@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package _m
+ * @package Mild
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -41,10 +41,10 @@ $logo = ot_get_option( 'ot_logo', '' );
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<div class="menu-toggle fa fa-bars"> <?php _e( 'Menu', '_m' ); ?></div>
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_m' ); ?></a>
+			<div class="menu-toggle fa fa-bars"> Menu </div>
+			<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php wp_nav_menu( [ 'theme_location' => 'primary' ] ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

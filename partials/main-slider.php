@@ -2,11 +2,11 @@
 /**
  * The partial for displaying the main slider
  *
- * @package _m
+ * @package Mild
  */
 
 // Get slides
-$slides = ot_get_option( 'ot_main_slider', array() );
+$slides = ot_get_option( 'ot_main_slider', [] );
 ?>
 
 <?php if ( ! empty( $slides ) ) { ?>

@@ -1,35 +1,42 @@
 <?php
 /**
- * _m definitions and includes
+ * Constants and Includes
  *
- * @package _m
+ * @package Mild
  */
 
 /**
 * Constants
 */
-define( '_m_DIRECTORY', get_template_directory() . '/' );
-define( '_m_THEME', _m_DIRECTORY . 'includes/theme/' );
-define( '_m_HELPERS', _m_DIRECTORY . 'includes/helpers/' );
-define( '_m_PLUGINS', _m_DIRECTORY . 'includes/plugins/' );
-define( '_m_OPTION_TREE', _m_DIRECTORY . 'includes/option-tree/' );
-define( '_m_PLUGINS_URI', get_template_directory_uri() . '/includes/plugins/' );
+define( 'MILD_DIRECTORY', get_template_directory() . '/' );
+define( 'MILD_THEME', MILD_DIRECTORY . 'includes/MildTheme/' );
+define( 'MILD_HELPERS', MILD_DIRECTORY . 'includes/MildHelpers/' );
+define( 'MILD_PLUGINS', MILD_DIRECTORY . 'includes/MildPlugins/' );
+define( 'MILD_OPTION_TREE', MILD_DIRECTORY . 'includes/OptionTree/' );
+define( 'MILD_PLUGINS_URI', get_template_directory_uri() . '/includes/MildPlugins/' );
+
+/**
+* Theme helper classes.
+*/
+//require_once MILD_HELPERS . 'PostTypes.php';
+//require_once MILD_HELPERS . 'Taxonomies.php';
+//require_once MILD_HELPERS . 'UserRoles.php';
 
 /**
 * Theme setup, options, additions, functions and so on.
 */
-require_once _m_THEME . 'setup.php';
-require_once _m_THEME . 'options.php';
-//require_once _m_THEME . 'meta-boxes.php';
-//require_once _m_THEME . 'additions.php';
-require_once _m_THEME . 'tweaks.php';
-require_once _m_THEME . 'template.php';
-require_once _m_THEME . 'functions.php';
+require_once MILD_THEME . 'Setup.php';
+require_once MILD_THEME . 'Options.php';
+//require_once MILD_THEME . 'MetaBoxes.php';
+//require_once MILD_THEME . 'Additions.php';
+require_once MILD_THEME . 'Tweaks.php';
+require_once MILD_THEME . 'Template.php';
+require_once MILD_THEME . 'Functions.php';
 
 /**
- * Theme plugins and widgets
+ * Theme plugins and widgets.
  */
-require_once _m_PLUGINS . 'shortcodes/shortcodes.php';
-require_once _m_PLUGINS . 'image-widget/image-widget.php';
-require_once _m_PLUGINS . 'gallery-widget/gallery-widget.php';
-require_once _m_PLUGINS . 'latest-posts-widget/latest-posts-widget.php';
+require_once MILD_PLUGINS . 'Shortcodes/Shortcodes.php';
+require_once MILD_PLUGINS . 'ImageWidget/ImageWidget.php';
+require_once MILD_PLUGINS . 'GalleryWidget/GalleryWidget.php';
+require_once MILD_PLUGINS . 'LatestPostsWidget/LatestPostsWidget.php';

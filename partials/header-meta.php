@@ -2,7 +2,7 @@
 /**
  * The partial for display within the head section
  *
- * @package _m
+ * @package Mild
  */
 $assest_dir = get_bloginfo( 'template_url' ) . '/assets/images/';
 ?>

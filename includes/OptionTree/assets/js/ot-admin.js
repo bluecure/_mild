@@ -706,8 +706,8 @@
   , select: function (elm) {
       var input = $(elm).parents('.format-setting-inner').children('.ot-gallery-value')
         , ids = input.attr('value')
-        , _shortcode = input.hasClass('ot-gallery-shortcode') ? ids : '[gallery ids=\'' + ids + '\]'
-        , shortcode = wp.shortcode.next('gallery', ( ids ? _shortcode : wp.media.view.settings.ot_gallery.shortcode ) )
+        , mildhortcode = input.hasClass('ot-gallery-shortcode') ? ids : '[gallery ids=\'' + ids + '\]'
+        , shortcode = wp.shortcode.next('gallery', ( ids ? mildhortcode : wp.media.view.settings.ot_gallery.shortcode ) )
         , defaultPostId = wp.media.gallery.defaults.id
         , attachments
         , selection

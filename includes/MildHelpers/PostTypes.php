@@ -1,11 +1,13 @@
 <?php
 /**
-* _m Create new post types
+* mild Create new post types
 *
-* @package _m
+* @package Mild
 */
 
-class Create_Post_Type {
+namespace MildHelpers;
+
+class PostTypes {
     // Variables
     public $post_type;
     public $labels = [];
@@ -27,7 +29,7 @@ class Create_Post_Type {
         $this->args['labels'] = wp_parse_args( $labels, self::default_labels() );
 
         // Register post type
-        add_action( 'init', array( $this, 'register' ) );
+        add_action( 'init', [ $this, 'register' ] );
     }
 
     /**

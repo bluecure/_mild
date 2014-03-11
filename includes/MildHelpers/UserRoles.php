@@ -1,11 +1,13 @@
 <?php
 /**
-* _m Create new user role
+* mild Create new user role
 *
-* @package _m
+* @package Mild
 */
 
-class Create_User_Role {
+namespace MildHelpers;
+
+class UserRoles {
     // Variables
     public $role;
     public $display_name;
@@ -25,7 +27,7 @@ class Create_User_Role {
         $this->capabilities = wp_parse_args( $capabilities, self::default_capabilities() );
 
         // Add user role
-        add_action( 'init', array( $this, 'register' ) );
+        add_action( 'init', [ $this, 'register' ] );
     }
 
     /**

@@ -2,7 +2,7 @@
 /**
  * The partial for displaying the various social links
  *
- * @package _m
+ * @package Mild
  */
 
 // Get social links

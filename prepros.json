@@ -1,7 +1,7 @@
 {
   "id": "b8592233",
   "cfgVersion": 1,
-  "name": "_mild",
+  "name": "Mild",
   "files": {
     "ef00f420": {
       "id": "ef00f420",
@@ -86,6 +86,30 @@
         "ef00f420"
       ]
     },
+    "a1de2419": {
+      "id": "a1de2419",
+      "pid": "b8592233",
+      "path": "assets\\styles\\vendor\\font-awesome.scss",
+      "parents": [
+        "ef00f420"
+      ]
+    },
+    "2c6ddf2b": {
+      "id": "2c6ddf2b",
+      "pid": "b8592233",
+      "path": "assets\\styles\\vendor\\magnific-popup.scss",
+      "parents": [
+        "ef00f420"
+      ]
+    },
+    "786ac62e": {
+      "id": "786ac62e",
+      "pid": "b8592233",
+      "path": "assets\\styles\\vendor\\owl-carousel.scss",
+      "parents": [
+        "ef00f420"
+      ]
+    },
     "26d308f9": {
       "id": "26d308f9",
       "pid": "b8592233",
@@ -98,14 +122,6 @@
       "id": "fde7104d",
       "pid": "b8592233",
       "path": "assets\\styles\\source\\grid.scss",
-      "parents": [
-        "ef00f420"
-      ]
-    },
-    "a1de2419": {
-      "id": "a1de2419",
-      "pid": "b8592233",
-      "path": "assets\\styles\\vendor\\font-awesome.scss",
       "parents": [
         "ef00f420"
       ]
@@ -154,22 +170,6 @@
       "id": "7530d931",
       "pid": "b8592233",
       "path": "assets\\styles\\source\\plugins.scss",
-      "parents": [
-        "ef00f420"
-      ]
-    },
-    "2c6ddf2b": {
-      "id": "2c6ddf2b",
-      "pid": "b8592233",
-      "path": "assets\\styles\\vendor\\magnific-popup.scss",
-      "parents": [
-        "ef00f420"
-      ]
-    },
-    "786ac62e": {
-      "id": "786ac62e",
-      "pid": "b8592233",
-      "path": "assets\\styles\\vendor\\owl-carousel.scss",
       "parents": [
         "ef00f420"
       ]

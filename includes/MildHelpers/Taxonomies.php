@@ -1,11 +1,13 @@
 <?php
 /**
-* _m Create new taxonomies
+* mild Create new taxonomies
 *
-* @package _m
+* @package Mild
 */
 
-class Create_Taxonomy {
+namespace MildHelpers;
+
+class Taxonomies {
     // Variables
     public $taxonomy;
     public $post_type = [];
@@ -30,7 +32,7 @@ class Create_Taxonomy {
         $this->options['labels'] = wp_parse_args( $labels, self::default_labels() );
 
         // Register taxonomy
-        add_action( 'init', array( $this, 'register' ) );
+        add_action( 'init', [ $this, 'register' ] );
     }
 
     /**

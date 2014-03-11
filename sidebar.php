@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package _m
+ * @package Mild
  */
 ?>
 	<div id="secondary" class="site-sidebar widget-area" role="complementary">
@@ -14,14 +14,14 @@
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', '_m' ); ?></h1>
+				<h1 class="widget-title">Archives</h1>
 				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+					<?php wp_get_archives( [ 'type' => 'monthly' ] ); ?>
 				</ul>
 			</aside>
 
 			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', '_m' ); ?></h1>
+				<h1 class="widget-title">Meta</h1>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>

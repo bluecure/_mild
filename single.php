@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package _m
+ * @package Mild
  */
 
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'partials/content', 'single' ); ?>
 
-			<?php _m_post_nav(); ?>
+			<?php mild_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package _m
+ * @package Mild
  */
 ?>
 
@@ -12,7 +12,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<?php do_action( '_m_credits' ); ?>
+			<?php do_action( 'mild_credits' ); ?>
 			&copy; <?php echo date( 'Y' ) ?> <?php bloginfo( 'name' ); ?>
 			<a href="#" class="to-top"><i class="fa fa-angle-up"></i> To Top</a>
 		</div><!-- .site-info -->

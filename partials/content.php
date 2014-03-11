@@ -1,6 +1,8 @@
 <?php
 /**
- * @package _m
+ * The generic content template.
+ *
+ * @package Mild
  */
 ?>
 
@@ -10,7 +12,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php _m_posted_on(); ?>
+			<?php mild_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -21,12 +23,12 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', '_m' ) ); ?>
+		<?php the_content( 'Continue reading <span class="meta-nav">&rarr;</span>' ); ?>
 		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_m' ),
+			wp_link_pages( [
+				'before' => '<div class="page-links">' . 'Pages:',
 				'after'  => '</div>',
-			) );
+			] );
 		?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
@@ -35,29 +37,29 @@
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', '_m' ) );
-				if ( $categories_list && _m_categorized_blog() ) :
+				$categories_list = get_the_category_list( ', ' );
+				if ( $categories_list && mild_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', '_m' ), $categories_list ); ?>
+				<?php printf( 'Posted in %1$s', $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', '_m' ) );
+				$tags_list = get_the_tag_list( '', ', ' );
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', '_m' ), $tags_list ); ?>
+				<?php printf( 'Tagged %1$s', $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', '_m' ), __( '1 Comment', '_m' ), __( '% Comments', '_m' ) ); ?></span>
+		<span class="comments-link"><?php comments_popup_link( 'Leave a comment', '1 Comment', '% Comments' ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', '_m' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

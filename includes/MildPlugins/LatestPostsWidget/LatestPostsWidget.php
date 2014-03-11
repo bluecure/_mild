@@ -5,33 +5,40 @@
  * Description: Display the latest posts with optional title, date and image.
  * Author: David Featherston
  *
- * @package _m
+ * @package Mild
  */
 
+// Plugins namespace.
+namespace MildPlugins;
+
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-    die;
-}
+if ( ! defined( 'WPINC' ) ) die;
 
-// Define plugin path
-if ( ! defined( 'LATEST_POSTS_WIDGET_DIRECTORY' ) )
-    define( 'LATEST_POSTS_WIDGET_DIRECTORY', _m_PLUGINS_URI . basename( dirname( __FILE__) ) );
+/* Latest Posts Widget Class */
+class LatestPostsWidget extends \WP_Widget {
 
-class Latest_Posts_Widget extends WP_Widget {
+    /* Variables */
+    private $directory;
+    private $directory_url;
 
-    //  Widget details
     public function __construct() {
+
+        // Set directory
+        $this->directory = plugin_dir_path( __FILE__ );
+        $this->directory_url = MILD_PLUGINS_URI . basename( dirname( __FILE__ ) );
+
+        // Widget details
         parent::__construct(
             'latest-posts-widget',
             'Latest Posts Widget',
-            array(
+            [
                 'classname'   => 'latest-posts-widget',
                 'description' => 'Display the latest posts with optional title, date and image.'
-            )
+            ]
         );
 
         // Register admin styles and scripts
-        add_action( 'admin_print_styles', array( $this, 'register_admin_styles' ) );
+        add_action( 'admin_print_styles', [ $this, 'register_admin_styles' ] );
 
     }
 
@@ -41,21 +48,21 @@ class Latest_Posts_Widget extends WP_Widget {
         extract( $instance, EXTR_SKIP );
 
         global $post;
-        $query = array(
+        $query = [
             'numberposts'   => $lpw_limit,
             'category__in'  => $lpw_cats,
             'tag__in'       => $lpw_tags
-        );
+        ];
         $posts = get_posts( $query );
 
         echo $before_widget;
-            include( plugin_dir_path(__FILE__) . '/views/widget.php' );
+            include( $this->directory . '/views/widget.php' );
         echo $after_widget;
     }
 
     // Generates the administration form for the widget.
     public function form( $instance ) {
-        $defaults = array(
+        $defaults = [
             'title' => '',
             'lpw_cats' => '',
             'lpw_tags' => '',
@@ -64,13 +71,13 @@ class Latest_Posts_Widget extends WP_Widget {
             'lpw_date' => '',
             'lpw_image' => '',
             'lpw_link' => ''
-        );
+        ];
         $instance = wp_parse_args(
             (array) $instance,
             $defaults
         );
         extract( $instance, EXTR_SKIP );
-        include( plugin_dir_path(__FILE__) . '/views/admin.php' );
+        include( $this->directory . '/views/admin.php' );
     }
 
     // Processes the widget's options to be saved.
@@ -90,12 +97,12 @@ class Latest_Posts_Widget extends WP_Widget {
 
     // Registers and enqueues admin-specific styles.
     public function register_admin_styles() {
-        wp_enqueue_style( 'latest-posts-widget-admin-styles', LATEST_POSTS_WIDGET_DIRECTORY . '/css/admin.css' );
+        wp_enqueue_style( 'latest-posts-widget-admin-styles', $this->directory_url . '/css/admin.css' );
     }
 
 }
 
 // Register Latest Posts Widget.
 add_action( 'widgets_init', function() {
-    register_widget( 'Latest_Posts_Widget' );
+    register_widget( 'MildPlugins\LatestPostsWidget' );
 });
