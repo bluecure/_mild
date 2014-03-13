@@ -1,6 +1,6 @@
 <?php
 /**
-* mild Create new taxonomies
+* Create new taxonomies
 *
 * @package Mild
 */
@@ -38,10 +38,10 @@ class Taxonomies {
     /**
      * Register new taxonomy
      *
-     * @access private
+     * @access public
      * @return null
      */
-    private function register() {
+    public function register() {
         
         register_taxonomy( $this->taxonomy, $this->post_type, $this->options );
 

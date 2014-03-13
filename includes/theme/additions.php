@@ -11,7 +11,7 @@ add_action( 'after_setup_theme', function() {
     * Create new post type
     * @param $post_type, $labels = [], $options = []
     */
-    $type = new MildHelpers\PostTypes( 
+    $type = new \MildHelpers\Post_Types( 
         'book', 
         [ 'single' => 'Book', 'plural' => 'Books' ], 
         [ 'menu_icon' => 'dashicons-admin-tools' ]
@@ -21,7 +21,7 @@ add_action( 'after_setup_theme', function() {
     * Create new taxonomy
     * @param $taxonomy, $post_type = [], $labels = [], $options = []
     */
-    $tax = new MildHelpers\Taxonomies( 
+    $tax = new \MildHelpers\Taxonomies( 
         'genre',
         'book', 
         [ 'single' => 'Genre', 'plural' => 'Genres' ]
@@ -31,7 +31,7 @@ add_action( 'after_setup_theme', function() {
     * Create new user role
     * @param $role, $display_name, $capabilities = []
     */
-    $role = new MildHelpers\UserRoles( 
+    $role = new \MildHelpers\User_Roles( 
         'customer',
         'Customer'
     );

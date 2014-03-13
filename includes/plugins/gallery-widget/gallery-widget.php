@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Latest Posts Widget
+ * Plugin Name: Gallery Widget
  * Version: 1.0
- * Description: Display the latest posts with optional title, date and image.
+ * Description: Adds a gallery with optional title and description.
  * Author: David Featherston
  *
  * @package Mild
@@ -14,13 +14,13 @@ namespace MildPlugins;
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) die;
 
-/* Latest Posts Widget Class */
-class LatestPostsWidget extends \WP_Widget {
+/* Gallery Widget Class */
+class Gallery_Widget extends \WP_Widget {
 
     /* Variables */
     private $directory;
     private $directory_url;
-
+    
     public function __construct() {
 
         // Set directory
@@ -29,16 +29,17 @@ class LatestPostsWidget extends \WP_Widget {
 
         // Widget details
         parent::__construct(
-            'latest-posts-widget',
-            'Latest Posts Widget',
+            'gallery-widget',
+            'Gallery Widget',
             [
-                'classname'   => 'latest-posts-widget',
-                'description' => 'Display the latest posts with optional title, date and image.'
+                'classname'   => 'gallery-widget',
+                'description' => 'Adds a gallery with optional title and description.'
             ]
         );
 
         // Register admin styles and scripts
         add_action( 'admin_print_styles', [ $this, 'register_admin_styles' ] );
+        add_action( 'admin_enqueue_scripts', [ $this, 'register_admin_scripts' ] );
 
     }
 
@@ -46,15 +47,6 @@ class LatestPostsWidget extends \WP_Widget {
     public function widget( $args, $instance ) {
         extract( $args, EXTR_SKIP );
         extract( $instance, EXTR_SKIP );
-
-        global $post;
-        $query = [
-            'numberposts'   => $lpw_limit,
-            'category__in'  => $lpw_cats,
-            'tag__in'       => $lpw_tags
-        ];
-        $posts = get_posts( $query );
-
         echo $before_widget;
             include( $this->directory . '/views/widget.php' );
         echo $after_widget;
@@ -64,13 +56,9 @@ class LatestPostsWidget extends \WP_Widget {
     public function form( $instance ) {
         $defaults = [
             'title' => '',
-            'lpw_cats' => '',
-            'lpw_tags' => '',
-            'lpw_limit' => '5',
-            'lpw_length' => '150',
-            'lpw_date' => '',
-            'lpw_image' => '',
-            'lpw_link' => ''
+            'gw_images' => '',
+            'gw_description' => '',
+            'gw_link' => ''
         ];
         $instance = wp_parse_args(
             (array) $instance,
@@ -84,25 +72,26 @@ class LatestPostsWidget extends \WP_Widget {
     public function update( $new_instance, $old_instance ) {
         extract( $new_instance, EXTR_SKIP );
         $instance = $old_instance;
-        $instance['title'] = strip_tags( $title );
-        $instance['lpw_cats']  = $lpw_cats;
-        $instance['lpw_tags']  = $lpw_tags;
-        $instance['lpw_limit'] = intval( $lpw_limit );
-        $instance['lpw_length'] = intval( $lpw_length );
-        $instance['lpw_date']  = intval( $lpw_date );
-        $instance['lpw_image'] = intval( $lpw_image );
-        $instance['lpw_link'] = strip_tags( $lpw_link );
+        $instance['title']           = strip_tags( $title );
+        $instance['gw_images']       = $gw_images;
+        $instance['gw_description']  = strip_tags( $gw_description );
+        $instance['gw_link']         = strip_tags( $gw_link );
         return $instance;
     }
 
     // Registers and enqueues admin-specific styles.
     public function register_admin_styles() {
-        wp_enqueue_style( 'latest-posts-widget-admin-styles', $this->directory_url . '/css/admin.css' );
+        wp_enqueue_style( 'gallery-widget-admin-styles', $this->directory_url . '/css/admin.css' );
+    }
+    // Registers and enqueues admin-specific JavaScript.
+    public function register_admin_scripts() {
+        wp_enqueue_media();
+        wp_enqueue_script( 'gallery-widget-admin-script', $this->directory_url . '/js/admin.js', ['jquery'] );
     }
 
 }
 
-// Register Latest Posts Widget.
+// Register Gallery Widget.
 add_action( 'widgets_init', function() {
-    register_widget( 'MildPlugins\LatestPostsWidget' );
+    register_widget( 'MildPlugins\Gallery_Widget' );
 });

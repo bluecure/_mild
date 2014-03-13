@@ -26,7 +26,7 @@ if ( ! empty( $title ) ) {
 
 			<?php if ( $lpw_length !== 0 ) { ?>
 				<div class="latest-posts-widget-excerpt">
-					<?php echo substr( get_the_excerpt(), 0, $lpw_length );	?>
+					<?php echo substr( get_the_excerpt(), 0, $lpw_length );	?>&hellip;
 					<a href="<?php the_permalink(); ?>" class="latest-posts-widget-more">Read More</a>
 				</div>
 			<?php } ?>

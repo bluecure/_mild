@@ -15,7 +15,7 @@ namespace MildPlugins;
 if ( ! defined( 'WPINC' ) ) die;
 
 /* Image Widget Class */
-class ImageWidget extends \WP_Widget {
+class Image_Widget extends \WP_Widget {
 
     /* Variables */
     private $directory;
@@ -94,5 +94,5 @@ class ImageWidget extends \WP_Widget {
 
 // Register Image Widget.
 add_action( 'widgets_init', function() {
-    register_widget( 'MildPlugins\ImageWidget' );
+    register_widget( 'MildPlugins\Image_Widget' );
 });

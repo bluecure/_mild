@@ -1,13 +1,13 @@
 <?php
 /**
-* mild Create new user role
+* Create new user role
 *
 * @package Mild
 */
 
 namespace MildHelpers;
 
-class UserRoles {
+class User_Roles {
     // Variables
     public $role;
     public $display_name;
@@ -33,10 +33,10 @@ class UserRoles {
     /**
      * Adds the new user role
      *
-     * @access private
+     * @access public
      * @return null
      */
-    private function register() {
+    public function register() {
 
         add_role( $this->role, $this->display_name, $this->capabilities );
 

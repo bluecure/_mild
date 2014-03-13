@@ -142,8 +142,30 @@ embed, iframe, object {
 }
 
 /* Comments */
-.comment-content a {
-    word-wrap: break-word;
+.comments-area {
+    background-color: darken( $color-white, 2% );
+    font-size: 0.9em;
+    padding: 0.2em 0.75em;
+    .comment-content a {
+        word-wrap: break-word;
+    }
+    .comment-list .comment {
+        border-left: 1px dotted $color-silver;
+        list-style: none outside none;
+        margin-top: 1em;
+        padding-left: 1em;
+    }
+    .comment-respond {
+        padding: 0.25em 0.75em;
+        label {
+            display: inline-block;
+            padding-right: 0.5em;
+            width: 4em;
+        }
+        .form-allowed-tags code {
+            font-size: 0.9em;
+        }
+    }
 }
 
 /* Widgets */

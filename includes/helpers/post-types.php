@@ -1,13 +1,13 @@
 <?php
 /**
-* mild Create new post types
+* Create new post types
 *
 * @package Mild
 */
 
 namespace MildHelpers;
 
-class PostTypes {
+class Post_Types {
     // Variables
     public $post_type;
     public $labels = [];
@@ -35,10 +35,10 @@ class PostTypes {
     /**
      * Register new post type
      *
-     * @access private
+     * @access public
      * @return null
      */
-    private function register() {
+    public function register() {
 
         register_post_type( $this->post_type, $this->args );
 

@@ -37,4 +37,4 @@ add_action( 'admin_init', function() {
     */
     ot_register_meta_box( $page_meta_box );
 
-}
+});
