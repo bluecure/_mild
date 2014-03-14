@@ -76,7 +76,7 @@ add_filter( 'login_redirect', function( $redirect_to, $request, $user ) {
     } else {
         return $redirect_to;
     }
-});
+}, 10, 3);
 
 /**
 * Redirect user after logout.
