@@ -7,12 +7,14 @@
  * @package Mild
  */
 
+namespace Mild;
+
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @return void
  */
-function mild_paging_nav() {
+function paging_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
@@ -40,7 +42,7 @@ function mild_paging_nav() {
  *
  * @return void
  */
-function mild_post_nav() {
+function post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -66,7 +68,7 @@ function mild_post_nav() {
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
-function mild_comment( $comment, $args, $depth ) {
+function comments( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
@@ -122,7 +124,7 @@ function mild_comment( $comment, $args, $depth ) {
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function mild_posted_on() {
+function posted_on() {
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -150,7 +152,7 @@ function mild_posted_on() {
 /**
  * Returns true if a blog has more than 1 category.
  */
-function mild_categorized_blog() {
+function categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( [
@@ -164,20 +166,19 @@ function mild_categorized_blog() {
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so mild_categorized_blog should return true.
+		// This blog has more than 1 category so categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so mild_categorized_blog should return false.
+		// This blog has only 1 category so categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in mild_categorized_blog.
+ * Flush out the transients used in categorized_blog.
  */
-function mild_category_transient_flusher() {
-	// Like, beat it. Dig?
+function category_transient_flusher() {
 	delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', 'mild_category_transient_flusher' );
-add_action( 'save_post',     'mild_category_transient_flusher' );
+add_action( 'edit_category', 'Mild\category_transient_flusher' );
+add_action( 'save_post',     'Mild\category_transient_flusher' );

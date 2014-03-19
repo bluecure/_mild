@@ -4,8 +4,7 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to mild_comment() which is
- * located in the inc/template-tags.php file.
+ * handled by a callback to Mild\comments()
  *
  * @package Mild
  */
@@ -43,12 +42,12 @@ if ( post_password_required() ) {
 		<ol class="comment-list">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use mild_comment() to format the comments.
+				 * to use Mild\comments() to format the comments.
 				 * If you want to override this in a child theme, then you can
-				 * define mild_comment() and that will be used instead.
-				 * See mild_comment() in inc/template-tags.php for more.
+				 * define Mild\comments() and that will be used instead.
+				 * See Mild\comments() in inc/template-tags.php for more.
 				 */
-				wp_list_comments( [ 'callback' => 'mild_comment' ] );
+				wp_list_comments( [ 'callback' => 'Mild\comments' ] );
 			?>
 		</ol><!-- .comment-list -->
 

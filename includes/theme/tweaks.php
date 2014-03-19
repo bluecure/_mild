@@ -66,15 +66,10 @@ add_filter( 'excerpt_more', function( $more ) {
 * Redirect user after login.
 */
 add_filter( 'login_redirect', function( $redirect_to, $request, $user ) {
-    global $user;
-    if( isset( $user->roles ) && is_array( $user->roles ) ) {
-        if( ! in_array( "administrator", $user->roles ) ) {
-            return home_url();
-        } else {
-            return $redirect_to;
-        }
-    } else {
+    if( Mild\is_user( 'administrator' ) ) {
         return $redirect_to;
+    } else {
+        return home_url();
     }
 }, 10, 3);
 

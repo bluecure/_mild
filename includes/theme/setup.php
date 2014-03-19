@@ -11,7 +11,7 @@
 add_filter( 'ot_show_pages', '__return_false' );
 add_filter( 'ot_show_new_layout', '__return_false' );
 add_filter( 'ot_theme_mode', '__return_true' );
-require MILD_OPTION_TREE . 'ot-loader.php';
+require MILD_OPTIONS . 'ot-loader.php';
 
 /**
  * Set the content width.
@@ -54,6 +54,7 @@ add_action( 'after_setup_theme', function() {
  * Register widgetized areas.
  */
 add_action( 'widgets_init', function () {
+
     // Register main sidebar.
     register_sidebar( [
         'name'          => 'Sidebar',
@@ -63,12 +64,14 @@ add_action( 'widgets_init', function () {
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ] );
+
 });
 
 /**
  * Enqueue scripts and styles.
  */
 add_action( 'wp_enqueue_scripts', function() {
+
     // Load main css file.
     wp_enqueue_style( 'mild-style', get_stylesheet_uri() );
     // Load main js file.
@@ -77,4 +80,5 @@ add_action( 'wp_enqueue_scripts', function() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+    
 });

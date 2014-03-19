@@ -5,7 +5,7 @@
 * @package Mild
 */
 
-namespace MildHelpers;
+namespace Mild;
 
 class Post_Types {
     // Variables

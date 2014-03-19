@@ -23,7 +23,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php mild_paging_nav(); ?>
+			<?php Mild\paging_nav(); ?>
 
 		<?php else : ?>
 

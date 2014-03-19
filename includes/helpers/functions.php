@@ -2,22 +2,24 @@
 /**
  * Custom functions for this theme including:
  *
- * mild_pagination()           | Displays Pagination
- * mild_breadcrumbs()          | Displays Breadcrumbs
- * mild_page_menu()            | Displays Page Menu
- * mild_posts_menu()           | Displays Posts Menu
- * mild_get_attachment_image() | Gets Attachment Image from Source
- * mild_is_user                | Checks user role
+ * pagination()  | Displays Pagination
+ * breadcrumbs() | Displays Breadcrumbs
+ * page_menu()   | Displays Page Menu
+ * posts_menu()  | Displays Posts Menu
+ * is_user()     | Checks user role
  *
  * @package Mild
  */
 
+namespace Mild;
+
 /**
  * Displays pagination links
  *
- * @return String or array of page links
+ * @param string $post_type
+ * @return sting $pagination
  */
-function mild_pagination( $post_type = 'post' ) {
+function pagination( $post_type = 'post' ) {
 	global $wp_query;
 
 	$args = [
@@ -38,9 +40,9 @@ function mild_pagination( $post_type = 'post' ) {
 /**
  * Display breadcrumbs
  *
- * @return html or empty string
+ * @return string
  */
-function mild_breadcrumbs() {
+function breadcrumbs() {
 	$html = '';
 	global $post;
 
@@ -65,9 +67,9 @@ function mild_breadcrumbs() {
 /**
  * Display sub page menu
  *
- * @return html or empty string
+ * @return string
  */
-function mild_page_menu() {
+function page_menu() {
 	$html = '';
 	global $post;
 
@@ -96,9 +98,9 @@ function mild_page_menu() {
 /**
  * Display latest posts
  *
- * @return html or empty string
+ * @return string
  */
-function mild_posts_menu() {
+function posts_menu() {
 	$html = '';
 
 	$args = [
@@ -122,38 +124,11 @@ function mild_posts_menu() {
 }
 
 /**
- * Get custom attachment image by url
- *
- * @return html or empty string
- */
-function mild_get_attachment_image( $attachment_url ) {
-	$html = '';
-	global $wpdb;
-
-	if ( $attachment_url === '' )
-		return;
-
-	$upload_dir_paths = wp_upload_dir();
-
-	if ( strpos( $attachment_url, $upload_dir_paths['baseurl'] ) !== false ) {
-
-		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
-		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
-
-		if ( $attachment_id )
-			$html = wp_get_attachment_image( $attachment_id, 'slider', 'false', [ 'class' => 'slide-image' ] );
-
-	}
-
-	echo $html;
-}
-
-/**
  * Get and check user role
  *
  * @return boolean
  */
-function mild_is_user( $role ) {
+function is_user( $role ) {
 	$user = wp_get_current_user();
 	return ( in_array( $role, $user->roles ) );
 }

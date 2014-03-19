@@ -5,7 +5,7 @@
 * @package Mild
 */
 
-namespace MildHelpers;
+namespace Mild;
 
 class User_Roles {
     // Variables

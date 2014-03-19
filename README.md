@@ -1,6 +1,6 @@
 #Mild
 
-Hi, This is `Mild` a WordPress Theme Starter based off `_s`, with a couple of extras.
+Hi, This is `Mild` a WordPress Starter Theme based off `_s`, with a couple of extras.
 
 Anyone is welcome to use this, however this is a work in progress and can break at anytime. 
 [Underscores](http://github.com/Automattic/_s) or [Roots](http://github.com/roots/roots) might be more useful.

@@ -8,8 +8,7 @@
  * @package Mild
  */
 
-// Plugins namespace.
-namespace MildPlugins;
+namespace Mild;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) die;
@@ -104,5 +103,5 @@ class Latest_Posts_Widget extends \WP_Widget {
 
 // Register Latest Posts Widget.
 add_action( 'widgets_init', function() {
-    register_widget( 'MildPlugins\Latest_Posts_Widget' );
+    register_widget( 'Mild\Latest_Posts_Widget' );
 });

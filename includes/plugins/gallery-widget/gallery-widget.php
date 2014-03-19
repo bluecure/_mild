@@ -8,8 +8,7 @@
  * @package Mild
  */
 
-// Plugins namespace.
-namespace MildPlugins;
+namespace Mild;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) die;
@@ -93,5 +92,5 @@ class Gallery_Widget extends \WP_Widget {
 
 // Register Gallery Widget.
 add_action( 'widgets_init', function() {
-    register_widget( 'MildPlugins\Gallery_Widget' );
+    register_widget( 'Mild\Gallery_Widget' );
 });

@@ -7,8 +7,7 @@
  *
  */
 
-// Plugins namespace.
-namespace MildPlugins;
+namespace Mild;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) die;

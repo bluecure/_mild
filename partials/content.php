@@ -12,7 +12,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php mild_posted_on(); ?>
+			<?php Mild\posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -38,7 +38,7 @@
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( ', ' );
-				if ( $categories_list && mild_categorized_blog() ) :
+				if ( $categories_list && Mild\categorized_blog() ) :
 			?>
 			<span class="cat-links">
 				<?php printf( 'Posted in %1$s', $categories_list ); ?>
