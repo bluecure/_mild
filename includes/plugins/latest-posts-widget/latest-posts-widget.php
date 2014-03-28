@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Latest Posts Widget
- * Version: 1.0
+ * Version: 1.0.0
  * Description: Display the latest posts with optional title, date and image.
  * Author: David Featherston
  *

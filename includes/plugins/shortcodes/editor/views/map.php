@@ -18,13 +18,13 @@ require( 'inc/header.php' );
 		<div class="half">
 			<label for="width">Width: </label>
 			<div class="field">
-				<input type="text" name="width" id="width" class="input" placeholder="400px">
+				<input type="text" name="width" id="width" class="input" placeholder="400">
 			</div>
 		</div>
 		<div class="half">
 			<label for="height">Height: </label>
 			<div class="field">
-				<input type="text" name="height" id="height" class="input" placeholder="300px">
+				<input type="text" name="height" id="height" class="input" placeholder="300">
 			</div>
 		</div>
 	</div>

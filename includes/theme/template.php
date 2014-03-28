@@ -1,13 +1,130 @@
 <?php
 /**
  * Template tags for this theme.
- *
- * Eventually, some of the functionality here could be replaced by core features.
+ * 
+ * pagination()  | Displays pagination
+ * breadcrumbs() | Displays breadcrumbs
+ * page_menu()   | Displays page menu
+ * posts_menu()  | Displays posts menu
+ * paging_nav()  | Displays paging nav
+ * post_nav()    | Displays post nav
+ * comments()    | Displays comments
+ * posted_on()   | Displays posted on
  *
  * @package Mild
  */
 
 namespace Mild;
+
+/**
+ * Displays pagination links
+ *
+ * @param string $post_type
+ * @return sting $pagination
+ */
+function pagination( $post_type = 'post' ) {
+	global $wp_query;
+
+	$args = [
+		'base'      => str_replace( 999999, '%#%', esc_url( get_pagenum_link( 999999 ) ) ),
+		'format'    => '?paged=%#%',
+		'current'   => max( 1, get_query_var('paged') ),
+		'total'     => $wp_query->max_num_pages,
+		'prev_next' => True,
+		'prev_text' => '<i class="icon icon-angle-double-left"></i>',
+		'next_text' => '<i class="icon icon-angle-double-right"></i>'
+	];
+
+	$pagination = '<nav class="pagination">' . paginate_links( $args ) . '</nav>';
+
+	echo $pagination;
+}
+
+/**
+ * Display breadcrumbs
+ *
+ * @return string
+ */
+function breadcrumbs() {
+	$html = '';
+	global $post;
+
+	$parents = get_post_ancestors( $post->ID );
+
+	if ( $parents ) {
+		$html = "<ul class='breadcrumbs'>";
+		$html .= "<li><a href='" . get_bloginfo( 'wpurl' ) . "'>Home</a></li>";
+		$breadcrumbs = array_reverse( $parents );
+		foreach ( $breadcrumbs as $item ) {
+			$html .= "<li>";
+				$html .= "<a href='" . get_permalink( $item ) . "'>" . get_the_title( $item ) . "</a>";
+			$html .= "</li>";
+		}
+		$html .= "<li>" . get_the_title( $post->ID ) . "</li>";
+		$html .= "</ul>";
+	}
+
+	echo $html;
+}
+
+/**
+ * Display sub page menu
+ *
+ * @return string
+ */
+function page_menu() {
+	$html = '';
+	global $post;
+
+	$parent = ( 0 !== $post->post_parent ) ? $post->post_parent : $post->ID;
+
+	$args = [
+		'child_of'     => $parent,
+		'exclude'      => $parent,
+		'sort_column'  => 'menu_order',
+		'post_type'    => 'page',
+	    'post_status'  => 'publish'
+	];
+	$pages = get_pages( $args );
+
+	if ( $pages ) {
+		$html = "<ul class='side-menu'>";
+		foreach( $pages as $page ) : setup_postdata( $post );
+			$html .= "<li><h4><a href='" . get_permalink() . "'>" . get_the_title() . "</a></h4></li>";
+		endforeach; wp_reset_postdata();
+		$html .= '</ul>';
+	}
+
+	echo $html;
+}
+
+/**
+ * Display latest posts
+ *
+ * @return string
+ */
+function posts_menu() {
+	$html = '';
+
+	$args = [
+		'posts_per_page'   => 10,
+		'orderby'          => 'post_date',
+		'order'            => 'DESC',
+		'post_type'        => 'post',
+		'post_status'      => 'publish'
+	];
+	$posts = get_posts( $args );
+
+	if ( $posts ) {
+		$html = "<ul class='side-menu'>";
+		foreach ( $posts as $post ) : setup_postdata( $post );
+			$html .= "<li><h4><a href='" . get_permalink() . "'>" . get_the_title() . "</a></h4></li>";
+		endforeach; wp_reset_postdata();
+		$html .= "</ul>";
+	}
+
+	echo $html;
+}
 
 /**
  * Display navigation to next/previous set of posts when applicable.
@@ -148,37 +265,3 @@ function posted_on() {
 		)
 	);
 }
-
-/**
- * Returns true if a blog has more than 1 category.
- */
-function categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( [
-			'hide_empty' => 1,
-		] );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
-
-		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
-	}
-
-	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so categorized_blog should return false.
-		return false;
-	}
-}
-
-/**
- * Flush out the transients used in categorized_blog.
- */
-function category_transient_flusher() {
-	delete_transient( 'all_the_cool_cats' );
-}
-add_action( 'edit_category', 'Mild\category_transient_flusher' );
-add_action( 'save_post',     'Mild\category_transient_flusher' );

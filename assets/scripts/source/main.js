@@ -8,6 +8,13 @@ jQuery(document).ready(function($) {
     menuToggle.on( 'click', function() {
         mainMenu.slideToggle();
     });
+    mainMenu.one( 'click', 'a', function( event ) {
+        var subMenu = $(this).next( 'ul' );
+        if ( subMenu.length > 0 && menuToggle.is(':visible') ) {
+            event.preventDefault();
+            subMenu.slideDown();
+        }
+    });
 
     // Scroll to top
     $( 'a.to-top' ).click( function() {
@@ -20,7 +27,7 @@ jQuery(document).ready(function($) {
     var searchBtn = $( '.search-submit' ),
         searchField = $( '.search-field' );
     searchBtn.on( 'click', function( e ) {
-       if ( !searchField.is( ':visible' ) || searchField.val() === '' ) {
+       if ( ! searchField.is( ':visible' ) || ! searchField.val() ) {
            searchField.fadeToggle();
            e.preventDefault();
        }

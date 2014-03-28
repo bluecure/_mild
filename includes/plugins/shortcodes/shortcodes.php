@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Shortcodes
  * Description: A set of simple shortcodes
- * Version: 1.0
+ * Version: 1.0.0
  * Author: David Featherston
  *
  */
@@ -110,7 +110,8 @@ class Shortcodes {
 	        'link' => '',
 	        'target' => 'self'
 	    ], $params) );
-	    $html = "<button class='button bg-{$color} {$size}'><i class='fa fa-{$icon}'></i>" . do_shortcode( $content ) . "</button>";
+	    $icon = self::create_icon( $icon );
+	    $html = "<button type='button' class='button bg-{$color} {$size}'>{$icon}" . do_shortcode( $content ) . "</button>";
 	    return self::wrap_with_anchor( $link, $target, $html );
 	}
 
@@ -123,7 +124,8 @@ class Shortcodes {
 	        'size' => '',
 	        'icon' => ''
 	    ], $params) );
-	    return "<div class='panel bg-{$color} {$size}'><i class='fa fa-{$icon}'></i>" . do_shortcode( $content ) . "</div>";
+	    $icon = self::create_icon( $icon );
+	    return "<div class='panel bg-{$color} {$size}'>{$icon}" . do_shortcode( $content ) . "</div>";
 	}
 
 	/*
@@ -145,10 +147,12 @@ class Shortcodes {
 	        'title' => '',
 	        'icon' => ''
 	    ], $params) );
-	    wp_enqueue_script( 'ss-accordion-js', $this->directory_url . '/js/accordion.js', ['jquery'], '1.0', true );
-	    return "<div class='accordion'><h3 class='accordion-title'>
-	            <i class='fa fa-{$icon}'></i>{$title}<i class='fa fa-plus'></i></h3>
-	            <div class='accordion-content'>" . do_shortcode($content) . "</div></div>";
+	    $icon = self::create_icon( $icon );
+	    $icon_plus = self::create_icon( 'plus' );
+	    return "<div class='accordion'>
+		    		<h3 class='accordion-title'>{$icon}{$title}{$icon_plus}</h3>
+		            <div class='accordion-content'>" . do_shortcode($content) . "</div>
+	            </div>";
 	}
 
 	/*
@@ -170,7 +174,7 @@ class Shortcodes {
 	        'post_type' => $type,
 	        'posts_per_page' => $no
 	    ];
-	    $query = new WP_Query( $args );
+	    $query = new \WP_Query( $args );
 
 	    $html = "<div class='show-posts show-{$type}'>";
 	        while( $query->have_posts() ) : $query->the_post();
@@ -196,7 +200,7 @@ class Shortcodes {
 	    ], $params) );
 	    $html = '';
 
-	    if ( strpos( $show, 'pages' ) !== false ) {
+	    if ( false !== strpos( $show, 'pages' ) ) {
 	        $pages = get_pages();
 	        $html .= "<h4>Pages</h4>";
 	        $html .= "<ul class='sitemap sitemap-pages'>";
@@ -208,7 +212,7 @@ class Shortcodes {
 	        $html .= "</ul>";
 	    }
 
-	    if ( strpos( $show, 'posts' ) !== false ) {
+	    if ( false !== strpos( $show, 'posts' ) ) {
 	        $posts = get_posts();
 	        $html .= "<h4>Posts</h4>";
 	        $html .= "<ul class='sitemap sitemap-posts'>";
@@ -220,7 +224,7 @@ class Shortcodes {
 	        $html .= "</ul>";
 	    }
 
-	    if ( strpos( $show,'menus' ) !== false ) {
+	    if ( false !== strpos( $show,'menus' ) ) {
 	        $menus = get_terms( 'nav_menu', [ 'hide_empty' => true ] );
 	        $html .= "<h4>Menus</h4>";
 	        foreach ( $menus as $menu ) {
@@ -236,12 +240,12 @@ class Shortcodes {
 	*/
 	public function map( $params, $content = null ) {
 	    extract( shortcode_atts([
-	        'width' => '400px',
-	        'height' => '300px',
+	        'width' => '400',
+	        'height' => '300',
 	        'location' => 'Australia'
 	    ], $params) );
 	    $location = str_replace( ' ', '+', $location );
-	    return "<div class='fluid-iframe'><iframe src='https://maps.google.com/maps?q={$location}&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='{$width}' height='{$height}'></iframe></div>";
+	    return "<div class='fluid-iframe'><iframe src='https://maps.google.com/maps?q={$location}&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='{$width}px' height='{$height}px'></iframe></div>";
 	}
 
 	/*
@@ -273,7 +277,14 @@ class Shortcodes {
 	* Wrap with anchor helper
 	*/
 	private function wrap_with_anchor( $link, $target, $html ) {
-	    return ( $link !== '' ) ? "<a href='{$link}' target='_{$target}' class='a-wrap'>{$html}</a>" : $html;
+	    return ( $link ) ? "<a href='{$link}' target='_{$target}' class='a-wrap'>{$html}</a>" : $html;
+	}
+
+	/*
+	* Create icon helper
+	*/
+	private function create_icon( $icon ) {
+	    return ( $icon ) ? "<i class='fa fa-{$icon}'></i>" : '';
 	}
 
 }

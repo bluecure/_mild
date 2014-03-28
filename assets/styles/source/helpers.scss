@@ -2,17 +2,17 @@
 ----------------------------------------------- */
 
 /* Alignment */
-.alignleft {
+.alignleft, .align-left {
     display: inline;
     float: left;
     margin: 0 2.5em 1em 0;
 }
-.alignright {
+.alignright, .align-right {
     display: inline;
     float: right;
     margin: 0 0 1em 2.5em;
 }
-.aligncenter {
+.aligncenter, .align-center {
     clear: both;
     display: block;
     margin: 0 auto 1em auto;
@@ -23,13 +23,13 @@
 .float-right {
     float: right;
 }
-.content-left {
+.text-left {
     text-align: left;
 }
-.content-right {
+.text-right {
     text-align: right;
 }
-.content-center {
+.text-center {
     text-align: center;
 }
 

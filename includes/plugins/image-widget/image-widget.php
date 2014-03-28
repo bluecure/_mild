@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Image Widget
- * Version: 1.0
+ * Version: 1.0.0
  * Description: Adds an image with optional title, description and link.
  * Author: David Featherston
  *

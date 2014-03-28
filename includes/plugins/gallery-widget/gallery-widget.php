@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Gallery Widget
- * Version: 1.0
+ * Version: 1.0.0
  * Description: Adds a gallery with optional title and description.
  * Author: David Featherston
  *

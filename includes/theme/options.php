@@ -24,12 +24,10 @@ add_action( 'admin_init', function() {
             [
                 'title' => 'General',
                 'id' => 'ot_general'
-            ],
-            [
+            ], [
                 'title' => 'Home',
                 'id' => 'ot_home'
-            ],
-            [
+            ], [
                 'title' => 'Social',
                 'id' => 'ot_social'
             ]
@@ -40,15 +38,25 @@ add_action( 'admin_init', function() {
                 'id' => 'ot_logo',
                 'type' => 'upload',
                 'section' => 'ot_general'
-            ],
+            ], [
             [
+                'label' => 'Favicon',
+                'id' => 'ot_favicon',
+                'type' => 'upload',
+                'section' => 'ot_general'
+            ], [
+            [
+                'label' => 'App Icon',
+                'id' => 'ot_app_icon',
+                'type' => 'upload',
+                'section' => 'ot_general'
+            ], [
                 'label' => 'Custom CSS',
                 'id' => 'ot_css',
                 'type' => 'textarea-simple',
                 'desc' => 'Put any custom CSS here, without the style tags.',
                 'section' => 'ot_general'
-            ],
-            [
+            ], [
                 'label' => 'Analytics code',
                 'id' => 'ot_analytics',
                 'type' => 'textarea-simple',
@@ -69,50 +77,42 @@ add_action( 'admin_init', function() {
                 'id' => 'ot_facebook',
                 'type' => 'text',
                 'section' => 'ot_social'
-            ],
-            [
+            ], [
                 'label' => 'Twitter Url',
                 'id' => 'ot_twitter',
                 'type' => 'text',
                 'section' => 'ot_social'
-            ],
-            [
+            ], [
                 'label' => 'Google Plus Url',
                 'id' => 'ot_google_plus',
                 'type' => 'text',
                 'section' => 'ot_social'
-            ],
-            [
+            ], [
                 'label' => 'LinkenIn Url',
                 'id' => 'ot_linkedin',
                 'type' => 'text',
                 'section' => 'ot_social'
-            ],
-            [
+            ], [
                 'label' => 'Pinterest Url',
                 'id' => 'ot_pinterest',
                 'type' => 'text',
                 'section' => 'ot_social'
-            ],
-            [
+            ], [
                 'label' => 'Flickr Url',
                 'id' => 'ot_flickr',
                 'type' => 'text',
                 'section' => 'ot_social'
-            ],
-            [
+            ], [
                 'label' => 'Instagram Url',
                 'id' => 'ot_instagram',
                 'type' => 'text',
                 'section' => 'ot_social'
-            ],
-            [
+            ], [
                 'label' => 'YouTube Url',
                 'id' => 'ot_youtube',
                 'type' => 'text',
                 'section' => 'ot_social'
-            ],
-            [
+            ], [
                 'label' => 'Vimeo Url',
                 'id' => 'ot_vimeo',
                 'type' => 'text',

@@ -35,7 +35,7 @@ add_action( 'after_setup_theme', function() {
     add_theme_support( 'post-thumbnails' );
 
     // Enable support for HTML5 markup.
-    add_theme_support( 'html5', [ 'comment-list', 'search-form', 'comment-form', 'gallery' ] );
+    add_theme_support( 'html5', [ 'comment-list', 'search-form', 'comment-form', 'gallery', 'caption' ] );
 
     // Enable support for Page excerpts.
     add_post_type_support( 'page', 'excerpt' );

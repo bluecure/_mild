@@ -66,7 +66,7 @@
             ed.addButton('button', {
                 title : 'Insert button',
                 cmd : 'button',
-                class: 'dashicons-admin-collapse',
+                class: 'dashicons-align-none',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Button',
@@ -82,7 +82,7 @@
             ed.addButton('panel', {
                 title : 'Insert panel',
                 cmd : 'panel',
-                class: 'dashicons-align-none',
+                class: 'dashicons-align-center',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Panel',
