@@ -327,16 +327,16 @@
 
           switch ( condition.rule ) {
             case 'less_than':
-              result = ( v1 < v2 );
+              result = ( parseInt( v1 ) < parseInt( v2 ) );
               break;
             case 'less_than_or_equal_to':
-              result = ( v1 <= v2 );
+              result = ( parseInt( v1 ) <= parseInt( v2 ) );
               break;
             case 'greater_than':
-              result = ( v1 > v2 );
+              result = ( parseInt( v1 ) > parseInt( v2 ) );
               break;
             case 'greater_than_or_equal_to':
-              result = ( v1 >= v2 );
+              result = ( parseInt( v1 ) >= parseInt( v2 ) );
               break;
             case 'contains':
               result = ( v2.indexOf(v1) !== -1 ? true : false );
@@ -706,8 +706,8 @@
   , select: function (elm) {
       var input = $(elm).parents('.format-setting-inner').children('.ot-gallery-value')
         , ids = input.attr('value')
-        , mildhortcode = input.hasClass('ot-gallery-shortcode') ? ids : '[gallery ids=\'' + ids + '\]'
-        , shortcode = wp.shortcode.next('gallery', ( ids ? mildhortcode : wp.media.view.settings.ot_gallery.shortcode ) )
+        , _shortcode = input.hasClass('ot-gallery-shortcode') ? ids : '[gallery ids=\'' + ids + '\]'
+        , shortcode = wp.shortcode.next('gallery', ( ids ? _shortcode : wp.media.view.settings.ot_gallery.shortcode ) )
         , defaultPostId = wp.media.gallery.defaults.id
         , attachments
         , selection

@@ -21,7 +21,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 /**
- * Sets up theme defaults and register support for various WordPress features.
+ * Sets up defaults, add theme support, register post types, taxonomies, roles, ect.
  */
 add_action( 'after_setup_theme', function() {
 
@@ -43,10 +43,25 @@ add_action( 'after_setup_theme', function() {
     // Enable support for Post Formats.
     add_theme_support( 'post-formats', [ 'aside', 'image', 'video', 'quote', 'link' ] );
 
-    // This theme uses wp_nav_menu() in one location.
+    // Register nav menus.
     register_nav_menus( [
-        'primary' => 'Primary Menu',
+        'primary' => 'Primary Menu'
     ] );
+
+    // Register user roles.
+    // $roles = new Mild\User_Roles( [
+    //     [ 'name' => 'Customer' ]        
+    // ] );
+
+    // Register post types.
+    // $types = new Mild\Post_Types( [
+    //     [ 'name' => 'Book' ]
+    // ] );
+
+    // Register taxonomies.
+    // $taxonomies = new Mild\Taxonomies( [
+    //     [ 'name' => 'Genre', 'post_types' => [ 'Book' ] ]
+    // ] );
 
 });
 
@@ -55,14 +70,9 @@ add_action( 'after_setup_theme', function() {
  */
 add_action( 'widgets_init', function () {
 
-    // Register main sidebar.
-    register_sidebar( [
-        'name'          => 'Sidebar',
-        'id'            => 'sidebar-1',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
+    // Register sidebars.
+    $sidebars = new Mild\Sidebars( [
+        [ 'name' => 'Sidebar' ]
     ] );
 
 });

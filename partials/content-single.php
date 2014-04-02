@@ -33,9 +33,9 @@
 			/* translators: used between list items, there is a space after the comma */
 			$tag_list = get_the_tag_list( '', ', ' );
 
-			if ( ! Mild\categorized_blog() ) {
+			if ( ! Mild\is_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
+				if ( $tag_list !== '' ) {
 					$meta_text = 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.';
 				} else {
 					$meta_text = 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.';
@@ -43,7 +43,7 @@
 
 			} else {
 				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
+				if ( $tag_list !== '' ) {
 					$meta_text = 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.';
 				} else {
 					$meta_text = 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.';

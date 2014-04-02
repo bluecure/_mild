@@ -9,10 +9,8 @@ namespace Mild;
 
 class Taxonomies {
     // Variables
-    public $taxonomy;
-    public $post_type = [];
+    public $taxonomies = [];
     public $labels = [];
-    public $options = [];
 
     /**
      * Creates a new taxonomy
@@ -21,18 +19,11 @@ class Taxonomies {
      * @param array $options
      * @param array $labels
      */
-    public function __construct( $taxonomy, $post_type = [], $labels = [], $options = [] ) {
-        $this->taxonomy = sanitize_title_with_dashes( $taxonomy );
-        $this->post_type = sanitize_title_with_dashes( $post_type );
-        $this->labels = $labels;
+    public function __construct( $taxonomies = [] ) {
+        $this->taxonomies = $taxonomies;
 
-        // Setup args
-        $this->options = wp_parse_args( $options, self::default_options() );
-        // Add labels
-        $this->options['labels'] = wp_parse_args( $labels, self::default_labels() );
-
-        // Register taxonomy
-        add_action( 'init', [ $this, 'register' ] );
+        // Register
+        self::register();
     }
 
     /**
@@ -42,8 +33,24 @@ class Taxonomies {
      * @return null
      */
     public function register() {
-        
-        register_taxonomy( $this->taxonomy, $this->post_type, $this->options );
+
+        foreach ( $this->taxonomies as $taxonomy ) {
+            // Set labels
+            $this->labels['single'] = $taxonomy['name'];
+            $this->labels['plural'] = ( $taxonomy['plural'] ) ? $taxonomy['plural'] : $taxonomy['name'] . 's' ;
+
+            // Setup options
+            $post_types = [];
+            foreach ( $taxonomy['post_types'] as $type ) {
+                $post_types[] = sanitize_title_with_dashes( $type );
+            }
+            $taxonomy_name = sanitize_title_with_dashes( $taxonomy['name'] );
+            $options = wp_parse_args( $options, self::default_options() );
+            $options['labels'] = wp_parse_args( $labels, self::default_labels() );
+            
+            // Register taxonomy
+            register_taxonomy( $taxonomy_name, $post_types, $options );
+        }
 
     }
 

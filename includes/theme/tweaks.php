@@ -11,10 +11,9 @@
 define ( 'DISALLOW_FILE_EDIT', true );
 
 /**
-* Clean up auto p's for shortcodes.
+* Reduce post revisions
 */
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 12 );
+define( 'WP_POST_REVISIONS', 20 );
 
 /**
 * Run shortcodes in widgets.
@@ -22,11 +21,27 @@ add_filter( 'the_content', 'wpautop' , 12 );
 add_filter( 'widget_text', 'do_shortcode' );
 
 /**
+* Clean up auto p's for shortcodes.
+*/
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 12 );
+
+/**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
 add_filter( 'wp_page_menu_args', function( $args ) {
     $args['show_home'] = true;
     return $args;
+});
+
+/**
+ * Add class if sidebar is present
+ */
+add_filter('body_class', function( $classes ) {
+    if ( is_active_sidebar( 'sidebar' ) ) {
+        $classes[] = 'sidebar';
+    }
+    return $classes;
 });
 
 /**
@@ -67,7 +82,7 @@ add_filter( 'excerpt_more', function( $more ) {
 */
 add_filter( 'login_redirect', function( $redirect_to, $request, $user ) {
     if( Mild\is_user( 'administrator' ) ) {
-        return $redirect_to;
+        return admin_url();
     } else {
         return home_url();
     }

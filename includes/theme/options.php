@@ -39,13 +39,11 @@ add_action( 'admin_init', function() {
                 'type' => 'upload',
                 'section' => 'ot_general'
             ], [
-            [
                 'label' => 'Favicon',
                 'id' => 'ot_favicon',
                 'type' => 'upload',
                 'section' => 'ot_general'
             ], [
-            [
                 'label' => 'App Icon',
                 'id' => 'ot_app_icon',
                 'type' => 'upload',

@@ -5,7 +5,7 @@
 
 // Get Images and create galley preview
 $gallery = '';
-if( $gw_images && 0 !== $gw_images ) {
+if( $gw_images && $gw_images !== 0 ) {
     $imageIDs = explode( ',', $gw_images );
     foreach ( $imageIDs as $imageID ) {
     	$gallery .= wp_get_attachment_link( $imageID, 'thumbnail' );

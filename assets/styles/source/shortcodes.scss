@@ -135,6 +135,19 @@
 /* Show */
 .show-posts .post {
     margin-bottom: 1.5em;
+    .post-title {
+        margin-bottom: 0;
+    }
+    .post-date {
+        font-size: 0.85em;
+        font-style: italic;
+        color: lighten($color-grey, 10%);
+        margin-bottom: 0.5em;
+    }
+    .post-image {
+        float: left;
+        margin: 0 0.5em 0.5em 0;
+    }
 }
 
 /* General */

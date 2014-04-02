@@ -58,7 +58,8 @@ class Image_Widget extends \WP_Widget {
             'title' => '',
             'iw_image' => '',
             'iw_description' => '',
-            'iw_link' => ''
+            'iw_link' => '',
+            'iw_target' => ''
         ];
         $instance = wp_parse_args(
             (array) $instance,
@@ -72,10 +73,11 @@ class Image_Widget extends \WP_Widget {
     public function update( $new_instance, $old_instance ) {
         extract( $new_instance, EXTR_SKIP );
         $instance = $old_instance;
-        $instance['title']   = strip_tags( $title );
-        $instance['iw_image']   = intval( $iw_image );
+        $instance['title'] = strip_tags( $title );
+        $instance['iw_image'] = intval( $iw_image );
         $instance['iw_description'] = strip_tags( $iw_description );
-        $instance['iw_link']    = strip_tags( $iw_link );
+        $instance['iw_link'] = strip_tags( $iw_link );
+        $instance['iw_target'] = intval( $iw_target );
         return $instance;
     }
 

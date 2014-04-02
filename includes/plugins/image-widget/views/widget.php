@@ -5,10 +5,12 @@
 
 // Get Image
 $image_src = wp_get_attachment_image_src( $iw_image, 'thumbnail' )[0];
+// Set target
+$iw_target = ( $iw_target ) ? '_blank' : '_self';
 ?>
 
 <?php if ( ! empty( $iw_link ) ) { ?>
-	<a href="<?php echo $iw_link; ?>">
+	<a href="<?php echo $iw_link; ?>" target="<?php echo $iw_target; ?>">
 <?php } ?>
 
 <?php if ( ! empty( $title ) ) {

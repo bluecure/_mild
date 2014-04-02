@@ -27,4 +27,8 @@ $image_src = ( $image_src ) ? $image_src[0] : $placeholder;
         <label for="<?php echo $this->get_field_id( 'iw_link' ); ?>">Link:</label>
         <input type="text" id="<?php echo $this->get_field_id( 'iw_link' ); ?>" name="<?php echo $this->get_field_name( 'iw_link' ); ?>" value="<?php echo $iw_link; ?>" class="image-widget-link widefat" />
     </div>
+    <div class="image-widget-row">
+        <input id="<?php echo esc_attr( $this->get_field_id( 'iw_target' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'iw_target' ) ); ?>" type="checkbox" value="1" <?php checked( '1', $iw_target ); ?> />
+        <label for="<?php echo $this->get_field_id( 'iw_target' ); ?>">Open in new window</label>
+    </div>
 </div>

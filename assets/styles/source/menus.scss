@@ -33,13 +33,14 @@
             left: 0;
             position: absolute;
             top: 100%;
-            z-index: 99999;
+            z-index: 9999;
             ul {
                 left: 100%;
                 top: 0;
             }
             a {
                 width: 200px;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
             }
         }
     }
@@ -91,7 +92,11 @@
                 box-shadow: none;
                 a {
                     width: 100%;
+                    padding-left: 1.5em;
                 }
+            }
+            &:hover ul {
+                display: none;
             }
         }
         > li &:first-child {

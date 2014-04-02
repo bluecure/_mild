@@ -54,22 +54,6 @@
         "ef00f420"
       ]
     },
-    "f6b157ba": {
-      "id": "f6b157ba",
-      "pid": "b8592233",
-      "path": "assets\\scripts\\vendor\\owl-carousel.js",
-      "parents": [
-        "4dd05069"
-      ]
-    },
-    "00943fab": {
-      "id": "00943fab",
-      "pid": "b8592233",
-      "path": "assets\\scripts\\vendor\\magnific-popup.js",
-      "parents": [
-        "4dd05069"
-      ]
-    },
     "6944b8c2": {
       "id": "6944b8c2",
       "pid": "b8592233",

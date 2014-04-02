@@ -14,10 +14,10 @@ Anyone is welcome to use this, however this is a work in progress and can break 
 * Gallery widget
 * Latest posts widgets
 * Shortcodes plugin
-* OptionTree for theme options and meta boxes (2.3.3)
+* OptionTree for theme options and meta boxes (2.3.4)
 * Magnific Popup for all lightboxes (0.9.9)
-* Owl Carousel for all sliders (1.3.2)
+* Slick for sliders (03/23/14)
 * Font Awesome for awesome icon fonts (4.0.3)
-* Normalize (3.0.0)
+* Normalize (3.0.1)
 
 More helpful readme to come....

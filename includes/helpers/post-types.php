@@ -9,27 +9,19 @@ namespace Mild;
 
 class Post_Types {
     // Variables
-    public $post_type;
+    public $post_types = [];
     public $labels = [];
-    public $args = [];
 
     /**
-     * Creates a new post type
-     * @param string $post_type
-     * @param array $options
-     * @param array $labels
+     * Creates new post types
+     *
+     * @param array $post_types
      */
-    public function __construct( $post_type, $labels = [], $options = [] ) {
-        $this->post_type = sanitize_title_with_dashes( $post_type );
-        $this->labels = $labels;
+    public function __construct( $post_types = [] ) {
+        $this->post_types = $post_types;
 
-        // Setup args
-        $this->args = wp_parse_args( $options, self::default_options() );
-        // Add labels
-        $this->args['labels'] = wp_parse_args( $labels, self::default_labels() );
-
-        // Register post type
-        add_action( 'init', [ $this, 'register' ] );
+        // Register
+        self::register();
     }
 
     /**
@@ -40,7 +32,19 @@ class Post_Types {
      */
     public function register() {
 
-        register_post_type( $this->post_type, $this->args );
+        foreach ( $this->post_types as $type ) {
+            // Set labels
+            $this->labels['single'] = $type['name'];
+            $this->labels['plural'] = ( $type['plural'] ) ? $type['plural'] : $type['name'] . 's' ;
+
+            // Set options
+            $type_name = sanitize_title_with_dashes ( $type['name'] );
+            $options = wp_parse_args( $type['options'], self::default_options() );
+            $options['labels'] = wp_parse_args( $type['labels'], self::default_labels() );
+
+            // Register post type
+            register_post_type( $type_name, $options );
+        }
 
     }
 
@@ -55,7 +59,7 @@ class Post_Types {
         return [
             'public'      => true,
             'has_archive' => true,
-            'menu_icon'   => 'dashicons-images-alt2',
+            'menu_icon'   => 'dashicons-format-aside',
             'supports'    => [ 'title', 'editor', 'revisions', 'thumbnail', 'excerpt' ]
         ];
 

@@ -182,7 +182,7 @@ class Shortcodes {
 	            $html .= "<div class='post'>
 	                        <h4 class='post-title'><a href='" . get_permalink() . "'>" . get_the_title() . "</a></h4>";
 	            if ( $date ) $html .= "<div class='post-date'>" . get_the_date() . "</div>";
-	            if ( $image ) $html .= "<a href='" . get_permalink() . " class='post-image''>" . get_the_post_thumbnail( $id, 'thumbnail' ) . "</a>";
+	            if ( $image ) $html .= "<a href='" . get_permalink() . "' class='post-image'>" . get_the_post_thumbnail( $id, 'thumbnail' ) . "</a>";
 	            $html .= "<div class='post-content'>" . get_the_excerpt() . "</div></div>";
 	        endwhile;
 	        wp_reset_query();
@@ -200,7 +200,7 @@ class Shortcodes {
 	    ], $params) );
 	    $html = '';
 
-	    if ( false !== strpos( $show, 'pages' ) ) {
+	    if ( strpos( $show, 'pages' ) !== false ) {
 	        $pages = get_pages();
 	        $html .= "<h4>Pages</h4>";
 	        $html .= "<ul class='sitemap sitemap-pages'>";
@@ -212,7 +212,7 @@ class Shortcodes {
 	        $html .= "</ul>";
 	    }
 
-	    if ( false !== strpos( $show, 'posts' ) ) {
+	    if ( strpos( $show, 'posts' ) !== false ) {
 	        $posts = get_posts();
 	        $html .= "<h4>Posts</h4>";
 	        $html .= "<ul class='sitemap sitemap-posts'>";
@@ -224,7 +224,7 @@ class Shortcodes {
 	        $html .= "</ul>";
 	    }
 
-	    if ( false !== strpos( $show,'menus' ) ) {
+	    if ( strpos( $show,'menus' ) !== false ) {
 	        $menus = get_terms( 'nav_menu', [ 'hide_empty' => true ] );
 	        $html .= "<h4>Menus</h4>";
 	        foreach ( $menus as $menu ) {

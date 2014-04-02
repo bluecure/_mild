@@ -9,25 +9,19 @@ namespace Mild;
 
 class User_Roles {
     // Variables
-    public $role;
-    public $display_name;
-    public $capabilities = [];
+    public $roles = [];
 
     /**
-     * Creates a new taxonomy
-     * @param string $role
-     * @param string $display_name
-     * @param array $capabilities
+     * Creates new roles
+     *
+     * @param array $roles
      */
-    public function __construct( $role, $display_name, $capabilities = [] ) {
-        $this->role = sanitize_title_with_dashes( $role );
-        $this->display_name = $display_name;
+    public function __construct( $roles = [] ) {
+        $this->roles = $roles;
 
-        // Setup capabilities
-        $this->capabilities = wp_parse_args( $capabilities, self::default_capabilities() );
+        // Register
+        self::register();
 
-        // Add user role
-        add_action( 'init', [ $this, 'register' ] );
     }
 
     /**
@@ -38,7 +32,15 @@ class User_Roles {
      */
     public function register() {
 
-        add_role( $this->role, $this->display_name, $this->capabilities );
+        foreach ( $this->roles as $role ) {
+            // Set params
+            $role_name = sanitize_title_with_dashes ( $role['name'] );
+            $display_name = $role['name'];
+            $capabilities = wp_parse_args( $role['capabilities'], self::default_capabilities() );
+
+            // Register user role
+            add_role( $role_name, $display_name, $capabilities );
+        }
 
     }
 
