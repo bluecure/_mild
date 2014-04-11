@@ -71,7 +71,10 @@ class Shortcodes {
 	* Row shortcode
 	*/
 	public function row( $params, $content = null ) {
-	    return "<div class='row'>" . do_shortcode( $content ) . "</div>";
+	    extract( shortcode_atts([
+	        'class' => ''
+	    ], $params) );
+	    return "<div class='row {$class}'>" . do_shortcode( $content ) . "</div>";
 	}
 	
 	/*
@@ -79,9 +82,10 @@ class Shortcodes {
 	*/
 	public function col( $params, $content = null ) {
 	    extract( shortcode_atts([
-	        'width' => '1-2'
+	        'width' => '1-2',
+	        'class' => ''
 	    ], $params) );
-	    return "<div class='col col-{$width}'>" . do_shortcode($content) . "</div>";
+	    return "<div class='col col-{$width} {$class}'>" . do_shortcode($content) . "</div>";
 	}
 
 	/*
@@ -93,9 +97,10 @@ class Shortcodes {
 	        'size' => '',
 	        'icon' => '',
 	        'link' => '',
-	        'target' => 'self'
+	        'target' => 'self',
+	        'class' => ''
 	    ], $params) );
-	    $html = "<i class='fa fa-{$icon} text-{$color} {$size}'></i>";
+	    $html = "<i class='fa fa-{$icon} text-{$color} {$size} {$class}'></i>";
 	    return self::wrap_with_anchor( $link, $target, $html );
 	}
 
@@ -108,10 +113,11 @@ class Shortcodes {
 	        'size' => '',
 	        'icon' => '',
 	        'link' => '',
-	        'target' => 'self'
+	        'target' => 'self',
+	        'class' => ''
 	    ], $params) );
 	    $icon = self::create_icon( $icon );
-	    $html = "<button type='button' class='button bg-{$color} {$size}'>{$icon}" . do_shortcode( $content ) . "</button>";
+	    $html = "<button type='button' class='button bg-{$color} {$size} {$class}'>{$icon}" . do_shortcode( $content ) . "</button>";
 	    return self::wrap_with_anchor( $link, $target, $html );
 	}
 
@@ -122,10 +128,11 @@ class Shortcodes {
 	    extract( shortcode_atts([
 	        'color' => '',
 	        'size' => '',
-	        'icon' => ''
+	        'icon' => '',
+	        'class' => ''
 	    ], $params) );
 	    $icon = self::create_icon( $icon );
-	    return "<div class='panel bg-{$color} {$size}'>{$icon}" . do_shortcode( $content ) . "</div>";
+	    return "<div class='panel bg-{$color} {$size} {$class}'>{$icon}" . do_shortcode( $content ) . "</div>";
 	}
 
 	/*
@@ -134,9 +141,10 @@ class Shortcodes {
 	public function align( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'to' => '',
-	        'width' => '1-3'
+	        'width' => '1-3',
+	        'class' => ''
 	    ], $params) );
-	    return "<div class='align align{$to} col-{$width}'>" . do_shortcode( $content ) . "</div>";
+	    return "<div class='align align{$to} col-{$width} {$class}'>" . do_shortcode( $content ) . "</div>";
 	}
 
 	/*
@@ -145,11 +153,12 @@ class Shortcodes {
 	public function accordion( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'title' => '',
-	        'icon' => ''
+	        'icon' => '',
+	        'class' => ''
 	    ], $params) );
 	    $icon = self::create_icon( $icon );
 	    $icon_plus = self::create_icon( 'plus' );
-	    return "<div class='accordion'>
+	    return "<div class='accordion {$class}'>
 		    		<h3 class='accordion-title'>{$icon}{$title}{$icon_plus}</h3>
 		            <div class='accordion-content'>" . do_shortcode($content) . "</div>
 	            </div>";
@@ -165,7 +174,8 @@ class Shortcodes {
 	        'no' => '5',
 	        'type' => 'post',
 	        'date' => false,
-	        'image' => false
+	        'image' => false,
+	        'class' => ''
 	    ], $params) );
 
 	    $args = [
@@ -176,7 +186,7 @@ class Shortcodes {
 	    ];
 	    $query = new \WP_Query( $args );
 
-	    $html = "<div class='show-posts show-{$type}'>";
+	    $html = "<div class='show-posts show-{$type} {$class}'>";
 	        while( $query->have_posts() ) : $query->the_post();
 	            $id = $query->post->ID;
 	            $html .= "<div class='post'>
@@ -196,9 +206,19 @@ class Shortcodes {
 	*/
 	public function sitemap( $params, $content = null ) {
 	    extract( shortcode_atts([
-	        'show' => 'menus,pages,posts'
+	        'show' => 'menus,pages,posts',
+	        'class' => ''
 	    ], $params) );
-	    $html = '';
+	    
+	    $html = "<nav class='site-map {$class}'>";
+	    
+	    if ( strpos( $show, 'menus' ) !== false ) {
+	        $menus = get_terms( 'nav_menu', [ 'hide_empty' => true ] );
+	        $html .= "<h4>Menus</h4>";
+	        foreach ( $menus as $menu ) {
+	            $html .= wp_nav_menu( [ 'menu' => $menu->name, 'echo' => false ] );
+	        }
+	    }
 
 	    if ( strpos( $show, 'pages' ) !== false ) {
 	        $pages = get_pages();
@@ -223,14 +243,8 @@ class Shortcodes {
 	            }
 	        $html .= "</ul>";
 	    }
-
-	    if ( strpos( $show,'menus' ) !== false ) {
-	        $menus = get_terms( 'nav_menu', [ 'hide_empty' => true ] );
-	        $html .= "<h4>Menus</h4>";
-	        foreach ( $menus as $menu ) {
-	            $html .= wp_nav_menu( [ 'menu' => $menu->name, 'echo' => false ] );
-	        }
-	    }
+	    
+	    $html .= "</nav>";
 
 	    return $html;
 	}
@@ -242,10 +256,11 @@ class Shortcodes {
 	    extract( shortcode_atts([
 	        'width' => '400',
 	        'height' => '300',
-	        'location' => 'Australia'
+	        'location' => 'Australia',
+	        'class' => ''
 	    ], $params) );
 	    $location = str_replace( ' ', '+', $location );
-	    return "<div class='fluid-iframe'><iframe src='https://maps.google.com/maps?q={$location}&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='{$width}px' height='{$height}px'></iframe></div>";
+	    return "<div class='fluid-iframe {$class}'><iframe src='https://maps.google.com/maps?q={$location}&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='{$width}px' height='{$height}px'></iframe></div>";
 	}
 
 	/*
@@ -256,9 +271,10 @@ class Shortcodes {
 	        'url' => '',
 	        'align' => 'one',
 	        'link' => '',
-	        'target' => 'self'
+	        'target' => 'self',
+	        'class' => ''
 	    ], $params) );
-	    $html = "<img src='{$url}' class='align{$align}'>";
+	    $html = "<img src='{$url}' class='align{$align} {$class}'>";
 	    return self::wrap_with_anchor( $link, $target, $html );
 	}
 
@@ -268,9 +284,10 @@ class Shortcodes {
 	public function link( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'url' => '#',
-	        'target' => 'self'
+	        'target' => 'self',
+	        'class' => ''
 	    ], $params) );
-	    return "<a href='{$url}' target='_{$target}'>" . do_shortcode($content) . "</a>";
+	    return "<a href='{$url}' target='_{$target} {$class}'>" . do_shortcode($content) . "</a>";
 	}
 
 	/*

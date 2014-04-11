@@ -10,17 +10,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mild
 */
 
+@import 'source/variables.scss';
 @import 'vendor/normalize.scss';
 @import 'vendor/font-awesome.scss';
 @import 'vendor/magnific-popup.scss';
 @import 'vendor/slick.scss';
-@import 'source/variables.scss';
 @import 'source/grid.scss';
 @import 'source/global.scss';
-@import 'source/helpers.scss';
 @import 'source/typography.scss';
 @import 'source/content.scss';
 @import 'source/menus.scss';
 @import 'source/shortcodes.scss';
 @import 'source/plugins.scss';
 @import 'source/main.scss';
+@import 'source/helpers.scss';

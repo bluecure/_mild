@@ -33,6 +33,7 @@ class Post_Types {
     public function register() {
 
         foreach ( $this->post_types as $type ) {
+            
             // Set labels
             $this->labels['single'] = $type['name'];
             $this->labels['plural'] = ( $type['plural'] ) ? $type['plural'] : $type['name'] . 's' ;
@@ -44,6 +45,7 @@ class Post_Types {
 
             // Register post type
             register_post_type( $type_name, $options );
+            
         }
 
     }

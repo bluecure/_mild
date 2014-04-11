@@ -11,7 +11,7 @@
         text-decoration: none;
         padding: 0.5em 0.75em;
     }
-    ul {
+    .menu {
         list-style: none;
         margin: 0;
         padding-left: 0;
@@ -48,7 +48,7 @@
 
 /* Secondary Navigation */
 .secondary-navigation {
-    ul {
+    .menu {
         padding: 0;
         margin: 0;
         li {

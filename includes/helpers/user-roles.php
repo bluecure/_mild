@@ -21,7 +21,6 @@ class User_Roles {
 
         // Register
         self::register();
-
     }
 
     /**
@@ -33,6 +32,7 @@ class User_Roles {
     public function register() {
 
         foreach ( $this->roles as $role ) {
+            
             // Set params
             $role_name = sanitize_title_with_dashes ( $role['name'] );
             $display_name = $role['name'];
@@ -40,6 +40,7 @@ class User_Roles {
 
             // Register user role
             add_role( $role_name, $display_name, $capabilities );
+            
         }
 
     }

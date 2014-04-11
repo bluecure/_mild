@@ -13,15 +13,15 @@ $analytics = ot_get_option( 'ot_analytics', '' );
 ?>
 
 <!-- Favicon -->
-<?php if ( $favicon ) { ?>
+<?php if ( $favicon ) : ?>
 	<link rel="shortcut icon" href="<?php echo $favicon; ?>" type="image/x-icon" />
-<?php } ?>
+<?php endif; ?>
 
 <!-- App Icons -->
-<?php if ( $app_icon ) { ?>
+<?php if ( $app_icon ) : ?>
 	<link rel="apple-touch-icon" href="<?php echo $app_icon; ?>" />
 	<meta name="msapplication-TileImage" content="<?php echo $app_icon; ?>"/>
-<?php } ?>
+<?php endif; ?>
 
 <?php
 // Header extras

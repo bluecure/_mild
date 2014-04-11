@@ -35,21 +35,25 @@ class Taxonomies {
     public function register() {
 
         foreach ( $this->taxonomies as $taxonomy ) {
+            
             // Set labels
             $this->labels['single'] = $taxonomy['name'];
             $this->labels['plural'] = ( $taxonomy['plural'] ) ? $taxonomy['plural'] : $taxonomy['name'] . 's' ;
 
-            // Setup options
+            // Setup post types
             $post_types = [];
             foreach ( $taxonomy['post_types'] as $type ) {
                 $post_types[] = sanitize_title_with_dashes( $type );
             }
+            
+            // Setup options
             $taxonomy_name = sanitize_title_with_dashes( $taxonomy['name'] );
             $options = wp_parse_args( $options, self::default_options() );
             $options['labels'] = wp_parse_args( $labels, self::default_labels() );
             
             // Register taxonomy
             register_taxonomy( $taxonomy_name, $post_types, $options );
+            
         }
 
     }

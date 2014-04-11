@@ -42,6 +42,9 @@ add_action( 'after_setup_theme', function() {
 
     // Enable support for Post Formats.
     add_theme_support( 'post-formats', [ 'aside', 'image', 'video', 'quote', 'link' ] );
+    
+    // Add banner size.
+    //add_image_size( 'banner', 1140, 475, true );
 
     // Register nav menus.
     register_nav_menus( [

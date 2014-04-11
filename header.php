@@ -32,11 +32,11 @@ $logo = ot_get_option( 'ot_logo', '' );
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
-				<?php if ( $logo ) { ?>
+				<?php if ( $logo ) : ?>
 					<img  src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
-				<?php } else { ?>
+				<?php else : ?>
 					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-				<?php } ?>
+				<?php endif; ?>
 			</a>
 		</div>
 

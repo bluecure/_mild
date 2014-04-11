@@ -2,9 +2,10 @@
 /**
  * Custom functions for this theme including:
  *
- * is_user()          | Checks user role
- * is_blog()          | Checks if is blog page
+ * is_user()             | Checks user role
+ * is_blog()             | Checks if is blog page
  * is_categorized_blog() | Check for multiple categories
+ * show_image_size()     | Gets new image size from source
  *
  * @package Mild
  */
@@ -14,6 +15,7 @@ namespace Mild;
 /**
  * Get and check user role
  *
+ * @param string $role
  * @return boolean
  */
 function is_user( $role ) {
@@ -33,7 +35,9 @@ function is_blog() {
 }
 
 /**
- * Returns true if a blog has more than 1 category.
+ * Check if a blog has more than 1 category.
+ *
+ * @return boolean
  */
 function is_categorized_blog() {
 	if ( ( $categories = get_transient( 'mild_categories' ) ) === false ) {
@@ -61,3 +65,23 @@ function category_transient_flusher() {
 }
 add_action( 'edit_category', 'Mild\category_transient_flusher' );
 add_action( 'save_post',     'Mild\category_transient_flusher' );
+
+/**
+ * Get an new image size from source.
+ *
+ * @param string $url
+ * @param string $size
+ * @return string
+ */
+function show_image_size( $url, $size = 'thumbnail' ) {
+	global $wpdb;
+	if ( ! $url ) return false;
+	// Get the image ID
+	$id = $wpdb->get_var( $wpdb->prepare(
+		"SELECT p.ID FROM   $wpdb->posts p WHERE  p.guid = %s AND p.post_type = %s", $url, 'attachment'
+	) );
+	// Get the new image size
+	if ( $id ) $url = wp_get_attachment_image_src( $id, $size )[0];
+	// Return the source
+	echo $url;
+}

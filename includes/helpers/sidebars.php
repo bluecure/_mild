@@ -33,15 +33,20 @@ class Sidebars {
     public function register() {
 
         foreach ( $this->sidebars as $sidebar ) {
+            
+            // Set params
+            $header = ( $sidebar['header'] ) ? $sidebar['header'] : 'h3' ;
+            
             // Register sidebar
             register_sidebar( [
                 'name'          => $sidebar['name'],
                 'id'            => sanitize_title_with_dashes( $sidebar['name'] ),
-                'before_widget' => '<aside id="%1$s" class="widget %2$s ' . $sidebar['classes'] . '">',
-                'after_widget'  => '</aside>',
-                'before_title'  => '<h3 class="widget-title">',
-                'after_title'   => '</h3>',
+                'before_widget' => "<aside id='%1$s' class='widget %2$s {$sidebar['classes']}'>",
+                'after_widget'  => "</aside>",
+                'before_title'  => "<{$header} class='widget-title'>",
+                'after_title'   => "</{$header}>"
             ] );
+            
         }
 
     }
