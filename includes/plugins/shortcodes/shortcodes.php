@@ -38,6 +38,7 @@ class Shortcodes {
 		add_shortcode( 'show',      [ $this, 'show' ] );
 		add_shortcode( 'sitemap',   [ $this, 'sitemap' ] );
 		add_shortcode( 'map',       [ $this, 'map' ] );
+		add_shortcode( 'iframe',    [ $this, 'iframe' ] );
 		add_shortcode( 'image',     [ $this, 'image' ] );
 		add_shortcode( 'link',      [ $this, 'link' ] );
 
@@ -61,7 +62,7 @@ class Shortcodes {
 
 	    // Register editor buttons.
 	    add_filter( 'mce_buttons_3', function( $buttons ) {
-	        array_push( $buttons, 'row', 'icon', 'button', 'panel', 'align', 'accordion', 'show', 'sitemap', 'map' );
+	        array_push( $buttons, 'row', 'icon', 'button', 'panel', 'align', 'accordion', 'show', 'sitemap', 'map', 'iframe' );
 	        return $buttons;
 	    });
 
@@ -264,6 +265,19 @@ class Shortcodes {
 	}
 
 	/*
+	* iFrame shortcode
+	*/
+	public function iframe( $params, $content = null ) {
+	    extract( shortcode_atts([
+	        'url' => '',
+	        'width' => '400',
+	        'height' => '300',
+	        'class' => ''
+	    ], $params) );
+	    return "<div class='fluid-iframe {$class}'><iframe src='{$url}' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='{$width}px' height='{$height}px'></iframe></div>";
+	}
+
+	/*
 	* Image shortcode
 	*/
 	public function image ($params, $content = null ) {
@@ -283,7 +297,7 @@ class Shortcodes {
 	*/
 	public function link( $params, $content = null ) {
 	    extract( shortcode_atts([
-	        'url' => '#',
+	        'to' => '#',
 	        'target' => 'self',
 	        'class' => ''
 	    ], $params) );

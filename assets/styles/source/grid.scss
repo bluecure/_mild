@@ -56,6 +56,11 @@
             width: ((100 / 6) * $i) * 1%;
         }
     }
+    @for $i from 1 through 12 {
+        .col-#{$i}-12 {
+            width: ((100 / 12) * $i) * 1%;
+        }
+    }
 }
 
 /* Media Queries */

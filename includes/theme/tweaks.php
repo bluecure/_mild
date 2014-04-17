@@ -78,17 +78,6 @@ add_filter( 'excerpt_more', function( $more ) {
 });
 
 /**
-* Redirect user after login.
-*/
-add_filter( 'login_redirect', function( $redirect_to, $request, $user ) {
-    if( Mild\is_user( 'administrator' ) ) {
-        return admin_url();
-    } else {
-        return home_url();
-    }
-}, 10, 3);
-
-/**
 * Redirect user after logout.
 */
 add_filter( 'logout_url', function( $logout_url, $redirect = null ) {

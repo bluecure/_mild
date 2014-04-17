@@ -11,14 +11,15 @@
 }
 hr {
 	background-color: #ccc;
-	border: 0;
-	height: 1px;
 	margin-bottom: 1.5em;
+	height: 1px;
+	border: 0;
+    clear: both;
 }
 
 /* Text elements */
 p {
-    margin-bottom: 1.5em;
+    margin: 0.5em 0 1em;
 }
 ul, ol {
     margin: 0 0 1.5em 1em;
@@ -118,6 +119,9 @@ table {
 img {
     height: auto;
     max-width: 100%;
+}
+a img {
+    border: none;
 }
 
 button, input, select, textarea {

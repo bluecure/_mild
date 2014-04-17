@@ -17,8 +17,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+	<?php if ( is_search() || Mild\is_blog() ) : // Only display excerpts for Search and Blog ?>
 	<div class="entry-summary">
+		<?php the_post_thumbnail( 'thumbnail', ['class' => 'alignleft'] ); ?>
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>

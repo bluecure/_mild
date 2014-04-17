@@ -28,7 +28,7 @@
                 });
             });
 
-            // add row button
+            // Add row button
             ed.addButton('row', {
                 title : 'Insert row with columns',
                 cmd : 'row',
@@ -46,7 +46,7 @@
                 }
             });
 
-            // add icon button
+            // Add icon button
             ed.addButton('icon', {
                 title : 'Insert icon',
                 cmd : 'icon',
@@ -62,7 +62,7 @@
                 }
             });
 
-            // add button button
+            // Add button button
             ed.addButton('button', {
                 title : 'Insert button',
                 cmd : 'button',
@@ -78,7 +78,7 @@
                 }
             });
 
-            // add panel button
+            // Add panel button
             ed.addButton('panel', {
                 title : 'Insert panel',
                 cmd : 'panel',
@@ -94,7 +94,7 @@
                 }
             });
 
-            // add alignment
+            // Add alignment
             ed.addButton('align', {
                 title : 'Insert alignment',
                 cmd : 'align',
@@ -110,7 +110,7 @@
                 }
             });
 
-            // add accordion button
+            // Add accordion button
             ed.addButton('accordion', {
                 title : 'Insert accordion',
                 cmd : 'accordion',
@@ -126,7 +126,7 @@
                 }
             });
 
-            // add show button
+            // Add show button
             ed.addButton('show', {
                 title : 'Show recent posts',
                 cmd : 'show',
@@ -142,7 +142,7 @@
                 }
             });
 
-            // add sitemap button
+            // Add sitemap button
             ed.addButton('sitemap', {
                 title : 'Insert sitemap',
                 cmd : 'sitemap',
@@ -158,7 +158,7 @@
                 }
             });
 
-            // add map button
+            // Add map button
             ed.addButton('map', {
                 title : 'Insert map',
                 cmd : 'map',
@@ -167,6 +167,22 @@
                     ed.windowManager.open({
                         title: 'Insert Map',
                         url: url + '/views/map.php',
+                        width: 500,
+                        height: 300,
+                        inline: true
+                    });
+                }
+            });
+
+            // Add iframe button
+            ed.addButton('iframe', {
+                title : 'Insert iframe',
+                cmd : 'iframe',
+                class: 'dashicons-tablet',
+                onclick : function() {
+                    ed.windowManager.open({
+                        title: 'Insert iFrame',
+                        url: url + '/views/iframe.php',
                         width: 500,
                         height: 300,
                         inline: true
