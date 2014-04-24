@@ -7,7 +7,6 @@ require( 'inc/header.php' );
 ?>
 
 <form class="shortcode" data-code="button" data-wrap="yes" action="#">
-	<h2>Button Shortcode</h2>
 	<div class="row">
 		<div class="half">
 			<label for="color">Color: </label>

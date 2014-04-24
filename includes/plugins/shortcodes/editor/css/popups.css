@@ -21,17 +21,11 @@
 /* Styles */
 .shortcode {
 	color: #404040;
-	padding: 0 0.5em;
+    margin: 0;
+	padding: 1em 0.5em 0 0.5em;
 	font-size: 0.9em;
 	font-weight: 400;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.shortcode h2 {
-    margin: 0.75em 0 1.5em;
-    padding-bottom: 0.25em;
-    font-weight: 600;
-    font-family: "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;
-    border-bottom: 1px solid #909090;
 }
 .shortcode a {
 	color: #606060;
@@ -83,7 +77,7 @@
     width: 100%;
     color: #FFFFFF;
 	padding: 1em;
-    margin: 3em 0 0;
+    margin: 1.5em 0 0;
     font-weight: bold;
     letter-spacing: 0.05em;
 	background-color: #21759B;

@@ -6,7 +6,6 @@
 require( 'inc/header.php' );
 ?>
 <form class="shortcode" data-code="show" data-wrap="no" action="#">
-	<h2>Show Shortcode</h2>
 	<div class="row">
 		<div class="half">
 			<label for="cat">Categories: </label>

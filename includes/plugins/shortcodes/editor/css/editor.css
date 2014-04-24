@@ -1,6 +1,46 @@
 /* =Editor
 -------------------------------------------------------------- */
 
-.mceToolbarRow3 a.mceButton:before {
-    content: none;
+.mce-i-s_row,
+.mce-i-s_icon,
+.mce-i-s_button,
+.mce-i-s_panel,
+.mce-i-s_align,
+.mce-i-s_accordion,
+.mce-i-s_show,
+.mce-i-s_sitemap,
+.mce-i-s_map,
+.mce-i-s_iframe {
+	font-family: dashicons !important;
+}
+
+.mce-i-s_row:before {
+    content: "\f180";
+}
+.mce-i-s_icon:before {
+    content: "\f155";
+}
+.mce-i-s_button:before {
+    content: "\f138";
+}
+.mce-i-s_panel:before {
+    content: "\f134";
+}
+.mce-i-s_align:before {
+    content: "\f229";
+}
+.mce-i-s_accordion:before {
+    content: "\f132";
+}
+.mce-i-s_show:before {
+    content: "\f177";
+}
+.mce-i-s_sitemap:before {
+    content: "\f325";
+}
+.mce-i-s_map:before {
+    content: "\f230";
+}
+.mce-i-s_iframe:before {
+    content: "\f471";
 }

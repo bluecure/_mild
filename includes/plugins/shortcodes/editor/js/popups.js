@@ -62,9 +62,9 @@
 			shortcode += ' ' + edActive.selection.getContent() + ' [/'+code+']';
 
 		// Insert shortcode
-		if ( ed ) {
-			ed.execInstanceCommand( ed.activeEditor.id, 'mceInsertContent', false, shortcode );
-			edActive.windowManager.close( window );
+        if ( ed ) {
+			ed.execCommand( 'mceInsertContent', false, shortcode );
+            edActive.windowManager.close();
 		}
 
 	});

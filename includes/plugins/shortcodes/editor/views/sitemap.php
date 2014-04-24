@@ -6,7 +6,6 @@
 require( 'inc/header.php' );
 ?>
 <form class="shortcode" data-code="sitemap" data-wrap="no" action="#">
-	<h2>Sitemap Shortcode</h2>
 	<div class="row">
 		<label for="show">Show sitemap for: </label>
 		<div class="field">

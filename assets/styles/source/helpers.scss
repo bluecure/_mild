@@ -58,10 +58,11 @@
 .no-padding {
     padding: 0;
 }
-
-/* Visually Hidden */
 .hidden {
     visibility: hidden;
+}
+.hide {
+    display: none;
 }
 
 /* Text meant only for screen readers */

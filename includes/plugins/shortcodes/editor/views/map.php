@@ -7,7 +7,6 @@ require( 'inc/header.php' );
 ?>
 
 <form class="shortcode" data-code="map" data-wrap="no" action="#">
-	<h2>Map Shortcode</h2>
 	<div class="row">
 		<label for="url">Location: </label>
 		<div class="field">

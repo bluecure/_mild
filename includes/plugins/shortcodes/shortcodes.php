@@ -28,19 +28,19 @@ class Shortcodes {
 		self::editor();
 
 		// Add shortcodes
-		add_shortcode( 'row',       [ $this, 'row' ] );
-		add_shortcode( 'col',       [ $this, 'col' ] );
-		add_shortcode( 'icon',      [ $this, 'icon' ] );
-		add_shortcode( 'button',    [ $this, 'button' ] );
-		add_shortcode( 'panel',     [ $this, 'panel' ] );
-		add_shortcode( 'align',     [ $this, 'align' ] );
-		add_shortcode( 'accordion', [ $this, 'accordion' ] );
-		add_shortcode( 'show',      [ $this, 'show' ] );
-		add_shortcode( 'sitemap',   [ $this, 'sitemap' ] );
-		add_shortcode( 'map',       [ $this, 'map' ] );
-		add_shortcode( 'iframe',    [ $this, 'iframe' ] );
-		add_shortcode( 'image',     [ $this, 'image' ] );
-		add_shortcode( 'link',      [ $this, 'link' ] );
+		add_shortcode( 'row',       [ $this, 's_row' ] );
+		add_shortcode( 'col',       [ $this, 's_col' ] );
+		add_shortcode( 'icon',      [ $this, 's_icon' ] );
+		add_shortcode( 'button',    [ $this, 's_button' ] );
+		add_shortcode( 'panel',     [ $this, 's_panel' ] );
+		add_shortcode( 'align',     [ $this, 's_align' ] );
+		add_shortcode( 'accordion', [ $this, 's_accordion' ] );
+		add_shortcode( 'show',      [ $this, 's_show' ] );
+		add_shortcode( 'sitemap',   [ $this, 's_sitemap' ] );
+		add_shortcode( 'map',       [ $this, 's_map' ] );
+		add_shortcode( 'iframe',    [ $this, 's_iframe' ] );
+		add_shortcode( 'image',     [ $this, 's_image' ] );
+		add_shortcode( 'link',      [ $this, 's_link' ] );
 
     }
 
@@ -62,7 +62,7 @@ class Shortcodes {
 
 	    // Register editor buttons.
 	    add_filter( 'mce_buttons_3', function( $buttons ) {
-	        array_push( $buttons, 'row', 'icon', 'button', 'panel', 'align', 'accordion', 'show', 'sitemap', 'map', 'iframe' );
+	        array_push( $buttons, 's_row', 's_icon', 's_button', 's_panel', 's_align', 's_accordion', 's_show', 's_sitemap', 's_map', 's_iframe' );
 	        return $buttons;
 	    });
 
@@ -71,7 +71,7 @@ class Shortcodes {
 	/*
 	* Row shortcode
 	*/
-	public function row( $params, $content = null ) {
+	public function s_row( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'class' => ''
 	    ], $params) );
@@ -81,7 +81,7 @@ class Shortcodes {
 	/*
 	* Col shortcode
 	*/
-	public function col( $params, $content = null ) {
+	public function s_col( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'width' => '1-2',
 	        'class' => ''
@@ -92,7 +92,7 @@ class Shortcodes {
 	/*
 	* Icon shortcode
 	*/
-	public function icon( $params, $content = null ) {
+	public function s_icon( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'color' => '',
 	        'size' => '',
@@ -108,7 +108,7 @@ class Shortcodes {
 	/*
 	* Button shortcode
 	*/
-	public function button( $params, $content = null ) {
+	public function s_button( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'color' => '',
 	        'size' => '',
@@ -125,7 +125,7 @@ class Shortcodes {
 	/*
 	* Panel shortcode
 	*/
-	public function panel( $params, $content = null ) {
+	public function s_panel( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'color' => '',
 	        'size' => '',
@@ -139,7 +139,7 @@ class Shortcodes {
 	/*
 	* Align shortcode
 	*/
-	public function align( $params, $content = null ) {
+	public function s_align( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'to' => '',
 	        'width' => '1-3',
@@ -151,7 +151,7 @@ class Shortcodes {
 	/*
 	* Accordian shortcode
 	*/
-	public function accordion( $params, $content = null ) {
+	public function s_accordion( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'title' => '',
 	        'icon' => '',
@@ -168,7 +168,7 @@ class Shortcodes {
 	/*
 	* Show shortcode
 	*/
-	public function show( $params, $content = null ) {
+	public function s_show( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'cat' => '',
 	        'tag' => '',
@@ -205,7 +205,7 @@ class Shortcodes {
 	/*
 	* Sitemap shortcode
 	*/
-	public function sitemap( $params, $content = null ) {
+	public function s_sitemap( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'show' => 'menus,pages,posts',
 	        'class' => ''
@@ -253,7 +253,7 @@ class Shortcodes {
 	/*
 	* Map shortcode
 	*/
-	public function map( $params, $content = null ) {
+	public function s_map( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'width' => '400',
 	        'height' => '300',
@@ -267,7 +267,7 @@ class Shortcodes {
 	/*
 	* iFrame shortcode
 	*/
-	public function iframe( $params, $content = null ) {
+	public function s_iframe( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'url' => '',
 	        'width' => '400',
@@ -280,7 +280,7 @@ class Shortcodes {
 	/*
 	* Image shortcode
 	*/
-	public function image ($params, $content = null ) {
+	public function s_image ($params, $content = null ) {
 	    extract( shortcode_atts([
 	        'url' => '',
 	        'align' => 'one',
@@ -295,7 +295,7 @@ class Shortcodes {
 	/*
 	* Link shortcode
 	*/
-	public function link( $params, $content = null ) {
+	public function s_link( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'to' => '#',
 	        'target' => 'self',

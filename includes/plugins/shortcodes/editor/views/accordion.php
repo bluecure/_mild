@@ -7,7 +7,6 @@ require( 'inc/header.php' );
 ?>
 
 <form class="shortcode" data-code="accordion" data-wrap="yes" action="#">
-	<h2>Accordion Shortcode</h2>
 	<div class="row">
 		<label for="title">Title: </label>
 		<div class="field">

@@ -1,0 +1,16 @@
+{
+  "name": "mild",
+  "title": "Mild",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "repository": "https://github.com/bluecure/mild",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-sass": "~0.7.1",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-jshint": "~1.5.5",
+    "gulp-concat": "~2.2.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-rename": "~1.2.0"
+  }
+}

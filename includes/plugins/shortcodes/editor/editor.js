@@ -5,13 +5,14 @@
 ( function( $ ) {
 
     tinymce.create('tinymce.plugins.shortcodes', {
+        
         /**
          * @param {tinymce.Editor} ed Editor instance that the plugin is initialized in.
          * @param {string} url Absolute URL to where the plugin is located.
          */
         init : function(ed, url) {
 
-            ed.onInit.add(function( ed ) {
+            ed.on('init', function( ed ) {
                 // Toggle the third row
                 var toggleBtn = $('.mce_wp_adv'),
                     rowTwo = $('.mceToolbarRow2'),
@@ -29,181 +30,145 @@
             });
 
             // Add row button
-            ed.addButton('row', {
+            ed.addButton('s_row', {
                 title : 'Insert row with columns',
-                cmd : 'row',
-                class: 'dashicons-screenoptions',
-                icon: false,
-                wrapper: false,
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert row with columns',
                         url: url + '/views/row.php',
                         width: 500,
-                        height: 350,
+                        height: 280,
                         inline: true
                     });
                 }
             });
 
             // Add icon button
-            ed.addButton('icon', {
+            ed.addButton('s_icon', {
                 title : 'Insert icon',
-                cmd : 'icon',
-                class: 'dashicons-star-filled',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Icon',
                         url: url + '/views/icon.php',
                         width: 500,
-                        height: 350,
+                        height: 280,
                         inline: true
                     });
                 }
             });
 
             // Add button button
-            ed.addButton('button', {
+            ed.addButton('s_button', {
                 title : 'Insert button',
-                cmd : 'button',
-                class: 'dashicons-align-none',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Button',
                         url: url + '/views/button.php',
                         width: 500,
-                        height: 350,
+                        height: 280,
                         inline: true
                     });
                 }
             });
 
             // Add panel button
-            ed.addButton('panel', {
+            ed.addButton('s_panel', {
                 title : 'Insert panel',
-                cmd : 'panel',
-                class: 'dashicons-align-center',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Panel',
                         url: url + '/views/panel.php',
                         width: 500,
-                        height: 300,
+                        height: 230,
                         inline: true
                     });
                 }
             });
 
             // Add alignment
-            ed.addButton('align', {
+            ed.addButton('s_align', {
                 title : 'Insert alignment',
-                cmd : 'align',
-                class: 'dashicons-editor-outdent',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Alignment',
                         url: url + '/views/align.php',
                         width: 500,
-                        height: 250,
+                        height: 180,
                         inline: true
                     });
                 }
             });
 
             // Add accordion button
-            ed.addButton('accordion', {
+            ed.addButton('s_accordion', {
                 title : 'Insert accordion',
-                cmd : 'accordion',
-                class: 'dashicons-plus',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Accordion',
                         url: url + '/views/accordion.php',
                         width: 500,
-                        height: 300,
+                        height: 230,
                         inline: true
                     });
                 }
             });
 
             // Add show button
-            ed.addButton('show', {
+            ed.addButton('s_show', {
                 title : 'Show recent posts',
-                cmd : 'show',
-                class: 'dashicons-visibility',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Posts',
                         url: url + '/views/show.php',
                         width: 500,
-                        height: 350,
+                        height: 280,
                         inline: true
                     });
                 }
             });
 
             // Add sitemap button
-            ed.addButton('sitemap', {
+            ed.addButton('s_sitemap', {
                 title : 'Insert sitemap',
-                cmd : 'sitemap',
-                class: 'dashicons-networking',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Sitemap',
                         url: url + '/views/sitemap.php',
                         width: 500,
-                        height: 250,
+                        height: 180,
                         inline: true
                     });
                 }
             });
 
             // Add map button
-            ed.addButton('map', {
+            ed.addButton('s_map', {
                 title : 'Insert map',
-                cmd : 'map',
-                class: 'dashicons-location',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Map',
                         url: url + '/views/map.php',
                         width: 500,
-                        height: 300,
+                        height: 220,
                         inline: true
                     });
                 }
             });
 
             // Add iframe button
-            ed.addButton('iframe', {
+            ed.addButton('s_iframe', {
                 title : 'Insert iframe',
-                cmd : 'iframe',
-                class: 'dashicons-tablet',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert iFrame',
                         url: url + '/views/iframe.php',
                         width: 500,
-                        height: 300,
+                        height: 220,
                         inline: true
                     });
                 }
             });
 
-        },
-
-        /**
-         * Creates control instances based in the incomming name. This method is normally not
-         * needed since the addButton method of the tinymce.Editor class is a more easy way of adding buttons
-         * but you sometimes need to create more complex controls like listboxes, split buttons etc then this
-         * method can be used to create those.
-         *
-         * @param {String} n Name of the control to create.
-         * @param {tinymce.ControlManager} cm Control manager to use inorder to create new control.
-         * @return {tinymce.ui.Control} New control instance or null if no control was created.
-         */
-        createControl : function(n, cm) {
-            return null;
         },
 
         /**
@@ -215,8 +180,6 @@
         getInfo : function() {
             return {
                     longname : 'Shortcode Buttons',
-                    author : 'David Featherston',
-                    authorurl : 'http://lambry.com',
                     version : "1.0"
             };
         }

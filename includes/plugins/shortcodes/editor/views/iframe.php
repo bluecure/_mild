@@ -7,7 +7,6 @@ require( 'inc/header.php' );
 ?>
 
 <form class="shortcode" data-code="iframe" data-wrap="no" action="#">
-	<h2>iFrame Shortcode</h2>
 	<div class="row">
 		<label for="url">Url: </label>
 		<div class="field">

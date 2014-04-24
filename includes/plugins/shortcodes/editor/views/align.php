@@ -6,7 +6,6 @@
 require( 'inc/header.php' );
 ?>
 <form class="shortcode" data-code="align" data-wrap="yes" action="#">
-	<h2>Align Shortcode</h2>
 	<div class="row">
 		<label for="show">Align content to: </label>
 		<div class="field">

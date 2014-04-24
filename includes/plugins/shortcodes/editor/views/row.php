@@ -7,7 +7,6 @@ require( 'inc/header.php' );
 ?>
 
 <form class="shortcode" data-code="row" data-wrap="no" action="#">
-	<h2>Row Shortcode</h2>
 	<div id="row-1" class="row">
 		<div id="column-1" class="half">
 			<label for="col-1">Column 1: </label>
