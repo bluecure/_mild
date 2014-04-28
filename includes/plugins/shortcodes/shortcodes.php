@@ -280,7 +280,7 @@ class Shortcodes {
 	/*
 	* Image shortcode
 	*/
-	public function s_image ($params, $content = null ) {
+	public function s_image( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'url' => '',
 	        'align' => 'one',
@@ -301,7 +301,7 @@ class Shortcodes {
 	        'target' => 'self',
 	        'class' => ''
 	    ], $params) );
-	    return "<a href='{$url}' target='_{$target} {$class}'>" . do_shortcode($content) . "</a>";
+	    return "<a href='{$to}' target='_{$target}' style='{$class}'>" . do_shortcode($content) . "</a>";
 	}
 
 	/*

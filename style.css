@@ -2065,14 +2065,14 @@ img.mfp-img {
 ----------------------------------------------- */
 ::-moz-selection {
   background-color: #222222;
-  color: #ffffff; }
+  color: #FFFFFF; }
 
 ::selection {
   background-color: #222222;
-  color: #ffffff; }
+  color: #FFFFFF; }
 
 hr {
-  background-color: #ccc;
+  background-color: #DDDDDD;
   margin-bottom: 1.5em;
   height: 1px;
   border: 0;
@@ -2115,7 +2115,7 @@ address {
   margin: 0 0 1.5em; }
 
 pre {
-  background: #eee;
+  background: #DDDDDD;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
   font-size: 1.5rem;
@@ -2129,11 +2129,11 @@ code, kbd, tt, var {
   font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; }
 
 abbr, acronym {
-  border-bottom: 1px dotted #666;
+  border-bottom: 1px dotted #666666;
   cursor: help; }
 
 mark, ins {
-  background: #fff9c0;
+  background: #f9f9f9;
   text-decoration: none; }
 
 sup, sub {
@@ -2166,9 +2166,9 @@ table {
   table th, table td {
     padding: 0.75em; }
   table tr {
-    background-color: #f5f5f5; }
+    background-color: #f2f2f2; }
   table tr:nth-child(odd) {
-    background-color: #fafafa; }
+    background-color: #f9f9f9; }
 
 img {
   height: auto;
@@ -2220,7 +2220,7 @@ input[type="text"], input[type="email"], input[type="url"], input[type="password
   padding: 3px;
   border-radius: 3px; }
 input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus {
-  color: #111; }
+  color: #222222; }
 
 button::-moz-focus-inner {
   border: 0;
@@ -2235,7 +2235,7 @@ textarea {
   vertical-align: top;
   width: 98%; }
   textarea:focus {
-    color: #111; }
+    color: #222222; }
 
 /* =Typography
 ----------------------------------------------- */
@@ -2321,7 +2321,7 @@ embed, iframe, object {
   padding: 0; }
 
 .wp-caption {
-  border: 1px solid #ccc;
+  border: 1px solid #DDDDDD;
   margin-bottom: 1.5em;
   max-width: 100%; }
   .wp-caption img[class*="wp-image-"] {
@@ -2404,7 +2404,7 @@ embed, iframe, object {
       background-color: #DDDDDD; }
   .pagination .current {
     background-color: #0074D9;
-    color: #fff; }
+    color: #FFFFFF; }
 
 /* Navigation */
 .site-main [class*="navigation"] {
@@ -2681,17 +2681,12 @@ embed, iframe, object {
 /* =Plugins
 ----------------------------------------------- */
 /* Image Widget */
-.image-widget .image-widget-image {
-  border-radius: 0.25em;
-  box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.75); }
 .image-widget .image-widget-description {
   margin: 1em 0; }
 
 /* Gallery Widget */
 .gallery-widget .gallery-widget-images img {
-  border-radius: 0.25em;
-  box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.75);
-  margin: 0 1em 1em 0; }
+  margin: 0 0.5em 1em; }
 .gallery-widget .gallery-widget-description {
   margin: 1em 0; }
 
@@ -2807,7 +2802,7 @@ body {
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
-    color: #21759b;
+    color: #0074D9;
     display: block;
     font-size: 14px;
     font-weight: bold;

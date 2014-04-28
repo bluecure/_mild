@@ -5,8 +5,6 @@ Hi, This is `Mild` a WordPress Starter Theme based off `_s`, with a couple of ex
 Anyone is welcome to use this, however this is a work in progress and can break at anytime. 
 [Underscores](http://github.com/Automattic/_s) or [Roots](http://github.com/roots/roots) might be more useful.
 
-This starter theme uses SCSS for the styles and Gulp for the build process.
-
 ####Mild includeds:
 * Standard templates
 * Custom styles
@@ -22,4 +20,6 @@ This starter theme uses SCSS for the styles and Gulp for the build process.
 * Font Awesome for awesome icon fonts (4.0.3)
 * Normalize (3.0.1)
 
-More helpful readme to come....
+####Using Mild:
+1. Install Gulp and plugins: `npm install gulp gulp-concat gulp-rename gulp-sass gulp-autoprefixer gulp-jshint gulp-uglify --save-dev`
+2. Run the defualt Gulp task: `gulp default`

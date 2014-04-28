@@ -3,10 +3,6 @@
 
 /* Image Widget */
 .image-widget {
-	.image-widget-image {
-	    border-radius: 0.25em;
-	    box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.75);
-	}
 	.image-widget-description {
 	    margin: 1em 0;
 	}
@@ -15,9 +11,7 @@
 /* Gallery Widget */
 .gallery-widget {
 	.gallery-widget-images img {
-	    border-radius: 0.25em;
-	    box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.75);
-	    margin: 0 1em 1em 0;
+	    margin: 0 0.5em 1em;
 	}
 	.gallery-widget-description {
 	    margin: 1em 0;

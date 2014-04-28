@@ -3,14 +3,14 @@
 
 ::-moz-selection {
     background-color: $color-black;
-    color: #ffffff;
+    color: $color-white;
 }
 ::selection {
     background-color: $color-black;
-    color: #ffffff;
+    color: $color-white;
 }
 hr {
-	background-color: #ccc;
+	background-color: $color-silver;
 	margin-bottom: 1.5em;
 	height: 1px;
 	border: 0;
@@ -56,7 +56,7 @@ address {
 	margin: 0 0 1.5em;
 }
 pre {
-	background: #eee;
+	background: $color-silver;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
 	font-size: 1.5rem;
@@ -70,11 +70,11 @@ code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 abbr, acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted $color-grey;
 	cursor: help;
 }
 mark, ins {
-	background: #fff9c0;
+	background: darken($color-white, 2.5%);
 	text-decoration: none;
 }
 sup,
@@ -110,10 +110,10 @@ table {
         padding: 0.75em;
     }
     tr {
-        background-color: #f5f5f5;
+        background-color: darken($color-white, 5%);
     }
     tr:nth-child(odd) {
-        background-color: #fafafa;
+        background-color: darken($color-white, 2.5%)
     }
 }
 img {
@@ -176,7 +176,7 @@ input {
         border-radius: 3px;
     }
     &[type="text"]:focus, &[type="email"]:focus, &[type="url"]:focus, &[type="password"]:focus, &[type="search"]:focus {
-        color: #111;
+        color: $color-black;
     }
 }
 button::-moz-focus-inner {
@@ -192,6 +192,6 @@ textarea {
     vertical-align: top;
     width: 98%;
     &:focus {
-        color: #111;
+        color: $color-black;
     }
 }
