@@ -1,0 +1,231 @@
+{
+  "id": "022c9b59",
+  "cfgVersion": 1,
+  "name": "mild",
+  "files": {
+    "b818cab0": {
+      "id": "b818cab0",
+      "pid": "022c9b59",
+      "name": "settings.scss",
+      "input": "assets\\styles\\settings.scss",
+      "customOutput": "style.css",
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compressed",
+        "autoprefixer": true
+      }
+    },
+    "4dd05069": {
+      "id": "4dd05069",
+      "pid": "022c9b59",
+      "name": "scripts.js",
+      "input": "assets\\scripts\\scripts.js",
+      "customOutput": "assets\\scripts\\scripts.min.js",
+      "type": "Js",
+      "config": {
+        "autoCompile": true,
+        "uglify": true,
+        "mangle": true,
+        "sourcemaps": false
+      }
+    }
+  },
+  "imports": {
+    "81147570": {
+      "id": "81147570",
+      "pid": "022c9b59",
+      "path": "assets\\scripts\\source\\fixes.js",
+      "parents": [
+        "4dd05069"
+      ]
+    },
+    "85421535": {
+      "id": "85421535",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\shortcodes.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "0c65e68a": {
+      "id": "0c65e68a",
+      "pid": "022c9b59",
+      "path": "assets\\scripts\\vendor\\slick.js",
+      "parents": [
+        "4dd05069"
+      ]
+    },
+    "3f6ffe0b": {
+      "id": "3f6ffe0b",
+      "pid": "022c9b59",
+      "path": "assets\\scripts\\vendor\\magnific.popup.js",
+      "parents": [
+        "4dd05069"
+      ]
+    },
+    "d412df2a": {
+      "id": "d412df2a",
+      "pid": "022c9b59",
+      "path": "assets\\scripts\\source\\shortcodes.js",
+      "parents": [
+        "4dd05069"
+      ]
+    },
+    "6944b8c2": {
+      "id": "6944b8c2",
+      "pid": "022c9b59",
+      "path": "assets\\scripts\\source\\main.js",
+      "parents": [
+        "4dd05069"
+      ]
+    },
+    "b156a236": {
+      "id": "b156a236",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\vendor\\normalize.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "a1de2419": {
+      "id": "a1de2419",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\vendor\\font-awesome.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "2c6ddf2b": {
+      "id": "2c6ddf2b",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\vendor\\magnific-popup.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "e8a494be": {
+      "id": "e8a494be",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\vendor\\slick.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "fde7104d": {
+      "id": "fde7104d",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\grid.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "efd3b24e": {
+      "id": "efd3b24e",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\global.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "cdda288c": {
+      "id": "cdda288c",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\typography.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "3c4fbe90": {
+      "id": "3c4fbe90",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\content.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "54f3c5d8": {
+      "id": "54f3c5d8",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\menus.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "7530d931": {
+      "id": "7530d931",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\plugins.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "4a65b66b": {
+      "id": "4a65b66b",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\main.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    },
+    "9857d352": {
+      "id": "9857d352",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\helpers.scss",
+      "parents": [
+        "b818cab0"
+      ]
+    }
+  },
+  "images": {
+    "bc77a80d": {
+      "id": "bc77a80d",
+      "pid": "022c9b59",
+      "path": "screenshot.png",
+      "size": 6757,
+      "name": "screenshot.png",
+      "type": "Png",
+      "initialSize": 6757,
+      "status": "NOT_OPTIMIZED"
+    }
+  },
+  "config": {
+    "watch": false,
+    "liveRefresh": true,
+    "liveRefreshDelay": 0,
+    "filterPatterns": "node_modules,includes,source,vendor,gulpfile.js,README.md",
+    "useCustomServer": false,
+    "customServerUrl": "",
+    "cssPath": "css/",
+    "jsPath": "js/",
+    "htmlPath": "html/",
+    "minJsPath": "min/",
+    "htmlExtension": ".html",
+    "cssPathType": "REPLACE_TYPE",
+    "htmlPathType": "REPLACE_TYPE",
+    "jsPathType": "REPLACE_TYPE",
+    "minJsPathType": "RELATIVE_FILEDIR",
+    "htmlTypes": "jade, haml, slim, markdown, md",
+    "cssTypes": "less, sass, stylus, scss, styl",
+    "jsTypes": "coffee, coffeescript, coffeescripts, ls, livescript, livescripts",
+    "cssPreprocessorPath": "",
+    "htmlPreprocessorPath": "",
+    "jsPreprocessorPath": "",
+    "minJsPreprocessorPath": "",
+    "autoprefixerBrowsers": "",
+    "ftpHost": "",
+    "ftpPort": "21",
+    "ftpRemotePath": "",
+    "ftpIgnorePreprocessorFiles": true,
+    "ftpType": "FTP",
+    "ftpExcludePatterns": "",
+    "ftpPassword": "",
+    "ftpUsername": ""
+  }
+}

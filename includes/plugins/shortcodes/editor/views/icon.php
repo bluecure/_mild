@@ -29,7 +29,7 @@ require( 'inc/header.php' );
 		<div class="half">
 			<label for="icon">Icon: </label>
 			<div class="field">
-				<select name="icon" id="icon" class="input">
+				<select name="i" id="i" class="input">
 					<?php include 'inc/list-icons.php'; ?>
 				</select>
 			</div>

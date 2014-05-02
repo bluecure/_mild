@@ -20,6 +20,11 @@ Anyone is welcome to use this, however this is a work in progress and can break 
 * Font Awesome for awesome icon fonts (4.0.3)
 * Normalize (3.0.1)
 
-####Using Mild:
-1. Install Gulp and plugins: `npm install gulp gulp-concat gulp-rename gulp-sass gulp-autoprefixer gulp-jshint gulp-uglify --save-dev`
-2. Run the defualt Gulp task: `gulp default`
+####Using Gulp:
+1. Install Gulp and plugins: `npm install gulp gulp-concat gulp-rename gulp-sass gulp-autoprefixer gulp-jshint gulp-uglify gulp-minify-css --save-dev`
+2. Run the watch task: `gulp watch`
+3. Make changes
+
+####Using Prepros:
+1. Open theme folder in Prepros (pro)
+3. Make changes

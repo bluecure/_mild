@@ -83,7 +83,7 @@ class Shortcodes {
 	*/
 	public function s_col( $params, $content = null ) {
 	    extract( shortcode_atts([
-	        'width' => '1-2',
+	        'width' => '6-12',
 	        'class' => ''
 	    ], $params) );
 	    return "<div class='col col-{$width} {$class}'>" . do_shortcode($content) . "</div>";
@@ -94,14 +94,14 @@ class Shortcodes {
 	*/
 	public function s_icon( $params, $content = null ) {
 	    extract( shortcode_atts([
+	        'i' => '',
 	        'color' => '',
 	        'size' => '',
-	        'icon' => '',
 	        'link' => '',
 	        'target' => 'self',
 	        'class' => ''
 	    ], $params) );
-	    $html = "<i class='fa fa-{$icon} text-{$color} {$size} {$class}'></i>";
+	    $html = "<i class='fa fa-{$i} text-{$color} {$size} {$class}'></i>";
 	    return self::wrap_with_anchor( $link, $target, $html );
 	}
 

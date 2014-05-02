@@ -37,7 +37,7 @@
                         title: 'Insert row with columns',
                         url: url + '/views/row.php',
                         width: 500,
-                        height: 280,
+                        height: 220,
                         inline: true
                     });
                 }

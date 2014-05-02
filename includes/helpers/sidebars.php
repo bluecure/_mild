@@ -41,8 +41,8 @@ class Sidebars {
             register_sidebar( [
                 'name'          => $sidebar['name'],
                 'id'            => sanitize_title_with_dashes( $sidebar['name'] ),
-                'before_widget' => "<aside id='%1$s' class='widget %2$s {$sidebar['classes']}'>",
-                'after_widget'  => "</aside>",
+                'before_widget' => '<aside id="%1$s" class="widget %2$s ' .$sidebar['classes']. '">',
+                'after_widget'  => '</aside>',
                 'before_title'  => "<{$header} class='widget-title'>",
                 'after_title'   => "</{$header}>"
             ] );

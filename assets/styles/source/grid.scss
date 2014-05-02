@@ -30,30 +30,9 @@
             padding-right: 0;
         }
     }
-    .col-1 {
-        width: 100%;
-    }
-    .col-1-2 {
-        width: 50%;
-    }
-    @for $i from 1 through 2 {
-        .col-#{$i}-3 {
-            width: ((100 / 3) * $i) * 1%;
-        }
-    }
-    @for $i from 1 through 3 {
-        .col-#{$i}-4 {
-            width: ((100 / 4) * $i) * 1%;
-        }
-    }
-    @for $i from 1 through 4 {
-        .col-#{$i}-5 {
-            width: ((100 / 5) * $i) * 1%;
-        }
-    }
-    @for $i from 1 through 5 {
-        .col-#{$i}-6 {
-            width: ((100 / 6) * $i) * 1%;
+    @for $i from 1 through 11 {
+        .col-#{$i}-12 {
+            width: ((100 / 12) * $i) * 1%;
         }
     }
 }

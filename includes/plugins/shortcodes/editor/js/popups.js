@@ -10,15 +10,13 @@
 		// Add new columns
 		var selectCol = $( '#column-1' ).clone(),
 			colNo = $( '.input' ).length + 1;
-		//set up cloned input
+		// Set up cloned input
 		selectCol.attr( 'id', 'column-' + colNo );
 		selectCol.find( 'label' ).attr( 'for', 'col-' + colNo ).html( 'Column ' + colNo + ':' );
 		selectCol.find( '.input' ).attr( 'id', 'col-' + colNo );
-		// insert new element
-		if ( colNo < 5  ) {
-			selectCol.appendTo( '#row-2' );
-		} else if ( colNo < 6  ) {
-			selectCol.appendTo( '#row-3' );
+		// Insert new element
+		if ( colNo < 13  ) {
+			selectCol.appendTo( '#row' );
 		}
 
 	});

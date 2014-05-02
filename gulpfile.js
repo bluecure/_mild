@@ -11,47 +11,29 @@ var sass   = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
-
-// Paths
-var paths = {
-	stylesSettings: 'assets/styles/settings.scss',
-	stylesName: 'style.css',
-	stylesPath: './',
-	styles: [
-		'assets/styles/vendor/*.scss', 
-		'assets/styles/source/*.scss'
-	],
-	scriptsName: 'scripts.min.js',
-	scriptsPath: 'assets/scripts/',
-	scripts: [
-		'assets/scripts/vendor/*.js', 
-		'assets/scripts/source/*.js'
-	]
-};
-
-// Default task
-gulp.task( 'default', ['styles', 'scripts', 'watch'] );
+var minify = require('gulp-minify-css');
 
 // Styles task
 gulp.task('styles', function() {
-  return gulp.src( paths.stylesSettings )
+  return gulp.src( 'assets/styles/settings.scss' )
     .pipe( sass( { outputStyle: 'compact' } ) )
     .pipe( prefix( 'last 3 versions' ) )
-    .pipe( rename( paths.stylesName ) )
-    .pipe( gulp.dest( paths.stylesPath ) );
+    .pipe( minify() )
+    .pipe( rename( 'style.css' ) )
+    .pipe( gulp.dest( './' ) );
 });
 
 // Scripts task
 gulp.task('scripts', function() {
-  return gulp.src( paths.scripts )
+  return gulp.src( ['assets/scripts/**/*.js'] )
     .pipe( jshint() )
-    .pipe( concat( paths.scriptsName ) )
+    .pipe( concat( 'scripts.min.js' ) )
     .pipe( uglify() )
-    .pipe( gulp.dest( paths.scriptsPath ) );
+    .pipe( gulp.dest( 'assets/scripts/' ) );
 });
 
 // Rerun tasks when a file changes
 gulp.task('watch', function() {
-	gulp.watch( paths.styles, ['styles'] );
-	gulp.watch( paths.scripts, ['scripts'] );
+	gulp.watch( ['assets/styles/settings.scss', 'assets/styles/**/*.scss'], ['styles'] );
+	gulp.watch( ['assets/scripts/**/*.js'], ['scripts'] );
 });
