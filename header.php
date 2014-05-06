@@ -20,12 +20,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
 <![endif]-->
 </head>
-
-<?php
-// Get Options
-$logo = ot_get_option( 'ot_logo', '' );
-?>
-
+<?php $logo = ot_get_option( 'ot_logo', '' ); ?>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>

@@ -28,7 +28,7 @@ gulp.task('scripts', function() {
   return gulp.src( ['assets/scripts/**/*.js'] )
     .pipe( jshint() )
     .pipe( concat( 'scripts.min.js' ) )
-    .pipe( uglify() )
+    .pipe( uglify( { outSourceMap: true } ) )
     .pipe( gulp.dest( 'assets/scripts/' ) );
 });
 

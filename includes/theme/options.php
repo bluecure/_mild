@@ -70,6 +70,11 @@ add_action( 'admin_init', function() {
                 'type' => 'slider',
                 'desc' => 'This is the main slider that will display at the top of your sites home page.',
                 'section' => 'ot_home'
+            ], [
+                'label' => 'Footer copyright',
+                'id' => 'ot_copyright',
+                'type' => 'text',
+                'section' => 'ot_home'
             ],
 
             [

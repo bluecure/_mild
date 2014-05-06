@@ -33,7 +33,7 @@
         "autoCompile": true,
         "uglify": true,
         "mangle": true,
-        "sourcemaps": false
+        "sourcemaps": true
       }
     }
   },

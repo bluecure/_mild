@@ -6,14 +6,15 @@
  *
  * @package Mild
  */
-?>
+ 
+$copyright = ot_get_option( 'ot_copyright', '' ); ?>
 
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'mild_credits' ); ?>
-			&copy; <?php echo date( 'Y' ) ?> <?php bloginfo( 'name' ); ?>
+			<?php echo ( $copyright ? $copyright : '&copy; ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) ); ?>
 			<a href="#" class="to-top"><i class="fa fa-angle-up"></i> To Top</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

@@ -46,23 +46,26 @@ function pagination( $post_type = 'post' ) {
  * @return string
  */
 function breadcrumbs() {
-	$html = '';
 	global $post;
 
 	$parents = get_post_ancestors( $post->ID );
+	
+	$html = "<ul class='breadcrumbs'>";
+    $html .= "<li><a href='" . get_bloginfo( 'wpurl' ) . "'>Home</a></li>";
 
 	if ( $parents ) {
-		$html = "<ul class='breadcrumbs'>";
-		$html .= "<li><a href='" . get_bloginfo( 'wpurl' ) . "'>Home</a></li>";
+		
 		$breadcrumbs = array_reverse( $parents );
 		foreach ( $breadcrumbs as $item ) {
 			$html .= "<li>";
 				$html .= "<a href='" . get_permalink( $item ) . "'>" . get_the_title( $item ) . "</a>";
 			$html .= "</li>";
 		}
-		$html .= "<li>" . get_the_title( $post->ID ) . "</li>";
-		$html .= "</ul>";
+		
 	}
+	
+	$html .= "<li>" . get_the_title( $post->ID ) . "</li>";
+    $html .= "</ul>";
 
 	echo $html;
 }
