@@ -50,9 +50,12 @@ class Shortcodes {
 	private function editor() {
 	        
 	    if ( ! is_admin() ) return;
-	        
-	    // Add admin style sheet.
+	        	        
+	    // Add editor style sheet.
 	    wp_enqueue_style( 'shortcodes', $this->directory_url . '/editor/css/editor.css' );
+	        
+        // Add editor content css.
+	    add_editor_style( $this->directory_url . '/editor/css/content.css' );
 
 	    // Add editor js.
 	    add_filter( 'mce_external_plugins', function( $plugin_array ) {

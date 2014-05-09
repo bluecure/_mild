@@ -92,14 +92,13 @@ add_filter( 'logout_url', function( $logout_url, $redirect = null ) {
  * @return string The filtered title.
  */
 add_filter( 'wp_title', function( $title, $sep ) {
-    global $page, $paged;
-
     if ( is_feed() ) {
         return $title;
     }
+    global $page, $paged;
 
     // Add the blog name
-    $title .= get_bloginfo( 'name' );
+    $title .= get_bloginfo( 'name', 'display' );
 
     // Add the blog description for the home/front page.
     $site_description = get_bloginfo( 'description', 'display' );
@@ -108,9 +107,9 @@ add_filter( 'wp_title', function( $title, $sep ) {
     }
 
     // Add a page number if necessary:
-    if ( $paged >= 2 || $page >= 2 ) {
-        $title .= " $sep " . sprintf( 'Page %s', max( $paged, $page ) );
-    }
+    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+	}
 
     return $title;
 }, 10, 2);

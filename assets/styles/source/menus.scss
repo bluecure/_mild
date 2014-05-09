@@ -11,10 +11,12 @@
         text-decoration: none;
         padding: 0.5em 0.75em;
     }
-    .menu {
+    ul {
         list-style: none;
         margin: 0;
         padding-left: 0;
+    }
+    .menu {
         li {
             float: left;
             position: relative;
@@ -81,6 +83,8 @@
     }
     .main-navigation .menu {
         display: none;
+        float: none;
+        width: 100%;
         li {
             float: none;
             width: 100%;
