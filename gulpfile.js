@@ -13,6 +13,9 @@ var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 var minify = require('gulp-minify-css');
 
+// Default task
+gulp.task( 'default', ['styles', 'scripts', 'watch'] );
+
 // Styles task
 gulp.task('styles', function() {
   return gulp.src( 'assets/styles/settings.scss' )

@@ -78,8 +78,9 @@ function breadcrumbs() {
 function page_menu() {
 	$html = '';
 	global $post;
-
-	$parent = ( 0 !== $post->post_parent ) ? $post->post_parent : $post->ID;
+    
+    $ID = $post->ID;
+	$parent = ( $post->post_parent !== 0 ) ? $post->post_parent : $post->ID;
 
 	$args = [
 		'child_of'     => $parent,
@@ -92,14 +93,16 @@ function page_menu() {
 
 	if ( $pages ) {
 		$html = "<ul class='side-menu'>";
-		foreach( $pages as $page ) : setup_postdata( $post );
-			$html .= "<li><h4><a href='" . get_permalink() . "'>" . get_the_title() . "</a></h4></li>";
+		foreach( $pages as $post ) : setup_postdata( $post );
+			$state = ( $post->ID === $ID ) ? 'active' : '';
+			$html .= "<li><h4><a href='" . get_permalink() . "' class='{$state}'>" . get_the_title() . "</a></h4></li>";
 		endforeach; wp_reset_postdata();
 		$html .= '</ul>';
 	}
 
 	echo $html;
 }
+
 
 /**
  * Display latest posts
@@ -108,7 +111,9 @@ function page_menu() {
  */
 function posts_menu() {
 	$html = '';
-
+    global $post;
+    
+    $ID = $post->ID;
 	$args = [
 		'posts_per_page'   => 10,
 		'orderby'          => 'post_date',
@@ -121,7 +126,8 @@ function posts_menu() {
 	if ( $posts ) {
 		$html = "<ul class='side-menu'>";
 		foreach ( $posts as $post ) : setup_postdata( $post );
-			$html .= "<li><h4><a href='" . get_permalink() . "'>" . get_the_title() . "</a></h4></li>";
+			$state = ( $post->ID === $ID ) ? 'active' : '';
+			$html .= "<li><h4><a href='" . get_permalink() . "' class='{$state}'>" . get_the_title() . "</a></h4></li>";
 		endforeach; wp_reset_postdata();
 		$html .= "</ul>";
 	}
@@ -167,10 +173,9 @@ function post_nav() {
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
 
-	if ( ! $next && ! $previous ) {
-		return;
-	}
-	?>
+	if ( ! $next && ! $previous )
+		return;	?>
+		
 	<nav class="navigation post-navigation" role="navigation">
 		<h1 class="screen-reader-text">Post navigation</h1>
 		<div class="nav-links">

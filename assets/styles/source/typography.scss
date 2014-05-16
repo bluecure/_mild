@@ -4,13 +4,14 @@ body, button, input, select, textarea {
     color: $color-grey;
     font-family: $font-primary;
     font-size: $font-size;
-    font-weight: $font-weight;
+    font-weight: $font-normal;
     line-height: $font-height;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     margin: 0.25em 0 1em 0;
+    font-weight: $font-bold;
 }
 h1 {
     font-size: 2em;

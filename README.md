@@ -17,14 +17,16 @@ Anyone is welcome to use this, however this is a work in progress and can break 
 * OptionTree for theme options and meta boxes (2.3.4)
 * Magnific Popup for all lightboxes (0.9.9)
 * Slick for sliders (23/04/14)
-* Font Awesome for awesome icon fonts (4.0.3)
+* Font Awesome for awesome icon fonts (4.1.0)
 * Normalize (3.0.1)
 
 ####Using Gulp:
-1. Install Gulp and plugins: `npm install gulp gulp-concat gulp-rename gulp-sass gulp-autoprefixer gulp-jshint gulp-uglify gulp-minify-css --save-dev`
-2. Run the watch task: `gulp watch`
-3. Make changes
+1. Rename the theme in `assets/styes/setting.scss` and `package.json`
+2. Install Gulp and plugins: `npm install gulp gulp-concat gulp-rename gulp-sass gulp-autoprefixer gulp-jshint gulp-uglify gulp-minify-css --save-dev`
+3. Run gulp: `gulp`
+4. Make changes
 
 ####Using Prepros:
-1. Open theme folder in Prepros (pro)
+1. Rename the theme in `assets/styes/setting.scss` and `prepros.json`
+2. Open theme folder in Prepros (pro)
 3. Make changes

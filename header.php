@@ -33,12 +33,10 @@
 					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 				<?php endif; ?>
 			</a>
-		</div>
-
+		</div><!-- .site-branding -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="menu-toggle fa fa-bars"> Menu </div>
 			<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-
 			<?php wp_nav_menu( [ 'theme_location' => 'primary' ] ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

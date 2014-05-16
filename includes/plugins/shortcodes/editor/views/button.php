@@ -37,7 +37,7 @@ require( 'inc/header.php' );
 		<div class="half">
 			<label for="link">Icon Ref: </label>
 			<div class="field">
-				<a href="http://fontawesome.io/icons/" target="_blank">fontawesome.io</a>
+				<a href="http://fontawesome.io/cheatsheet/" target="_blank">fontawesome.io</a>
 			</div>
 		</div>
 	</div>

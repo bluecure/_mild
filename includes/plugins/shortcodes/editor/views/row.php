@@ -17,7 +17,7 @@ require( 'inc/header.php' );
 					<option value="3-12">Three Twelths</option>
 					<option value="4-12">Four Twelths</option>
 					<option value="5-12">Five Twelths</option>
-					<option value="6-12">Six Twelths</option>
+					<option value="6-12" selected>Six Twelths</option>
 					<option value="7-12">Seven Twelths</option>
 					<option value="8-12">Eight Twelths</option>
 					<option value="9-12">Nine Twelths</option>
@@ -36,7 +36,7 @@ require( 'inc/header.php' );
 					<option value="3-12">Three Twelths</option>
 					<option value="4-12">Four Twelths</option>
 					<option value="5-12">Five Twelths</option>
-					<option value="6-12">Six Twelths</option>
+					<option value="6-12" selected>Six Twelths</option>
 					<option value="7-12">Seven Twelths</option>
 					<option value="8-12">Eight Twelths</option>
 					<option value="9-12">Nine Twelths</option>
