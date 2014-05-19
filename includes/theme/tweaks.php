@@ -27,24 +27,6 @@ remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12 );
 
 /**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- */
-add_filter( 'wp_page_menu_args', function( $args ) {
-    $args['show_home'] = true;
-    return $args;
-});
-
-/**
- * Add class if sidebar is present
- */
-add_filter('body_class', function( $classes ) {
-    if ( is_active_sidebar( 'sidebar' ) ) {
-        $classes[] = 'sidebar';
-    }
-    return $classes;
-});
-
-/**
 * Enable core buttons.
 */
 add_filter( 'mce_buttons_2', function( $buttons ) {
@@ -85,6 +67,25 @@ add_filter( 'logout_url', function( $logout_url, $redirect = null ) {
 });
 
 /**
+ * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
+ */
+add_filter( 'wp_page_menu_args', function( $args ) {
+    $args['show_home'] = true;
+    return $args;
+});
+
+/**
+ * Add extra classes to the body.
+ */
+add_filter('body_class', function( $classes ) {
+    if ( is_active_sidebar( 'sidebar' ) )
+        $classes[] = 'sidebar';
+    if ( is_multi_author() )
+		$classes[] = 'group-blog';
+    return $classes;
+});
+
+/**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  *
  * @param string $title Default title text for current view.
@@ -92,9 +93,8 @@ add_filter( 'logout_url', function( $logout_url, $redirect = null ) {
  * @return string The filtered title.
  */
 add_filter( 'wp_title', function( $title, $sep ) {
-    if ( is_feed() ) {
-        return $title;
-    }
+    if ( is_feed() ) return $title;
+        
     global $page, $paged;
 
     // Add the blog name
@@ -102,14 +102,12 @@ add_filter( 'wp_title', function( $title, $sep ) {
 
     // Add the blog description for the home/front page.
     $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description && ( is_home() || is_front_page() ) ) {
+    if ( $site_description && ( is_home() || is_front_page() ) )
         $title .= " $sep $site_description";
-    }
 
     // Add a page number if necessary:
-    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() )
 		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
-	}
 
     return $title;
 }, 10, 2);
@@ -117,16 +115,12 @@ add_filter( 'wp_title', function( $title, $sep ) {
 /**
  * Sets the authordata global when viewing an author archive.
  *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
  * @global WP_Query $wp_query WordPress Query object.
  * @return void
  */
 add_action( 'wp', function() {
     global $wp_query;
 
-    if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-        $GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-    }
+    if ( $wp_query->is_author() && isset( $wp_query->post ) )
+		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 });

@@ -42,9 +42,12 @@ function is_blog() {
 function is_categorized_blog() {
 	if ( ( $categories = get_transient( 'mild_categories' ) ) === false ) {
 		// Create an array of all the categories that are attached to posts.
-		$categories = get_categories( array(
+		$categories = get_categories( [
+			'fields'     => 'ids',
 			'hide_empty' => 1,
-		) );
+			'number'     => 2
+        ] );
+
 		// Count the number of categories that are attached to the posts.
 		$categories = count( $categories );
 		set_transient( 'mild_categories', $categories );

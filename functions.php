@@ -31,7 +31,7 @@ require_once MILD_THEME . 'tweaks.php';
 require_once MILD_THEME . 'options.php';
 require_once MILD_THEME . 'functions.php';
 require_once MILD_THEME . 'template.php';
-//require_once MILD_THEME . 'meta-boxes.php';
+require_once MILD_THEME . 'meta-boxes.php';
 
 /**
  * Theme plugins and widgets.

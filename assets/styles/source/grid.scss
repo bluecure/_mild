@@ -12,6 +12,7 @@
     margin: 0 auto;
 }
 .row {
+    @extend .clear;
     width: 100%;
     margin: 0 auto 1em;
     &:after {

@@ -6,10 +6,10 @@
  */
 
 // Get slides
-$slides = ot_get_option( 'ot_main_slider', [] ); ?>
+$slides = get_post_meta( $post->ID, 'pm_slider', true ); ?>
 
 <?php if ( ! empty( $slides ) ) : ?>
-	<div class="main-slider">
+	<div class="meta-slider">
 		<?php foreach ( $slides as $slide ) : ?>
 			<div class="slide">
 				<img src="<?php echo $slide['image']; ?>" class="slide-image" alt="<?php echo $slide['title']; ?>" />

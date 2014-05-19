@@ -18,7 +18,7 @@ gulp.task( 'default', ['styles', 'scripts', 'watch'] );
 
 // Styles task
 gulp.task('styles', function() {
-  return gulp.src( 'assets/styles/settings.scss' )
+  return gulp.src( 'assets/styles/styles.scss' )
     .pipe( sass( { outputStyle: 'compact' } ) )
     .pipe( prefix( 'last 3 versions' ) )
     .pipe( minify() )

@@ -3,25 +3,6 @@
   "cfgVersion": 1,
   "name": "Mild",
   "files": {
-    "b818cab0": {
-      "id": "b818cab0",
-      "pid": "022c9b59",
-      "name": "settings.scss",
-      "input": "assets\\styles\\settings.scss",
-      "customOutput": "style.css",
-      "type": "Scss",
-      "config": {
-        "autoCompile": true,
-        "lineNumbers": false,
-        "unixNewlines": false,
-        "sourcemaps": false,
-        "debug": false,
-        "compass": false,
-        "fullCompass": false,
-        "outputStyle": "compressed",
-        "autoprefixer": true
-      }
-    },
     "4dd05069": {
       "id": "4dd05069",
       "pid": "022c9b59",
@@ -34,6 +15,25 @@
         "uglify": true,
         "mangle": true,
         "sourcemaps": true
+      }
+    },
+    "ef00f420": {
+      "id": "ef00f420",
+      "pid": "022c9b59",
+      "name": "styles.scss",
+      "input": "assets\\styles\\styles.scss",
+      "customOutput": "style.css",
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compressed",
+        "autoprefixer": true
       }
     }
   },
@@ -51,7 +51,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\shortcodes.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "0c65e68a": {
@@ -91,7 +91,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\vendor\\normalize.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "a1de2419": {
@@ -99,7 +99,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\vendor\\font-awesome.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "2c6ddf2b": {
@@ -107,7 +107,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\vendor\\magnific-popup.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "e8a494be": {
@@ -115,7 +115,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\vendor\\slick.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "fde7104d": {
@@ -123,7 +123,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\grid.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "efd3b24e": {
@@ -131,7 +131,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\global.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "cdda288c": {
@@ -139,7 +139,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\typography.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "3c4fbe90": {
@@ -147,7 +147,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\content.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "54f3c5d8": {
@@ -155,7 +155,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\menus.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "7530d931": {
@@ -163,7 +163,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\plugins.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "4a65b66b": {
@@ -171,7 +171,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\main.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     },
     "9857d352": {
@@ -179,7 +179,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\helpers.scss",
       "parents": [
-        "b818cab0"
+        "ef00f420"
       ]
     }
   },

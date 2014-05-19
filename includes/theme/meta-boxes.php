@@ -10,23 +10,60 @@
 */
 add_action( 'admin_init', function() {
 
-    /**
-    * Create a custom meta boxes array that we pass to
-    * the OptionTree Meta Box API Class.
-    */
-    $page_meta_box = [
-        'id'          => 'page_meta_box',
-        'title'       => 'Page Options',
-        'desc'        => '',
+    /* Slider */
+    $mb_slider = [
+        'id'          => 'mb_slider',
+        'title'       => 'Slider',
         'pages'       => [ 'page' ],
         'context'     => 'normal',
         'priority'    => 'high',
         'fields'      => [
             [
-                'label'       => 'Background Image',
-                'id'          => 'pm_background_image',
-                'type'        => 'upload',
-                'desc'        => 'This image will be used as the pages background'
+                'label'       => 'Slider',
+                'id'          => 'pm_slider',
+                'type'        => 'slider'
+            ]
+        ]
+    ];
+    /* Two Cols */
+    $mb_two_cols = [
+        'id'          => 'mb_two_cols',
+        'title'       => 'Columns',
+        'pages'       => [ 'page' ],
+        'context'     => 'normal',
+        'priority'    => 'high',
+        'fields'      => [
+            [
+                'label'       => 'Column One',
+                'id'          => 'tc_col_one',
+                'type'        => 'textarea'
+            ], [
+                'label'       => 'Column Two',
+                'id'          => 'tc_col_two',
+                'type'        => 'textarea'
+            ]
+        ]
+    ];
+    /* Three Cols */
+    $mb_three_cols = [
+        'id'          => 'mb_three_cols',
+        'title'       => 'Columns',
+        'pages'       => [ 'page' ],
+        'context'     => 'normal',
+        'priority'    => 'high',
+        'fields'      => [
+            [
+                'label'       => 'Column One',
+                'id'          => 'tc_col_one',
+                'type'        => 'textarea'
+            ], [
+                'label'       => 'Column Two',
+                'id'          => 'tc_col_two',
+                'type'        => 'textarea'
+            ], [
+                'label'       => 'Column Three',
+                'id'          => 'tc_col_three',
+                'type'        => 'textarea'
             ]
         ]
     ];
@@ -35,6 +72,18 @@ add_action( 'admin_init', function() {
     * Register our meta boxes using the
     * ot_register_meta_box() function.
     */
-    ot_register_meta_box( $page_meta_box );
+    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+    $template_file = get_post_meta( $post_id, '_wp_page_template', TRUE );
+    
+    if ($template_file === 'templates/slider.php')
+        ot_register_meta_box( $mb_slider );
+
+    if ($template_file === 'templates/two-cols.php')
+        ot_register_meta_box( $mb_two_cols );
+        
+        
+    if ($template_file === 'templates/three-cols.php')
+        ot_register_meta_box( $mb_three_cols );
+
 
 });

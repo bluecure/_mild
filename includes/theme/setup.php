@@ -16,9 +16,8 @@ require MILD_OPTIONS . 'ot-loader.php';
 /**
  * Set the content width.
  */
-if ( ! isset( $content_width ) ) {
+if ( ! isset( $content_width ) )
     $content_width = 1140;
-}
 
 /**
  * Sets up defaults, add theme support, register post types, taxonomies, roles, ect.
@@ -90,8 +89,7 @@ add_action( 'wp_enqueue_scripts', function() {
     // Load main js file.
     wp_enqueue_script( 'mild-scripts', get_template_directory_uri() . '/assets/scripts/scripts.min.js', ['jquery'], '20120206', true );
     // Load comment script.
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
-    }
     
 });

@@ -20,3 +20,18 @@ body {
 	@extend .col;
 	@extend .col-4-12;
 }
+
+/* Site Header */
+.site-header {
+    @extend .clear;
+}
+
+/* Site Content */
+.site-content {
+    @extend .clear;
+}
+
+/* Site Footer */
+.site-footer {
+    @extend .clear;
+}

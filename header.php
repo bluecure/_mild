@@ -1,12 +1,13 @@
 <?php
 /**
- * The Header for this theme.
+ * The Header file for this theme.
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
  * @package Mild
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -23,7 +24,6 @@
 <?php $logo = ot_get_option( 'ot_logo', '' ); ?>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">

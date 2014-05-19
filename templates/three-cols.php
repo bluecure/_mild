@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying three columns.
  *
- * This is the template that displays all pages by default.
+ * Template Name: 3 Columns
  *
  * @package Mild
  */
@@ -22,9 +22,20 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; // end of the loop. ?>
+			
+			<div class="two-cols row">
+			    <div class="col col-4-12">
+			        <?php echo get_post_meta( $post->ID, 'tc_col_one', true ); ?>
+			    </div>
+			    <div class="col col-4-12">
+			        <?php echo get_post_meta( $post->ID, 'tc_col_two', true ); ?>
+			    </div>
+			    <div class="col col-4-12">
+			        <?php echo get_post_meta( $post->ID, 'tc_col_three', true ); ?>
+			    </div>
+			</div><!-- .two-cols -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

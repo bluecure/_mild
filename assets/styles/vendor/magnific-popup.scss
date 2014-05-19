@@ -1,5 +1,9 @@
 /* Magnific Popup CSS */
 
+////////////////////////
+//      Settings      //
+////////////////////////
+
 // overlay
 $mfp-overlay-color:                   #0b0b0b;                    // Color of overlay screen
 $mfp-overlay-opacity:                 0.8;                        // Opacity of overlay screen
@@ -15,7 +19,7 @@ $mfp-z-index-base:                    1040;                        // Base z-ind
 $mfp-include-arrows:                  true;                       // Include styles for nav arrows
 $mfp-controls-opacity:                0.65;                       // Opacity of controls
 $mfp-controls-color:                  #FFF;                       // Color of controls
-$mfp-controls-border-color:           #3F3F3F;                    // Border color of controls
+$mfp-controls-border-color:           #3F3F3F; 	                  // Border color of controls
 $mfp-inner-close-icon-color:          #333;                       // Color of close button when inside
 $mfp-controls-text-color:             #CCC;                       // Color of preloader and "1 of X" indicator
 $mfp-controls-text-color-hover:       #FFF;                       // Hover color of preloader and "1 of X" indicator
@@ -64,8 +68,6 @@ $mfp-use-visuallyhidden:              false;
 //    - IE7 support
 //
 ////////////////////////
-
-
 
 ////////////////////////
 // 1. Default Settings
@@ -370,7 +372,6 @@ button {
   color: $mfp-controls-text-color;
   font-size: 12px;
   line-height: 18px;
-  width: 100%;
 }
 
 // Navigation arrows

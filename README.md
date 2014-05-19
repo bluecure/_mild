@@ -14,11 +14,11 @@ Anyone is welcome to use this, however this is a work in progress and can break 
 * Gallery widget
 * Latest posts widgets
 * Shortcodes plugin
-* OptionTree for theme options and meta boxes (2.3.4)
-* Magnific Popup for all lightboxes (0.9.9)
-* Slick for sliders (23/04/14)
-* Font Awesome for awesome icon fonts (4.1.0)
 * Normalize (3.0.1)
+* Font Awesome for awesome icon fonts (4.1.0)
+* Slick for sliders (1.3.6)
+* Magnific Popup for all lightboxes (0.9.9)
+* OptionTree for theme options and meta boxes (2.4.0)
 
 ####Using Gulp:
 1. Rename the theme in `assets/styes/setting.scss` and `package.json`

@@ -10,7 +10,6 @@
 	<header class="page-header">
 		<h1 class="page-title">Nothing Found</h1>
 	</header><!-- .page-header -->
-
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
