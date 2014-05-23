@@ -1,15 +1,15 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying a page with a sidebar.
  *
- * This is the template that displays all pages by default.
+ * Template Name: With Sidebar
  *
  * @package Mild
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area col col-8-12">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -22,7 +22,7 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; // end of the loop. ?>
-
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

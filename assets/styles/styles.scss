@@ -13,10 +13,17 @@ Text Domain: mild
 /* =Variables
 -------------------------------------------------------------- */
 
-// Site width
+/* Site Layout */
 $container-width: 1140px;
 
-// Site colors
+/* Site Font */
+$font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-size: 15px;
+$font-height: 1.4;
+$font-normal: 400;
+$font-bold: 700;
+
+/* Site Colors */
 $color-blue: #0074D9;
 $color-green: #4BC717;
 $color-orange: #EB6D00;
@@ -27,17 +34,14 @@ $color-grey: #666666;
 $color-black: #222222;
 $color-white: #FFFFFF;
 
-// Site font
-$font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-size: 15px;
-$font-height: 1.4;
-$font-normal: 400;
-$font-bold: 700;
+/* Site Styles */
+$radius: 3px;
+$transition: 0.2s ease;
 
-// Site Icons
+/* Site Icons */
 $icon-font: 'FontAwesome';
 
-// Site break points
+/* Site Break Points */
 $break-huge: 75em;
 $break-large: 60em;
 $break-medium: 45em;

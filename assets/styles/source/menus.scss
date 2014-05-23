@@ -20,7 +20,7 @@
         li {
             float: left;
             position: relative;
-            &:hover a, &.current_page_item a, &.current-menu-item a {
+            &:hover > a, &.current_page_item > a, &.current-menu-item > a {
                 background-color: rgba(0, 0, 0, 0.2);
             }
             &:hover > ul {

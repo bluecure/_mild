@@ -48,8 +48,8 @@ class Taxonomies {
             
             // Setup options
             $taxonomy_name = sanitize_title_with_dashes( $taxonomy['name'] );
-            $options = wp_parse_args( $options, self::default_options() );
-            $options['labels'] = wp_parse_args( $labels, self::default_labels() );
+            $options = wp_parse_args( $taxonomy['options'], self::default_options() );
+            $options['labels'] = wp_parse_args( $taxonomy['labels'], self::default_labels() );
             
             // Register taxonomy
             register_taxonomy( $taxonomy_name, $post_types, $options );

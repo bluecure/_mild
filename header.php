@@ -30,7 +30,7 @@
 				<?php if ( $logo ) : ?>
 					<img  src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
 				<?php else : ?>
-					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+					<h1><?php bloginfo( 'name' ); ?></h1>
 				<?php endif; ?>
 			</a>
 		</div><!-- .site-branding -->

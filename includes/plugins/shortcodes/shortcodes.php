@@ -89,7 +89,7 @@ class Shortcodes {
 	        'width' => '6-12',
 	        'class' => ''
 	    ], $params) );
-	    return "<div class='col col-{$width} {$class}'>" . do_shortcode($content) . "</div>";
+	    return "<div class='col col-{$width} {$class}'>" . do_shortcode( $content ) . "</div>";
 	}
 
 	/*
@@ -101,10 +101,11 @@ class Shortcodes {
 	        'color' => '',
 	        'size' => '',
 	        'link' => '',
-	        'target' => 'self',
-	        'class' => ''
+	        'align' => '',
+	        'class' => '',
+	        'target' => 'self'
 	    ], $params) );
-	    $html = "<i class='fa fa-{$i} text-{$color} {$size} {$class}'></i>";
+	    $html = "<i class='fa fa-{$i} text-{$color} {$size} align{$align} {$class}'></i>";
 	    return self::wrap_with_anchor( $link, $target, $html );
 	}
 
@@ -113,15 +114,16 @@ class Shortcodes {
 	*/
 	public function s_button( $params, $content = null ) {
 	    extract( shortcode_atts([
+	        'icon' => '',
 	        'color' => '',
 	        'size' => '',
-	        'icon' => '',
 	        'link' => '',
-	        'target' => 'self',
-	        'class' => ''
+	        'align' => '',
+	        'class' => '',
+	        'target' => 'self'
 	    ], $params) );
 	    $icon = self::create_icon( $icon );
-	    $html = "<button type='button' class='button bg-{$color} {$size} {$class}'>{$icon}" . do_shortcode( $content ) . "</button>";
+	    $html = "<button type='button' class='button bg-{$color} {$size} align{$align} {$class}'>{$icon}" . do_shortcode( $content ) . "</button>";
 	    return self::wrap_with_anchor( $link, $target, $html );
 	}
 
@@ -130,13 +132,14 @@ class Shortcodes {
 	*/
 	public function s_panel( $params, $content = null ) {
 	    extract( shortcode_atts([
+	        'icon' => '',
 	        'color' => '',
 	        'size' => '',
-	        'icon' => '',
+	        'align' => '',
 	        'class' => ''
 	    ], $params) );
 	    $icon = self::create_icon( $icon );
-	    return "<div class='panel bg-{$color} {$size} {$class}'>{$icon}" . do_shortcode( $content ) . "</div>";
+	    return "<div class='panel bg-{$color} {$size} align{$align} {$class}'>{$icon}" . do_shortcode( $content ) . "</div>";
 	}
 
 	/*
@@ -145,7 +148,7 @@ class Shortcodes {
 	public function s_align( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'to' => '',
-	        'width' => '1-3',
+	        'width' => '4-12',
 	        'class' => ''
 	    ], $params) );
 	    return "<div class='align align{$to} col-{$width} {$class}'>" . do_shortcode( $content ) . "</div>";
@@ -164,7 +167,7 @@ class Shortcodes {
 	    $icon_plus = self::create_icon( 'plus' );
 	    return "<div class='accordion {$class}'>
 		    		<h3 class='accordion-title'>{$icon}{$title}{$icon_plus}</h3>
-		            <div class='accordion-content'>" . do_shortcode($content) . "</div>
+		            <div class='accordion-content'>" . do_shortcode( $content ) . "</div>
 	            </div>";
 	}
 
@@ -261,10 +264,11 @@ class Shortcodes {
 	        'width' => '400',
 	        'height' => '300',
 	        'location' => 'Australia',
+	        'align' => '',
 	        'class' => ''
 	    ], $params) );
 	    $location = str_replace( ' ', '+', $location );
-	    return "<div class='fluid-iframe {$class}'><iframe src='https://maps.google.com/maps?q={$location}&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='{$width}px' height='{$height}px'></iframe></div>";
+	    return "<div class='fluid-iframe align{$align} {$class}'><iframe src='https://maps.google.com/maps?q={$location}&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='{$width}px' height='{$height}px'></iframe></div>";
 	}
 
 	/*
@@ -275,9 +279,10 @@ class Shortcodes {
 	        'url' => '',
 	        'width' => '400',
 	        'height' => '300',
+	        'align' => '',
 	        'class' => ''
 	    ], $params) );
-	    return "<div class='fluid-iframe {$class}'><iframe src='{$url}' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='{$width}px' height='{$height}px'></iframe></div>";
+	    return "<div class='fluid-iframe align{$align} {$class}'><iframe src='{$url}' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='{$width}px' height='{$height}px'></iframe></div>";
 	}
 
 	/*
@@ -286,10 +291,10 @@ class Shortcodes {
 	public function s_image( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'url' => '',
-	        'align' => 'one',
 	        'link' => '',
+	        'class' => '',
+	        'align' => 'one',
 	        'target' => 'self',
-	        'class' => ''
 	    ], $params) );
 	    $html = "<img src='{$url}' class='align{$align} {$class}'>";
 	    return self::wrap_with_anchor( $link, $target, $html );
@@ -301,10 +306,10 @@ class Shortcodes {
 	public function s_link( $params, $content = null ) {
 	    extract( shortcode_atts([
 	        'to' => '#',
-	        'target' => 'self',
-	        'class' => ''
+	        'class' => '',
+	        'target' => 'self'
 	    ], $params) );
-	    return "<a href='{$to}' target='_{$target}' style='{$class}'>" . do_shortcode($content) . "</a>";
+	    return "<a href='{$to}' target='_{$target}' style='{$class}'>" . do_shortcode( $content ) . "</a>";
 	}
 
 	/*

@@ -10,8 +10,7 @@ if( $gw_images && $gw_images !== 0 ) {
     foreach ( $imageIDs as $imageID ) {
     	$gallery .= wp_get_attachment_link( $imageID, 'thumbnail' );
     }
-}
-?>
+} ?>
 
 <?php if ( ! empty( $title ) ) {
 	echo $before_title . apply_filters( 'widget_title', $title ) . $after_title;

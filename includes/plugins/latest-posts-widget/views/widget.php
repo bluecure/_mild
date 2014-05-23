@@ -6,8 +6,7 @@
 // Filter title
 if ( ! empty( $title ) ) {
 	echo $before_title . apply_filters( 'widget_title', $title ) . $after_title;
-} 
-?>
+} ?>
 
 <div class="latest-posts-widget">
 	<?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>

@@ -15,8 +15,8 @@ if( $gw_images && $gw_images !== 0 ) {
     }
 }
 // Set preview to the gallery or placeholder
-$preview = ($gallery) ? $gallery : $placeholderImg;
-?>
+$preview = ($gallery) ? $gallery : $placeholderImg; ?>
+
 <div class="gallery-widget-container">
     <div class="gallery-widget-row">
         <div class="gallery-widget-preview">

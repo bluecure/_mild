@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying a page without a sidebar.
  *
- * This is the template that displays all pages by default.
+ * Template Name: Without Sidebar
  *
  * @package Mild
  */
@@ -22,10 +22,8 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; // end of the loop. ?>
-
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-    <?php get_sidebar(); ?>
-    
 <?php get_footer(); ?>

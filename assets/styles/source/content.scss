@@ -4,9 +4,6 @@
 .hentry {
 	margin: 0 0 1.5em;
 }
-.byline, .updated {
-	display: none;
-}
 .single .byline, .group-blog .byline {
 	display: inline;
 }
@@ -26,12 +23,6 @@
     color: lighten($color-grey, 5%);
     font-size: 0.8em;
     font-style: italic;
-}
-
-/* Asides */
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
 }
 
 /* Media */
@@ -109,7 +100,7 @@ embed, iframe, object {
         color: $color-grey;
         margin: 0 0.25em 1em;
         padding: 0.2em 0.5em;
-        border-radius: 2px;
+        border-radius: $radius;
         &:hover {
             background-color: $color-silver;
         }

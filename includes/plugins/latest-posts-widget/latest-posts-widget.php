@@ -48,7 +48,7 @@ class Latest_Posts_Widget extends \WP_Widget {
 
         global $post;
         $query = [
-            'numberposts'   => $lpw_limit,
+            'posts_per_page'   => $lpw_limit,
             'category__in'  => $lpw_cats,
             'tag__in'       => $lpw_tags
         ];

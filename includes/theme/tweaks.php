@@ -78,8 +78,6 @@ add_filter( 'wp_page_menu_args', function( $args ) {
  * Add extra classes to the body.
  */
 add_filter('body_class', function( $classes ) {
-    if ( is_active_sidebar( 'sidebar' ) )
-        $classes[] = 'sidebar';
     if ( is_multi_author() )
 		$classes[] = 'group-blog';
     return $classes;

@@ -6,7 +6,6 @@
  */
 ?>
 <div id="secondary" class="site-sidebar widget-area" role="complementary">
-    <?php do_action( 'before_sidebar' ); ?>
     <?php if ( ! dynamic_sidebar( 'Sidebar' ) ) : ?>
 
         <aside id="search" class="widget widget_search">

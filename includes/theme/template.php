@@ -18,8 +18,8 @@ namespace Mild;
 /**
  * Displays pagination links
  *
- * @param string $post_type
- * @return sting $pagination
+ * @param  string $post_type
+ * @return void
  */
 function pagination( $post_type = 'post' ) {
 	global $wp_query;
@@ -32,53 +32,47 @@ function pagination( $post_type = 'post' ) {
 		'prev_next' => True,
 		'prev_text' => '<i class="icon icon-angle-double-left"></i>',
 		'next_text' => '<i class="icon icon-angle-double-right"></i>'
-	];
+	]; ?>
 
-	$pagination = '<nav class="pagination">' . paginate_links( $args ) . '</nav>';
-
-	echo $pagination;
+	<nav class="pagination"><?php echo paginate_links( $args ); ?></nav>
+	
+<?php
 }
 
 /**
  * Display breadcrumbs
  *
- * @return string
+ * @return void
  */
 function breadcrumbs() {
 	global $post;
 
-	$parents = get_post_ancestors( $post->ID );
+	$parents = get_post_ancestors( $post->ID ); ?>
 	
-	$html = "<ul class='breadcrumbs'>";
-    $html .= "<li><a href='" . get_bloginfo( 'wpurl' ) . "'>Home</a></li>";
+	<ul class='breadcrumbs'>
+        <li><a href="<?php echo get_bloginfo( 'wpurl' ) ?>">Home</a></li>
 
-	if ( $parents ) {
-		
-		$breadcrumbs = array_reverse( $parents );
-		foreach ( $breadcrumbs as $item ) {
-			$html .= "<li>";
-				$html .= "<a href='" . get_permalink( $item ) . "'>" . get_the_title( $item ) . "</a>";
-			$html .= "</li>";
-		}
-		
-	}
-	
-	$html .= "<li>" . get_the_title( $post->ID ) . "</li>";
-    $html .= "</ul>";
+        <?php if ( $parents ) :
+            $breadcrumbs = array_reverse( $parents );
+            foreach ( $breadcrumbs as $item ) : ?>
 
-	echo $html;
+                <li><a href="<?php echo get_permalink( $item ); ?>"><?php echo get_the_title( $item ); ?></a></li>
+
+        <?php endforeach; endif; ?>
+        
+	    <li><?php echo get_the_title( $post->ID ); ?></li>
+   </ul>
+
+<?php
 }
 
 /**
  * Display sub page menu
  *
- * @return string
+ * @return void
  */
 function page_menu() {
-	$html = '';
 	global $post;
-    
-    $ID = $post->ID;
 	$parent = ( $post->post_parent !== 0 ) ? $post->post_parent : $post->ID;
 
 	$args = [
@@ -86,33 +80,23 @@ function page_menu() {
 		'exclude'      => $parent,
 		'sort_column'  => 'menu_order',
 		'post_type'    => 'page',
-	    'post_status'  => 'publish'
-	];
-	$pages = get_pages( $args );
+	    'post_status'  => 'publish',
+		'title_li'     => ''
+	]; ?>
 
-	if ( $pages ) {
-		$html = "<ul class='side-menu'>";
-		foreach( $pages as $post ) : setup_postdata( $post );
-			$state = ( $post->ID === $ID ) ? 'active' : '';
-			$html .= "<li><h4><a href='" . get_permalink() . "' class='{$state}'>" . get_the_title() . "</a></h4></li>";
-		endforeach; wp_reset_postdata();
-		$html .= '</ul>';
-	}
+	<ul class='side-menu'>
+        <?php wp_list_pages( $args ); ?>
+	</ul>
 
-	echo $html;
+<?php
 }
-
 
 /**
  * Display latest posts
  *
- * @return string
+ * @return void
  */
 function posts_menu() {
-	$html = '';
-    global $post;
-    
-    $ID = $post->ID;
 	$args = [
 		'posts_per_page'   => 10,
 		'orderby'          => 'post_date',
@@ -122,16 +106,15 @@ function posts_menu() {
 	];
 	$posts = get_posts( $args );
 
-	if ( $posts ) {
-		$html = "<ul class='side-menu'>";
-		foreach ( $posts as $post ) : setup_postdata( $post );
-			$state = ( $post->ID === $ID ) ? 'active' : '';
-			$html .= "<li><h4><a href='" . get_permalink() . "' class='{$state}'>" . get_the_title() . "</a></h4></li>";
-		endforeach; wp_reset_postdata();
-		$html .= "</ul>";
-	}
-
-	echo $html;
+	if ( $posts ) : ?>
+		
+		<ul class='side-menu'>
+		    <?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
+                <li class="post_item"><a href="<?php echo $post->guid; ?>"><?php echo $post->post_title; ?></a></li>
+            <?php endforeach; wp_reset_postdata(); ?>
+		</ul>
+		
+	<?php endif;
 }
 
 /**
@@ -141,10 +124,8 @@ function posts_menu() {
  */
 function paging_nav() {
 	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 )
+		return;	?>
 	<nav class="navigation paging-navigation" role="navigation">
 		<h1 class="screen-reader-text">Posts navigation</h1>
 		<div class="nav-links">
