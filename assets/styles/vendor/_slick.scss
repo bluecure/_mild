@@ -2,32 +2,11 @@
 
 // Default Variables
 
-$slick-font-path: "assets/images/" !default;
-$slick-loader-path: "./" !default;
 $slick-arrow-color: black !default;
 $slick-dot-color: black !default;
 $slick-prev-character: '\f104' !default;
 $slick-next-character: '\f105' !default;
 $slick-dot-character: '\f111' !default;
-
-
-@function slick-image-url($url) {
-  @if function-exists(image-url) {
-    @return image-url($slick-loader-path + $url);
-  }
-  @else  {  
-    @return url($slick-loader-path + $url);  
-  }  
-}
-
-@function slick-font-url($url) {
-  @if function-exists(font-url) {
-    @return font-url($slick-font-path + $url);
-  }
-  @else  {  
-    @return url($slick-font-path + $url);  
-  }  
-}
 
 /* Slider */
 
@@ -58,7 +37,7 @@ $slick-dot-character: '\f111' !default;
     }
 
     .slick-loading & {
-        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+        background: #fff url("assets/images/ajax-loader.gif") center center no-repeat;
     }
 
     &.dragging {

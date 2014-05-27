@@ -15,6 +15,14 @@ $image_src = ( $image_src ) ? $image_src[0] : $placeholder; ?>
         <button class="image-widget-select button button-primary button-hero widefat">Select Image</button>
     </div>
     <div class="image-widget-row">
+        <label for="<?php echo $this->get_field_id( 'iw_icon' ); ?>">You can also use an icon:</label>
+        <select name="<?php echo $this->get_field_name( 'iw_icon' ); ?>" id="<?php echo $this->get_field_id( 'iw_icon' ); ?>" class="image-widget-icon">
+            <option value="">Select Icon</option>
+            <?php include 'inc/list-icons.php'; ?>
+        </select>
+        <a href="http://fontawesome.io/cheatsheet/" target="_blank">Icon List.</a>
+    </div>
+    <div class="image-widget-row">
         <label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
         <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $title; ?>" class="image-widget-title widefat" />
     </div>

@@ -24,14 +24,17 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 			
 			<div class="two-cols row">
-			    <div class="col col-4-12">
-			        <?php echo get_post_meta( $post->ID, 'three_cols_one', true ); ?>
+			    <div class="col col-3-12">
+			        <?php echo get_post_meta( $post->ID, 'four_cols_one', true ); ?>
 			    </div>
-			    <div class="col col-4-12">
-			        <?php echo get_post_meta( $post->ID, 'three_cols_two', true ); ?>
+			    <div class="col col-3-12">
+			        <?php echo get_post_meta( $post->ID, 'four_cols_two', true ); ?>
 			    </div>
-			    <div class="col col-4-12">
-			        <?php echo get_post_meta( $post->ID, 'three_cols_three', true ); ?>
+			    <div class="col col-3-12">
+			        <?php echo get_post_meta( $post->ID, 'four_cols_three', true ); ?>
+			    </div>
+			    <div class="col col-3-12">
+			        <?php echo get_post_meta( $post->ID, 'four_cols_four', true ); ?>
 			    </div>
 			</div><!-- .two-cols -->
 

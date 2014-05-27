@@ -20,7 +20,7 @@ add_action( 'admin_init', function() {
         'fields'      => [
             [
                 'label'       => 'Slider',
-                'id'          => 'pm_slider',
+                'id'          => 'slider',
                 'type'        => 'slider'
             ]
         ]
@@ -35,11 +35,11 @@ add_action( 'admin_init', function() {
         'fields'      => [
             [
                 'label'       => 'Column One',
-                'id'          => 'tc_col_one',
+                'id'          => 'two_cols_one',
                 'type'        => 'textarea'
             ], [
                 'label'       => 'Column Two',
-                'id'          => 'tc_col_two',
+                'id'          => 'two_cols_two',
                 'type'        => 'textarea'
             ]
         ]
@@ -54,15 +54,42 @@ add_action( 'admin_init', function() {
         'fields'      => [
             [
                 'label'       => 'Column One',
-                'id'          => 'tc_col_one',
+                'id'          => 'three_cols_one',
                 'type'        => 'textarea'
             ], [
                 'label'       => 'Column Two',
-                'id'          => 'tc_col_two',
+                'id'          => 'three_cols_two',
                 'type'        => 'textarea'
             ], [
                 'label'       => 'Column Three',
-                'id'          => 'tc_col_three',
+                'id'          => 'three_cols_three',
+                'type'        => 'textarea'
+            ]
+        ]
+    ];
+    /* Four Cols */
+    $mb_four_cols = [
+        'id'          => 'mb_four_cols',
+        'title'       => 'Columns',
+        'pages'       => [ 'page' ],
+        'context'     => 'normal',
+        'priority'    => 'high',
+        'fields'      => [
+            [
+                'label'       => 'Column One',
+                'id'          => 'four_cols_one',
+                'type'        => 'textarea'
+            ], [
+                'label'       => 'Column Two',
+                'id'          => 'four_cols_two',
+                'type'        => 'textarea'
+            ], [
+                'label'       => 'Column Three',
+                'id'          => 'four_cols_three',
+                'type'        => 'textarea'
+            ], [
+                'label'       => 'Column Four',
+                'id'          => 'four_cols_four',
                 'type'        => 'textarea'
             ]
         ]
@@ -75,14 +102,14 @@ add_action( 'admin_init', function() {
     $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
     $template_file = get_post_meta( $post_id, '_wp_page_template', TRUE );
     
-    if ($template_file === 'templates/slider.php')
+    if ( $template_file === 'templates/slider.php' )
         ot_register_meta_box( $mb_slider );
 
-    if ($template_file === 'templates/two-cols.php')
+    if ( $template_file === 'templates/two-cols.php' )
         ot_register_meta_box( $mb_two_cols );
         
         
-    if ($template_file === 'templates/three-cols.php')
+    if ( $template_file === 'templates/three-cols.php' )
         ot_register_meta_box( $mb_three_cols );
 
 

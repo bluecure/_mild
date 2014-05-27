@@ -25,9 +25,6 @@ add_action( 'admin_init', function() {
                 'title' => 'General',
                 'id' => 'ot_general'
             ], [
-                'title' => 'Home',
-                'id' => 'ot_home'
-            ], [
                 'title' => 'Social',
                 'id' => 'ot_social'
             ]
@@ -51,6 +48,11 @@ add_action( 'admin_init', function() {
                 'desc' => '32px X 32px',
                 'section' => 'ot_general'
             ], [
+                'label' => 'Footer copyright',
+                'id' => 'ot_copyright',
+                'type' => 'text',
+                'section' => 'ot_general'
+            ], [
                 'label' => 'Custom CSS',
                 'id' => 'ot_css',
                 'type' => 'textarea-simple',
@@ -62,19 +64,6 @@ add_action( 'admin_init', function() {
                 'type' => 'textarea-simple',
                 'desc' => 'Paste in your full Analytics code here, without the script tags.',
                 'section' => 'ot_general'
-            ],
-
-            [
-                'label' => 'Home page slider',
-                'id' => 'ot_main_slider',
-                'type' => 'slider',
-                'desc' => 'This is the main slider that will display at the top of your sites home page.',
-                'section' => 'ot_home'
-            ], [
-                'label' => 'Footer copyright',
-                'id' => 'ot_copyright',
-                'type' => 'text',
-                'section' => 'ot_home'
             ],
 
             [

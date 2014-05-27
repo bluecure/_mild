@@ -6,17 +6,19 @@ body {
 }
 
 /* Layout */
-#page {
+.site {
 	@extend .container;
 }
-#content {
+.site-content {
 	@extend .row;
 }
-#primary {
+.site-primary {
 	@extend .col;
+}
+.with-secondary {
 	@extend .col-8-12;
 }
-#secondary {
+.site-secondary {
 	@extend .col;
 	@extend .col-4-12;
 }

@@ -3,8 +3,8 @@
 * Align View
 *
 */
-require( 'inc/header.php' );
-?>
+require( 'inc/header.php' ); ?>
+
 <form class="shortcode" data-code="align" data-wrap="yes" action="#">
 	<div class="row">
 		<label for="show">Align content to: </label>

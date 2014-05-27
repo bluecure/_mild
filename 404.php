@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="site-primary content-area">
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
@@ -24,7 +24,7 @@ get_header(); ?>
 
 					<?php if ( Mild\is_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
-						<h2 class="widgettitle">Most Used Categories</h2>
+						<h2 class="widget-title">Most Used Categories</h2>
 						<ul>
 						<?php
 							wp_list_categories( [

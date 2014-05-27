@@ -3,8 +3,7 @@
 * Icon View
 *
 */
-require( 'inc/header.php' );
-?>
+require( 'inc/header.php' ); ?>
 
 <form class="shortcode" data-code="icon" data-wrap="no" action="#">
 	<div class="row">
@@ -30,6 +29,7 @@ require( 'inc/header.php' );
 			<label for="icon">Icon: </label>
 			<div class="field">
 				<select name="i" id="i" class="input">
+					<option value="">Select Icon</option>
 					<?php include 'inc/list-icons.php'; ?>
 				</select>
 			</div>

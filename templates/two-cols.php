@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="site-primary content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -25,10 +25,10 @@ get_header(); ?>
 			
 			<div class="two-cols row">
 			    <div class="col col-6-12">
-			        <?php echo get_post_meta( $post->ID, 'tc_col_one', true ); ?>
+			        <?php echo get_post_meta( $post->ID, 'two_cols_one', true ); ?>
 			    </div>
 			    <div class="col col-6-12">
-			        <?php echo get_post_meta( $post->ID, 'tc_col_two', true ); ?>
+			        <?php echo get_post_meta( $post->ID, 'two_cols_two', true ); ?>
 			    </div>
 			</div><!-- .two-cols -->
 

@@ -8,7 +8,7 @@
     menuToggle.on( 'click', function() {
         mainMenu.slideToggle();
     });
-    mainMenu.one( 'click', 'a', function( event ) {
+    mainMenu.find( 'a' ).one( 'click', function( event ) {
         var subMenu = $(this).next( 'ul' );
         if ( subMenu.length > 0 && menuToggle.is(':visible') ) {
             event.preventDefault();
@@ -34,7 +34,7 @@
     });
 
     // Main slider
-    var slider = $( '.main-slider' );
+    var slider = $( '.meta-slider' );
     if ( slider ) {
         slider.slick({
             autoplay: true,

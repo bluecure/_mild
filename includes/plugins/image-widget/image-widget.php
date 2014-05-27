@@ -57,6 +57,7 @@ class Image_Widget extends \WP_Widget {
         $defaults = [
             'title' => '',
             'iw_image' => '',
+            'iw_icon' => '',
             'iw_description' => '',
             'iw_link' => '',
             'iw_target' => ''
@@ -75,6 +76,7 @@ class Image_Widget extends \WP_Widget {
         $instance = $old_instance;
         $instance['title'] = strip_tags( $title );
         $instance['iw_image'] = intval( $iw_image );
+        $instance['iw_icon'] = strip_tags( $iw_icon );
         $instance['iw_description'] = strip_tags( $iw_description );
         $instance['iw_link'] = strip_tags( $iw_link );
         $instance['iw_target'] = intval( $iw_target );

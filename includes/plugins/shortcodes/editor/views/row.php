@@ -3,8 +3,7 @@
 * Row View
 *
 */
-require( 'inc/header.php' );
-?>
+require( 'inc/header.php' ); ?>
 
 <form class="shortcode" data-code="row" data-wrap="no" action="#">
 	<div id="row" class="row">

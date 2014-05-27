@@ -20,6 +20,10 @@ $iw_target = ( $iw_target ) ? '_blank' : '_self'; ?>
 	<img class="image-widget-image" src="<?php echo $image_src; ?>" />
 <?php } ?>
 
+<?php if ( ! empty( $iw_icon ) ) { ?>
+	<i class="image-widget-icon fa fa-<?php echo $iw_icon; ?>"></i>
+<?php } ?>
+
 <?php if ( ! empty( $iw_description ) ) { ?>
 	<div class="image-widget-description"><?php echo $iw_description; ?></div>
 <?php } ?>

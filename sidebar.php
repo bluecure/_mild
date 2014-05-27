@@ -5,7 +5,7 @@
  * @package Mild
  */
 ?>
-<div id="secondary" class="site-sidebar widget-area" role="complementary">
+<div id="secondary" class="site-secondary widget-area" role="complementary">
     <?php if ( ! dynamic_sidebar( 'Sidebar' ) ) : ?>
 
         <aside id="search" class="widget widget_search">

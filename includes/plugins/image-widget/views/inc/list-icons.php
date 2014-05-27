@@ -448,6 +448,6 @@ $icons_array = [
 
 foreach ( $icons_array as $icon ) : ?>
 
-    <option value="<?php echo $icon; ?>"><?php echo $icon; ?></option>
+    <option value="<?php echo $icon; ?>" <?php echo ( $iw_icon === $icon ? 'selected="selected"': '' ); ?>><?php echo $icon; ?></option>
     
 <?php endforeach; 
