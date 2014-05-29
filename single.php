@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-primary with-secondary content-area">
+	<div id="primary" class="site-primary content-area col col-8-12">
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>

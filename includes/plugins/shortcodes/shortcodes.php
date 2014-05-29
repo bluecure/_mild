@@ -34,7 +34,6 @@ class Shortcodes {
 		add_shortcode( 'button',    [ $this, 's_button' ] );
 		add_shortcode( 'panel',     [ $this, 's_panel' ] );
 		add_shortcode( 'align',     [ $this, 's_align' ] );
-		add_shortcode( 'accordion', [ $this, 's_accordion' ] );
 		add_shortcode( 'show',      [ $this, 's_show' ] );
 		add_shortcode( 'sitemap',   [ $this, 's_sitemap' ] );
 		add_shortcode( 'map',       [ $this, 's_map' ] );
@@ -65,7 +64,7 @@ class Shortcodes {
 
 	    // Register editor buttons.
 	    add_filter( 'mce_buttons_3', function( $buttons ) {
-	        array_push( $buttons, 's_row', 's_icon', 's_button', 's_panel', 's_align', 's_accordion', 's_show', 's_sitemap', 's_map', 's_iframe' );
+	        array_push( $buttons, 's_row', 's_icon', 's_button', 's_panel', 's_align', 's_show', 's_sitemap', 's_map', 's_iframe' );
 	        return $buttons;
 	    });
 
@@ -152,23 +151,6 @@ class Shortcodes {
 	        'class' => ''
 	    ], $params) );
 	    return "<div class='align align{$to} col-{$width} {$class}'>" . do_shortcode( $content ) . "</div>";
-	}
-
-	/*
-	* Accordian shortcode
-	*/
-	public function s_accordion( $params, $content = null ) {
-	    extract( shortcode_atts([
-	        'title' => '',
-	        'icon' => '',
-	        'class' => ''
-	    ], $params) );
-	    $icon = self::create_icon( $icon );
-	    $icon_plus = self::create_icon( 'plus' );
-	    return "<div class='accordion {$class}'>
-		    		<h3 class='accordion-title'>{$icon}{$title}{$icon_plus}</h3>
-		            <div class='accordion-content'>" . do_shortcode( $content ) . "</div>
-	            </div>";
 	}
 
 	/*

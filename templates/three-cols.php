@@ -25,13 +25,13 @@ get_header(); ?>
 			
 			<div class="two-cols row">
 			    <div class="col col-4-12">
-			        <?php echo get_post_meta( $post->ID, 'three_cols_one', true ); ?>
+			        <?php echo do_shortcode( get_post_meta( $post->ID, 'three_cols_one', true ) ); ?>
 			    </div>
 			    <div class="col col-4-12">
-			        <?php echo get_post_meta( $post->ID, 'three_cols_two', true ); ?>
+			        <?php echo do_shortcode( get_post_meta( $post->ID, 'three_cols_two', true ) ); ?>
 			    </div>
 			    <div class="col col-4-12">
-			        <?php echo get_post_meta( $post->ID, 'three_cols_three', true ); ?>
+			        <?php echo do_shortcode( get_post_meta( $post->ID, 'three_cols_three', true ) ); ?>
 			    </div>
 			</div><!-- .two-cols -->
 

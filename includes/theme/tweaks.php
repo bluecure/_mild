@@ -39,9 +39,8 @@ add_filter( 'mce_buttons_2', function( $buttons ) {
 */
 add_action( 'admin_init', function() {
     $image_default_link = get_option( 'image_default_link_type' );
-    if ( $image_default_link !== 'none' ) {
+    if ( $image_default_link !== 'none' )
         update_option( 'image_default_link_type', 'none' );
-    }
 });
 
 /**
@@ -118,7 +117,6 @@ add_filter( 'wp_title', function( $title, $sep ) {
  */
 add_action( 'wp', function() {
     global $wp_query;
-
     if ( $wp_query->is_author() && isset( $wp_query->post ) )
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 });

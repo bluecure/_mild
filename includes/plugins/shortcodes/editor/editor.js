@@ -99,20 +99,6 @@
                 }
             });
 
-            // Add accordion button
-            ed.addButton('s_accordion', {
-                title : 'Insert accordion',
-                onclick : function() {
-                    ed.windowManager.open({
-                        title: 'Insert Accordion',
-                        url: url + '/views/accordion.php',
-                        width: 500,
-                        height: 230,
-                        inline: true
-                    });
-                }
-            });
-
             // Add show button
             ed.addButton('s_show', {
                 title : 'Show recent posts',

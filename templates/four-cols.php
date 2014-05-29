@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying three columns.
+ * The template for displaying four columns.
  *
- * Template Name: 3 Columns
+ * Template Name: 4 Columns
  *
  * @package Mild
  */
@@ -25,16 +25,16 @@ get_header(); ?>
 			
 			<div class="two-cols row">
 			    <div class="col col-3-12">
-			        <?php echo get_post_meta( $post->ID, 'four_cols_one', true ); ?>
+			        <?php echo do_shortcode( get_post_meta( $post->ID, 'four_cols_one', true ) ); ?>
 			    </div>
 			    <div class="col col-3-12">
-			        <?php echo get_post_meta( $post->ID, 'four_cols_two', true ); ?>
+			        <?php echo do_shortcode( get_post_meta( $post->ID, 'four_cols_two', true ) ); ?>
 			    </div>
 			    <div class="col col-3-12">
-			        <?php echo get_post_meta( $post->ID, 'four_cols_three', true ); ?>
+			        <?php echo do_shortcode( get_post_meta( $post->ID, 'four_cols_three', true ) ); ?>
 			    </div>
 			    <div class="col col-3-12">
-			        <?php echo get_post_meta( $post->ID, 'four_cols_four', true ); ?>
+			        <?php echo do_shortcode( get_post_meta( $post->ID, 'four_cols_four', true ) ); ?>
 			    </div>
 			</div><!-- .two-cols -->
 

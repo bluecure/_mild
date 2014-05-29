@@ -5,24 +5,6 @@ body {
     background-color: $color-white;
 }
 
-/* Layout */
-.site {
-	@extend .container;
-}
-.site-content {
-	@extend .row;
-}
-.site-primary {
-	@extend .col;
-}
-.with-secondary {
-	@extend .col-8-12;
-}
-.site-secondary {
-	@extend .col;
-	@extend .col-4-12;
-}
-
 /* Site Header */
 .site-header {
     @extend .clear;

@@ -1,15 +1,15 @@
 <?php
 /**
- * The template for displaying two columns.
+ * The template for displaying a page without with login form.
  *
- * Template Name: 2 Columns
+ * Template Name: Login Form
  *
  * @package Mild
  */
 
 get_header(); ?>
 
-	<div id="primary" class="site-primary content-area">
+	<div id="primary" class="site-primary with-secondary content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -23,15 +23,14 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 			
-			<div class="two-cols row">
-			    <div class="col col-6-12">
-			        <?php echo do_shortcode( get_post_meta( $post->ID, 'two_cols_one', true ) ); ?>
-			    </div>
-			    <div class="col col-6-12">
-			        <?php echo do_shortcode( get_post_meta( $post->ID, 'two_cols_two', true ) ); ?>
-			    </div>
-			</div><!-- .two-cols -->
-
+			<?php
+				if ( ! is_user_logged_in() ) {
+					wp_login_form(); 
+                } else {
+					echo '<a href="' . wp_logout_url() .'" title="Logout" class="button">Logout</a>';
+                }
+			?>
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

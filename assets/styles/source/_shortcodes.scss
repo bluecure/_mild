@@ -107,27 +107,6 @@
     font-size: 2.5em;
 }
 
-/* Accordion */
-.accordion {
-    padding: 1em;
-    .fa {
-        padding: 0.2em 0.5em;
-        font-size: 0.75em;
-    }
-    .fa-plus, .fa-minus {
-        float: right;
-    }
-    .accordion-title {
-        margin-bottom: 0.5em;
-        line-height: 1;
-        cursor: pointer;
-        border-bottom: 1px solid;
-    }
-    .accordion-content {
-        display: none;
-    }
-}
-
 /* Show */
 .show-posts .post {
     margin-bottom: 1.5em;

@@ -23,12 +23,12 @@
 </head>
 <?php $logo = ot_get_option( 'ot_logo', '' ); ?>
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<header id="masthead" class="site-header" role="banner">
+<div id="page" class="hfeed site container">
+	<header id="masthead" class="site-header row" role="banner">
 		<div class="site-branding">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
 				<?php if ( $logo ) : ?>
-					<img  src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
+					<img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
 				<?php else : ?>
 					<h1><?php bloginfo( 'name' ); ?></h1>
 				<?php endif; ?>
@@ -41,4 +41,4 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content row">

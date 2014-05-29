@@ -24,11 +24,11 @@ $font-normal: 400;
 $font-bold: 700;
 
 /* Site Colors */
-$color-blue: #0074D9;
-$color-green: #4BC717;
-$color-orange: #EB6D00;
+$color-blue: #1882f4;
+$color-green: #08b411;
+$color-orange: #FF9500;
 $color-yellow: #E9DD0F;
-$color-red: #E90008;
+$color-red: #db1b11;
 $color-silver: #DDDDDD;
 $color-grey: #666666;
 $color-black: #222222;
@@ -42,10 +42,11 @@ $transition: 0.2s ease;
 $icon-font: 'FontAwesome';
 
 /* Site Break Points */
-$break-huge: 75em;
-$break-large: 60em;
-$break-medium: 45em;
-$break-small: 30em;
+$break-huge: 80em;
+$break-large: 65em;
+$break-medium: 50em;
+$break-small: 35em;
+$break-tiny: 20em;
 
 /* =Imports
 -------------------------------------------------------------- */
@@ -59,6 +60,7 @@ $break-small: 30em;
 @import 'source/_typography.scss';
 @import 'source/_content.scss';
 @import 'source/_menus.scss';
+@import 'source/_social.scss';
 @import 'source/_shortcodes.scss';
 @import 'source/_plugins.scss';
 @import 'source/_main.scss';
