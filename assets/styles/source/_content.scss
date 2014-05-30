@@ -19,7 +19,7 @@
 .blog .entry-header .entry-title {
     font-size: 1.5em;
 }
-.posted-on {
+.posted-on, .entry-footer {
     color: lighten($color-grey, 5%);
     font-size: 0.8em;
     font-style: italic;

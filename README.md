@@ -20,10 +20,15 @@ Note: This is a work in progress and can break at anytime.
 * Magnific Popup (0.9.9)
 * OptionTree (Latest)
 
+####Installing theme:
+1. `$ git clone --recursive https://github.com/bluecure/mild.git`
+2. `$ rmdir mild\.git /s /q` (optional: remove git folder)
+3. `$ Rename mild my-new-theme-name`
+
 ####Using Gulp:
 1. Rename the theme in `assets/styes/styles.scss` and `package.json`
-2. Install Gulp and plugins: `npm install gulp gulp-concat gulp-rename gulp-sass gulp-autoprefixer gulp-jshint gulp-uglify gulp-minify-css --save-dev`
-3. Run gulp: `gulp`
+2. Install Gulp and plugins: `$ npm install gulp gulp-concat gulp-rename gulp-sass gulp-autoprefixer gulp-jshint gulp-uglify gulp-minify-css --save-dev`
+3. Run gulp: `$ gulp`
 
 ####Using Prepros:
 1. Rename the theme in `assets/styes/styles.scss` and `prepros.json`
