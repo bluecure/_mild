@@ -27,7 +27,7 @@ Note: This is a work in progress and can break at anytime.
 
 ####Using Gulp:
 1. Rename the theme in `assets/styes/styles.scss` and `package.json`
-2. Install Gulp and plugins: `$ npm install gulp gulp-concat gulp-rename gulp-sass gulp-autoprefixer gulp-jshint gulp-uglify gulp-minify-css --save-dev`
+2. Install Gulp and plugins: `$ npm install`
 3. Run gulp: `$ gulp`
 
 ####Using Prepros:
