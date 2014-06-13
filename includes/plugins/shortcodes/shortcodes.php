@@ -34,7 +34,9 @@ class Shortcodes {
 		add_shortcode( 'button',    [ $this, 's_button' ] );
 		add_shortcode( 'panel',     [ $this, 's_panel' ] );
 		add_shortcode( 'align',     [ $this, 's_align' ] );
+		add_shortcode( 'accordion', [ $this, 's_accordion' ] );
 		add_shortcode( 'show',      [ $this, 's_show' ] );
+		add_shortcode( 'login',     [ $this, 's_login' ] );
 		add_shortcode( 'sitemap',   [ $this, 's_sitemap' ] );
 		add_shortcode( 'map',       [ $this, 's_map' ] );
 		add_shortcode( 'iframe',    [ $this, 's_iframe' ] );
@@ -64,7 +66,7 @@ class Shortcodes {
 
 	    // Register editor buttons.
 	    add_filter( 'mce_buttons_3', function( $buttons ) {
-	        array_push( $buttons, 's_row', 's_icon', 's_button', 's_panel', 's_align', 's_show', 's_sitemap', 's_map', 's_iframe' );
+	        array_push( $buttons, 's_row', 's_icon', 's_button', 's_panel', 's_align', 's_accordion', 's_show', 's_login', 's_sitemap', 's_map', 's_iframe' );
 	        return $buttons;
 	    });
 
@@ -122,8 +124,9 @@ class Shortcodes {
 	        'target' => 'self'
 	    ], $params) );
 	    $icon = self::create_icon( $icon );
-	    $html = "<button type='button' class='button bg-{$color} {$size} align{$align} {$class}'>{$icon}" . do_shortcode( $content ) . "</button>";
-	    return self::wrap_with_anchor( $link, $target, $html );
+	    $el = ( $link ) ? 'a' : 'button';
+	    $href = ( $link ) ? " href='{$link}' target='_{$target}'" : '';
+	    return "<{$el}{$href} class='button bg-{$color} {$size} align{$align} {$class}'>{$icon}" . do_shortcode( $content ) . "</{$el}>";
 	}
 
 	/*
@@ -153,6 +156,23 @@ class Shortcodes {
 	    return "<div class='align align{$to} col-{$width} {$class}'>" . do_shortcode( $content ) . "</div>";
 	}
 
+	/*
+	* Accordian shortcode
+	*/
+	public function s_accordion( $params, $content = null ) {
+	    extract( shortcode_atts([
+	        'title' => '',
+	        'icon' => '',
+	        'class' => ''
+	    ], $params) );
+	    $icon = self::create_icon( $icon );
+	    $icon_plus = self::create_icon( 'plus' );
+	    return "<div class='accordion {$class}'>
+		    		<h3 class='accordion-title'>{$icon}{$title}{$icon_plus}</h3>
+		            <div class='accordion-content'>" . do_shortcode( $content ) . "</div>
+	            </div>";
+	}
+	
 	/*
 	* Show shortcode
 	*/
@@ -186,6 +206,32 @@ class Shortcodes {
 	        endwhile;
 	        wp_reset_query();
 	    $html .= '</div>';
+
+	    return $html;
+	}
+	
+	/*
+	* Login shortcode
+	*/
+	public function s_login( $params, $content = null ) {
+	    extract( shortcode_atts([
+	        'redirect' => '',
+	        'style' => 'block',
+	        'class' => ''
+	    ], $params) );
+
+        $login_options = [ 
+            'echo' => false,
+            'redirect' => $redirect 
+        ];
+
+        $html = "<div class='login {$class} login-style-{$style}'>";
+            if ( ! is_user_logged_in() ) {
+                $html .= wp_login_form( $login_options ); 
+            } else {
+                $html .= '<a href="' . wp_logout_url() .'" title="Logout" class="button">Logout</a>';
+            }
+        $html .= '</div>';
 
 	    return $html;
 	}

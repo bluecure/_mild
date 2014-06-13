@@ -15,6 +15,14 @@
 	margin: 0 0 1.5em;
 }
 
+/* Search */
+.search .site-main > article {
+    @extend .clear;
+    border-bottom: 1px solid;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
 /* Blog */
 .blog .entry-header .entry-title {
     font-size: 1.5em;

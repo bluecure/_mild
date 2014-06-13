@@ -6,7 +6,7 @@
  */
 
 // Get slides
-$slides = get_post_meta( $post->ID, 'pm_slider', true ); ?>
+$slides = get_post_meta( $post->ID, 'slider', true ); ?>
 
 <?php if ( ! empty( $slides ) ) : ?>
 	<div class="meta-slider">

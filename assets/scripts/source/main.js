@@ -10,30 +10,30 @@
     });
     mainMenu.find( 'a' ).one( 'click', function( event ) {
         var subMenu = $(this).next( 'ul' );
-        if ( subMenu.length > 0 && menuToggle.is(':visible') ) {
+        if ( subMenu.length > 0 && menuToggle.is( ':visible' ) ) {
             event.preventDefault();
             subMenu.slideDown();
         }
-    });
-
-    // Scroll to top
-    $( 'a.to-top' ).click( function() {
-        $( 'html, body' ).animate({
-            scrollTop: 0
-        }, 500);
     });
 
     // Mobile search
     var searchBtn = $( '.search-submit' ),
         searchField = $( '.search-field' );
     searchBtn.on( 'click', function( e ) {
-       if ( ! searchField.is( ':visible' ) || ! searchField.val() ) {
-           searchField.fadeToggle();
-           e.preventDefault();
-       }
+        if ( ! searchField.is( ':visible' ) || ! searchField.val() ) {
+            searchField.fadeToggle( 300 );
+            e.preventDefault();
+        }
     });
-
-    // Main slider
+    
+    // Scroll to top
+    $( 'a.to-top' ).click( function() {
+        $( 'html, body' ).animate({
+            scrollTop: 0
+        }, 500);
+    });
+    
+    // Meta slider
     var slider = $( '.meta-slider' );
     if ( slider ) {
         slider.slick({

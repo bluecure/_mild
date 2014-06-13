@@ -10,18 +10,16 @@
     max-width: $container-width;
     padding: 1em;
     margin: 0 auto;
+    position: relative;
 }
 .row {
     @extend .clear;
     width: 100%;
     margin: 0 auto 1em;
     &:after {
-        content: "";
+        content: '';
         display: table;
         clear: both;
-    }
-    &.row-pad {
-        padding: 20px;
     }
     .col {
         float: left;
@@ -36,6 +34,9 @@
             width: ((100 / 12) * $i) * 1%;
         }
     }
+}
+.row-pad, .col-pad {
+    padding: 20px;
 }
 
 /* Media Queries */

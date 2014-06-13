@@ -20,7 +20,7 @@ $image_src = ( $image_src ) ? $image_src[0] : $placeholder; ?>
             <option value="">Select Icon</option>
             <?php include 'inc/list-icons.php'; ?>
         </select>
-        <a href="http://fontawesome.io/cheatsheet/" target="_blank">Icon List.</a>
+        <a href="http://fontawesome.io/cheatsheet/" target="_blank">Icon List</a>
     </div>
     <div class="image-widget-row">
         <label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>

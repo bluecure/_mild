@@ -6,6 +6,7 @@
     color: $color-white;
     padding: 0.4em 1em;
     margin: 0.5em 0 1em 0;
+    display: inline-block;
     background-color: $color-blue;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: $radius;
@@ -107,6 +108,27 @@
     font-size: 2.5em;
 }
 
+/* Accordion */
+.accordion {
+    padding: 1em;
+    .fa {
+        padding: 0.2em 0.5em;
+        font-size: 0.75em;
+    }
+    .fa-plus, .fa-minus {
+        float: right;
+    }
+    .accordion-title {
+        margin-bottom: 0.5em;
+        line-height: 1;
+        cursor: pointer;
+        border-bottom: 1px solid;
+    }
+    .accordion-content {
+        display: none;
+    }
+}
+
 /* Show */
 .show-posts .post {
     margin-bottom: 1.5em;
@@ -122,6 +144,30 @@
     .post-image {
         float: left;
         margin: 0 0.5em 0.5em 0;
+    }
+}
+
+/* Login */
+.login-style-inline {
+    .login-username, .login-password {
+        color: $color-grey;
+        position: relative;
+        label {
+            position: absolute;
+            top: 0.3em;
+            left: 0.3em;
+            transition: all $transition;
+            &.is-hidden {
+                opacity: 0;
+                top: -0.3em;
+            }
+        }
+        input {
+            width: 100%;
+        }
+    }
+    .login-remember {
+        font-size: 0.9em;
     }
 }
 

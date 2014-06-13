@@ -8,6 +8,7 @@
 .mce-i-s_align,
 .mce-i-s_accordion,
 .mce-i-s_show,
+.mce-i-s_login,
 .mce-i-s_sitemap,
 .mce-i-s_map,
 .mce-i-s_iframe {
@@ -34,6 +35,9 @@
 }
 .mce-i-s_show:before {
     content: "\f177";
+}
+.mce-i-s_login:before {
+    content: "\f110";
 }
 .mce-i-s_sitemap:before {
     content: "\f325";
