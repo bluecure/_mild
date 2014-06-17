@@ -3,7 +3,7 @@
 * Map View
 *
 */
-require( 'inc/header.php' ); ?>
+require 'inc/header.php'; ?>
 
 <form class="shortcode" data-code="map" data-wrap="no" action="#">
 	<div class="row">

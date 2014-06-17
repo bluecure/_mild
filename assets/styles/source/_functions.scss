@@ -1,0 +1,27 @@
+/* =Functions
+----------------------------------------------- */
+
+/* Layout */
+@function layout($attr) {
+    @return map-get($layout, $attr);
+}
+
+/* Font */
+@function font($attr) {
+    @return map-get($font, $attr);
+}
+
+/* Colors */
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
+/* Styles */
+@function style($attr) {
+    @return map-get($styles, $attr);
+}
+
+/* Break */
+@function break($size) {
+    @return map-get($break, $size);
+}

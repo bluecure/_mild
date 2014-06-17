@@ -55,7 +55,7 @@ class Latest_Posts_Widget extends \WP_Widget {
         $posts = get_posts( $query );
 
         echo $before_widget;
-            include( $this->directory . '/views/widget.php' );
+            include $this->directory . '/views/widget.php';
         echo $after_widget;
     }
 
@@ -76,7 +76,7 @@ class Latest_Posts_Widget extends \WP_Widget {
             $defaults
         );
         extract( $instance, EXTR_SKIP );
-        include( $this->directory . '/views/admin.php' );
+        include $this->directory . '/views/admin.php';
     }
 
     // Processes the widget's options to be saved.

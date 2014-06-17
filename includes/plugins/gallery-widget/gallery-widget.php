@@ -47,7 +47,7 @@ class Gallery_Widget extends \WP_Widget {
         extract( $args, EXTR_SKIP );
         extract( $instance, EXTR_SKIP );
         echo $before_widget;
-            include( $this->directory . '/views/widget.php' );
+            include $this->directory . '/views/widget.php';
         echo $after_widget;
     }
 
@@ -64,7 +64,7 @@ class Gallery_Widget extends \WP_Widget {
             $defaults
         );
         extract( $instance, EXTR_SKIP );
-        include( $this->directory . '/views/admin.php' );
+        include $this->directory . '/views/admin.php';
     }
 
     // Processes the widget's options to be saved.

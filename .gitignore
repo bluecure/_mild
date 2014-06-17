@@ -1,3 +1,4 @@
 # Ignore Directories #
 ###################
 node_modules/
+assets/styles/cache/

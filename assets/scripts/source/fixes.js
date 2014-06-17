@@ -1,7 +1,7 @@
 /* =JS fixes
 ----------------------------------------------- */
 (function() {
-    // Avoid `console` errors in browsers that lack a console.
+    // Avoid console errors in browsers that lack a console.
     var method;
     var noop = function () {};
     var methods = [

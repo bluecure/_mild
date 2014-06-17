@@ -4,6 +4,9 @@
 .hentry {
 	margin: 0 0 1.5em;
 }
+.sticky {
+    font-size: 1.1em;
+}
 .single .byline, .group-blog .byline {
 	display: inline;
 }
@@ -28,7 +31,7 @@
     font-size: 1.5em;
 }
 .posted-on, .entry-footer {
-    color: lighten($color-grey, 5%);
+    color: lighten(color(grey), 5%);
     font-size: 0.8em;
     font-style: italic;
 }
@@ -46,7 +49,7 @@ embed, iframe, object {
     }
 }
 .wp-caption {
-	border: 1px solid $color-silver;
+	border: 1px solid color(silver);
 	margin-bottom: 1.5em;
 	max-width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
@@ -74,6 +77,10 @@ embed, iframe, object {
         max-width: (100 / $i) * 1%;
     }
 }
+.gallery-caption {
+    padding: 0.1em;
+    border: 1px solid color(silver);
+}
 
 /* Breadcrumbs */
 .breadcrumbs {
@@ -86,14 +93,14 @@ embed, iframe, object {
         list-style: none;
         padding: 0.25em 0.5em;
         &:after {
-            content: "/";
+            content: '/';
             font-size: 0.8em;
             position: absolute;
             bottom: 18%;
             right: 0;
         }
         &:last-child:after {
-            content: "";
+            content: '';
         }
     }
 }
@@ -105,17 +112,17 @@ embed, iframe, object {
     list-style-type: none;
     .page-numbers {
         display: inline-block;
-        color: $color-grey;
+        color: color(grey);
         margin: 0 0.25em 1em;
         padding: 0.2em 0.5em;
-        border-radius: $radius;
+        border-radius: style(radius);
         &:hover {
-            background-color: $color-silver;
+            background-color: color(silver);
         }
     }
     .current {
-        background-color: $color-blue;
-        color: $color-white;
+        background-color: color(blue);
+        color: color(white);
     }
 }
 
@@ -138,14 +145,14 @@ embed, iframe, object {
 
 /* Comments */
 .comments-area {
-    background-color: darken( $color-white, 2% );
+    background-color: darken(color(white), 2%);
     font-size: 0.9em;
     padding: 0.2em 0.75em;
     .comment-content a {
         word-wrap: break-word;
     }
     .comment-list .comment {
-        border-left: 1px dotted $color-silver;
+        border-left: 1px dotted color(silver);
         list-style: none outside none;
         margin-top: 1em;
         padding-left: 1em;
@@ -155,12 +162,15 @@ embed, iframe, object {
         label {
             display: inline-block;
             padding-right: 0.5em;
-            width: 4em;
+            width: 5em;
         }
         .form-allowed-tags code {
             font-size: 0.9em;
         }
     }
+}
+.bypostauthor {
+    text-decoration: underline;
 }
 
 /* Widgets */
@@ -169,17 +179,4 @@ embed, iframe, object {
     select {
         max-width: 100%;
     }
-}
-.widget_search .search-submit {
-    display: none;
-}
-
-/* Infinite Scroll */
-.infinite-scroll {
-    .paging-navigation, &.neverending .site-footer {
-        display: none;
-    }
-}
-.infinity-end.neverending .site-footer {
-    display: block;
 }

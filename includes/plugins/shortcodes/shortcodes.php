@@ -87,7 +87,7 @@ class Shortcodes {
 	*/
 	public function s_col( $params, $content = null ) {
 	    extract( shortcode_atts([
-	        'width' => '6-12',
+	        'width' => '6',
 	        'class' => ''
 	    ], $params) );
 	    return "<div class='col col-{$width} {$class}'>" . do_shortcode( $content ) . "</div>";

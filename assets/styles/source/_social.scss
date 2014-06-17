@@ -8,9 +8,9 @@
         margin: 0.25em;
         padding: 0.5em;
         text-align: center;
-        color: $color-white;
+        color: color(white);
         &:hover {
-            color: darken($color-white, 5%);
+            color: darken(color(white), 5%);
         }
     }
     .fa-facebook {

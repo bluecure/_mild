@@ -7,6 +7,7 @@ $slick-dot-color: black !default;
 $slick-prev-character: '\f104' !default;
 $slick-next-character: '\f105' !default;
 $slick-dot-character: '\f111' !default;
+$slick-icons: 'FontAwesome';
 
 /* Slider */
 
@@ -134,7 +135,7 @@ $slick-dot-character: '\f111' !default;
     }
 }
 .slick-prev:before, .slick-next:before {
-    font-family: $icon-font;
+    font-family: $slick-icons;
     font-size: 20px;
     line-height: 1;
     color: $slick-arrow-color;
@@ -201,7 +202,7 @@ $slick-dot-character: '\f111' !default;
                 content: $slick-dot-character;
                 width: 20px;
                 height: 20px;
-                font-family: $icon-font;
+                font-family: $slick-icons;
                 font-size: 6px;
                 line-height: 20px;
                 text-align: center;

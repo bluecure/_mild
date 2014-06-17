@@ -37,9 +37,9 @@
     var slider = $( '.meta-slider' );
     if ( slider ) {
         slider.slick({
+            speed: 500,
             autoplay: true,
             autoplaySpeed: 5000,
-            speed: 500,
             fade: true,
             dots: true,
             arrows: true,

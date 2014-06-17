@@ -32,7 +32,7 @@ class Image_Widget extends \WP_Widget {
             'Image Widget',
             [
                 'classname'   => 'image-widget',
-                'description' => 'Adds an image with optional title, description and link.'
+                'description' => 'Adds an image (or icon) with optional title, description and link.'
             ]
         );
 
@@ -48,7 +48,7 @@ class Image_Widget extends \WP_Widget {
         extract( $instance, EXTR_SKIP );
 
         echo $before_widget;
-            include( $this->directory . '/views/widget.php' );
+            include $this->directory . '/views/widget.php';
         echo $after_widget;
     }
 
@@ -67,7 +67,7 @@ class Image_Widget extends \WP_Widget {
             $defaults
         );
         extract( $instance, EXTR_SKIP );
-        include( $this->directory . '/views/admin.php' );
+        include $this->directory . '/views/admin.php';
     }
 
     // Processes the widget's options to be saved.

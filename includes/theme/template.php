@@ -50,7 +50,7 @@ function breadcrumbs() {
 	$parents = get_post_ancestors( $post->ID ); ?>
 	
 	<ul class='breadcrumbs'>
-        <li><a href="<?php echo get_bloginfo( 'wpurl' ) ?>">Home</a></li>
+        <li><a href="<?php echo site_url(); ?>">Home</a></li>
 
         <?php if ( $parents ) :
             $breadcrumbs = array_reverse( $parents );

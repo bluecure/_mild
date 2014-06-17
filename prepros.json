@@ -3,12 +3,12 @@
   "cfgVersion": 1,
   "name": "Mild",
   "files": {
-    "4dd05069": {
-      "id": "4dd05069",
+    "39584041": {
+      "id": "39584041",
       "pid": "022c9b59",
-      "name": "scripts.js",
-      "input": "assets\\scripts\\scripts.js",
-      "customOutput": "assets\\scripts\\scripts.min.js",
+      "name": "script.js",
+      "input": "assets\\scripts\\script.js",
+      "customOutput": "assets\\scripts\\script.min.js",
       "type": "Js",
       "config": {
         "autoCompile": true,
@@ -17,11 +17,11 @@
         "sourcemaps": true
       }
     },
-    "ef00f420": {
-      "id": "ef00f420",
+    "b5e3f5b9": {
+      "id": "b5e3f5b9",
       "pid": "022c9b59",
-      "name": "styles.scss",
-      "input": "assets\\styles\\styles.scss",
+      "name": "style.scss",
+      "input": "assets\\styles\\style.scss",
       "customOutput": "style.css",
       "type": "Scss",
       "config": {
@@ -43,7 +43,7 @@
       "pid": "022c9b59",
       "path": "assets\\scripts\\source\\fixes.js",
       "parents": [
-        "4dd05069"
+        "39584041"
       ]
     },
     "0c65e68a": {
@@ -51,7 +51,7 @@
       "pid": "022c9b59",
       "path": "assets\\scripts\\vendor\\slick.js",
       "parents": [
-        "4dd05069"
+        "39584041"
       ]
     },
     "3f6ffe0b": {
@@ -59,7 +59,15 @@
       "pid": "022c9b59",
       "path": "assets\\scripts\\vendor\\magnific.popup.js",
       "parents": [
-        "4dd05069"
+        "39584041"
+      ]
+    },
+    "d412df2a": {
+      "id": "d412df2a",
+      "pid": "022c9b59",
+      "path": "assets\\scripts\\source\\shortcodes.js",
+      "parents": [
+        "39584041"
       ]
     },
     "6944b8c2": {
@@ -67,7 +75,15 @@
       "pid": "022c9b59",
       "path": "assets\\scripts\\source\\main.js",
       "parents": [
-        "4dd05069"
+        "39584041"
+      ]
+    },
+    "b0c2f655": {
+      "id": "b0c2f655",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\_functions.scss",
+      "parents": [
+        "b5e3f5b9"
       ]
     },
     "52fc0020": {
@@ -75,7 +91,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\vendor\\_normalize.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "deca4410": {
@@ -83,7 +99,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\vendor\\_font-awesome.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "a11a63d4": {
@@ -91,7 +107,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\vendor\\_magnific-popup.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "a0a12a47": {
@@ -99,7 +115,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\vendor\\_slick.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "fe5bc24c": {
@@ -107,7 +123,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_grid.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "f5202326": {
@@ -115,7 +131,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_global.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "6e63e313": {
@@ -123,7 +139,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_typography.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "2b22a873": {
@@ -131,7 +147,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_content.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "c7fde82c": {
@@ -139,7 +155,15 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_menus.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
+      ]
+    },
+    "77f0e821": {
+      "id": "77f0e821",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\_social.scss",
+      "parents": [
+        "b5e3f5b9"
       ]
     },
     "0682e979": {
@@ -147,7 +171,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_shortcodes.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "d2c8ad85": {
@@ -155,7 +179,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_plugins.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "2d8b37b0": {
@@ -163,7 +187,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_main.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     },
     "774f67ea": {
@@ -171,7 +195,7 @@
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_helpers.scss",
       "parents": [
-        "ef00f420"
+        "b5e3f5b9"
       ]
     }
   },

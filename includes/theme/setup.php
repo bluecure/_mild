@@ -87,7 +87,7 @@ add_action( 'wp_enqueue_scripts', function() {
     // Load main css file.
     wp_enqueue_style( 'mild-style', get_stylesheet_uri() );
     // Load main js file.
-    wp_enqueue_script( 'mild-scripts', get_template_directory_uri() . '/assets/scripts/scripts.min.js', ['jquery'], '20120206', true );
+    wp_enqueue_script( 'mild-scripts', get_template_directory_uri() . '/assets/scripts/script.min.js', ['jquery'], '20120206', true );
     // Load comment script.
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );

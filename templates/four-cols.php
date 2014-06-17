@@ -24,16 +24,16 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 			
 			<div class="two-cols row">
-			    <div class="col col-3-12">
+			    <div class="col-3">
 			        <?php echo do_shortcode( get_post_meta( $post->ID, 'four_cols_one', true ) ); ?>
 			    </div>
-			    <div class="col col-3-12">
+			    <div class="col-3">
 			        <?php echo do_shortcode( get_post_meta( $post->ID, 'four_cols_two', true ) ); ?>
 			    </div>
-			    <div class="col col-3-12">
+			    <div class="col-3">
 			        <?php echo do_shortcode( get_post_meta( $post->ID, 'four_cols_three', true ) ); ?>
 			    </div>
-			    <div class="col col-3-12">
+			    <div class="col-3">
 			        <?php echo do_shortcode( get_post_meta( $post->ID, 'four_cols_four', true ) ); ?>
 			    </div>
 			</div><!-- .two-cols -->

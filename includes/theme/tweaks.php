@@ -11,11 +11,6 @@
 define ( 'DISALLOW_FILE_EDIT', true );
 
 /**
-* Reduce post revisions
-*/
-define( 'WP_POST_REVISIONS', 20 );
-
-/**
 * Run shortcodes in widgets.
 */
 add_filter( 'widget_text', 'do_shortcode' );
@@ -62,7 +57,7 @@ add_filter( 'excerpt_more', function( $more ) {
 * Redirect user after logout.
 */
 add_filter( 'logout_url', function( $logout_url, $redirect = null ) {
-    return $logout_url . '&amp;redirect_to=' . urlencode( get_bloginfo('url')  );
+    return $logout_url . '&amp;redirect_to=' . urlencode( home_url()  );
 });
 
 /**

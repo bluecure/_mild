@@ -1,7 +1,7 @@
 /*!
 Theme Name: Mild
 Theme URI: https://github.com/bluecure/mild
-Author: David Fetaherston
+Author: David Featherston
 Author URI: https://github.com/bluecure/mild
 Description: WordPress Theme Starter.
 Version: 1.0.0
@@ -14,43 +14,55 @@ Text Domain: mild
 -------------------------------------------------------------- */
 
 /* Site Layout */
-$container-width: 1140px;
+$layout: (
+    width:   1140px,
+    margin:  1em,
+    padding: 1em,
+    spacing: 2.5em
+);
 
 /* Site Font */
-$font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-size: 15px;
-$font-height: 1.4;
-$font-normal: 400;
-$font-bold: 700;
+$font: (
+    primary: Arial,
+    size:    15px,
+    height:  1.4,
+    normal:  400,
+    bold:    700
+);
 
 /* Site Colors */
-$color-blue: #1882f4;
-$color-green: #08b411;
-$color-orange: #FF9500;
-$color-yellow: #E9DD0F;
-$color-red: #db1b11;
-$color-silver: #DDDDDD;
-$color-grey: #666666;
-$color-black: #222222;
-$color-white: #FFFFFF;
+$colors: (
+    blue:   #1882f4,
+    green:  #08b411,
+    orange: #FF9500,
+    yellow: #E9DD0F,
+    red:    #db1b11,
+    silver: #DDDDDD,
+    grey:   #666666,
+    black:  #222222,
+    white:  #FFFFFF
+);
 
 /* Site Styles */
-$radius: 3px;
-$transition: 0.2s ease;
-
-/* Site Icons */
-$icon-font: 'FontAwesome';
+$styles: (
+    radius: 3px,
+    transition: 0.2s ease
+);
 
 /* Site Break Points */
-$break-huge: 80em;
-$break-large: 65em;
-$break-medium: 50em;
-$break-small: 35em;
-$break-tiny: 20em;
+$break: (
+    huge:   80em,
+    large:  65em,
+    medium: 50em,
+    small:  35em,
+    tiny:   20em
+);
+
 
 /* =Imports
 -------------------------------------------------------------- */
 
+@import 'source/_functions.scss';
 @import 'vendor/_normalize.scss';
 @import 'vendor/_font-awesome.scss';
 @import 'vendor/_magnific-popup.scss';

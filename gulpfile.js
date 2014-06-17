@@ -6,37 +6,47 @@ var gulp = require('gulp');
 
 // Plugins
 var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var sass   = require('gulp-sass');
+var sass   = require('gulp-ruby-sass');
 var prefix = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
-var minify = require('gulp-minify-css');
+
+/* Paths */
+var path = {
+    styles: 'assets/styles/',
+    styleFile: 'assets/styles/style.scss',
+    styleFiles: 'assets/styles/**/*.scss',
+    scripts: 'assets/scripts/',
+    scriptFile: 'script.min.js',
+    scriptFiles: 'assets/scripts/**/*.js',
+};
 
 // Default task
-gulp.task( 'default', ['styles', 'scripts', 'watch'] );
+gulp.task( 'default', ['watch'] );
 
 // Styles task
 gulp.task('styles', function() {
-  return gulp.src( 'assets/styles/styles.scss' )
-    .pipe( sass( { outputStyle: 'compact' } ) )
+  return gulp.src( path.styleFile )
+    .pipe( sass( { 
+        style: 'compressed', 
+        sourcemap: true,
+        cacheLocation: path.styles + 'cache'
+    } ) )
     .pipe( prefix( 'last 3 versions' ) )
-    .pipe( minify() )
-    .pipe( rename( 'style.css' ) )
     .pipe( gulp.dest( './' ) );
 });
 
 // Scripts task
 gulp.task('scripts', function() {
-  return gulp.src( ['assets/scripts/**/*.js'] )
+  return gulp.src( path.scriptFiles )
     .pipe( jshint() )
-    .pipe( concat( 'scripts.min.js' ) )
+    .pipe( concat( path.scriptFile ) )
     .pipe( uglify( { outSourceMap: true } ) )
-    .pipe( gulp.dest( 'assets/scripts/' ) );
+    .pipe( gulp.dest( path.scripts ) );
 });
 
 // Rerun tasks when a file changes
 gulp.task('watch', function() {
-	gulp.watch( ['assets/styles/settings.scss', 'assets/styles/**/*.scss'], ['styles'] );
-	gulp.watch( ['assets/scripts/**/*.js'], ['scripts'] );
+	gulp.watch( [ path.styleFile, path.styleFiles ], [ 'styles' ] );
+	gulp.watch( [ path.scriptFiles ], [ 'scripts' ] );
 });

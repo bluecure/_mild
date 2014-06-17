@@ -3,7 +3,7 @@
 * Panel View
 *
 */
-require( 'inc/header.php' ); ?>
+require 'inc/header.php'; ?>
 
 <form class="shortcode" data-code="panel" data-wrap="yes" action="#">
 	<div class="row">
