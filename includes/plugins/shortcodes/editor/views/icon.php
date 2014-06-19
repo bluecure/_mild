@@ -28,7 +28,7 @@ require 'inc/header.php'; ?>
 		<div class="half">
 			<label for="icon">Icon: </label>
 			<div class="field">
-				<select name="i" id="i" class="input">
+				<select name="icon" id="icon" class="input">
 					<option value="">Select Icon</option>
 					<?php include 'inc/list-icons.php'; ?>
 				</select>

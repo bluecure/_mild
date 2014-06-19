@@ -18,7 +18,7 @@ require 'inc/header.php'; ?>
 			<div class="field">
 				<select name="style" id="style" class="input">
 					<option value="block">Block</option>
-					<option value="block">Inline</option>
+					<option value="inline">Inline</option>
 				</select>
 			</div>
 		</div>

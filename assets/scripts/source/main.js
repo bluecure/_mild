@@ -61,7 +61,7 @@
                 arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
                 tPrev: '<',
                 tNext: '>',
-                tCounter: '<span class="mfp-counter">%curr% of %total%</span>'
+                tCounter: '%curr% of %total%'
             }
         });
     }

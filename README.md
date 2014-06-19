@@ -25,7 +25,7 @@ Note: This is a work in progress and can break at anytime.
 ####Installing theme:
 1. `$ git clone --recursive https://github.com/bluecure/mild.git`
 2. `$ rmdir mild\.git /s /q` (optional: remove git folder)
-3. `$ Rename mild my-new-theme-name`
+3. `$ Rename mild my-new-theme-name` (optional: rename theme)
 
 ####Using Gulp:
 1. Rename the theme in `assets/styes/styles.scss` and `package.json`

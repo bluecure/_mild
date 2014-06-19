@@ -104,6 +104,9 @@
 
 /* Login */
 .login-style-inline {
+    br {
+        display: none;
+    }
     .login-username, .login-password {
         color: color(grey);
         position: relative;

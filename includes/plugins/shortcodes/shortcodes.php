@@ -98,15 +98,14 @@ class Shortcodes {
 	*/
 	public function s_icon( $params, $content = null ) {
 	    extract( shortcode_atts([
-	        'i' => '',
+	        'icon' => '',
 	        'color' => '',
 	        'size' => '',
 	        'link' => '',
-	        'align' => '',
-	        'class' => '',
-	        'target' => 'self'
+	        'target' => 'self',
+	        'class' => ''
 	    ], $params) );
-	    $html = "<i class='fa fa-{$i} text-{$color} {$size} align{$align} {$class}'></i>";
+	    $html = "<i class='fa fa-{$icon} text-{$color} {$size} align{$align} {$class}'></i>";
 	    return self::wrap_with_anchor( $link, $target, $html );
 	}
 
@@ -119,9 +118,8 @@ class Shortcodes {
 	        'color' => '',
 	        'size' => '',
 	        'link' => '',
-	        'align' => '',
-	        'class' => '',
-	        'target' => 'self'
+	        'target' => 'self',
+	        'class' => ''
 	    ], $params) );
 	    $icon = self::create_icon( $icon );
 	    $el = ( $link ) ? 'a' : 'button';
@@ -137,11 +135,10 @@ class Shortcodes {
 	        'icon' => '',
 	        'color' => '',
 	        'size' => '',
-	        'align' => '',
 	        'class' => ''
 	    ], $params) );
 	    $icon = self::create_icon( $icon );
-	    return "<div class='panel bg-{$color} {$size} align{$align} {$class}'>{$icon}" . do_shortcode( $content ) . "</div>";
+	    return "<div class='panel bg-{$color} {$size} {$width} align{$align} {$class}'>{$icon}" . do_shortcode( $content ) . "</div>";
 	}
 
 	/*
@@ -149,11 +146,11 @@ class Shortcodes {
 	*/
 	public function s_align( $params, $content = null ) {
 	    extract( shortcode_atts([
-	        'to' => '',
-	        'width' => '4-12',
+	        'align' => '',
+	        'width' => '4',
 	        'class' => ''
 	    ], $params) );
-	    return "<div class='align align{$to} col-{$width} {$class}'>" . do_shortcode( $content ) . "</div>";
+	    return "<div class='align align{$align} col-{$width} {$class}'>" . do_shortcode( $content ) . "</div>";
 	}
 
 	/*
@@ -225,7 +222,7 @@ class Shortcodes {
             'redirect' => $redirect 
         ];
 
-        $html = "<div class='login {$class} login-style-{$style}'>";
+        $html = "<div class='login login-style-{$style} {$class}'>";
             if ( ! is_user_logged_in() ) {
                 $html .= wp_login_form( $login_options ); 
             } else {
@@ -333,7 +330,7 @@ class Shortcodes {
 	*/
 	public function s_link( $params, $content = null ) {
 	    extract( shortcode_atts([
-	        'to' => '#',
+	        'link' => '#',
 	        'class' => '',
 	        'target' => 'self'
 	    ], $params) );

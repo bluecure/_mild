@@ -3,7 +3,6 @@
 * List Colors
 *
 */
-require( 'header.php' );
 ?>
 
 	<option value="blue">Blue</option>
