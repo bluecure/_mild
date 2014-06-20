@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-primary content-area col col-8-12">
+	<section id="primary" class="site-primary content-area col-8">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>

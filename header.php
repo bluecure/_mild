@@ -25,7 +25,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site container">
 	<header id="masthead" class="site-header row" role="banner">
-		<div class="site-branding">
+		<div class="site-branding col-6">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
 				<?php if ( $logo ) : ?>
 					<img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
@@ -34,7 +34,7 @@
 				<?php endif; ?>
 			</a>
 		</div><!-- .site-branding -->
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<nav id="site-navigation" class="main-navigation col-6" role="navigation">
 			<div class="menu-toggle fa fa-bars"> Menu </div>
 			<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 			<?php wp_nav_menu( [ 'theme_location' => 'primary' ] ); ?>

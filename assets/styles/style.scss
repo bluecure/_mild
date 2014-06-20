@@ -16,9 +16,8 @@ Text Domain: mild
 /* Site Layout */
 $layout: (
     width:   1140px,
-    margin:  1em,
-    padding: 1em,
-    spacing: 2.5em
+    margin:  1.5em,
+    padding: 1em
 );
 
 /* Site Font */
@@ -51,11 +50,9 @@ $styles: (
 
 /* Site Break Points */
 $break: (
-    huge:   80em,
-    large:  65em,
-    medium: 50em,
-    small:  35em,
-    tiny:   20em
+    large:  80em,
+    medium: 60em,
+    small:  40em
 );
 
 

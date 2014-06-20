@@ -38,5 +38,4 @@ require_once MILD_THEME . 'meta-boxes.php';
  */
 require_once MILD_PLUGINS . 'shortcodes/shortcodes.php';
 require_once MILD_PLUGINS . 'image-widget/image-widget.php';
-require_once MILD_PLUGINS . 'gallery-widget/gallery-widget.php';
 require_once MILD_PLUGINS . 'latest-posts-widget/latest-posts-widget.php';

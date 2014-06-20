@@ -108,9 +108,11 @@ add_action( 'admin_init', function() {
     if ( $template_file === 'templates/two-cols.php' )
         ot_register_meta_box( $mb_two_cols );
         
-        
     if ( $template_file === 'templates/three-cols.php' )
         ot_register_meta_box( $mb_three_cols );
+    
+    if ( $template_file === 'templates/four-cols.php' )
+        ot_register_meta_box( $mb_four_cols );
 
 
 });

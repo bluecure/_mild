@@ -20,7 +20,7 @@ if ( ! isset( $content_width ) )
     $content_width = 1140;
 
 /**
- * Sets up defaults, add theme support, register post types, taxonomies, roles, ect.
+ * Sets up defaults, add theme supports and menus.
  */
 add_action( 'after_setup_theme', function() {
 
@@ -50,6 +50,13 @@ add_action( 'after_setup_theme', function() {
         'primary' => 'Primary Menu'
     ] );
 
+});
+
+/**
+ * Register post types, taxonomies and roles.
+ */
+add_action( 'init', function () {
+    
     // Register user roles.
     // $roles = new Mild\User_Roles( [
     //     [ 'name' => 'Customer' ]        
@@ -64,7 +71,7 @@ add_action( 'after_setup_theme', function() {
     // $taxonomies = new Mild\Taxonomies( [
     //     [ 'name' => 'Genre', 'post_types' => [ 'Book' ] ]
     // ] );
-
+    
 });
 
 /**

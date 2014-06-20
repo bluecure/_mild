@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-primary content-area">
+	<div id="primary" class="site-primary content-area col-12">
 		
 		<?php get_template_part( 'partials/meta', 'slider' ); ?>
 		
