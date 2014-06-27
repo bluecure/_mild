@@ -21,13 +21,16 @@
         margin-bottom: 0;
     }
 }
-[class*="col-"], [class*="md-"] {
+.col {
     float: left;
     min-height: 1px;
-    padding: layout(padding);
-    .inner {
-        padding: layout(padding);   
+    padding: layout(padding); 
+    &-inner {
+        padding: layout(padding);
     }
+}
+[class*="col-"] {
+    @extend .col;
 }
 @for $i from 1 through 12 {
     .col-#{$i} {

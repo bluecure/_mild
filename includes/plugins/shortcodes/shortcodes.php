@@ -105,7 +105,7 @@ class Shortcodes {
 	        'target' => 'self',
 	        'class' => ''
 	    ], $params) );
-	    $html = "<i class='fa fa-{$icon} text-{$color} {$size} align{$align} {$class}'></i>";
+	    $html = "<i class='fa fa-{$icon} text-{$color} {$size} {$class}'></i>";
 	    return self::wrap_with_anchor( $link, $target, $html );
 	}
 
@@ -177,7 +177,7 @@ class Shortcodes {
 	    extract( shortcode_atts([
 	        'cat' => '',
 	        'tag' => '',
-	        'no' => '5',
+	        'no' => 6,
 	        'type' => 'post',
 	        'date' => false,
 	        'image' => false,

@@ -9,8 +9,7 @@
 $favicon = ot_get_option( 'ot_favicon', '' );
 $app_icon = ot_get_option( 'ot_app_icon', '' );
 $css = ot_get_option( 'ot_css', '' );
-$analytics = ot_get_option( 'ot_analytics', '' );
-?>
+$analytics = ot_get_option( 'ot_analytics', '' ); ?>
 
 <!-- Favicon -->
 <?php if ( $favicon ) : ?>

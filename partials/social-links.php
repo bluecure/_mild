@@ -14,8 +14,8 @@ $pinterest = ot_get_option( 'ot_pinterest', '' );
 $flickr = ot_get_option( 'ot_flickr', '' );
 $instagram = ot_get_option( 'ot_instagram', '' );
 $youtube = ot_get_option( 'ot_youtube', '' );
-$vimeo = ot_get_option( 'ot_vimeo', '' );
-?>
+$vimeo = ot_get_option( 'ot_vimeo', '' ); ?>
+
 <div class="social-links">
 	<?php
         if ( $facebook ) echo "<a href='{$facebook}' class='fa fa-facebook' target='_blank'></a>";

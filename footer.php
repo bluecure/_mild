@@ -17,6 +17,7 @@ $copyright = ot_get_option( 'ot_copyright', '' ); ?>
 			<a href="#" class="to-top"><i class="fa fa-angle-up"></i> To Top</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+	
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

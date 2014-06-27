@@ -5,28 +5,28 @@
  * @package Mild
  */
 ?>
-<div id="secondary" class="site-secondary widget-area col-4" role="complementary">
+<aside id="secondary" class="site-secondary widget-area col-4" role="complementary">
     <?php if ( ! dynamic_sidebar( 'Sidebar' ) ) : ?>
 
-        <aside id="search" class="widget widget_search">
+        <div id="search" class="widget widget_search">
             <?php get_search_form(); ?>
-        </aside>
+        </div>
 
-        <aside id="archives" class="widget">
+        <div id="archives" class="widget">
             <h1 class="widget-title">Archives</h1>
             <ul>
                 <?php wp_get_archives( [ 'type' => 'monthly' ] ); ?>
             </ul>
-        </aside>
+        </div>
 
-        <aside id="meta" class="widget">
+        <div id="meta" class="widget">
             <h1 class="widget-title">Meta</h1>
             <ul>
                 <?php wp_register(); ?>
                 <li><?php wp_loginout(); ?></li>
                 <?php wp_meta(); ?>
             </ul>
-        </aside>
+        </div>
 
     <?php endif; // end sidebar widget area ?>
-</div><!-- #secondary -->
+</aside><!-- #secondary -->

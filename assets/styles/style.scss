@@ -10,60 +10,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mild
 */
 
-/* =Variables
--------------------------------------------------------------- */
-
-/* Site Layout */
-$layout: (
-    width:   1140px,
-    margin:  1.5em,
-    padding: 1em
-);
-
-/* Site Font */
-$font: (
-    primary: Arial,
-    size:    15px,
-    height:  1.4,
-    normal:  400,
-    bold:    700
-);
-
-/* Site Colors */
-$colors: (
-    blue:   #1882f4,
-    green:  #08b411,
-    orange: #FF9500,
-    yellow: #E9DD0F,
-    red:    #db1b11,
-    silver: #DDDDDD,
-    grey:   #666666,
-    black:  #222222,
-    white:  #FFFFFF
-);
-
-/* Site Styles */
-$styles: (
-    radius: 3px,
-    transition: 0.2s ease
-);
-
-/* Site Break Points */
-$break: (
-    large:  80em,
-    medium: 60em,
-    small:  40em
-);
-
-
 /* =Imports
 -------------------------------------------------------------- */
 
+@import 'source/_variables.scss';
 @import 'source/_functions.scss';
 @import 'vendor/_normalize.scss';
 @import 'vendor/_font-awesome.scss';
 @import 'vendor/_magnific-popup.scss';
-@import 'vendor/_slick.scss';
+@import 'vendor/_owl-carousel.scss';
 @import 'source/_grid.scss';
 @import 'source/_global.scss';
 @import 'source/_typography.scss';

@@ -36,15 +36,15 @@
     // Meta slider
     var slider = $( '.meta-slider' );
     if ( slider ) {
-        slider.slick({
-            speed: 500,
-            autoplay: true,
-            autoplaySpeed: 5000,
-            fade: true,
-            dots: true,
-            arrows: true,
-            slide: '.slide',
-            slidesToShow: 1
+        slider.owlCarousel({
+            autoplay: 5000,
+            animateIn: 'fadeIn',
+            animateOut: 'fadeOut',
+            items: 1,
+            loop: true,
+            dots: false,
+            nav: true,
+            navText: [ '<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>' ]
         });
     }
 

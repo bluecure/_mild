@@ -34,13 +34,13 @@ add_action( 'after_setup_theme', function() {
     add_theme_support( 'post-thumbnails' );
 
     // Enable support for HTML5 markup.
-    add_theme_support( 'html5', [ 'comment-list', 'search-form', 'comment-form', 'gallery', 'caption' ] );
+    add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ] );
 
     // Enable support for Page excerpts.
     add_post_type_support( 'page', 'excerpt' );
 
     // Enable support for Post Formats.
-    add_theme_support( 'post-formats', [ 'aside', 'image', 'video', 'quote', 'link' ] );
+    add_theme_support( 'post-formats', [ 'aside', 'image', 'gallery', 'video', 'audio', 'quote', 'link' ] );
     
     // Add banner size.
     //add_image_size( 'banner', 1140, 475, true );

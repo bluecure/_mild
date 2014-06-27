@@ -13,12 +13,11 @@ Note: This is a work in progress and can break at anytime.
 * Custom functions
 * Helper classes
 * Image widget
-* Gallery widget
 * Latest posts widgets
 * Shortcodes plugin
 * Normalize (3.0.1)
 * Font Awesome (4.1.0)
-* Slick.js (1.3.6)
+* OwlCarousel (2.0.0-beta.2.4)
 * Magnific Popup (0.9.9)
 * OptionTree (Latest)
 

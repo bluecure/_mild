@@ -11,7 +11,7 @@ var prefix = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 
-/* Paths */
+// Paths
 var path = {
     styles: 'assets/styles/',
     styleFile: 'assets/styles/style.scss',
@@ -27,11 +27,11 @@ gulp.task( 'default', ['watch'] );
 // Styles task
 gulp.task('styles', function() {
   return gulp.src( path.styleFile )
-    .pipe( sass( { 
-        style: 'compressed', 
+    .pipe( sass({
+        style: 'compact',
         sourcemap: true,
         cacheLocation: path.styles + 'cache'
-    } ) )
+    }) )
     .pipe( prefix( 'last 3 versions' ) )
     .pipe( gulp.dest( './' ) );
 });
