@@ -3,7 +3,7 @@ Theme Name: Mild
 Theme URI: https://github.com/bluecure/mild
 Author: David Featherston
 Author URI: https://github.com/bluecure/mild
-Description: WordPress Theme Starter.
+Description: WordPress Starter Theme.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -26,7 +26,7 @@ Text Domain: mild
 /* Colors */
 /* Styles */
 /* Break */
-/* normalize.css v3.0.1 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
 html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
 
@@ -1167,8 +1167,8 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 .owl-carousel .owl-item img { display: block; width: 100%; -webkit-transform-style: preserve-3d; }
 .owl-carousel.owl-text-select-on .owl-item { -webkit-user-select: auto; -moz-user-select: auto; -ms-user-select: auto; user-select: auto; }
 .owl-carousel .owl-grab { cursor: move; cursor: -webkit-grab; cursor: -o-grab; cursor: -ms-grab; cursor: -moz-grab; cursor: grab; }
-.owl-carousel .owl-rtl { direction: rtl; }
-.owl-carousel .owl-rtl .owl-item { float: right; }
+.owl-carousel.owl-rtl { direction: rtl; }
+.owl-carousel.owl-rtl .owl-item { float: right; }
 
 /* No Js */
 .no-js .owl-carousel { display: block; }
@@ -1209,6 +1209,7 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 .row-thin { margin-bottom: 0; }
 
 .col, [class*="col-"] { float: left; min-height: 1px; padding: 1em; }
+.col-thin { padding: 0 1em; }
 .col-inner { padding: 1em; }
 
 .col-1 { width: 8.33333%; }
@@ -1254,6 +1255,7 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 /* =Global
 ----------------------------------------------- */
 ::-moz-selection { background-color: #222222; color: white; }
+
 ::selection { background-color: #222222; color: white; }
 
 hr { background-color: #dddddd; margin-bottom: 1.5em; height: 1px; border: 0; clear: both; }
@@ -1371,7 +1373,7 @@ a:hover, a:focus, a:active { color: #0a69cf; }
 /* Blog */
 .blog .entry-header .entry-title { font-size: 1.5em; }
 
-.posted-on, .entry-footer, a.more { color: #737373; font-size: 0.8em; font-style: italic; }
+.entry-meta, .entry-footer, a.more { color: #737373; font-size: 0.8em; font-style: italic; }
 
 /* Media */
 embed, iframe, object { max-width: 100%; }
@@ -1467,7 +1469,7 @@ embed, iframe, object { max-width: 100%; }
   .main-navigation .menu li ul { font-size: 0.9em; float: none; position: relative; -webkit-box-shadow: none; box-shadow: none; }
   .main-navigation .menu li ul a { width: 100%; padding-left: 1.5em; }
   .main-navigation .menu li:hover ul { display: none; }
-  > li .main-navigation .menu:first-child { border-top: none; } }
+  .main-navigation .menu > li:first-child { border-top: none; } }
 @media screen and (min-width: 60em) { .main-navigation .menu { display: block !important; } }
 /* =Social
 -------------------------------------------------------------- */
@@ -1560,7 +1562,7 @@ embed, iframe, object { max-width: 100%; }
 .accordion .fa { padding: 0.2em 0.5em; font-size: 0.75em; }
 .accordion .fa-plus, .accordion .fa-minus { float: right; }
 .accordion .accordion-title { margin-bottom: 0.5em; line-height: 1; cursor: pointer; border-bottom: 1px solid; }
-.accordion .accordion-content { display: none; }
+.accordion .accordion-content { display: none; margin-bottom: 1.5em; }
 
 /* Show */
 .show-posts .post { margin-bottom: 1.5em; }
@@ -1589,7 +1591,6 @@ embed, iframe, object { max-width: 100%; }
 .gallery-widget .gallery-widget-description { margin: 1em 0; }
 
 /* Latest Posts Widget */
-.latest-posts-widget { list-style: none outside none; margin: 0; padding: 0; }
 .latest-posts-widget .latest-posts-widget-post { margin: 0 0 1em 0; padding: 0; }
 .latest-posts-widget .latest-posts-widget-title { margin-bottom: 0.25em; }
 .latest-posts-widget .latest-posts-widget-image { float: left; margin: 0 5% 5% 0; width: 40%; }
@@ -1629,8 +1630,6 @@ body { background-color: white; }
 .fluid-iframe iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /* Misc*/
-.a-wrap { display: inline-block; }
-
 .no-margin { margin: 0; }
 
 .no-padding { padding: 0; }
@@ -1640,7 +1639,7 @@ body { background-color: white; }
 .hide { display: none; }
 
 /* Text meant only for screen readers */
-.screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; }
+.screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; overflow: hidden; }
 .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus { background-color: #f9f9f9; border-radius: 3px; -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto !important; color: #1882f4; display: block; font-size: 14px; font-weight: bold; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; text-decoration: none; top: 5px; width: auto; z-index: 100000; }
 
 /* Clearing */

@@ -1,6 +1,10 @@
 /* =Global
 ----------------------------------------------- */
 
+::-moz-selection {
+    background-color: color(black);
+    color: color(white);
+}
 ::selection {
     background-color: color(black);
     color: color(white);

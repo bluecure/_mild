@@ -49,7 +49,7 @@
     }
 
     // Gallery popups
-    var gallery = $( '.gallery, .gallery-widget-images' );
+    var gallery = $( '.gallery' );
     if ( gallery ) {
         gallery.magnificPopup({
             delegate: 'a',

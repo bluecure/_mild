@@ -46,14 +46,6 @@
         "39584041"
       ]
     },
-    "0c65e68a": {
-      "id": "0c65e68a",
-      "pid": "022c9b59",
-      "path": "assets\\scripts\\vendor\\slick.js",
-      "parents": [
-        "39584041"
-      ]
-    },
     "3f6ffe0b": {
       "id": "3f6ffe0b",
       "pid": "022c9b59",
@@ -106,14 +98,6 @@
       "id": "a11a63d4",
       "pid": "022c9b59",
       "path": "assets\\styles\\vendor\\_magnific-popup.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
-    "a0a12a47": {
-      "id": "a0a12a47",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\vendor\\_slick.scss",
       "parents": [
         "b5e3f5b9"
       ]

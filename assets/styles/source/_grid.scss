@@ -24,7 +24,10 @@
 .col {
     float: left;
     min-height: 1px;
-    padding: layout(padding); 
+    padding: layout(padding);
+    &-thin {
+        padding: 0 layout(padding);
+    }
     &-inner {
         padding: layout(padding);
     }

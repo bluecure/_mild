@@ -5,7 +5,7 @@
  * is_user()             | Checks user role
  * is_blog()             | Checks if is blog page
  * is_categorized_blog() | Check for multiple categories
- * show_image_size()     | Gets new image size from source
+ * get_image_size()      | Gets new image size from source
  *
  * @package Mild
  */
@@ -76,7 +76,7 @@ add_action( 'save_post',     'Mild\category_transient_flusher' );
  * @param string $size
  * @return string
  */
-function show_image_size( $url, $size = 'thumbnail' ) {
+function get_image_size( $url, $size = 'thumbnail' ) {
 	global $wpdb;
 	if ( ! $url ) return false;
 	// Get the image ID

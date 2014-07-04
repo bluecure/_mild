@@ -49,9 +49,6 @@
 }
 
 /* Misc*/
-.a-wrap {
-    display: inline-block;
-}
 .no-margin {
     margin: 0;
 }
@@ -69,6 +66,9 @@
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
     &:hover, &:active, &:focus {
         background-color: darken(color(white), 2.5%);
         border-radius: style(radius);
@@ -85,7 +85,7 @@
         text-decoration: none;
         top: 5px;
         width: auto;
-        z-index: 100000;
+	    z-index: 100000
     }
 }
 

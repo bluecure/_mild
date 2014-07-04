@@ -341,7 +341,7 @@ class Shortcodes {
 	* Wrap with anchor helper
 	*/
 	private function wrap_with_anchor( $link, $target, $html ) {
-	    return ( $link ) ? "<a href='{$link}' target='_{$target}' class='a-wrap'>{$html}</a>" : $html;
+	    return ( $link ) ? "<a href='{$link}' target='_{$target}'>{$html}</a>" : $html;
 	}
 
 	/*

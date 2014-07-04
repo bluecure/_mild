@@ -59,10 +59,10 @@ add_action( 'admin_init', function() {
                 'desc' => 'Put any custom CSS here, without the style tags.',
                 'section' => 'ot_general'
             ], [
-                'label' => 'Analytics code',
-                'id' => 'ot_analytics',
+                'label' => 'Custom JavaScript',
+                'id' => 'ot_javascript',
                 'type' => 'textarea-simple',
-                'desc' => 'Paste in your full Analytics code here, without the script tags.',
+                'desc' => 'Paste in any JavaScript i.e Analytics code here, without the script tags.',
                 'section' => 'ot_general'
             ],
 

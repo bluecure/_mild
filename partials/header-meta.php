@@ -9,7 +9,7 @@
 $favicon = ot_get_option( 'ot_favicon', '' );
 $app_icon = ot_get_option( 'ot_app_icon', '' );
 $css = ot_get_option( 'ot_css', '' );
-$analytics = ot_get_option( 'ot_analytics', '' ); ?>
+$javascript = ot_get_option( 'ot_javascript', '' ); ?>
 
 <!-- Favicon -->
 <?php if ( $favicon ) : ?>
@@ -22,7 +22,7 @@ $analytics = ot_get_option( 'ot_analytics', '' ); ?>
 	<meta name="msapplication-TileImage" content="<?php echo $app_icon; ?>"/>
 <?php endif; ?>
 
+<!-- Custom CSS/JS -->
 <?php
-// Header extras
 if ( $css ) echo "<style>{$css}</style>";
-if ( $analytics ) echo "<script>{$analytics}</script>";
+if ( $javascript ) echo "<script>{$javascript}</script>";
