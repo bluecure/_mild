@@ -41,7 +41,7 @@
             animateIn: 'fadeIn',
             animateOut: 'fadeOut',
             items: 1,
-            loop: true,
+            loop: false,
             dots: false,
             nav: true,
             navText: [ '<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>' ]

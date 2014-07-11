@@ -2,7 +2,7 @@
 ----------------------------------------------- */
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 layout(margin);
 }
 .sticky {
     font-size: 1.1em;
@@ -11,23 +11,23 @@
 	display: inline;
 }
 .page-content, .entry-content, .entry-summary {
-	margin: 0 0 1.5em 0;
+	margin: 0 0 layout(margin) 0;
 }
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin: 0 0 layout(margin);
 }
 
 /* Search */
 .search .site-main > article {
     @extend .clear;
     border-bottom: 1px solid;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
+    margin-bottom: layout(margin);
+    padding-bottom: layout(padding);
 }
 
 /* Blog */
-.blog .entry-header .entry-title {
+.blog .entry-title {
     font-size: 1.5em;
 }
 .entry-meta, .entry-footer, a.more {
@@ -40,17 +40,15 @@
 embed, iframe, object {
     max-width: 100%;
 }
-.page-content, .entry-content, .comment-content {
-    img.wp-smiley {
-        border: none;
-        margin-bottom: 0;
-        margin-top: 0;
-        padding: 0;
-    }
+img.wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
 }
 .wp-caption {
 	border: 1px solid color(silver);
-	margin-bottom: 1.5em;
+	margin-bottom: layout(margin);
 	max-width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
     img[class*="wp-image-"] {
@@ -64,7 +62,7 @@ embed, iframe, object {
     }
 }
 .gallery {
-    margin-bottom: 1.5em;
+    margin-bottom: layout(margin);
     .gallery-item {
         display: inline-block;
         text-align: center;
@@ -85,9 +83,9 @@ embed, iframe, object {
 /* Breadcrumbs */
 .breadcrumbs {
     padding: 0;
-    margin: 0 1em 1em 0;
+    margin: layout(margin) 0;
     font-size: 0.8em;
-    li {
+    .breadcrumb {
         float: left;
         position: relative;
         list-style: none;
@@ -108,12 +106,12 @@ embed, iframe, object {
 /* Pagination */
 .pagination {
     padding: 0;
-    margin: 1em 0;
+    margin: layout(margin) 0;
     list-style-type: none;
     .page-numbers {
         display: inline-block;
         color: color(grey);
-        margin: 0 0.25em 1em;
+        margin: 0 0.25em layout(margin);
         padding: 0.2em 0.5em;
         border-radius: style(radius);
         &:hover {
@@ -127,11 +125,9 @@ embed, iframe, object {
 }
 
 /* Navigation */
-.site-main [class*="navigation"] {
-    margin: 0 0 1.5em;
+.navigation {
+    margin: 0 0 layout(margin);
     overflow: hidden;
-}
-[class*="navigation"] {
     .nav-previous {
         float: left;
         width: 50%;
@@ -148,14 +144,14 @@ embed, iframe, object {
     background-color: darken(color(white), 2%);
     font-size: 0.9em;
     padding: 0.2em 0.75em;
-    .comment-content a {
+    a {
         word-wrap: break-word;
     }
-    .comment-list .comment {
+    .comment {
         border-left: 1px dotted color(silver);
         list-style: none outside none;
-        margin-top: 1em;
-        padding-left: 1em;
+        margin-top: layout(margin);
+        padding-left: layout(padding);
     }
     .comment-respond {
         padding: 0.25em 0.75em;
@@ -164,9 +160,9 @@ embed, iframe, object {
             padding-right: 0.5em;
             width: 5em;
         }
-        .form-allowed-tags code {
-            font-size: 0.9em;
-        }
+    }
+    .form-allowed-tags code {
+        font-size: 0.9em;
     }
 }
 .bypostauthor {
@@ -175,8 +171,5 @@ embed, iframe, object {
 
 /* Widgets */
 .widget {
-    margin: 0 0 2em;
-    select {
-        max-width: 100%;
-    }
+    margin: 0 0 layout(margin);
 }

@@ -129,7 +129,7 @@
             
             // Add login button
             ed.addButton('s_login', {
-                title : 'Show login form',
+                title : 'Insert login form',
                 onclick : function() {
                     ed.windowManager.open({
                         title: 'Insert Login Form',

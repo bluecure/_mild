@@ -34,7 +34,7 @@ function pagination( $post_type = 'post' ) {
 		'next_text' => '<i class="icon icon-angle-double-right"></i>'
 	]; ?>
 
-	<nav class="pagination"><?php echo paginate_links( $args ); ?></nav>
+	<nav class="pagination" role="navigation"><?php echo paginate_links( $args ); ?></nav>
 	
 <?php
 }
@@ -49,18 +49,16 @@ function breadcrumbs() {
 
 	$parents = get_post_ancestors( $post->ID ); ?>
 	
-	<ul class='breadcrumbs'>
-        <li><a href="<?php echo site_url(); ?>">Home</a></li>
-
+	<ul class='breadcrumbs' role="navigation">
+        <li class='breadcrumb'><a href="<?php echo site_url(); ?>">Home</a></li>
         <?php if ( $parents ) :
             $breadcrumbs = array_reverse( $parents );
             foreach ( $breadcrumbs as $item ) : ?>
-
-                <li><a href="<?php echo get_permalink( $item ); ?>"><?php echo get_the_title( $item ); ?></a></li>
-
+                <li class='breadcrumb'>
+                    <a href="<?php echo get_permalink( $item ); ?>"><?php echo get_the_title( $item ); ?></a>
+                </li>
         <?php endforeach; endif; ?>
-        
-	    <li><?php echo get_the_title( $post->ID ); ?></li>
+	    <li class='breadcrumb'><?php echo get_the_title( $post->ID ); ?></li>
    </ul>
 
 <?php
@@ -84,7 +82,7 @@ function page_menu() {
 		'title_li'     => ''
 	]; ?>
 
-	<ul class='side-menu'>
+	<ul class='side-menu' role="navigation">
         <?php wp_list_pages( $args ); ?>
 	</ul>
 
@@ -108,7 +106,7 @@ function posts_menu() {
 
 	if ( $posts ) : ?>
 		
-		<ul class='side-menu'>
+		<ul class='side-menu' role="navigation">
 		    <?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
                 <li class="post_item"><a href="<?php echo $post->guid; ?>"><?php echo $post->post_title; ?></a></li>
             <?php endforeach; wp_reset_postdata(); ?>

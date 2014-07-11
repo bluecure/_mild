@@ -35,10 +35,10 @@
         background-color: $color;
     }
 }
-.bg-silver, .bg-white {
+.bg-yellow, .bg-silver, .bg-white {
     color: color(black);
     &:hover, &:active, &:visited, &:focus {
-        color: color(black);
+        color: lighten(color(black), 15%);
     }
 }
 
@@ -70,7 +70,7 @@
         padding: 0.2em 0.5em;
         font-size: 0.75em;
     }
-    .fa-plus, .fa-minus {
+    .fa-plus {
         float: right;
     }
     .accordion-title {
@@ -81,13 +81,15 @@
     }
     .accordion-content {
         display: none;
-        margin-bottom: 1.5em;
+        margin-bottom: layout(margin);
     }
 }
 
 /* Show */
-.show-posts .post {
-    margin-bottom: 1.5em;
+.show-posts {
+    .post {
+        margin-bottom: layout(margin);
+    }
     .post-title {
         margin-bottom: 0;
     }
@@ -108,22 +110,23 @@
     br {
         display: none;
     }
-    .login-username, .login-password {
+    .login-username, 
+    .login-password {
         color: color(grey);
         position: relative;
-        label {
-            position: absolute;
-            top: 0.3em;
-            left: 0.3em;
-            transition: all style(transition);
-            &.is-hidden {
-                opacity: 0;
-                top: -0.3em;
-            }
-        }
-        input {
-            width: 100%;
-        }
+    }
+    label {
+        position: absolute;
+        top: 0.3em;
+        left: 0.3em;
+        transition: all style(transition);
+    }
+    .is-hidden {
+        opacity: 0;
+        top: -0.3em;
+    }
+    input {
+        width: 100%;
     }
     .login-remember {
         font-size: 0.9em;

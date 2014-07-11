@@ -4,24 +4,14 @@
 /* Image Widget */
 .image-widget {
 	.image-widget-description {
-	    margin: 1em 0;
-	}
-}
-
-/* Gallery Widget */
-.gallery-widget {
-	.gallery-widget-images img {
-	    margin: 0 0.5em 1em;
-	}
-	.gallery-widget-description {
-	    margin: 1em 0;
+	    margin: layout(margin) 0;
 	}
 }
 
 /* Latest Posts Widget */
 .latest-posts-widget {
     .latest-posts-widget-post {
-	    margin: 0 0 1em 0;
+	    margin: 0 0 layout(margin) 0;
 	    padding: 0;
 	}
 	.latest-posts-widget-title {

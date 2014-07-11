@@ -11,7 +11,7 @@
 }
 hr {
 	background-color: color(silver);
-	margin-bottom: 1.5em;
+	margin-bottom: layout(margin);
 	height: 1px;
 	border: 0;
     clear: both;
@@ -19,8 +19,8 @@ hr {
 
 /* Elements */
 ul, ol {
-    margin: 0 0 1.5em 1em;
-    padding: 0 0 0 1.5em;
+    margin: 0 0 layout(margin) layout(margin);
+    padding: 0 0 0 layout(padding);
 }
 ul {
     list-style: disc;
@@ -31,14 +31,14 @@ ol {
 li > {
     ul, ol {
         margin-bottom: 0;
-        margin-left: 1.5em;
+        margin-left: layout(margin);
     }
 }
 dt {
 	font-weight: bold;
 }
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 layout(margin) layout(margin);
 }
 b, strong {
 	font-weight: bold;
@@ -47,21 +47,20 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 layout(margin);
 }
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 layout(margin);
 }
 pre {
 	background: color(silver);
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
-	font-size: 1.5rem;
 	line-height: 1.6;
-	margin-bottom: 1.6em;
+	margin-bottom: layout(margin);
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: layout(padding);
 }
 code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -106,7 +105,7 @@ a img {
 
 /* Tables */
 table {
-    margin: 0 0 1.5em;
+    margin: 0 0 layout(margin);
     width: 100%;
     th {
         font-weight: bold;
@@ -132,7 +131,7 @@ button, input, select, textarea {
     max-width: 100%;
 }
 input, textarea, select {
-    padding: 3px;
+    padding: 0.25em;
     color: color(grey);
     border-radius: style(radius);
     border: 1px solid color(silver);
@@ -163,7 +162,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 	cursor: pointer;
     color: color(black);
     border-radius: style(radius);
-	padding: 0.4em 1em 0.4em;
+	padding: 0.4em 0.8em;
     transition: all style(transition);
 	background-color: color(silver);
     border: 1px solid rgba(0, 0, 0, 0.1);
