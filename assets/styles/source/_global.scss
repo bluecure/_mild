@@ -66,7 +66,7 @@ code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 abbr, acronym {
-	border-bottom: 1px dotted color(grey);
+	border-bottom: 1px dotted color(gray);
 	cursor: help;
 }
 mark, ins {
@@ -132,7 +132,7 @@ button, input, select, textarea {
 }
 input, textarea, select {
     padding: 0.25em;
-    color: color(grey);
+    color: color(gray);
     border-radius: style(radius);
     border: 1px solid color(silver);
     &[type="checkbox"], &[type="radio"] {
@@ -145,11 +145,11 @@ input, textarea, select {
         }
     }
     &:hover {
-        color: darken(color(grey), 2.5%);
+        color: darken(color(gray), 2.5%);
         border: 1px solid darken(color(silver), 2.5%);
     }
     &:focus {
-        color: darken(color(grey), 5%);
+        color: darken(color(gray), 5%);
         border: 1px solid darken(color(silver), 5%);
     }
 }

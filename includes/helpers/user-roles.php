@@ -8,6 +8,7 @@
 namespace Mild;
 
 class User_Roles {
+
     // Variables
     public $roles = [];
 
@@ -34,8 +35,8 @@ class User_Roles {
         foreach ( $this->roles as $role ) {
             
             // Set params
-            $role_name = sanitize_title_with_dashes ( $role['name'] );
             $display_name = $role['name'];
+            $role_name = sanitize_title_with_dashes ( $role['name'] );
             $capabilities = wp_parse_args( $role['capabilities'], self::default_capabilities() );
 
             // Register user role

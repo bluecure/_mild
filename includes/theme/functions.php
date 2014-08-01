@@ -53,7 +53,7 @@ function is_categorized_blog() {
 		set_transient( 'mild_categories', $categories );
 	}
 	// If this blog has more than 1 category return true.
-	if ( $categories !== '1' ) {
+	if ( $categories > 1 ) {
 		return true;
 	} else {
 		return false;

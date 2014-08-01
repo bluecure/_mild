@@ -8,6 +8,7 @@
 namespace Mild;
 
 class Post_Types {
+
     // Variables
     public $post_types = [];
     public $labels = [];
@@ -93,4 +94,5 @@ class Post_Types {
         ];
     
     }
+
 }

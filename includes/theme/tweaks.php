@@ -5,33 +5,33 @@
  * @package Mild
  */
 
-/**
+/*
  * Stop file editing.
- */
+*/
 define ( 'DISALLOW_FILE_EDIT', true );
 
 /**
-* Run shortcodes in widgets.
-*/
+ * Run shortcodes in widgets.
+ */
 add_filter( 'widget_text', 'do_shortcode' );
 
 /**
-* Clean up auto p's for shortcodes.
-*/
+ * Clean up auto p's for shortcodes.
+ */
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12 );
 
 /**
-* Enable core buttons.
-*/
+ * Enable core buttons.
+ */
 add_filter( 'mce_buttons_2', function( $buttons ) {
     $buttons[] = 'hr';
     return $buttons;
 });
 
 /**
-* Set default image link to none.
-*/
+ * Set default image link to none.
+ */
 add_action( 'admin_init', function() {
     $image_default_link = get_option( 'image_default_link_type' );
     if ( $image_default_link !== 'none' )
@@ -39,23 +39,23 @@ add_action( 'admin_init', function() {
 });
 
 /**
-* Allow SVG uploads.
-*/
+ * Allow SVG uploads.
+ */
 add_filter( 'upload_mimes', function( $mimes ) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 });
 
 /**
-* Alter the excerpt more.
-*/
+ * Alter the excerpt more.
+ */
 add_filter( 'excerpt_more', function( $more ) {
     return '<br><a href="' . get_permalink() . '" class="more">Read More...</a>';
 });
 
 /**
-* Redirect user after logout.
-*/
+ * Redirect user after logout.
+ */
 add_filter( 'logout_url', function( $logout_url, $redirect = null ) {
     return $logout_url . '&amp;redirect_to=' . urlencode( home_url()  );
 });
@@ -99,7 +99,7 @@ add_filter( 'wp_title', function( $title, $sep ) {
 
     // Add a page number if necessary:
     if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() )
-		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( 'Page %s', max( $paged, $page ) );
 
     return $title;
 }, 10, 2);

@@ -34,20 +34,36 @@ class Sidebars {
 
         foreach ( $this->sidebars as $sidebar ) {
             
-            // Set params
-            $header = ( $sidebar['header'] ) ? $sidebar['header'] : 'h3' ;
+            // Set options
+            $options = wp_parse_args( $sidebar, self::default_options() );
             
             // Register sidebar
             register_sidebar( [
-                'name'          => $sidebar['name'],
-                'id'            => sanitize_title_with_dashes( $sidebar['name'] ),
-                'before_widget' => '<aside id="%1$s" class="widget %2$s ' .$sidebar['classes']. '">',
+                'name'          => $options['name'],
+                'id'            => sanitize_title_with_dashes( $options['name'] ),
+                'before_widget' => '<aside id="%1$s" class="widget %2$s ' .$options['classes']. '">',
                 'after_widget'  => '</aside>',
-                'before_title'  => "<{$header} class='widget-title'>",
-                'after_title'   => "</{$header}>"
+                'before_title'  => '<' .$options['header']. ' class="widget-title">',
+                'after_title'   => '</' .$options['header']. '>'
             ] );
             
         }
+
+    }
+    
+    /**
+     * Setup default options
+     *
+     * @access private
+     * @return array
+     */
+    private function default_options() {
+        
+        return [
+            'name'    => 'Sidebar',
+            'header'  => 'h3',
+            'classes' => ''
+        ];
 
     }
 

@@ -8,6 +8,7 @@
 namespace Mild;
 
 class Taxonomies {
+
     // Variables
     public $taxonomies = [];
     public $labels = [];

@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-primary content-area col-12">
-		<main id="main" class="site-main" role="main">
+	<section class="site-primary content-area col-12">
+		<main class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -32,7 +32,7 @@ get_header(); ?>
                 if ( comments_open() || get_comments_number() != '0' ) comments_template();
             ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+		</main><!-- .site-main -->
+	</section><!-- .site-primary -->
 
 <?php get_footer(); ?>

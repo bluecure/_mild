@@ -19,5 +19,7 @@
 			] );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( 'Edit', '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+	<footer class="entry-footer">
+		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

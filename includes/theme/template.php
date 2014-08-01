@@ -22,6 +22,7 @@ namespace Mild;
  * @return void
  */
 function pagination( $post_type = 'post' ) {
+
 	global $wp_query;
 
 	$args = [
@@ -30,8 +31,8 @@ function pagination( $post_type = 'post' ) {
 		'current'   => max( 1, get_query_var('paged') ),
 		'total'     => $wp_query->max_num_pages,
 		'prev_next' => True,
-		'prev_text' => '<i class="icon icon-angle-double-left"></i>',
-		'next_text' => '<i class="icon icon-angle-double-right"></i>'
+		'prev_text' => '<i class="fa fa-angle-double-left"></i>',
+		'next_text' => '<i class="fa fa-angle-double-right"></i>'
 	]; ?>
 
 	<nav class="pagination" role="navigation"><?php echo paginate_links( $args ); ?></nav>
@@ -45,21 +46,22 @@ function pagination( $post_type = 'post' ) {
  * @return void
  */
 function breadcrumbs() {
+
 	global $post;
 
 	$parents = get_post_ancestors( $post->ID ); ?>
 	
-	<ul class='breadcrumbs' role="navigation">
-        <li class='breadcrumb'><a href="<?php echo site_url(); ?>">Home</a></li>
+	<ul class="breadcrumbs" role="navigation">
+        <li class="breadcrumb"><a href="<?php echo site_url(); ?>">Home</a></li>
         <?php if ( $parents ) :
             $breadcrumbs = array_reverse( $parents );
             foreach ( $breadcrumbs as $item ) : ?>
-                <li class='breadcrumb'>
+                <li class="breadcrumb">
                     <a href="<?php echo get_permalink( $item ); ?>"><?php echo get_the_title( $item ); ?></a>
                 </li>
         <?php endforeach; endif; ?>
-	    <li class='breadcrumb'><?php echo get_the_title( $post->ID ); ?></li>
-   </ul>
+	    <li class="breadcrumb"><?php echo get_the_title( $post->ID ); ?></li>
+   </ul><!-- .breadcrumbs -->
 
 <?php
 }
@@ -70,6 +72,7 @@ function breadcrumbs() {
  * @return void
  */
 function page_menu() {
+
 	global $post;
 	$parent = ( $post->post_parent !== 0 ) ? $post->post_parent : $post->ID;
 
@@ -82,7 +85,7 @@ function page_menu() {
 		'title_li'     => ''
 	]; ?>
 
-	<ul class='side-menu' role="navigation">
+	<ul class="side-menu" role="navigation">
         <?php wp_list_pages( $args ); ?>
 	</ul>
 
@@ -95,6 +98,7 @@ function page_menu() {
  * @return void
  */
 function posts_menu() {
+
 	$args = [
 		'posts_per_page'   => 10,
 		'orderby'          => 'post_date',
@@ -106,7 +110,7 @@ function posts_menu() {
 
 	if ( $posts ) : ?>
 		
-		<ul class='side-menu' role="navigation">
+		<ul class="side-menu" role="navigation">
 		    <?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
                 <li class="post_item"><a href="<?php echo $post->guid; ?>"><?php echo $post->post_title; ?></a></li>
             <?php endforeach; wp_reset_postdata(); ?>
@@ -121,7 +125,7 @@ function posts_menu() {
  * @return void
  */
 function paging_nav() {
-	// Don't print empty markup if there's only one page.
+
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 )
 		return;	?>
 	<nav class="navigation paging-navigation" role="navigation">
@@ -129,15 +133,16 @@ function paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( '<span class="meta-nav">&larr;</span> Older posts' ); ?></div>
+			    <div class="nav-previous"><?php next_posts_link( '<span class="meta-nav">&larr;</span> Older posts' ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( 'Newer posts <span class="meta-nav">&rarr;</span>' ); ?></div>
+			    <div class="nav-next"><?php previous_posts_link( 'Newer posts <span class="meta-nav">&rarr;</span>' ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
+
 	<?php
 }
 
@@ -147,9 +152,9 @@ function paging_nav() {
  * @return void
  */
 function post_nav() {
-	// Don't print empty markup if there's nowhere to navigate.
+
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
+	$next = get_adjacent_post( false, '', false );
 
 	if ( ! $next && ! $previous )
 		return;	?>
@@ -163,6 +168,7 @@ function post_nav() {
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
+
 	<?php
 }
 
@@ -170,10 +176,10 @@ function post_nav() {
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function posted_on() {
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
-	}
+
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -182,14 +188,12 @@ function posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf('<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>',
-		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-			esc_url( get_permalink() ),
-			$time_string
-		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() )
-		)
-	);
+	$posted_on = sprintf( 'Posted on %s', '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' );
+
+	$byline = sprintf( 'by %s', '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>' ); ?>
+
+	<span class="posted-on"><?php echo $posted_on; ?></span>
+	<span class="byline"><?php echo $byline; ?></span>
+
+<?php
 }

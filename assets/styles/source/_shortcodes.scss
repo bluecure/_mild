@@ -96,7 +96,7 @@
     .post-date {
         font-size: 0.85em;
         font-style: italic;
-        color: lighten(color(grey), 10%);
+        color: lighten(color(gray), 10%);
         margin-bottom: 0.5em;
     }
     .post-image {
@@ -112,7 +112,7 @@
     }
     .login-username, 
     .login-password {
-        color: color(grey);
+        color: color(gray);
         position: relative;
     }
     label {

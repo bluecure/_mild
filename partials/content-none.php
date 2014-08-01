@@ -22,7 +22,7 @@
 
 		<?php else : ?>
 
-			<p>It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.</p>
+			<p>It seems we can't find what you're looking for. Perhaps searching can help.</p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>

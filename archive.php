@@ -7,8 +7,8 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-primary content-area col-8">
-		<main id="main" class="site-main" role="main">
+	<section class="site-primary content-area col-8">
+		<main class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -75,20 +75,13 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'partials/content', get_post_format() );
-				?>
+				<?php get_template_part( 'partials/content', get_post_format() ); ?>
 
-			<?php endwhile; ?>
+			<?php endwhile; ?><!-- have_posts() -->
 
-			<?php Mild\paging_nav(); ?>
+			<?php Mild\pagination(); ?>
 
 		<?php else : ?>
 
@@ -96,8 +89,8 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+		</main><!-- .site-main -->
+	</section><!-- .site-primary -->
 
     <?php get_sidebar(); ?>
     

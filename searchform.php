@@ -10,5 +10,5 @@
 		<span class="screen-reader-text">Search for</span>
 		<input type="search" class="search-field" placeholder="Search&hellip;" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
 	</label>
-	<button type="submit" class="search-submit">Search</button>
+	<button type="submit" class="search-submit fa fa-search"></button>
 </form>

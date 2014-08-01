@@ -5,7 +5,7 @@
  * @package Mild
  */
 ?>
-<aside id="secondary" class="site-secondary widget-area col-4" role="complementary">
+<aside class="site-secondary widget-area col-4" role="complementary">
     <?php if ( ! dynamic_sidebar( 'Sidebar' ) ) : ?>
 
         <div id="search" class="widget widget_search">
@@ -29,4 +29,4 @@
         </div>
 
     <?php endif; // end sidebar widget area ?>
-</aside><!-- #secondary -->
+</aside><!-- .site-secondary -->

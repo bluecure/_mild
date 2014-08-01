@@ -9,11 +9,11 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-primary content-area col-12">
+	<section class="site-primary content-area col-12">
 		
 		<?php get_template_part( 'partials/meta', 'slider' ); ?>
 		
-		<main id="main" class="site-main" role="main">
+		<main class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -26,8 +26,8 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 			
-		</main><!-- #main -->
+		</main><!-- .site-main -->
 		
-	</section><!-- #primary -->
+	</section><!-- .site-primary -->
 
 <?php get_footer(); ?>

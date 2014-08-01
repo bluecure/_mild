@@ -31,7 +31,7 @@
     font-size: 1.5em;
 }
 .entry-meta, .entry-footer, a.more {
-    color: lighten(color(grey), 5%);
+    color: lighten(color(gray), 5%);
     font-size: 0.8em;
     font-style: italic;
 }
@@ -110,8 +110,8 @@ img.wp-smiley {
     list-style-type: none;
     .page-numbers {
         display: inline-block;
-        color: color(grey);
-        margin: 0 0.25em layout(margin);
+        color: color(gray);
+        margin: 0.2em 0.1em;
         padding: 0.2em 0.5em;
         border-radius: style(radius);
         &:hover {

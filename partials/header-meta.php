@@ -19,7 +19,7 @@ $javascript = ot_get_option( 'ot_javascript', '' ); ?>
 <!-- App Icons -->
 <?php if ( $app_icon ) : ?>
 	<link rel="apple-touch-icon" href="<?php echo $app_icon; ?>" />
-	<meta name="msapplication-TileImage" content="<?php echo $app_icon; ?>"/>
+	<meta name="msapplication-TileImage" content="<?php echo $app_icon; ?>" />
 <?php endif; ?>
 
 <!-- Custom CSS/JS -->

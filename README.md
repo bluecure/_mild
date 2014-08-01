@@ -26,11 +26,15 @@ Note: This is a work in progress and can break at anytime.
 2. `$ rmdir mild\.git /s /q` (optional: remove git folder)
 3. `$ Rename mild my-new-theme-name` (optional: rename folder)
 
+####Setting up theme:
+1. Rename the theme in `assets/styes/styles.scss`
+2. Also, update the Author, URIs and description.
+
 ####Using Gulp:
-1. Rename the theme in `assets/styes/styles.scss` and `package.json`
+1. Rename the theme in `package.json`
 2. Install Gulp and plugins: `$ npm install`
 3. Run gulp: `$ gulp`
 
 ####Using Prepros:
-1. Rename the theme in `assets/styes/styles.scss` and `prepros.json`
+1. Rename the theme in `prepros.json`
 2. Open theme folder in Prepros (pro)
