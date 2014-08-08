@@ -96,7 +96,7 @@ class Shortcodes {
 	/*
 	* Icon shortcode
 	*/
-	public function s_icon( $params, $content = null ) {
+	public function s_icon( $params ) {
 	    extract( shortcode_atts([
 	        'icon' => '',
 	        'color' => '',
@@ -173,7 +173,7 @@ class Shortcodes {
 	/*
 	* Show shortcode
 	*/
-	public function s_show( $params, $content = null ) {
+	public function s_show( $params ) {
 	    extract( shortcode_atts([
 	        'cat' => '',
 	        'tag' => '',
@@ -210,7 +210,7 @@ class Shortcodes {
 	/*
 	* Login shortcode
 	*/
-	public function s_login( $params, $content = null ) {
+	public function s_login( $params ) {
 	    extract( shortcode_atts([
 	        'redirect' => '',
 	        'style' => 'block',
@@ -236,7 +236,7 @@ class Shortcodes {
 	/*
 	* Sitemap shortcode
 	*/
-	public function s_sitemap( $params, $content = null ) {
+	public function s_sitemap( $params ) {
 	    extract( shortcode_atts([
 	        'show' => 'menus,pages,posts',
 	        'class' => ''
@@ -284,7 +284,7 @@ class Shortcodes {
 	/*
 	* Map shortcode
 	*/
-	public function s_map( $params, $content = null ) {
+	public function s_map( $params ) {
 	    extract( shortcode_atts([
 	        'width' => '400',
 	        'height' => '300',
@@ -299,7 +299,7 @@ class Shortcodes {
 	/*
 	* iFrame shortcode
 	*/
-	public function s_iframe( $params, $content = null ) {
+	public function s_iframe( $params ) {
 	    extract( shortcode_atts([
 	        'url' => '',
 	        'width' => '400',
@@ -313,7 +313,7 @@ class Shortcodes {
 	/*
 	* Image shortcode
 	*/
-	public function s_image( $params, $content = null ) {
+	public function s_image( $params ) {
 	    extract( shortcode_atts([
 	        'url' => '',
 	        'link' => '',

@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<section class="site-primary content-area">
+	<section class="site-primary content-area col-12">
 		<main class="site-main" role="main">
            
             <section class="error-404 not-found">

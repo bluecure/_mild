@@ -6,20 +6,15 @@
  */
 
 // Get Options
-$favicon = ot_get_option( 'ot_favicon', '' );
-$app_icon = ot_get_option( 'ot_app_icon', '' );
+$icon = ot_get_option( 'ot_icon', '' );
 $css = ot_get_option( 'ot_css', '' );
 $javascript = ot_get_option( 'ot_javascript', '' ); ?>
 
-<!-- Favicon -->
-<?php if ( $favicon ) : ?>
-	<link rel="shortcut icon" href="<?php echo $favicon; ?>" type="image/x-icon" />
-<?php endif; ?>
-
-<!-- App Icons -->
-<?php if ( $app_icon ) : ?>
-	<link rel="apple-touch-icon" href="<?php echo $app_icon; ?>" />
-	<meta name="msapplication-TileImage" content="<?php echo $app_icon; ?>" />
+<!-- Icons -->
+<?php if ( $icon ) : ?>
+	<link rel="shortcut icon" href="<?php echo $icon; ?>">
+	<link rel="apple-touch-icon" href="<?php echo $icon; ?>">
+	<meta name="msapplication-TileImage" content="<?php echo $icon; ?>">
 <?php endif; ?>
 
 <!-- Custom CSS/JS -->

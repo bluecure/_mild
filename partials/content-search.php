@@ -25,7 +25,7 @@
 		<?php if ( get_post_type() == 'post' ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( ', ' ) );
+				$categories_list = get_the_category_list( ', ' );
 				if ( $categories_list && Mild\is_categorized_blog() ) :
 			?>
                 <span class="cat-links">

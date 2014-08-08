@@ -18,10 +18,9 @@ namespace Mild;
 /**
  * Displays pagination links
  *
- * @param  string $post_type
  * @return void
  */
-function pagination( $post_type = 'post' ) {
+function pagination() {
 
 	global $wp_query;
 

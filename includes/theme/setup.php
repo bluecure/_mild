@@ -58,17 +58,17 @@ add_action( 'after_setup_theme', function() {
 add_action( 'init', function () {
     
     // Register user roles.
-    // $roles = new Mild\User_Roles( [
+    // new Mild\User_Roles( [
     //     [ 'name' => 'Customer' ]        
     // ] );
 
     // Register post types.
-    // $types = new Mild\Post_Types( [
+    // new Mild\Post_Types( [
     //     [ 'name' => 'Book' ]
     // ] );
 
     // Register taxonomies.
-    // $taxonomies = new Mild\Taxonomies( [
+    // new Mild\Taxonomies( [
     //     [ 'name' => 'Genre', 'post_types' => [ 'Book' ] ]
     // ] );
     
@@ -80,7 +80,7 @@ add_action( 'init', function () {
 add_action( 'widgets_init', function () {
 
     // Register sidebars.
-    $sidebars = new Mild\Sidebars( [
+    new Mild\Sidebars( [
         [ 'name' => 'Sidebar' ]
     ] );
 

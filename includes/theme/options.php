@@ -36,16 +36,10 @@ add_action( 'admin_init', function() {
                 'type' => 'upload',
                 'section' => 'ot_general'
             ], [
-                'label' => 'App Icon',
-                'id' => 'ot_app_icon',
+                'label' => 'Icon',
+                'id' => 'ot_icon',
                 'type' => 'upload',
-                'desc' => '152px X 152px',
-                'section' => 'ot_general'
-            ], [
-                'label' => 'Favicon',
-                'id' => 'ot_favicon',
-                'type' => 'upload',
-                'desc' => '32px X 32px',
+                'desc' => '196px X 196px',
                 'section' => 'ot_general'
             ], [
                 'label' => 'Footer copyright',
