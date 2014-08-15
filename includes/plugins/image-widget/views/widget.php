@@ -4,7 +4,7 @@
  */
 
 // Get Image
-$image_src = wp_get_attachment_image_src( $iw_image, 'thumbnail' )[0];
+$image_src = wp_get_attachment_image_src( $iw_image, $iw_size )[0];
 // Set target
 $iw_target = ( $iw_target ) ? '_blank' : '_self'; ?>
 

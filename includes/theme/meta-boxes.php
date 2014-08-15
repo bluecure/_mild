@@ -99,20 +99,24 @@ add_action( 'admin_init', function() {
     * Register our meta boxes using the
     * ot_register_meta_box() function.
     */
-    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
-    $template_file = get_post_meta( $post_id, '_wp_page_template', TRUE );
-    
-    if ( $template_file === 'templates/slider.php' )
-        ot_register_meta_box( $mb_slider );
 
-    if ( $template_file === 'templates/two-cols.php' )
-        ot_register_meta_box( $mb_two_cols );
+    if ( isset( $_GET['post'] ) ) {
         
-    if ( $template_file === 'templates/three-cols.php' )
-        ot_register_meta_box( $mb_three_cols );
-    
-    if ( $template_file === 'templates/four-cols.php' )
-        ot_register_meta_box( $mb_four_cols );
+        $template_file = get_post_meta( $_GET['post'], '_wp_page_template', TRUE );
+
+        if ( $template_file === 'templates/slider.php' )
+            ot_register_meta_box( $mb_slider );
+
+        if ( $template_file === 'templates/two-cols.php' )
+            ot_register_meta_box( $mb_two_cols );
+
+        if ( $template_file === 'templates/three-cols.php' )
+            ot_register_meta_box( $mb_three_cols );
+
+        if ( $template_file === 'templates/four-cols.php' )
+            ot_register_meta_box( $mb_four_cols );
+        
+    }
 
 
 });

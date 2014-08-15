@@ -1,7 +1,6 @@
 <?php
 /**
 * List Icons
-*
 */
 
 $icons_array = [

@@ -24,7 +24,7 @@ class Latest_Posts_Widget extends \WP_Widget {
 
         // Set directory
         $this->directory = plugin_dir_path( __FILE__ );
-        $this->directory_url = MILD_PLUGINS_URI . basename( dirname( __FILE__ ) );
+        $this->directory_url = get_template_directory_uri() . '/includes/plugins/' . basename( dirname( __FILE__ ) );
 
         // Widget details
         parent::__construct(

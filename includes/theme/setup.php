@@ -6,12 +6,11 @@
  */
 
 /**
-* Setup Theme Options Framework.
+* Theme Options options.
 */
 add_filter( 'ot_show_pages', '__return_false' );
 add_filter( 'ot_show_new_layout', '__return_false' );
 add_filter( 'ot_theme_mode', '__return_true' );
-require MILD_OPTIONS . 'ot-loader.php';
 
 /**
  * Set the content width.

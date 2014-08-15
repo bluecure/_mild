@@ -24,7 +24,7 @@ class Image_Widget extends \WP_Widget {
 
         // Set directory
         $this->directory = plugin_dir_path( __FILE__ );
-        $this->directory_url = MILD_PLUGINS_URI . basename( dirname( __FILE__ ) );
+        $this->directory_url = get_template_directory_uri() . '/includes/plugins/' . basename( dirname( __FILE__ ) );
 
         // Widget details
         parent::__construct(
@@ -60,6 +60,7 @@ class Image_Widget extends \WP_Widget {
             'iw_icon' => '',
             'iw_description' => '',
             'iw_link' => '',
+            'iw_size' => '',
             'iw_target' => ''
         ];
         $instance = wp_parse_args(
@@ -79,6 +80,7 @@ class Image_Widget extends \WP_Widget {
         $instance['iw_icon'] = strip_tags( $iw_icon );
         $instance['iw_description'] = strip_tags( $iw_description );
         $instance['iw_link'] = strip_tags( $iw_link );
+        $instance['iw_size'] = strip_tags( $iw_size );
         $instance['iw_target'] = intval( $iw_target );
         return $instance;
     }

@@ -37,7 +37,7 @@
     var slider = $( '.meta-slider' );
     if ( slider ) {
         slider.owlCarousel({
-            autoplay: 5000,
+            autoplay: true,
             animateIn: 'fadeIn',
             animateOut: 'fadeOut',
             items: 1,

@@ -22,7 +22,7 @@ class Shortcodes {
     public function __construct() {
 
     	// Set directory url
-        $this->directory_url = MILD_PLUGINS_URI . basename( dirname( __FILE__ ) );
+        $this->directory_url = get_template_directory_uri() . '/includes/plugins/' . basename( dirname( __FILE__ ) );
 
 		// Include the editor module.
 		self::editor();
