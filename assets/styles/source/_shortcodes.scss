@@ -3,49 +3,49 @@
 
 /* Buttons */
 .button {
-    color: color(white);
+    color: color('white');
     padding: 0.4em 1em;
     margin: 0.5em 0 1em 0;
     display: inline-block;
-    background-color: color(blue);
+    background-color: color('blue');
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: style(radius);
+    border-radius: style('radius');
     &:hover {
-        color: color(white);
+        color: color('white');
         box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset, 0 0em 0.25em rgba(0, 0, 0, 0.15) inset;
     }
     &:active, &:visited, &:focus {
-        color: color(white);
+        color: color('white');
         box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0.3em rgba(0, 0, 0, 0.2) inset;
     }
 }
 
 /* Panels */
 .panel {
-    color: color(white);
+    color: color('white');
     padding: 1em 2em;
     margin: 0.5em 0 2em 0;
-    background-color: color(silver);
+    background-color: color('silver');
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Background Colors */
-@each $name, $color in $colors {
+@each $name, $value in $color {
     .bg-#{$name} {
-        background-color: $color;
+        background-color: $value;
     }
 }
 .bg-yellow, .bg-silver, .bg-white {
-    color: color(black);
+    color: color('black');
     &:hover, &:active, &:visited, &:focus {
-        color: lighten(color(black), 15%);
+        color: lighten(color('black'), 15%);
     }
 }
 
 /* Text Colors */
-@each $name, $color in $colors {
+@each $name, $value in $color {
     .text-#{$name} {
-        color: $color;
+        color: $value;
     }
 }
 
@@ -81,14 +81,14 @@
     }
     .accordion-content {
         display: none;
-        margin-bottom: layout(margin);
+        margin-bottom: layout('margin');
     }
 }
 
 /* Show */
 .show-posts {
     .post {
-        margin-bottom: layout(margin);
+        margin-bottom: layout('margin');
     }
     .post-title {
         margin-bottom: 0;
@@ -96,7 +96,7 @@
     .post-date {
         font-size: 0.85em;
         font-style: italic;
-        color: lighten(color(gray), 10%);
+        color: lighten(color('gray'), 10%);
         margin-bottom: 0.5em;
     }
     .post-image {
@@ -112,14 +112,14 @@
     }
     .login-username, 
     .login-password {
-        color: color(gray);
+        color: color('gray');
         position: relative;
     }
     label {
         position: absolute;
         top: 0.3em;
         left: 0.3em;
-        transition: all style(transition);
+        transition: all style('transition');
     }
     .is-hidden {
         opacity: 0;

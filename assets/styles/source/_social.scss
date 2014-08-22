@@ -8,23 +8,23 @@
         margin: 0.25em;
         padding: 0.5em;
         text-align: center;
-        color: color(white);
+        color: color('white');
         &:hover {
-            color: darken(color(white), 5%);
+            color: darken(color('white'), 5%);
         }
     }
     /* Background Colors */
-    @each $name, $color in $social {
+    @each $name, $value in $social {
         .fa-#{$name} {
-            background-color: $color;
+            background-color: $value;
         }
     }
 }
 .social-hovers {
     /* Hover Colors */
-    @each $name, $color in $social {
+    @each $name, $value in $social {
         .fa-#{$name}:hover {
-            color: $color;
+            color: $value;
         }
     }
 }

@@ -4,14 +4,14 @@
 /* Image Widget */
 .image-widget {
 	.image-widget-description {
-	    margin: layout(margin) 0;
+	    margin: layout('margin') 0;
 	}
 }
 
 /* Latest Posts Widget */
 .latest-posts-widget {
     .latest-posts-widget-post {
-	    margin: 0 0 layout(margin) 0;
+	    margin: 0 0 layout('margin') 0;
 	    padding: 0;
         clear: both;
 	}
@@ -24,7 +24,7 @@
 	    width: 40%;
 	}
 	.latest-posts-widget-time {
-	    color: lighten(color(gray), 12%);
+	    color: lighten(color('gray'), 12%);
 	    font-size: 0.8em;
 	    font-style: italic;
 	}

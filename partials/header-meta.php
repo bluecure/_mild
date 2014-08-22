@@ -12,7 +12,7 @@ $javascript = ot_get_option( 'ot_javascript', '' ); ?>
 
 <!-- Icons -->
 <?php if ( $icon ) : ?>
-	<link rel="shortcut icon" href="<?php echo $icon; ?>">
+	<link rel="icon" href="<?php echo $icon; ?>">
 	<link rel="apple-touch-icon" href="<?php echo $icon; ?>">
 	<meta name="msapplication-TileImage" content="<?php echo $icon; ?>">
 <?php endif; ?>

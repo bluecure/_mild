@@ -2,16 +2,16 @@
 ----------------------------------------------- */
 
 ::-moz-selection {
-    background-color: color(black);
-    color: color(white);
+    background-color: color('black');
+    color: color('white');
 }
 ::selection {
-    background-color: color(black);
-    color: color(white);
+    background-color: color('black');
+    color: color('white');
 }
 hr {
-	background-color: color(silver);
-	margin-bottom: layout(margin);
+	background-color: color('silver');
+	margin-bottom: layout('margin');
 	height: 1px;
 	border: 0;
     clear: both;
@@ -19,8 +19,8 @@ hr {
 
 /* Elements */
 ul, ol {
-    margin: 0 0 layout(margin) layout(margin);
-    padding: 0 0 0 layout(padding);
+    margin: 0 0 layout('margin') layout('margin');
+    padding: 0 0 0 layout('padding');
 }
 ul {
     list-style: disc;
@@ -31,14 +31,14 @@ ol {
 li > {
     ul, ol {
         margin-bottom: 0;
-        margin-left: layout(margin);
+        margin-left: layout('margin');
     }
 }
 dt {
 	font-weight: bold;
 }
 dd {
-	margin: 0 layout(margin) layout(margin);
+	margin: 0 layout('margin') layout('margin');
 }
 b, strong {
 	font-weight: bold;
@@ -47,30 +47,30 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 layout(margin);
+	margin: 0 layout('margin');
 }
 address {
-	margin: 0 0 layout(margin);
+	margin: 0 0 layout('margin');
 }
 pre {
-	background: color(silver);
+	background: color('silver');
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
 	line-height: 1.6;
-	margin-bottom: layout(margin);
+	margin-bottom: layout('margin');
 	max-width: 100%;
 	overflow: auto;
-	padding: layout(padding);
+	padding: layout('padding');
 }
 code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 abbr, acronym {
-	border-bottom: 1px dotted color(gray);
+	border-bottom: 1px dotted color('gray');
 	cursor: help;
 }
 mark, ins {
-	background: darken(color(white), 2.5%);
+	background: darken(color('white'), 2.5%);
 	text-decoration: none;
 }
 sup, sub {
@@ -105,7 +105,7 @@ a img {
 
 /* Tables */
 table {
-    margin: 0 0 layout(margin);
+    margin: 0 0 layout('margin');
     width: 100%;
     th {
         font-weight: bold;
@@ -114,10 +114,10 @@ table {
         padding: 0.75em;
     }
     tr {
-        background-color: darken(color(white), 5%);
+        background-color: darken(color('white'), 5%);
     }
     tr:nth-child(odd) {
-        background-color: darken(color(white), 2.5%)
+        background-color: darken(color('white'), 2.5%)
     }
 }
 
@@ -132,9 +132,9 @@ button, input, select, textarea {
 }
 input, textarea, select {
     padding: 0.25em;
-    color: color(gray);
-    border-radius: style(radius);
-    border: 1px solid color(silver);
+    color: color('gray');
+    border-radius: style('radius');
+    border: 1px solid color('silver');
     &[type="checkbox"], &[type="radio"] {
         padding: 0;
     }
@@ -145,12 +145,12 @@ input, textarea, select {
         }
     }
     &:hover {
-        color: darken(color(gray), 2.5%);
-        border: 1px solid darken(color(silver), 2.5%);
+        color: darken(color('gray'), 2.5%);
+        border: 1px solid darken(color('silver'), 2.5%);
     }
     &:focus {
-        color: darken(color(gray), 5%);
-        border: 1px solid darken(color(silver), 5%);
+        color: darken(color('gray'), 5%);
+        border: 1px solid darken(color('silver'), 5%);
     }
 }
 textarea {
@@ -160,19 +160,19 @@ textarea {
 button, input[type="button"], input[type="reset"], input[type="submit"] {
 	line-height: 1;
 	cursor: pointer;
-    color: color(black);
-    border-radius: style(radius);
+    color: color('black');
+    border-radius: style('radius');
 	padding: 0.4em 0.8em;
-    transition: all style(transition);
-	background-color: color(silver);
+    transition: all style('transition');
+	background-color: color('silver');
     border: 1px solid rgba(0, 0, 0, 0.1);
 	-webkit-appearance: button;
     &:hover {
-        color: color(black);
+        color: color('black');
         box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset, 0 0em 0.25em rgba(0, 0, 0, 0.15) inset;
     }
     &:focus, &:active {
-        color: color(black);
+        color: color('black');
         box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0.3em rgba(0, 0, 0, 0.2) inset;
     }
 }

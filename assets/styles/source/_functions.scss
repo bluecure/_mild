@@ -11,17 +11,17 @@
     @return map-get($font, $attr);
 }
 
-/* Colors */
-@function color($color) {
-    @return map-get($colors, $color);
+/* Color */
+@function color($attr) {
+    @return map-get($color, $attr);
 }
 
-/* Styles */
+/* Style */
 @function style($attr) {
-    @return map-get($styles, $attr);
+    @return map-get($style, $attr);
 }
 
 /* Break */
-@function break($size) {
-    @return map-get($break, $size);
+@function break($attr) {
+    @return map-get($break, $attr);
 }
