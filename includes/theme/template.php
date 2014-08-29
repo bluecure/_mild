@@ -9,6 +9,7 @@
  * paging_nav()  | Displays paging nav
  * post_nav()    | Displays post nav
  * posted_on()   | Displays posted on
+ * entry_meta()  | Displays entry meta data
  *
  * @package Mild
  */
@@ -173,12 +174,12 @@ function post_nav() {
 
 /**
  * Prints HTML with meta information for the current post-date/time and author.
+ *
+ * @return void
  */
 function posted_on() {
 
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -191,8 +192,36 @@ function posted_on() {
 
 	$byline = sprintf( 'by %s', '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>' ); ?>
 
-	<span class="posted-on"><?php echo $posted_on; ?></span>
-	<span class="byline"><?php echo $byline; ?></span>
+	<span class="posted-on"><?php echo $posted_on; ?></span><span class="byline"><?php echo $byline; ?></span>
 
 <?php
+}
+
+/**
+ * Output relevant entry mneta data.
+ *
+ * @return void
+ */
+function entry_meta() {
+
+    // Show post categories and tags
+	if ( get_post_type() === 'post' ) {
+		$categories_list = get_the_category_list( ', ' );
+		if ( $categories_list && is_categorized_blog() ) {
+			printf( '<span class="cat-links">Posted in %1$s</span>', $categories_list );
+		}
+		$tags_list = get_the_tag_list( '',  ', ' );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links">Tagged %1$s</span>', $tags_list );
+		}
+	}
+    // Show comments link
+	if ( ! post_password_required() && comments_open() ) { ?>
+	    <span class="comments-link">
+		    <?php comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) ); ?>
+		</span>
+	<?php }
+
+	edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' );
+
 }
