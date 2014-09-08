@@ -1,0 +1,26 @@
+{
+    "name": "lambry/mild",
+    "description": "WordPress Starter Theme.",
+    "homepage": "https://github.com/lambry/mild",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "David Featherston",
+            "email": "david@lambry.com"
+        }
+    ],
+    "keywords": [
+        "wordpress", "theme"
+    ],
+    "support": {
+        "issues": "https://github.com/lambry/mild/issues"
+    },
+    "require": {
+        "valendesigns/option-tree": "dev-master"
+    },
+    "extra": {
+        "installer-paths": {
+            "includes/options": [ "valendesigns/option-tree" ]
+        }
+    }
+}

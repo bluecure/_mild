@@ -37,11 +37,14 @@ class Sidebars {
             // Set options
             $options = wp_parse_args( $sidebar, self::default_options() );
             
+            // Translate name
+            $sidebar_name = __( $options['name'], 'mild' );
+            
             // Register sidebar
             register_sidebar( [
-                'name'          => $options['name'],
-                'id'            => sanitize_title_with_dashes( $options['name'] ),
-                'before_widget' => '<aside id="%1$s" class="widget %2$s ' .$options['classes']. '">',
+                'name'          => $sidebar_name,
+                'id'            => sanitize_title_with_dashes( $sidebar_name ),
+                'before_widget' => '<aside id="%1$s" class="widget %2$s ' . $options['classes'] . '">',
                 'after_widget'  => '</aside>',
                 'before_title'  => '<' .$options['header']. ' class="widget-title">',
                 'after_title'   => '</' .$options['header']. '>'

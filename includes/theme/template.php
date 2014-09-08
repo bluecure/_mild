@@ -52,7 +52,7 @@ function breadcrumbs() {
 	$parents = get_post_ancestors( $post->ID ); ?>
 	
 	<ul class="breadcrumbs" role="navigation">
-        <li class="breadcrumb"><a href="<?php echo site_url(); ?>">Home</a></li>
+        <li class="breadcrumb"><a href="<?php echo site_url(); ?>"><?php _e( 'Home', 'mild'); ?></a></li>
         <?php if ( $parents ) :
             $breadcrumbs = array_reverse( $parents );
             foreach ( $breadcrumbs as $item ) : ?>
@@ -129,15 +129,15 @@ function paging_nav() {
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 )
 		return;	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text">Posts navigation</h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'mild' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			    <div class="nav-previous"><?php next_posts_link( '<span class="meta-nav">&larr;</span> Older posts' ); ?></div>
+			    <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'mild' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			    <div class="nav-next"><?php previous_posts_link( 'Newer posts <span class="meta-nav">&rarr;</span>' ); ?></div>
+			    <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'mild' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -160,11 +160,11 @@ function post_nav() {
 		return;	?>
 		
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text">Post navigation</h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'mild' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">&larr;</span> %title', 'Previous post link' );
-				next_post_link(     '<div class="nav-next">%link</div>',     '%title <span class="meta-nav">&rarr;</span>', 'Next post link' );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'mild' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'mild' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -180,6 +180,8 @@ function post_nav() {
 function posted_on() {
 
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> - <time class="updated" datetime="%3$s">%4$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -188,9 +190,15 @@ function posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = sprintf( 'Posted on %s', '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' );
+	$posted_on = sprintf(
+		_x( 'Posted on %s', 'post date', 'mild' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
 
-	$byline = sprintf( 'by %s', '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>' ); ?>
+	$byline = sprintf(
+		_x( 'by %s', 'post author', 'mild' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	); ?>
 
 	<span class="posted-on"><?php echo $posted_on; ?></span><span class="byline"><?php echo $byline; ?></span>
 
@@ -198,7 +206,7 @@ function posted_on() {
 }
 
 /**
- * Output relevant entry mneta data.
+ * Output relevant entry meta data.
  *
  * @return void
  */
@@ -208,20 +216,20 @@ function entry_meta() {
 	if ( get_post_type() === 'post' ) {
 		$categories_list = get_the_category_list( ', ' );
 		if ( $categories_list && is_categorized_blog() ) {
-			printf( '<span class="cat-links">Posted in %1$s</span>', $categories_list );
+            printf( __( '<span class="cat-links">Posted in %1$s</span>', 'mild' ), $categories_list );
 		}
 		$tags_list = get_the_tag_list( '',  ', ' );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">Tagged %1$s</span>', $tags_list );
+            printf( __( '<span class="tags-links">Tagged %1$s</span>', 'mild' ), $tags_list );
 		}
 	}
     // Show comments link
 	if ( ! post_password_required() && comments_open() ) { ?>
 	    <span class="comments-link">
-		    <?php comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) ); ?>
+		    <?php comments_popup_link( __( 'Leave a comment', 'mild' ), __( '1 Comment', 'mild' ), __( '% Comments', 'mild' ) ); ?>
 		</span>
 	<?php }
 
-	edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', 'mild' ), '<span class="edit-link">', '</span>' );
 
 }

@@ -24,11 +24,16 @@
         </div><!-- .entry-summary -->
 	<?php else : ?>
         <div class="entry-content">
-            <?php the_content( 'Continue reading <span class="meta-nav">&rarr;</span>' ); ?>
+            <?php 
+                the_content( sprintf(
+                    __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'mild' ), 
+                    the_title( '<span class="screen-reader-text">"', '"</span>', false )
+                ) ); 
+            ?>
             <?php
                 wp_link_pages( [
-                    'before' => '<div class="page-links">' . 'Pages:',
-                    'after'  => '</div>',
+                    'before' => '<div class="page-links">' . __( 'Pages:', 'mild' ),
+                    'after'  => '</div>'
                 ] );
             ?>
         </div><!-- .entry-content -->

@@ -50,7 +50,7 @@ add_filter( 'upload_mimes', function( $mimes ) {
  * Alter the excerpt more.
  */
 add_filter( 'excerpt_more', function( $more ) {
-    return '<br><a href="' . get_permalink() . '" class="more">Read More...</a>';
+    return '<br><a href="' . get_permalink() . '" class="more"> ' . __( 'Read More...', 'mild' ) . '</a>';
 });
 
 /**
@@ -99,7 +99,7 @@ add_filter( 'wp_title', function( $title, $sep ) {
 
     // Add a page number if necessary:
     if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() )
-		$title .= " $sep " . sprintf( 'Page %s', max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'mild' ), max( $paged, $page ) );
 
     return $title;
 }, 10, 2);

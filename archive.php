@@ -22,46 +22,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( 'Author: %s', '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'mild' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( 'Day: %s', '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'mild' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( 'Month: %s', '<span>' . get_the_date( 'F Y', 'monthly archives date format' ) . '</span>' );
+							printf( __( 'Month: %s', 'mild' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'mild' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( 'Year: %s', 'mild', '<span>' . get_the_date( 'Y', 'yearly archives date format' ) . '</span>' );
+							printf( __( 'Year: %s', 'mild' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'mild' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							echo 'Asides';
+							_e( 'Asides', 'mild' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							echo 'Galleries';
+							_e( 'Galleries', 'mild' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							echo 'Images';
+							_e( 'Images', 'mild' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							echo 'Videos';
+							_e( 'Videos', 'mild' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							echo 'Quotes';
+							_e( 'Quotes', 'mild' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							echo 'Links';
+							_e( 'Links', 'mild' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							echo 'Statuses';
+							_e( 'Statuses', 'mild' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							echo 'Audios';
+							_e( 'Audios', 'mild' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							echo 'Chats';
+							_e( 'Chats', 'mild' );
 
 						else :
-							echo 'Archives';
+							_e( 'Archives', 'mild' );
 
 						endif;
 					?>

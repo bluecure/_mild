@@ -39,7 +39,7 @@ add_action( 'admin_init', function() {
                 'label' => 'Icon',
                 'id' => 'ot_icon',
                 'type' => 'upload',
-                'desc' => '196px X 196px',
+                'desc' => '192px X 192px',
                 'section' => 'ot_general'
             ], [
                 'label' => 'Footer copyright',

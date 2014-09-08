@@ -181,6 +181,30 @@
       "parents": [
         "b5e3f5b9"
       ]
+    },
+    "0a4bbb4b": {
+      "id": "0a4bbb4b",
+      "pid": "022c9b59",
+      "path": "assets\\scripts\\vendor\\owl.carousel.js",
+      "parents": [
+        "39584041"
+      ]
+    },
+    "0d28d4c4": {
+      "id": "0d28d4c4",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\_variables.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "ef58f6c4": {
+      "id": "ef58f6c4",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\vendor\\_owl-carousel.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
     }
   },
   "images": {
@@ -192,6 +216,16 @@
       "name": "screenshot.png",
       "type": "Png",
       "initialSize": 6757,
+      "status": "NOT_OPTIMIZED"
+    },
+    "a411650b": {
+      "id": "a411650b",
+      "pid": "022c9b59",
+      "path": "assets\\images\\icon-play.png",
+      "size": 4976,
+      "name": "icon-play.png",
+      "type": "Png",
+      "initialSize": 4976,
       "status": "NOT_OPTIMIZED"
     }
   },

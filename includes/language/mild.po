@@ -1,0 +1,221 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mild\n"
+"POT-Creation-Date: 2014-09-08 19:34+1000\n"
+"PO-Revision-Date: 2014-09-08 19:34+1000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_AU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:44
+
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:25
+
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:28
+
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:31
+
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:34
+
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:37
+msgid "Asides"
+msgstr ""
+
+#: archive.php:40
+msgid "Galleries"
+msgstr ""
+
+#: archive.php:43
+msgid "Images"
+msgstr ""
+
+#: archive.php:46
+msgid "Videos"
+msgstr ""
+
+#: archive.php:49
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:52
+msgid "Links"
+msgstr ""
+
+#: archive.php:55
+msgid "Statuses"
+msgstr ""
+
+#: archive.php:58
+msgid "Audios"
+msgstr ""
+
+#: archive.php:61
+msgid "Chats"
+msgstr ""
+
+#: archive.php:64
+msgid "Archives"
+msgstr ""
+
+#: comments.php:25 comments.php:42
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:26 comments.php:43
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:27 comments.php:44
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:54
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:17
+msgid "To Top"
+msgstr ""
+
+#: header.php:27
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:40
+msgid "Menu"
+msgstr ""
+
+#: includes/theme/setup.php:52 theme/setup.php:52
+msgid "Primary Menu"
+msgstr ""
+
+#: includes/theme/template.php:55 theme/template.php:55
+msgid "Home"
+msgstr ""
+
+#: includes/theme/template.php:132 theme/template.php:132
+msgid "Posts navigation"
+msgstr ""
+
+#: includes/theme/template.php:136 theme/template.php:136
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: includes/theme/template.php:140 theme/template.php:140
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: includes/theme/template.php:163 theme/template.php:163
+msgid "Post navigation"
+msgstr ""
+
+#: includes/theme/template.php:219 theme/template.php:219
+
+msgid "<span class=\"cat-links\">Posted in %1$s</span>"
+msgstr ""
+
+#: includes/theme/template.php:223 theme/template.php:223
+
+msgid "<span class=\"tags-links\">Tagged %1$s</span>"
+msgstr ""
+
+#: includes/theme/template.php:229 theme/template.php:229
+msgid "Leave a comment"
+msgstr ""
+
+#: includes/theme/template.php:229 theme/template.php:229
+msgid "1 Comment"
+msgstr ""
+
+#: includes/theme/template.php:229 theme/template.php:229
+msgid "% Comments"
+msgstr ""
+
+#: includes/theme/template.php:233 theme/template.php:233
+msgid "Edit"
+msgstr ""
+
+#: includes/theme/tweaks.php:53 theme/tweaks.php:53
+msgid "Read More..."
+msgstr ""
+
+#: includes/theme/tweaks.php:102 theme/tweaks.php:102
+
+msgid "Page %s"
+msgstr ""
+
+#: partials/content-none.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#: partials/content-none.php:16
+
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: partials/content-none.php:20
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: partials/content-none.php:25
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: partials/content-page.php:17 partials/content-single.php:22
+#: partials/content.php:35
+msgid "Pages:"
+msgstr ""
+
+#: partials/content.php:29
+
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: search.php:16
+
+msgid "Search Results for: %s"
+msgstr ""

@@ -36,11 +36,11 @@ class Post_Types {
         foreach ( $this->post_types as $type ) {
             
             // Set labels
-            $this->labels['single'] = $type['name'];
-            $this->labels['plural'] = ( $type['plural'] ) ? $type['plural'] : $type['name'] . 's' ;
+            $this->labels['single'] = __( $type['name'], 'mild' );
+            $this->labels['plural'] = ( $type['plural'] ) ? __( $type['plural'], 'mild' ) : $this->labels['single'] . 's' ;
 
             // Set options
-            $type_name = sanitize_title_with_dashes( $type['name'] );
+            $type_name = sanitize_title_with_dashes( __( $type['name'], 'mild' ) );
             $options = wp_parse_args( $type['options'], self::default_options() );
             $options['labels'] = wp_parse_args( $type['labels'], self::default_labels() );
 

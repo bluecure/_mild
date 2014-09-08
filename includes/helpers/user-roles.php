@@ -35,8 +35,8 @@ class User_Roles {
         foreach ( $this->roles as $role ) {
             
             // Set params
-            $display_name = $role['name'];
-            $role_name = sanitize_title_with_dashes ( $role['name'] );
+            $display_name = __( $role['name'], 'mild' );
+            $role_name = sanitize_title_with_dashes ( $display_name );
             $capabilities = wp_parse_args( $role['capabilities'], self::default_capabilities() );
 
             // Register user role

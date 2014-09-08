@@ -38,17 +38,17 @@ class Taxonomies {
         foreach ( $this->taxonomies as $taxonomy ) {
             
             // Set labels
-            $this->labels['single'] = $taxonomy['name'];
-            $this->labels['plural'] = ( $taxonomy['plural'] ) ? $taxonomy['plural'] : $taxonomy['name'] . 's' ;
+            $this->labels['single'] = __( $taxonomy['name'], 'mild' );
+            $this->labels['plural'] = ( $taxonomy['plural'] ) ? __( $taxonomy['plural'], 'mild' ) : $this->labels['single'] . 's' ;
 
             // Setup post types
             $post_types = [];
             foreach ( $taxonomy['post_types'] as $type ) {
-                $post_types[] = sanitize_title_with_dashes( $type );
+                $post_types[] = sanitize_title_with_dashes( __( $type, 'mild' ) );
             }
             
             // Setup options
-            $taxonomy_name = sanitize_title_with_dashes( $taxonomy['name'] );
+            $taxonomy_name = sanitize_title_with_dashes( $this->labels['single'] );
             $options = wp_parse_args( $taxonomy['options'], self::default_options() );
             $options['labels'] = wp_parse_args( $taxonomy['labels'], self::default_labels() );
             

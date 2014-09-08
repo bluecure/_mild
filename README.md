@@ -22,7 +22,7 @@ Note: This is a work in progress and can break at anytime.
 * OptionTree (Latest)
 
 ####Installing theme:
-1. `$ git clone --recursive https://github.com/bluecure/mild.git`
+1. `$ git clone --recursive https://github.com/lambry/mild.git`
 2. `$ rmdir mild\.git /s /q` (optional: remove git folder)
 3. `$ Rename mild my-new-theme-name` (optional: rename folder)
 

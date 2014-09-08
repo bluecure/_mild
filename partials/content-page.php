@@ -14,8 +14,8 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( [
-				'before' => '<div class="page-links">' . 'Pages:',
-				'after'  => '</div>',
+				'before' => '<div class="page-links">' . __( 'Pages:', 'mild' ),
+				'after'  => '</div>'
 			] );
 		?>
 	</div><!-- .entry-content -->

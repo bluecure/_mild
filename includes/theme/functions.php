@@ -81,10 +81,10 @@ function get_image_size( $url, $size = 'thumbnail' ) {
 	if ( ! $url ) return false;
 	// Get the image ID
 	$id = $wpdb->get_var( $wpdb->prepare(
-		"SELECT p.ID FROM   $wpdb->posts p WHERE  p.guid = %s AND p.post_type = %s", $url, 'attachment'
+		"SELECT p.ID FROM $wpdb->posts p WHERE  p.guid = %s AND p.post_type = %s", $url, 'attachment'
 	) );
 	// Get the new image size
-	if ( $id ) $url = wp_get_attachment_image_src( $id, $size )[0];
-	// Return the source
-	echo $url;
+	if ( $id ) { 
+        echo wp_get_attachment_image_src( $id, $size )[0];
+    }
 }

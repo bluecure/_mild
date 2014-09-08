@@ -22,6 +22,9 @@ if ( ! isset( $content_width ) )
  * Sets up defaults, add theme supports and menus.
  */
 add_action( 'after_setup_theme', function() {
+    
+    // Make theme available for translation.
+	load_theme_textdomain( 'mild', get_template_directory() . '/includes/language' );
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
@@ -46,7 +49,7 @@ add_action( 'after_setup_theme', function() {
 
     // Register nav menus.
     register_nav_menus( [
-        'primary' => 'Primary Menu'
+        'primary' => __( 'Primary Menu', 'mild' )
     ] );
 
 });
@@ -58,7 +61,7 @@ add_action( 'init', function () {
     
     // Register user roles.
     // new Mild\User_Roles( [
-    //     [ 'name' => 'Customer' ]        
+    //     [ 'name' => 'Customer' ]
     // ] );
 
     // Register post types.
