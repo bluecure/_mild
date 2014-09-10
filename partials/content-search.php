@@ -18,6 +18,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
+	    <?php the_post_thumbnail( 'thumbnail', ['class' => 'alignleft'] ); ?>
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 

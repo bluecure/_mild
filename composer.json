@@ -22,5 +22,7 @@
         "installer-paths": {
             "includes/options": [ "valendesigns/option-tree" ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
 }

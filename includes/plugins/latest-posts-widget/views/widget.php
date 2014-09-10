@@ -26,13 +26,13 @@ if ( ! empty( $title ) ) {
 			<?php if ( $lpw_length !== 0 ) { ?>
 				<div class="latest-posts-widget-excerpt">
 					<?php echo substr( get_the_excerpt(), 0, $lpw_length );	?>&hellip;
-					<a href="<?php the_permalink(); ?>" class="latest-posts-widget-more">Read More</a>
+					<a href="<?php the_permalink(); ?>" class="latest-posts-widget-more"><?php _e( 'Read More', 'mild' ); ?></a>
 				</div>
 			<?php } ?>
 		</div>
 	<?php endforeach; ?>
 		<?php if ( $lpw_link ) { ?>
-            <a href="<?php echo $lpw_link; ?>" class="latest-posts-widget-link"> - View More - </a>
+            <a href="<?php echo $lpw_link; ?>" class="latest-posts-widget-link"><?php _e( '- View More -', 'mild' ); ?></a>
 		<?php } ?>
 	<?php wp_reset_postdata(); ?>
 </div>

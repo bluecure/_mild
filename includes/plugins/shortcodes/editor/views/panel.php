@@ -8,40 +8,21 @@ require 'inc/header.php'; ?>
 <form class="shortcode" data-code="panel" data-wrap="yes" action="#">
 	<div class="row">
 		<div class="half">
-			<label for="color">Color: </label>
-			<div class="field">
-				<select name="color" id="color" class="input">
-					<?php include 'inc/list-colors.php'; ?>
-				</select>
-			</div>
+            <?php include 'inc/list-colors.php'; ?>
 		</div>
 		<div class="half">
-			<label for="size">Size: </label>
-			<div class="field">
-				<select name="size" id="size" class="input">
-					<?php include 'inc/list-sizes.php'; ?>
-				</select>
-			</div>
+            <?php include 'inc/list-sizes.php'; ?>
 		</div>
 	</div>
 	<div class="row">
 		<div class="half">
-			<label for="icon">Icon: </label>
-			<div class="field">
-				<select name="icon" id="icon" class="input">
-					<option value="">Select Icon</option>
-					<?php include 'inc/list-icons.php'; ?>
-				</select>
-			</div>
+            <?php include 'inc/list-icons.php'; ?>
 		</div>
 		<div class="half">
-			<label for="link">Icon Ref: </label>
-			<div class="field">
-				<a href="http://fontawesome.io/cheatsheet/" target="_blank">fontawesome.io</a>
-			</div>
+			<?php include 'inc/icon-ref.php'; ?>
 		</div>
 	</div>
 	<div class="row center">
-		<button type="submit" class="submit">Insert Panel</button>
+		<button type="submit" class="submit"><?php _e( 'Insert Panel', 'mild') ?></button>
 	</div>
 </form>

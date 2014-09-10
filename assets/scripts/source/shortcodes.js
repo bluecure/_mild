@@ -5,9 +5,21 @@
     // Accordian
     var accordion = $( '.accordion' );
     if ( accordion ) {
-        accordion.on( 'click', '.accordion-title', function() {
-            $( this ).parent( '.accordion' ).find( '.accordion-content' ).slideToggle();
+        accordion.on( 'click', '.accordion-title a', function(e) {
+            e.preventDefault();
+            var hash = $( this ).attr( 'href' );
+            $( this ).parents( '.accordion' ).find( '.accordion-content' ).slideToggle();
+            if( history.pushState ) {
+                history.pushState( null, null, hash );
+            }
+            else {
+                location.hash = hash;
+            }
         });
+        var urlHash = window.location.hash;
+        if ( urlHash ) {
+            $( urlHash ).find( 'a' ).trigger( 'click' );
+        }
     }
  
     // Inline login

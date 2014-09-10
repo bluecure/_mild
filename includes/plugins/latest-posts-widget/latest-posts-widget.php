@@ -29,10 +29,10 @@ class Latest_Posts_Widget extends \WP_Widget {
         // Widget details
         parent::__construct(
             'latest-posts-widget',
-            'Latest Posts Widget',
+            __( 'Latest Posts Widget', 'mild' ),
             [
                 'classname'   => 'latest-posts-widget',
-                'description' => 'Display the latest posts with optional title, date and image.'
+                'description' => __( 'Display the latest posts with optional title, date and image.', 'mild' )
             ]
         );
 

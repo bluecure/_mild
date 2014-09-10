@@ -1,11 +1,14 @@
 <?php
 /**
 * List Sizes
-*
 */
 ?>
-
-    <option value="small">Small</option>
-    <option value="medium" selected="selected">Medium</option>
-    <option value="large">Large</option>
-    <option value="huge">Huge</option>
+<label for="size"><?php _e( 'Size:', 'mild') ?>Size: </label>
+<div class="field">
+    <select name="size" id="size" class="input">
+        <option value="small"><?php _e( 'Small', 'mild') ?></option>
+        <option value="medium" selected="selected"><?php _e( 'Medium', 'mild') ?></option>
+        <option value="large"><?php _e( 'Large', 'mild') ?></option>
+        <option value="huge"><?php _e( 'Huge', 'mild') ?></option>
+    </select>
+</div>

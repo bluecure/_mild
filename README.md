@@ -17,11 +17,14 @@ Note: This is a work in progress and can break at anytime.
 * Shortcodes plugin
 * Normalize (3.0.1)
 * Font Awesome (4.2.0)
-* OwlCarousel (2.0.0-beta.2.4)
+* OwlCarousel (2.0.0)
 * Magnific Popup (0.9.9)
 * OptionTree (Latest)
 
-####Installing theme:
+####Installing theme (via composer):
+1. `$ composer create-project lambry/mild theme-name --prefer-dist`
+
+####Installing theme (via git):
 1. `$ git clone --recursive https://github.com/lambry/mild.git`
 2. `$ rmdir mild\.git /s /q` (optional: remove git folder)
 3. `$ Rename mild my-new-theme-name` (optional: rename folder)

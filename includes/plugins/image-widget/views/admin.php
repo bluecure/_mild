@@ -12,36 +12,36 @@ $image_src = ( $image_src ) ? $image_src[0] : $placeholder; ?>
     <div class="image-widget-row">
         <div class="image-widget-preview"><img src="<?php echo $image_src; ?>"></div>
         <input type="hidden" id="<?php echo $this->get_field_id( 'iw_image' ); ?>" name="<?php echo $this->get_field_name( 'iw_image' ); ?>" value="<?php echo $iw_image; ?>" class="image-widget-image" />
-        <button class="image-widget-select button button-primary button-hero widefat">Select Image</button>
+        <button class="image-widget-select button button-primary button-hero widefat"><?php _e( 'Select Image', 'mild' ); ?></button>
     </div>
     <div class="image-widget-row">
-        <label for="<?php echo $this->get_field_id( 'iw_icon' ); ?>">You can also use an icon:</label>
+        <label for="<?php echo $this->get_field_id( 'iw_icon' ); ?>"><?php _e( 'You can also use an icon:', 'mild' ); ?></label>
         <select name="<?php echo $this->get_field_name( 'iw_icon' ); ?>" id="<?php echo $this->get_field_id( 'iw_icon' ); ?>" class="image-widget-icon">
-            <option value="">Select Icon</option>
+            <option value=""><?php _e( 'Select Icon', 'mild' ) ?></option>
             <?php include 'inc/list-icons.php'; ?>
         </select>
-        <a href="http://fontawesome.io/cheatsheet/" target="_blank">Icon List</a>
+        <a href="http://fontawesome.io/cheatsheet/" target="_blank"><?php _e( 'Icon List', 'mild' ); ?></a>
     </div>
     <div class="image-widget-row">
-        <label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'mild' ); ?></label>
         <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $title; ?>" class="image-widget-title widefat" />
     </div>
     <div class="image-widget-row">
-        <label for="<?php echo $this->get_field_id( 'iw_description' ); ?>">Description:</label>
+        <label for="<?php echo $this->get_field_id( 'iw_description' ); ?>"><?php _e( 'Description:', 'mild' ); ?></label>
         <textarea id="<?php echo $this->get_field_id( 'iw_description' ); ?>" name="<?php echo $this->get_field_name( 'iw_description' ); ?>" class="image-widget-description widefat"><?php echo $iw_description; ?></textarea>
     </div>
     <div class="image-widget-row">
-        <label for="<?php echo $this->get_field_id( 'iw_link' ); ?>">Link:</label>
+        <label for="<?php echo $this->get_field_id( 'iw_link' ); ?>"><?php _e( 'Link:', 'mild' ); ?></label>
         <input type="text" id="<?php echo $this->get_field_id( 'iw_link' ); ?>" name="<?php echo $this->get_field_name( 'iw_link' ); ?>" value="<?php echo $iw_link; ?>" class="image-widget-link widefat" />
     </div>
     <div class="image-widget-row">
-        <label for="<?php echo $this->get_field_id( 'iw_size' ); ?>">Image size:</label>
+        <label for="<?php echo $this->get_field_id( 'iw_size' ); ?>"><?php _e( 'Image size:', 'mild' ); ?></label>
         <select name="<?php echo $this->get_field_name( 'iw_size' ); ?>" id="<?php echo $this->get_field_id( 'iw_size' ); ?>" class="image-widget-icon widefat">
            <?php include 'inc/list-sizes.php'; ?>
         </select>
     </div>
     <div class="image-widget-row">
         <input id="<?php echo esc_attr( $this->get_field_id( 'iw_target' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'iw_target' ) ); ?>" type="checkbox" value="1" <?php checked( '1', $iw_target ); ?> />
-        <label for="<?php echo $this->get_field_id( 'iw_target' ); ?>">Open in new window</label>
+        <label for="<?php echo $this->get_field_id( 'iw_target' ); ?>"><?php _e( 'Open in new window', 'mild' ); ?></label>
     </div>
 </div>

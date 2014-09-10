@@ -28,20 +28,20 @@ class Shortcodes {
 		self::editor();
 
 		// Add shortcodes
-		add_shortcode( 'row',       [ $this, 's_row' ] );
-		add_shortcode( 'col',       [ $this, 's_col' ] );
-		add_shortcode( 'icon',      [ $this, 's_icon' ] );
-		add_shortcode( 'button',    [ $this, 's_button' ] );
-		add_shortcode( 'panel',     [ $this, 's_panel' ] );
-		add_shortcode( 'align',     [ $this, 's_align' ] );
-		add_shortcode( 'accordion', [ $this, 's_accordion' ] );
-		add_shortcode( 'show',      [ $this, 's_show' ] );
-		add_shortcode( 'login',     [ $this, 's_login' ] );
-		add_shortcode( 'sitemap',   [ $this, 's_sitemap' ] );
-		add_shortcode( 'map',       [ $this, 's_map' ] );
-		add_shortcode( 'iframe',    [ $this, 's_iframe' ] );
-		add_shortcode( 'image',     [ $this, 's_image' ] );
-		add_shortcode( 'link',      [ $this, 's_link' ] );
+		add_shortcode( __( 'row', 'mild' ),       [ $this, 's_row' ] );
+		add_shortcode( __( 'col', 'mild' ),       [ $this, 's_col' ] );
+		add_shortcode( __( 'icon', 'mild' ),      [ $this, 's_icon' ] );
+		add_shortcode( __( 'button', 'mild' ),    [ $this, 's_button' ] );
+		add_shortcode( __( 'panel', 'mild' ),     [ $this, 's_panel' ] );
+		add_shortcode( __( 'align', 'mild' ),     [ $this, 's_align' ] );
+		add_shortcode( __( 'accordion', 'mild' ), [ $this, 's_accordion' ] );
+		add_shortcode( __( 'show', 'mild' ),      [ $this, 's_show' ] );
+		add_shortcode( __( 'login', 'mild' ),     [ $this, 's_login' ] );
+		add_shortcode( __( 'sitemap', 'mild' ),   [ $this, 's_sitemap' ] );
+		add_shortcode( __( 'map', 'mild' ),       [ $this, 's_map' ] );
+		add_shortcode( __( 'iframe', 'mild' ),    [ $this, 's_iframe' ] );
+		add_shortcode( __( 'image', 'mild' ),     [ $this, 's_image' ] );
+		add_shortcode( __( 'link', 'mild' ),      [ $this, 's_link' ] );
 
     }
 
@@ -162,10 +162,11 @@ class Shortcodes {
 	        'icon' => '',
 	        'class' => ''
 	    ], $params) );
+        $id = sanitize_title_with_dashes( $title );
 	    $icon = self::create_icon( $icon );
 	    $icon_plus = self::create_icon( 'plus' );
-	    return "<div class='accordion {$class}'>
-		    		<h3 class='accordion-title'>{$icon}{$title}{$icon_plus}</h3>
+	    return "<div id='{$id}' class='accordion {$class}'>
+		    		<h3 class='accordion-title'><a href='#{$id}'>{$icon}{$title}{$icon_plus}</a></h3>
 		            <div class='accordion-content'>" . do_shortcode( $content ) . "</div>
 	            </div>";
 	}
@@ -194,11 +195,10 @@ class Shortcodes {
 
 	    $html = "<div class='show-posts show-{$type} {$class}'>";
 	        while( $query->have_posts() ) : $query->the_post();
-	            $id = $query->post->ID;
 	            $html .= "<div class='post'>
 	                        <h4 class='post-title'><a href='" . get_permalink() . "'>" . get_the_title() . "</a></h4>";
 	            if ( $date ) $html .= "<div class='post-date'>" . get_the_date() . "</div>";
-	            if ( $image ) $html .= "<a href='" . get_permalink() . "' class='post-image'>" . get_the_post_thumbnail( $id, 'thumbnail' ) . "</a>";
+	            if ( $image ) $html .= "<a href='" . get_permalink() . "' class='post-image'>" . get_the_post_thumbnail( $query->post->ID, 'thumbnail' ) . "</a>";
 	            $html .= "<div class='post-content'>" . get_the_excerpt() . "</div></div>";
 	        endwhile;
 	        wp_reset_query();
@@ -246,7 +246,7 @@ class Shortcodes {
 	    
 	    if ( strpos( $show, 'menus' ) !== false ) {
 	        $menus = get_terms( 'nav_menu', [ 'hide_empty' => true ] );
-	        $html .= "<h4>Menus</h4>";
+	        $html .= "<h4>" . __( 'Menus', 'mild' ) . "</h4>";
 	        foreach ( $menus as $menu ) {
 	            $html .= wp_nav_menu( [ 'menu' => $menu->name, 'echo' => false ] );
 	        }
@@ -254,7 +254,7 @@ class Shortcodes {
 
 	    if ( strpos( $show, 'pages' ) !== false ) {
 	        $pages = get_pages();
-	        $html .= "<h4>Pages</h4>";
+            $html .= "<h4>" . __( 'Pages', 'mild' ) . "</h4>";
 	        $html .= "<ul class='sitemap sitemap-pages'>";
 	            foreach ( $pages as $page ) {
 	                $html .= "<li><a href='" . get_permalink( $page->ID ) . "'>";
@@ -266,7 +266,7 @@ class Shortcodes {
 
 	    if ( strpos( $show, 'posts' ) !== false ) {
 	        $posts = get_posts();
-	        $html .= "<h4>Posts</h4>";
+            $html .= "<h4>" . __( 'Posts', 'mild' ) . "</h4>";
 	        $html .= "<ul class='sitemap sitemap-posts'>";
 	            foreach ( $posts as $post ) {
 	                $html .= "<li><a href='" . get_permalink( $post->ID ) . "'>";

@@ -29,10 +29,10 @@ class Image_Widget extends \WP_Widget {
         // Widget details
         parent::__construct(
             'image-widget',
-            'Image Widget',
+            __( 'Image Widget', 'mild' ),
             [
                 'classname'   => 'image-widget',
-                'description' => 'Adds an image (or icon) with optional title, description and link.'
+                'description' => __( 'Adds an image (or icon) with optional title, description and link.', 'mild' )
             ]
         );
 
