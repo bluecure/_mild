@@ -5,7 +5,6 @@
  * is_user()             | Checks user role
  * is_blog()             | Checks if is blog page
  * is_categorized_blog() | Check for multiple categories
- * get_image_size()      | Gets new image size from source
  *
  * @package Mild
  */
@@ -68,23 +67,3 @@ function category_transient_flusher() {
 }
 add_action( 'edit_category', 'Mild\category_transient_flusher' );
 add_action( 'save_post',     'Mild\category_transient_flusher' );
-
-/**
- * Get an new image size from source.
- *
- * @param string $url
- * @param string $size
- * @return string
- */
-function get_image_size( $url, $size = 'thumbnail' ) {
-	global $wpdb;
-	if ( ! $url ) return false;
-	// Get the image ID
-	$id = $wpdb->get_var( $wpdb->prepare(
-		"SELECT p.ID FROM $wpdb->posts p WHERE  p.guid = %s AND p.post_type = %s", $url, 'attachment'
-	) );
-	// Get the new image size
-	if ( $id ) { 
-        echo wp_get_attachment_image_src( $id, $size )[0];
-    }
-}

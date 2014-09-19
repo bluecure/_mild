@@ -13,14 +13,14 @@
         </div>
 
         <div id="archives" class="widget">
-            <h1 class="widget-title">_e( 'Archives', 'mild' );</h1>
+            <h1 class="widget-title"><?php _e( 'Archives', 'mild' ); ?></h1>
             <ul>
                 <?php wp_get_archives( [ 'type' => 'monthly' ] ); ?>
             </ul>
         </div>
 
         <div id="meta" class="widget">
-            <h1 class="widget-title">_e( 'Meta', 'mild' );</h1>
+            <h1 class="widget-title"><?php _e( 'Meta', 'mild' ); ?></h1>
             <ul>
                 <?php wp_register(); ?>
                 <li><?php wp_loginout(); ?></li>

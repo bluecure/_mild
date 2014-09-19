@@ -27,30 +27,15 @@
     });
     
     // Scroll to top
-    $( 'a.to-top' ).click( function() {
+    $( '.to-top' ).click( function() {
         $( 'html, body' ).animate({
             scrollTop: 0
         }, 500);
     });
-    
-    // Meta slider
-    var slider = $( '.meta-slider' );
-    if ( slider ) {
-        slider.owlCarousel({
-            autoplay: true,
-            animateIn: 'fadeIn',
-            animateOut: 'fadeOut',
-            items: 1,
-            loop: false,
-            dots: false,
-            nav: true,
-            navText: [ '<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>' ]
-        });
-    }
 
-    // Gallery popups
+    // Gallery modal
     var gallery = $( '.gallery' );
-    if ( gallery ) {
+    if ( gallery.length > 0 ) {
         gallery.magnificPopup({
             delegate: 'a',
             type: 'image',

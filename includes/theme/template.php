@@ -214,17 +214,17 @@ function entry_meta() {
 
     // Show post categories and tags
 	if ( get_post_type() === 'post' ) {
-		$categories_list = get_the_category_list( ', ' );
+		$categories_list = get_the_category_list( __( ', ', 'mild' ) );
 		if ( $categories_list && is_categorized_blog() ) {
-            printf( __( '<span class="cat-links">Posted in %1$s</span>', 'mild' ), $categories_list );
+            printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'mild' ) . '</span>', $categories_list );
 		}
-		$tags_list = get_the_tag_list( '',  ', ' );
+		$tags_list = get_the_tag_list( '', __( ', ', 'mild' ) );
 		if ( $tags_list ) {
-            printf( __( '<span class="tags-links">Tagged %1$s</span>', 'mild' ), $tags_list );
+			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'mild' ) . '</span>', $tags_list );
 		}
 	}
     // Show comments link
-	if ( ! post_password_required() && comments_open() ) { ?>
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) { ?>
 	    <span class="comments-link">
 		    <?php comments_popup_link( __( 'Leave a comment', 'mild' ), __( '1 Comment', 'mild' ), __( '% Comments', 'mild' ) ); ?>
 		</span>

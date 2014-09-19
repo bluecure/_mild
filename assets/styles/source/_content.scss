@@ -7,8 +7,10 @@
 .sticky {
     font-size: 1.1em;
 }
-.single .byline, .group-blog .byline {
-	display: inline;
+.single, .group-blog {
+    .byline {
+	    display: inline;
+    }
 }
 .page-content, .entry-content, .entry-summary {
 	margin: 0 0 layout('margin') 0;
@@ -21,7 +23,7 @@
 /* Search */
 .search .site-main > article {
     @extend .clear;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid color('silver');
     margin-bottom: layout('margin');
     padding-bottom: layout('padding');
 }

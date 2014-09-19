@@ -85,7 +85,8 @@ add_filter('body_class', function( $classes ) {
  * @return string The filtered title.
  */
 add_filter( 'wp_title', function( $title, $sep ) {
-    if ( is_feed() ) return $title;
+    if ( is_feed() ) 
+        return $title;
         
     global $page, $paged;
 

@@ -6,15 +6,14 @@
  *
  * @package Mild
  */
- 
-$copyright = ot_get_option( 'ot_copyright', '' ); ?>
+ ?>
 
 	</div><!-- .site-content -->
 
 	<footer class="site-footer row" role="contentinfo">
 		<div class="site-info col-12">
-			<?php echo ( $copyright ? $copyright : '&copy; ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) ); ?>
-			<a href="#" class="to-top"><i class="fa fa-angle-up"></i> <?php _e( 'To Top', 'mild' ); ?></a>
+		    <?php printf( __( '&copy; %s', '_s' ), date( 'Y' ) ); ?>
+			<a href="#" class="to-top float-right"><i class="fa fa-angle-up"></i> <?php _e( 'To Top', 'mild' ); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- site-footer -->
 	

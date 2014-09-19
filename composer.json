@@ -11,18 +11,5 @@
     ],
     "keywords": [
         "wordpress", "theme"
-    ],
-    "support": {
-        "issues": "https://github.com/lambry/mild/issues"
-    },
-    "require": {
-        "valendesigns/option-tree": "dev-master"
-    },
-    "extra": {
-        "installer-paths": {
-            "includes/options": [ "valendesigns/option-tree" ]
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    ]
 }
