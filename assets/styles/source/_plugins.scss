@@ -9,31 +9,31 @@
 }
 
 /* Latest Posts Widget */
-.latest-posts-widget {
-    .latest-posts-widget-post {
+.posts-widget {
+    .posts-widget-post {
 	    margin: 0 0 layout('margin') 0;
 	    padding: 0;
         clear: both;
 	}
-	.latest-posts-widget-title {
+	.posts-widget-title {
 		margin-bottom: 0.25em;
 	}
-	.latest-posts-widget-image {
+	.posts-widget-image {
 		float: left;
 	    margin: 0 5% 5% 0;
 	    width: 40%;
 	}
-	.latest-posts-widget-time {
+	.posts-widget-time {
 	    color: lighten(color('gray'), 12%);
 	    font-size: 0.8em;
 	    font-style: italic;
 	}
-	.latest-posts-widget-more {
+	.posts-widget-more {
 	    display: block;
 	    font-size: 0.8em;
 	    text-align: right;
 	}
-	.latest-posts-widget-link {
+	.posts-widget-link {
 	    display: block;
 	    font-size: 0.9em;
 	    padding: 0.25em;

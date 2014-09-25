@@ -17,7 +17,7 @@ if ( ! isset( $content_width ) )
 add_action( 'after_setup_theme', function() {
     
     // Make theme available for translation.
-	load_theme_textdomain( 'mild', get_template_directory() . '/includes/languages' );
+    load_theme_textdomain( 'mild', get_template_directory() . '/includes/languages' );
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );

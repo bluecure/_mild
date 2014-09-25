@@ -54,14 +54,6 @@
         "39584041"
       ]
     },
-    "d412df2a": {
-      "id": "d412df2a",
-      "pid": "022c9b59",
-      "path": "assets\\scripts\\source\\shortcodes.js",
-      "parents": [
-        "39584041"
-      ]
-    },
     "6944b8c2": {
       "id": "6944b8c2",
       "pid": "022c9b59",
@@ -182,26 +174,10 @@
         "b5e3f5b9"
       ]
     },
-    "0a4bbb4b": {
-      "id": "0a4bbb4b",
-      "pid": "022c9b59",
-      "path": "assets\\scripts\\vendor\\owl.carousel.js",
-      "parents": [
-        "39584041"
-      ]
-    },
     "0d28d4c4": {
       "id": "0d28d4c4",
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_variables.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
-    "ef58f6c4": {
-      "id": "ef58f6c4",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\vendor\\_owl-carousel.scss",
       "parents": [
         "b5e3f5b9"
       ]
