@@ -18,10 +18,13 @@ class Sidebars {
      * @param array $sidebars
      */
     public function __construct( $sidebars = [] ) {
+
+        // Set variables
         $this->sidebars = $sidebars;
 
         // Register
-        self::register();
+        $this->register();
+
     }
 
     /**
@@ -35,15 +38,12 @@ class Sidebars {
         foreach ( $this->sidebars as $sidebar ) {
             
             // Set options
-            $options = wp_parse_args( $sidebar, self::default_options() );
-            
-            // Translate name
-            $sidebar_name = __( $options['name'], 'mild' );
-            
+            $options = wp_parse_args( $sidebar, $this->default_options() );
+
             // Register sidebar
             register_sidebar( [
-                'name'          => $sidebar_name,
-                'id'            => sanitize_title_with_dashes( $sidebar_name ),
+                'name'          => $options['name'],
+                'id'            => sanitize_title_with_dashes( $options['name'] ),
                 'before_widget' => '<aside id="%1$s" class="widget %2$s ' . $options['classes'] . '">',
                 'after_widget'  => '</aside>',
                 'before_title'  => '<' .$options['header']. ' class="widget-title">',

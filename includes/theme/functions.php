@@ -5,6 +5,8 @@
  * is_user()             | Checks user role
  * is_blog()             | Checks if is blog page
  * is_categorized_blog() | Check for multiple categories
+ * the_section()         | Get a sections settings
+ * the_option()          | Get a settings option
  *
  * @package Mild
  */
@@ -67,3 +69,31 @@ function category_transient_flusher() {
 }
 add_action( 'edit_category', 'Mild\category_transient_flusher' );
 add_action( 'save_post',     'Mild\category_transient_flusher' );
+
+/**
+ * Helper function to get options
+ *
+ * @param string $name
+ * @param string $section
+ * @return string $field
+ */
+function the_section( $name, $section ) {
+
+    return Settings::get_settings( $name, $section );
+    
+}
+
+/**
+ * Helper function to get a options value
+ *
+ * @param string   $name
+ * @param string   $section
+ * @param string   $field
+ * @param boolean  $field
+ * @return string  $field
+ */
+function the_option( $name, $section, $field, $url = true ) {
+
+    return Settings::get_setting( $name, $section, $field, $url );
+
+}

@@ -1,13 +1,17 @@
 /* =Social
 -------------------------------------------------------------- */
 
-.social-tiles {
+.social-links {
     a {
         width: 2em;
         height: 2em;
         margin: 0.25em;
         padding: 0.5em;
         text-align: center;
+    }
+}
+.social-tiles {
+    a {
         color: color('white');
         &:hover {
             color: darken(color('white'), 5%);

@@ -54,17 +54,17 @@ add_action( 'after_setup_theme', function() {
     
     // Register user roles.
      new Mild\User_Roles( [
-         [ 'name' => 'Customer' ]
+         [ 'name' => __( 'Customer', 'mild' ) ]
      ] );
 
     // Register post types.
      new Mild\Post_Types( [
-         [ 'name' => 'Book' ]
+         [ 'name' => __( 'Book', 'mild' ) ]
      ] );
 
     // Register taxonomies.
      new Mild\Taxonomies( [
-         [ 'name' => 'Genre', 'post_types' => [ 'Book' ] ]
+         [ 'name' => __( 'Genre', 'mild' ), 'post_types' => [ __( 'Book', 'mild' ) ] ]
      ] );
     
 }); */
@@ -76,7 +76,7 @@ add_action( 'widgets_init', function () {
 
     // Register sidebars.
     new Mild\Sidebars( [
-        [ 'name' => 'Sidebar' ]
+        [ 'name' => __( 'Sidebar', 'mild' ) ]
     ] );
 
 });

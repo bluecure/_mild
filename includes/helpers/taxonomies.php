@@ -15,16 +15,17 @@ class Taxonomies {
 
     /**
      * Creates a new taxonomy
-     * @param string $tax
-     * @param array $post_type
-     * @param array $options
-     * @param array $labels
+     *
+     * @param array $taxonomies
      */
     public function __construct( $taxonomies = [] ) {
+
+        // Set variables
         $this->taxonomies = $taxonomies;
 
         // Register
-        self::register();
+        $this->register();
+
     }
 
     /**
@@ -38,19 +39,19 @@ class Taxonomies {
         foreach ( $this->taxonomies as $taxonomy ) {
             
             // Set labels
-            $this->labels['single'] = __( $taxonomy['name'], 'mild' );
-            $this->labels['plural'] = ( $taxonomy['plural'] ) ? __( $taxonomy['plural'], 'mild' ) : $this->labels['single'] . 's' ;
+            $this->labels['single'] = $taxonomy['name'];
+            $this->labels['plural'] = ( $taxonomy['plural'] ) ? $taxonomy['plural'] : $this->labels['single'] . 's' ;
 
             // Setup post types
             $post_types = [];
             foreach ( $taxonomy['post_types'] as $type ) {
-                $post_types[] = sanitize_title_with_dashes( __( $type, 'mild' ) );
+                $post_types[] = sanitize_title_with_dashes( $type );
             }
             
             // Setup options
             $taxonomy_name = sanitize_title_with_dashes( $this->labels['single'] );
-            $options = wp_parse_args( $taxonomy['options'], self::default_options() );
-            $options['labels'] = wp_parse_args( $taxonomy['labels'], self::default_labels() );
+            $options = wp_parse_args( $taxonomy['options'], $this->default_options() );
+            $options['labels'] = wp_parse_args( $taxonomy['labels'], $this->default_labels() );
             
             // Register taxonomy
             register_taxonomy( $taxonomy_name, $post_types, $options );

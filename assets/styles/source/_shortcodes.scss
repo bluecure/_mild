@@ -123,7 +123,7 @@
     .post-date {
         font-size: 0.85em;
         font-style: italic;
-        color: lighten(color('gray'), 10%);
+        color: lighten(color('grey'), 10%);
         margin-bottom: 0.5em;
     }
     .post-image {
@@ -139,7 +139,7 @@
     }
     .login-username, 
     .login-password {
-        color: color('gray');
+        color: color('grey');
         position: relative;
     }
     label {

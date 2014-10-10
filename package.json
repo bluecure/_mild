@@ -1,9 +1,9 @@
 {
   "name": "mild",
   "title": "Mild",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "gulpfile.js",
-  "repository": "https://github.com/bluecure/mild",
+  "repository": "https://github.com/lambry/mild",
   "devDependencies": {
     "gulp": "*",
     "gulp-autoprefixer": "*",

@@ -19,10 +19,13 @@ class Post_Types {
      * @param array $post_types
      */
     public function __construct( $post_types = [] ) {
+
+        // Set variables
         $this->post_types = $post_types;
 
         // Register
-        self::register();
+        $this->register();
+
     }
 
     /**
@@ -36,13 +39,13 @@ class Post_Types {
         foreach ( $this->post_types as $type ) {
             
             // Set labels
-            $this->labels['single'] = __( $type['name'], 'mild' );
-            $this->labels['plural'] = ( $type['plural'] ) ? __( $type['plural'], 'mild' ) : $this->labels['single'] . 's' ;
+            $this->labels['single'] = $type['name'];
+            $this->labels['plural'] = ( $type['plural'] ) ? $type['plural'] : $this->labels['single'] . 's' ;
 
             // Set options
-            $type_name = sanitize_title_with_dashes( __( $type['name'], 'mild' ) );
-            $options = wp_parse_args( $type['options'], self::default_options() );
-            $options['labels'] = wp_parse_args( $type['labels'], self::default_labels() );
+            $type_name = sanitize_title_with_dashes( $type['name'] );
+            $options = wp_parse_args( $type['options'], $this->default_options() );
+            $options['labels'] = wp_parse_args( $type['labels'], $this->default_labels() );
 
             // Register post type
             register_post_type( $type_name, $options );

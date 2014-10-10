@@ -1,6 +1,12 @@
 /* =Global
 ----------------------------------------------- */
 
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 ::-moz-selection {
     background-color: color('black');
     color: color('white');
@@ -9,6 +15,8 @@
     background-color: color('black');
     color: color('white');
 }
+
+/* Elements */
 hr {
 	background-color: color('silver');
 	margin-bottom: layout('margin');
@@ -16,8 +24,6 @@ hr {
 	border: 0;
     clear: both;
 }
-
-/* Elements */
 ul, ol {
     margin: 0 0 layout('margin') layout('margin');
     padding: 0 0 0 layout('padding');
@@ -66,7 +72,7 @@ code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 abbr, acronym {
-	border-bottom: 1px dotted color('gray');
+	border-bottom: 1px dotted color('grey');
 	cursor: help;
 }
 mark, ins {
@@ -132,7 +138,7 @@ button, input, select, textarea {
 }
 input, textarea, select {
     padding: 0.25em;
-    color: color('gray');
+    color: color('grey');
     border-radius: style('radius');
     border: 1px solid color('silver');
     &[type="checkbox"], &[type="radio"] {
@@ -145,11 +151,11 @@ input, textarea, select {
         }
     }
     &:hover {
-        color: darken(color('gray'), 2.5%);
+        color: darken(color('grey'), 2.5%);
         border: 1px solid darken(color('silver'), 2.5%);
     }
     &:focus {
-        color: darken(color('gray'), 5%);
+        color: darken(color('grey'), 5%);
         border: 1px solid darken(color('silver'), 5%);
     }
 }

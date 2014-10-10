@@ -1,9 +1,6 @@
 /* =Grid
 ----------------------------------------------- */
 
-*, *:after, *:before {
-    box-sizing: border-box;
-}
 .container {
     max-width: layout('width');
     padding: layout('padding');

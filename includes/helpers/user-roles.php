@@ -18,10 +18,13 @@ class User_Roles {
      * @param array $roles
      */
     public function __construct( $roles = [] ) {
+
+        // Set variables
         $this->roles = $roles;
 
         // Register
-        self::register();
+        $this->register();
+
     }
 
     /**
@@ -35,12 +38,11 @@ class User_Roles {
         foreach ( $this->roles as $role ) {
             
             // Set params
-            $display_name = __( $role['name'], 'mild' );
-            $role_name = sanitize_title_with_dashes ( $display_name );
-            $capabilities = wp_parse_args( $role['capabilities'], self::default_capabilities() );
+            $role_name = sanitize_title_with_dashes ( $role['name'] );
+            $capabilities = wp_parse_args( $role['capabilities'], $this->default_capabilities() );
 
             // Register user role
-            add_role( $role_name, $display_name, $capabilities );
+            add_role( $role_name, $role['name'], $capabilities );
             
         }
 

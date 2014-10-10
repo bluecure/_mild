@@ -16,8 +16,8 @@ define ( 'DISALLOW_FILE_EDIT', true );
 add_filter( 'widget_text', 'do_shortcode' );
 
 /**
- * Clean up auto p's for shortcodes.
- */
+* Clean up auto p's for shortcodes.
+*/
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12 );
 

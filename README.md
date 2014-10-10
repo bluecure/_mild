@@ -14,9 +14,6 @@ Note: This is a work in progress and can break at anytime.
 * Font Awesome (4.2.0)
 * Magnific Popup (0.9.9)
 
-###Installing theme:
-1. `$ composer create-project lambry/mild theme-name --prefer-dist`
-
 ###Setting up theme:
 1. Rename the theme in `assets/styes/styles.scss`
 2. Also, update the Author, URIs and description.

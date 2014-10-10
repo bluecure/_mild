@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mild\n"
-"POT-Creation-Date: 2014-09-25 19:06+1000\n"
-"PO-Revision-Date: 2014-09-25 19:06+1000\n"
+"POT-Creation-Date: 2014-10-10 16:53+1000\n"
+"PO-Revision-Date: 2014-10-10 16:53+1000\n"
 "Last-Translator: David Featherston\n"
 "Language-Team: \n"
 "Language: en_AU\n"
@@ -114,23 +114,95 @@ msgstr ""
 
 #: footer.php:15
 #, php-format
-msgid "&copy; %s"
+msgid "&copy; %s - %s"
 msgstr ""
 
 #: footer.php:16
 msgid "To Top"
 msgstr ""
 
-#: header.php:23
+#: header.php:24
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:30
+#: header.php:38
 msgid "Menu"
+msgstr ""
+
+#: includes/helpers/settings.php:262 helpers/settings.php:262
+msgid "Select"
+msgstr ""
+
+#: includes/theme/options.php:14 theme/options.php:14
+msgid "General"
+msgstr ""
+
+#: includes/theme/options.php:15 theme/options.php:15
+msgid "Main options."
+msgstr ""
+
+#: includes/theme/options.php:19 theme/options.php:19
+msgid "Logo"
+msgstr ""
+
+#: includes/theme/options.php:23 theme/options.php:23
+msgid "Icon"
+msgstr ""
+
+#: includes/theme/options.php:28 theme/options.php:28
+msgid "JavaScript"
+msgstr ""
+
+#: includes/theme/options.php:29 theme/options.php:29
+msgid "i.e. Google Analytics"
+msgstr ""
+
+#: includes/theme/options.php:35 theme/options.php:35
+msgid "Social"
+msgstr ""
+
+#: includes/theme/options.php:36 theme/options.php:36
+msgid "Social links."
+msgstr ""
+
+#: includes/theme/options.php:40 theme/options.php:40
+msgid "Facebook Url"
+msgstr ""
+
+#: includes/theme/options.php:44 theme/options.php:44
+msgid "Twitter Url"
+msgstr ""
+
+#: includes/theme/options.php:48 theme/options.php:48
+msgid "Google Plus Url"
+msgstr ""
+
+#: includes/theme/options.php:52 theme/options.php:52
+msgid "LinkedIn Url"
+msgstr ""
+
+#: includes/theme/options.php:56 theme/options.php:56
+msgid "Instagram Url"
+msgstr ""
+
+#: includes/theme/options.php:60 theme/options.php:60
+msgid "Flickr Url"
+msgstr ""
+
+#: includes/theme/options.php:64 theme/options.php:64
+msgid "Youtube Url"
+msgstr ""
+
+#: includes/theme/options.php:72 theme/options.php:72
+msgid "Theme Options"
 msgstr ""
 
 #: includes/theme/setup.php:45 theme/setup.php:45
 msgid "Primary Menu"
+msgstr ""
+
+#: includes/theme/setup.php:79 theme/setup.php:79
+msgid "Sidebar"
 msgstr ""
 
 #: includes/theme/template.php:55 theme/template.php:55
