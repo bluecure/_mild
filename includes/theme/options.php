@@ -12,28 +12,33 @@ add_action( 'init', function () {
         [
             'id' => 'general',
             'title' => __( 'General', 'mild' ),
-            'description' => __( 'Main options.', 'mild' ),
+            'description' => __( 'Main theme options.', 'mild' ),
             'fields' => [
                 [
                     'id'    => 'logo',
                     'label' => __( 'Logo', 'mild' ),
                     'type'  => 'upload'
                 ], [
-                    'id'          => 'icon',
-                    'label'       => __( 'Icon', 'mild' ),
+                    'id'          => 'favicon',
+                    'label'       => __( 'Favicon', 'mild' ),
+                    'description' => '32px X 32px',
+                    'type'        => 'upload'
+                ], [
+                    'id'          => 'app-icon',
+                    'label'       => __( 'App Icon', 'mild' ),
                     'description' => '192px X 192px',
                     'type'        => 'upload'
                 ], [
                     'id'          => 'javascript',
                     'label'       => __( 'JavaScript', 'mild' ),
-                    'description' => __( 'i.e. Google Analytics', 'mild' ),
+                    'description' => __( 'i.e. Google Analytics with script tags.', 'mild' ),
                     'type'        => 'textarea'
                 ]
             ]
         ], [
             'id' => 'social',
             'title' => __( 'Social', 'mild' ),
-            'description' => __( 'Social links.', 'mild' ),
+            'description' => __( 'Social website links.', 'mild' ),
             'fields' => [
                 [
                     'id'    => 'facebook',

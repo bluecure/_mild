@@ -8,11 +8,12 @@
 /**
  * Set the content width.
  */
-if ( ! isset( $content_width ) )
+if ( ! isset( $content_width ) ) {
     $content_width = 1140;
+}
 
 /**
- * Sets up defaults, add theme supports and menus.
+ * Set up defaults, add theme supports and menus.
  */
 add_action( 'after_setup_theme', function() {
     

@@ -5,12 +5,24 @@
  * @package Mild
  */
 
-// Get Icon
-$icon = Mild\the_option( 'theme-options', 'general', 'icon' ); ?>
+// Get General Settings
+$general = Mild\the_section( 'theme-options', 'general' ); ?>
 
 <!-- Icons -->
-<?php if ( $icon ) : ?>
-	<link rel="icon" href="<?php echo $icon; ?>">
-	<link rel="apple-touch-icon" href="<?php echo $icon; ?>">
-	<meta name="msapplication-TileImage" content="<?php echo $icon; ?>">
-<?php endif; ?>
+<?php
+/* Favicon */
+ if ( isset( $general['favicon'] ) ) : ?>
+	<link rel="shortcut icon" href="<?php echo $general['favicon']; ?>">
+<?php endif;
+
+/* App Icon */
+if ( isset( $general['app-icon'] ) ) : ?>
+	<link rel="icon" sizes="192x192" href="<?php echo $general['app-icon']; ?>">
+	<link rel="apple-touch-icon" href="<?php echo $general['app-icon']; ?>">
+	<meta name="msapplication-TileImage" content="<?php echo $general['app-icon']; ?>">
+<?php endif; 
+
+/* JavaScript */
+if ( isset( $general['javascript'] ) ) {
+    echo $general['javascript'];
+}

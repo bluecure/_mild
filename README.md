@@ -10,18 +10,16 @@ Note: This is a work in progress and can break at anytime.
 * Standard templates
 * Base styles
 * Helpers
-* Normalize (3.0.1)
+* Normalize (3.0.2)
 * Font Awesome (4.2.0)
 * Magnific Popup (0.9.9)
 
 ###Setting up theme:
-1. Rename the theme in `assets/styes/styles.scss`
-2. Also, update the Author, URIs and description.
+1. Update the theme details in `assets/styes/styles.scss`
 
 ###Using Gulp:
-1. Rename the theme in `package.json`
-2. Install Gulp and plugins: `$ npm install`
-3. Run gulp: `$ gulp`
+1. Install Gulp and plugins: `$ npm install`
+2. Run gulp: `$ gulp`
 
 ###Using Prepros:
 1. Rename the theme in `prepros.json`

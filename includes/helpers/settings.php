@@ -68,7 +68,7 @@ class Settings {
                 $menu = add_options_page( $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
                 break;
 
-            case 'custom':
+            case 'submenu':
                 $menu = add_submenu_page( $this->menu, $this->title, $this->menu_title, 'manage_options', $this->title_clean,  [ $this, 'register_page' ] );
                 break;
         }
@@ -251,15 +251,12 @@ class Settings {
     private function upload( $field ) { 
 
         $options = get_option( $field['section'] );
-        $upload  = $this->get_upload( $field, $options ) ?>
+        $file = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>
 
             <div class="upload">
-                <p>
-                    <img src="<?php echo $upload['url']; ?>" class="upload-image <?php echo ( $upload['url'] === '' ) ? 'hidden': ''; ?>">
-                    <strong class="upload-title <?php echo ( $upload['url'] ) ? 'hidden': ''; ?>"><?php echo $upload['name']; ?></strong>
-                </p>
-                <input type="hidden" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>" class="upload-id">
-                <button class="button upload" type="button"><?php _e( 'Select', 'mild' ); ?></button>
+                <p><img src="<?php echo $file; ?>" class="upload-image <?php echo ( ! $file ) ? 'hidden': ''; ?>" alt="<?php echo $file; ?>"></p>
+                <input type="hidden" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $file; ?>" class="upload-file">
+                <button class="button upload-select" type="button"><?php _e( 'Select', 'mild' ); ?></button>
                 <?php if ( isset( $field['description'] ) ) : ?>
                     <p><?php echo $field['description']; ?></p>
                 <?php endif; ?>
@@ -286,22 +283,18 @@ class Settings {
                 var Settings = {
                     init: function () {
                         // Handle upload
-                        $( '.mild-settings' ).on( 'click', '.upload button', this.upload );
+                        $( '.mild-settings' ).on( 'click', '.upload-select', this.selectUpload );
                     },
                     // Launch media manager
-                    upload : function( e ) {
+                    selectUpload : function( e ) {
                         e.preventDefault();
-                        var wrap  = $( this ).parents( '.upload' ),
-                            frame = wp.media({ multiple: false }).open();
+                        var upload  = $( this ).parents( '.upload' ),
+                            frame = wp.media({ title: '<?php _e( 'Select a file', 'mild' ); ?>', multiple: false }).open();
                         // Load upload into setting
                         frame.on( 'close', function() {
-                            var upload = frame.state().get( 'selection' ).toJSON()[0];
-                            if ( upload.type === 'image' ) {
-                                wrap.find( '.upload-image' ).attr( 'src', upload.url ).show();
-                            } else {
-                                wrap.find( '.upload-title' ).html( upload.title ).show();
-                            }
-                            wrap.find( '.upload-id' ).val( upload.id );
+                            var file = frame.state().get( 'selection' ).toJSON()[0];
+                            upload.find( '.upload-image' ).attr( { 'src': file.url, 'alt': file.url } ).show();
+                            upload.find( '.upload-file' ).val( file.url );
                         });
                     }
                 };
@@ -332,18 +325,16 @@ class Settings {
     }
 
     /**
-     * Setting Name
+     * Get Tab
      *
-     * Generates a settings name
+     * Gets the current tab
      *
-     * @access public 
-     * @param  string  $name
-     * @param  string  $id
-     * @return string  $name
+     * @access private
+     * @return string  $tab
      */
-    public static function setting_name( $name, $id ) { 
+    private function get_tab() { 
 
-        return 'mild-' . $name . '-' . $id;
+        return ( isset( $_GET['tab'] ) ) ? $_GET['tab'] : $this->settings[0]['id'];
 
     }
 
@@ -363,46 +354,18 @@ class Settings {
     }
 
     /**
-     * Get Tab
+     * Setting Name
      *
-     * Gets the current tab
+     * Generates a settings name
      *
-     * @access private
-     * @return string  $tab
+     * @access public 
+     * @param  string  $name
+     * @param  string  $id
+     * @return string  $name
      */
-    private function get_tab() { 
+    public static function setting_name( $name, $id ) { 
 
-        return ( isset( $_GET['tab'] ) ) ? $_GET['tab'] : $this->settings[0]['id'];
-
-    }
-
-    /**
-     * Get Upload
-     *
-     * Gets the saved upload
-     *
-     * @access private
-     * @param  array $field
-     * @param  array $options
-     * @return array $upload
-     */
-    private function get_upload( $field, $options ) {
-
-        $upload = [
-            'url'  => '',
-            'name' => ''
-        ];
-
-        // Set source and name
-        if ( isset( $options[$field['id']] ) ) {
-            if ( wp_attachment_is_image( $options[$field['id']] ) ) {
-                $upload['url'] = wp_get_attachment_thumb_url( $options[$field['id']] );
-            } else {
-                $upload['name'] = get_the_title( $options[$field['id']] );
-            }
-        }
-
-        return $upload;
+        return 'mild-' . $name . '-' . $id;
 
     }
 
@@ -431,17 +394,13 @@ class Settings {
      * @param string  $name
      * @param string  $id
      * @param string  $field
-     * @param boolen  $url
      * @return string $setting
      */
-    public static function get_setting( $name, $id, $field, $url = true ) {
+    public static function get_setting( $name, $id, $field ) {
 
         $setting = get_option( self::setting_name( $name, $id ), false );
         if ( $setting && isset( $setting[$field] ) ) {
             $setting = $setting[$field];
-        }
-        if ( $setting && $url && ( get_post_type( $setting ) === 'attachment' ) ) {
-            $setting = wp_get_attachment_url( $setting );
         }
         return $setting;
 

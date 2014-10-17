@@ -1,6 +1,6 @@
 # Ignored Directories
 node_modules/
-assets/styles/cache/
+assets/styles/.sass-cache/
 
 # Ignored extensions
 *.diff
@@ -12,8 +12,6 @@ assets/styles/cache/
 *.swp
 *.vi
 *~
-*.mo
-*.sass-cache
 
 # Ignored OS and Editor folders
 .DS_Store

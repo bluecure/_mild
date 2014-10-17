@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mild\n"
-"POT-Creation-Date: 2014-10-10 16:53+1000\n"
-"PO-Revision-Date: 2014-10-10 16:53+1000\n"
+"POT-Creation-Date: 2014-10-17 16:59+1000\n"
+"PO-Revision-Date: 2014-10-17 16:59+1000\n"
 "Last-Translator: David Featherston\n"
 "Language-Team: \n"
 "Language: en_AU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
@@ -129,8 +129,12 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: includes/helpers/settings.php:262 helpers/settings.php:262
+#: includes/helpers/settings.php:259 helpers/settings.php:259
 msgid "Select"
+msgstr ""
+
+#: includes/helpers/settings.php:292 helpers/settings.php:292
+msgid "Select a file"
 msgstr ""
 
 #: includes/theme/options.php:14 theme/options.php:14
@@ -138,7 +142,7 @@ msgid "General"
 msgstr ""
 
 #: includes/theme/options.php:15 theme/options.php:15
-msgid "Main options."
+msgid "Main theme options."
 msgstr ""
 
 #: includes/theme/options.php:19 theme/options.php:19
@@ -146,62 +150,66 @@ msgid "Logo"
 msgstr ""
 
 #: includes/theme/options.php:23 theme/options.php:23
-msgid "Icon"
+msgid "Favicon"
 msgstr ""
 
 #: includes/theme/options.php:28 theme/options.php:28
+msgid "App Icon"
+msgstr ""
+
+#: includes/theme/options.php:33 theme/options.php:33
 msgid "JavaScript"
 msgstr ""
 
-#: includes/theme/options.php:29 theme/options.php:29
-msgid "i.e. Google Analytics"
-msgstr ""
-
-#: includes/theme/options.php:35 theme/options.php:35
-msgid "Social"
-msgstr ""
-
-#: includes/theme/options.php:36 theme/options.php:36
-msgid "Social links."
+#: includes/theme/options.php:34 theme/options.php:34
+msgid "i.e. Google Analytics with script tags."
 msgstr ""
 
 #: includes/theme/options.php:40 theme/options.php:40
+msgid "Social"
+msgstr ""
+
+#: includes/theme/options.php:41 theme/options.php:41
+msgid "Social website links."
+msgstr ""
+
+#: includes/theme/options.php:45 theme/options.php:45
 msgid "Facebook Url"
 msgstr ""
 
-#: includes/theme/options.php:44 theme/options.php:44
+#: includes/theme/options.php:49 theme/options.php:49
 msgid "Twitter Url"
 msgstr ""
 
-#: includes/theme/options.php:48 theme/options.php:48
+#: includes/theme/options.php:53 theme/options.php:53
 msgid "Google Plus Url"
 msgstr ""
 
-#: includes/theme/options.php:52 theme/options.php:52
+#: includes/theme/options.php:57 theme/options.php:57
 msgid "LinkedIn Url"
 msgstr ""
 
-#: includes/theme/options.php:56 theme/options.php:56
+#: includes/theme/options.php:61 theme/options.php:61
 msgid "Instagram Url"
 msgstr ""
 
-#: includes/theme/options.php:60 theme/options.php:60
+#: includes/theme/options.php:65 theme/options.php:65
 msgid "Flickr Url"
 msgstr ""
 
-#: includes/theme/options.php:64 theme/options.php:64
+#: includes/theme/options.php:69 theme/options.php:69
 msgid "Youtube Url"
 msgstr ""
 
-#: includes/theme/options.php:72 theme/options.php:72
+#: includes/theme/options.php:77 theme/options.php:77
 msgid "Theme Options"
 msgstr ""
 
-#: includes/theme/setup.php:45 theme/setup.php:45
+#: includes/theme/setup.php:46 theme/setup.php:46
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/theme/setup.php:79 theme/setup.php:79
+#: includes/theme/setup.php:80 theme/setup.php:80
 msgid "Sidebar"
 msgstr ""
 

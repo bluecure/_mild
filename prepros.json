@@ -193,16 +193,6 @@
       "type": "Png",
       "initialSize": 6757,
       "status": "NOT_OPTIMIZED"
-    },
-    "a411650b": {
-      "id": "a411650b",
-      "pid": "022c9b59",
-      "path": "assets\\images\\icon-play.png",
-      "size": 4976,
-      "name": "icon-play.png",
-      "type": "Png",
-      "initialSize": 4976,
-      "status": "NOT_OPTIMIZED"
     }
   },
   "config": {
