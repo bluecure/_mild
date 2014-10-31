@@ -1,15 +1,17 @@
 <?php
 /**
- * The template part for displaying a message that posts cannot be found.
+ * The partial for displaying when no content is found.
  *
  * @package Mild
  */
 ?>
 
 <section class="no-results not-found">
+
 	<header class="page-header">
 		<h1 class="page-title"><?php _e( 'Nothing Found', 'mild' ); ?></h1>
 	</header><!-- .page-header -->
+
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
@@ -27,4 +29,5 @@
 
 		<?php endif; ?>
 	</div><!-- .page-content -->
+
 </section><!-- .no-results -->

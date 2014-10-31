@@ -25,9 +25,6 @@
     &-thin {
         padding: 0 layout('padding');
     }
-    &-inner {
-        padding: layout('padding');
-    }
 }
 [class*="col-"] {
     @extend .col;

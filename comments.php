@@ -20,11 +20,11 @@ if ( post_password_required() ) return; ?>
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Check for comments ?>
             <nav id="comment-nav-above" class="comment-navigation" role="navigation">
-                <h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'mild' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'mild' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'mild' ) ); ?></div>
+	            <h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'mild' ); ?></h1>
+				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'mild' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'mild' ) ); ?></div>
             </nav><!-- #comment-nav-above -->
 		<?php endif; ?>
 
@@ -37,20 +37,17 @@ if ( post_password_required() ) return; ?>
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Check for comments ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'mild' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'mild' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'mild' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
-		<?php endif; // check for comment navigation ?>
+		<?php endif; ?>
 
 	<?php endif; ?><!-- have_comments() -->
 
-	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && get_comments_number() != '0' && post_typemildupports( get_post_type(), 'comments' ) ) :
-	?>
+	<?php if ( ! comments_open() && get_comments_number() != '0' && post_typemildupports( get_post_type(), 'comments' ) ) : ?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'mild' ); ?></p>
 	<?php endif; ?>
 

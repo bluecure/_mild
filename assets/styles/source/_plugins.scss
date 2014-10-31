@@ -2,41 +2,41 @@
 ----------------------------------------------- */
 
 /* Image Widget */
-.image-widget {
-	.image-widget-description {
-	    margin: layout('margin') 0;
-	}
+.image-widget-icon {
+    display: block;
+    font-size: 5em;
+    margin-bottom: 0.25em;
+}
+.image-widget-image,
+.image-widget-description {
+    margin-bottom: layout('margin');
 }
 
 /* Latest Posts Widget */
-.posts-widget {
-    .posts-widget-post {
-	    margin: 0 0 layout('margin') 0;
-	    padding: 0;
-        clear: both;
-	}
-	.posts-widget-title {
-		margin-bottom: 0.25em;
-	}
-	.posts-widget-image {
-		float: left;
-	    margin: 0 5% 5% 0;
-	    width: 40%;
-	}
-	.posts-widget-time {
-	    color: lighten(color('grey'), 12%);
-	    font-size: 0.8em;
-	    font-style: italic;
-	}
-	.posts-widget-more {
-	    display: block;
-	    font-size: 0.8em;
-	    text-align: right;
-	}
-	.posts-widget-link {
-	    display: block;
-	    font-size: 0.9em;
-	    padding: 0.25em;
-	    text-align: center;
-	}
+.posts-widget-post {
+    clear: both;
+}
+.posts-widget-title {
+    margin-bottom: 0.25em;
+}
+.posts-widget-image {
+    float: left;
+    margin: 0 1em 1em 0;
+    width: 40%;
+}
+.posts-widget-time {
+    color: lighten(color('grey'), 12%);
+    font-size: 0.8em;
+    font-style: italic;
+}
+.posts-widget-more {
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+}
+.posts-widget-link {
+    display: block;
+    font-size: 0.9em;
+    padding: 0.25em;
+    text-align: center;
 }

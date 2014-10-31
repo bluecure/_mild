@@ -54,19 +54,19 @@ add_action( 'after_setup_theme', function() {
 /* add_action( 'init', function () {
     
     // Register user roles.
-     new Mild\User_Roles( [
-         [ 'name' => __( 'Customer', 'mild' ) ]
-     ] );
+    new Mild\User_Roles( [
+        [ 'name' => __( 'Customer', 'mild' ) ]
+    ] );
 
     // Register post types.
-     new Mild\Post_Types( [
-         [ 'name' => __( 'Book', 'mild' ) ]
-     ] );
+    new Mild\Post_Types( [
+        [ 'name' => __( 'Book', 'mild' ) ]
+    ] );
 
     // Register taxonomies.
-     new Mild\Taxonomies( [
-         [ 'name' => __( 'Genre', 'mild' ), 'post_types' => [ __( 'Book', 'mild' ) ] ]
-     ] );
+    new Mild\Taxonomies( [
+        [ 'name' => __( 'Genre', 'mild' ), 'post_types' => [ __( 'Book', 'mild' ) ] ]
+    ] );
     
 }); */
 

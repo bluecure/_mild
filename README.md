@@ -16,6 +16,7 @@ Note: This is a work in progress and can break at anytime.
 
 ###Setting up theme:
 1. Update the theme details in `assets/styes/styles.scss`
+2. Update screenshot.png
 
 ###Using Gulp:
 1. Install Gulp and plugins: `$ npm install`

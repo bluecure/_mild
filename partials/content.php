@@ -1,15 +1,15 @@
 <?php
 /**
- * The generic content template.
+ * The generic content partial.
  *
  * @package Mild
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'article-excerpt' ); ?>>
+
 	<header class="entry-header">
 	    <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-
 		<?php if ( get_post_type() === 'post' ) : ?>
             <div class="entry-meta">
                 <?php Mild\posted_on(); ?>
@@ -17,7 +17,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() || Mild\is_blog() ) : // Only display excerpts for Search and Blog ?>
+	<?php if ( is_search() || Mild\is_blog() ) : // Display excerpts for search/blog ?>
         <div class="entry-summary">
             <?php the_post_thumbnail( 'thumbnail', ['class' => 'alignleft'] ); ?>
             <?php the_excerpt(); ?>
@@ -42,4 +42,5 @@
 	<footer class="entry-footer">
 		<?php Mild\entry_meta(); ?>
 	</footer><!-- .entry-footer -->
+
 </article><!-- #post-## -->

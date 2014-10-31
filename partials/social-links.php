@@ -1,6 +1,6 @@
 <?php
 /**
- * The partial for displaying the various social links
+ * The partial for displaying the various social links.
  *
  * @package Mild
  */

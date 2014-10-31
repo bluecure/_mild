@@ -47,33 +47,34 @@ embed, iframe, object {
 }
 img.wp-smiley {
     border: none;
-    margin-bottom: 0;
-    margin-top: 0;
+    margin: 0 0.5em;
     padding: 0;
 }
 .wp-caption {
 	border: 1px solid color('silver');
 	margin-bottom: layout('margin');
 	max-width: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: lighten(color('silver'), 2.5%);
     img[class*="wp-image-"] {
         display: block;
         margin: 1.2% auto 0;
         max-width: 98%;
     }
-    .wp-caption-text {
-        padding: 0.3em 0.5em;
-        text-align: center;
-    }
+}
+.wp-caption-text {
+    padding: 0.3em 0.5em;
+    text-align: center;
 }
 .gallery {
     margin-bottom: layout('margin');
-    .gallery-item {
-        display: inline-block;
-        text-align: center;
-        vertical-align: top;
-        width: 100%;
-    }
+}
+.gallery-item {
+    width: 100%;
+    margin-right: -4px;
+    padding-right: 0.25em;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
 }
 @for $i from 1 through 10 {
     .gallery-columns-#{$i} .gallery-item {
@@ -90,21 +91,21 @@ img.wp-smiley {
     padding: 0;
     margin: layout('margin') 0;
     font-size: 0.8em;
-    .breadcrumb {
-        float: left;
-        position: relative;
-        list-style: none;
-        padding: 0.25em 0.5em;
-        &:after {
-            content: '/';
-            font-size: 0.8em;
-            position: absolute;
-            bottom: 18%;
-            right: 0;
-        }
-        &:last-child:after {
-            content: '';
-        }
+}
+.breadcrumb {
+    float: left;
+    position: relative;
+    list-style: none;
+    padding: 0.25em 0.5em;
+    &:after {
+        content: '/';
+        font-size: 0.8em;
+        position: absolute;
+        bottom: 18%;
+        right: 0;
+    }
+    &:last-child:after {
+        content: '';
     }
 }
 
@@ -155,23 +156,23 @@ img.wp-smiley {
     a {
         word-wrap: break-word;
     }
-    .comment {
-        border-left: 1px dotted color('silver');
-        list-style: none outside none;
-        margin-top: layout('margin');
-        padding-left: layout('padding');
+}
+.comment {
+    border-left: 1px dotted color('silver');
+    list-style: none outside none;
+    margin-top: layout('margin');
+    padding-left: layout('padding');
+}
+.comment-respond {
+    padding: 0.25em 0.75em;
+    label {
+        display: inline-block;
+        padding-right: 0.5em;
+        width: 5em;
     }
-    .comment-respond {
-        padding: 0.25em 0.75em;
-        label {
-            display: inline-block;
-            padding-right: 0.5em;
-            width: 5em;
-        }
-    }
-    .form-allowed-tags code {
-        font-size: 0.9em;
-    }
+}
+.form-allowed-tags code {
+    font-size: 0.9em;
 }
 .bypostauthor {
     text-decoration: underline;

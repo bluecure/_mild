@@ -12,11 +12,11 @@
     border-radius: style('radius');
     &:hover {
         color: color('white');
-        box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset, 0 0em 0.25em rgba(0, 0, 0, 0.15) inset;
+        box-shadow: 0 -0.05em 0.1em rgba(255, 255, 255, 0.25) inset, -0.1em -0.15em 0.1em rgba(0, 0, 0, 0.2) inset;
     }
-    &:active, &:visited, &:focus {
+    &:active, &:focus {
         color: color('white');
-        box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0.3em rgba(0, 0, 0, 0.2) inset;
+        box-shadow: 0 -0.05em 0.25em rgba(255, 255, 255, 0.25) inset, -0.1em -0.15em 0.3em rgba(0, 0, 0, 0.2) inset;
     }
 }
 
@@ -51,7 +51,7 @@
 
 /* Sizes */
 .small {
-    font-size: 0.85em;
+    font-size: 0.75em;
 }
 .medium {
     font-size: 1em;
@@ -66,33 +66,37 @@
 
 /* Tabs */
 .tabs {
+    margin-bottom: layout('margin');
     .tabs-nav {
         margin: 0;
         padding: 0;
-        list-style-type: none;
-        li {
-            float: left;
-            cursor: pointer;
-            padding: 0.5em 0.75em;
-        }
-        .fa {
-            padding-right: 0.5em;    
-        }
+        list-style: none;
+    }
+    .tab-item {
+        float: left;
+        cursor: pointer;
+        padding: 0.5em 0.75em;
+        margin: 0 0.25em -2px 0;
+        border: 1px solid color('silver');
+        border-bottom-color: color('white');
+        background-color: lighten(color('silver'), 2.5%);
+        border-radius: style('radius') style('radius') 0 0;
     }
     .tab-active {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: color('white');
     }
     .tab-panes {
-        clear: both;    
+        clear: both;
     }
     .tab {
         padding: 1em 1.25em;
+        border: 1px solid color('silver');
     }
 }
 
 /* Accordion */
 .accordion {
-    padding: 1em;
+    padding: layout('padding');
     .fa {
         padding: 0.2em 0.5em;
         font-size: 0.75em;
@@ -104,7 +108,7 @@
         margin-bottom: 0.5em;
         line-height: 1;
         cursor: pointer;
-        border-bottom: 1px solid;
+        border-bottom: 1px solid color('silver');
     }
     .accordion-content {
         display: none;
@@ -128,7 +132,7 @@
     }
     .post-image {
         float: left;
-        margin: 0 0.5em 0.5em 0;
+        margin: 0 layout('padding') 0.5em 0;
     }
 }
 
@@ -161,7 +165,7 @@
 }
 
 /* General */
-.button, .panel {
+.button, .panel, .tab-item {
     .fa {
         margin-right: 0.5em;
     }

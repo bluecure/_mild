@@ -5,17 +5,20 @@ body {
     background-color: color('white');
 }
 
-/* Site Header */
-.site-header {
-
+/* Site Info */
+.site-info {
+    font-size: 0.75em;
+    text-align: right;
 }
 
-/* Site Content */
-.site-content {
+/* Media Queries */
+@media screen and (max-width: break('small')) {
 
-}
-
-/* Site Footer */
-.site-footer {
+    .site-footer {
+        text-align: center;
+        .text-right {
+            text-align: center;
+        }
+    }
 
 }

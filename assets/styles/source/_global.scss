@@ -27,6 +27,7 @@ hr {
 ul, ol {
     margin: 0 0 layout('margin') layout('margin');
     padding: 0 0 0 layout('padding');
+    list-style-position: inside;
 }
 ul {
     list-style: disc;
@@ -47,7 +48,7 @@ dd {
 	margin: 0 layout('margin') layout('margin');
 }
 b, strong {
-	font-weight: bold;
+	font-weight: font('bold');
 }
 dfn, cite, em, i {
 	font-style: italic;
@@ -90,13 +91,13 @@ sup {
 	bottom: 1ex;
 }
 sub {
-	top: .5ex;
+	top: 0.5ex;
 }
 small {
-	font-size: 75%;
+	font-size: 0.75em;
 }
 big {
-	font-size: 125%;
+	font-size: 1.25em;
 }
 figure {
 	margin: 0;
@@ -175,10 +176,10 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 	-webkit-appearance: button;
     &:hover {
         color: color('black');
-        box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset, 0 0em 0.25em rgba(0, 0, 0, 0.15) inset;
+        box-shadow: 0 -0.05em 0.1em rgba(255, 255, 255, 0.25) inset, -0.1em -0.15em 0.1em rgba(0, 0, 0, 0.2) inset;
     }
     &:focus, &:active {
         color: color('black');
-        box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0.3em rgba(0, 0, 0, 0.2) inset;
+        box-shadow: 0 -0.05em 0.25em rgba(255, 255, 255, 0.25) inset, -0.1em -0.15em 0.3em rgba(0, 0, 0, 0.2) inset;
     }
 }

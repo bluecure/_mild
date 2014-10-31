@@ -1,7 +1,7 @@
 <?php
 /**
  * Template tags for this theme.
- * 
+ *
  * pagination()  | Displays pagination
  * breadcrumbs() | Displays breadcrumbs
  * page_menu()   | Displays page menu
@@ -35,8 +35,10 @@ function pagination() {
 		'next_text' => '<i class="fa fa-angle-double-right"></i>'
 	]; ?>
 
-	<nav class="pagination" role="navigation"><?php echo paginate_links( $args ); ?></nav>
-	
+	<nav class="pagination" role="navigation">
+	    <?php echo paginate_links( $args ); ?>
+	</nav>
+
 <?php
 }
 
@@ -50,7 +52,7 @@ function breadcrumbs() {
 	global $post;
 
 	$parents = get_post_ancestors( $post->ID ); ?>
-	
+
 	<ul class="breadcrumbs" role="navigation">
         <li class="breadcrumb"><a href="<?php echo site_url(); ?>"><?php _e( 'Home', 'mild'); ?></a></li>
         <?php if ( $parents ) :
@@ -60,7 +62,9 @@ function breadcrumbs() {
                     <a href="<?php echo get_permalink( $item ); ?>"><?php echo get_the_title( $item ); ?></a>
                 </li>
         <?php endforeach; endif; ?>
-	    <li class="breadcrumb"><?php echo get_the_title( $post->ID ); ?></li>
+	    <li class="breadcrumb">
+	        <?php echo get_the_title( $post->ID ); ?>
+	    </li>
    </ul><!-- .breadcrumbs -->
 
 <?php
@@ -77,12 +81,12 @@ function page_menu() {
 	$parent = ( $post->post_parent !== 0 ) ? $post->post_parent : $post->ID;
 
 	$args = [
-		'child_of'     => $parent,
-		'exclude'      => $parent,
-		'sort_column'  => 'menu_order',
-		'post_type'    => 'page',
-	    'post_status'  => 'publish',
-		'title_li'     => ''
+		'child_of'    => $parent,
+		'exclude'     => $parent,
+		'sort_column' => 'menu_order',
+		'post_type'   => 'page',
+		'post_status' => 'publish',
+		'title_li'    => ''
 	]; ?>
 
 	<ul class="side-menu" role="navigation">
@@ -99,23 +103,24 @@ function page_menu() {
  */
 function posts_menu() {
 
+    global $post;
 	$args = [
-		'posts_per_page'   => 10,
-		'orderby'          => 'post_date',
-		'order'            => 'DESC',
-		'post_type'        => 'post',
-		'post_status'      => 'publish'
+		'posts_per_page' => 10,
+		'orderby'        => 'post_date',
+		'order'          => 'DESC',
+		'post_type'      => 'post',
+		'post_status'    => 'publish'
 	];
 	$posts = get_posts( $args );
 
 	if ( $posts ) : ?>
-		
+
 		<ul class="side-menu" role="navigation">
 		    <?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
-                <li class="post_item"><a href="<?php echo $post->guid; ?>"><?php echo $post->post_title; ?></a></li>
-            <?php endforeach; wp_reset_postdata(); ?>
+				<li class="post_item"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+			<?php endforeach; wp_reset_postdata(); ?>
 		</ul>
-		
+
 	<?php endif;
 }
 
@@ -158,7 +163,7 @@ function post_nav() {
 
 	if ( ! $next && ! $previous )
 		return;	?>
-		
+
 	<nav class="navigation post-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'mild' ); ?></h1>
 		<div class="nav-links">

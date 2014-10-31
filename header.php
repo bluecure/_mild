@@ -22,7 +22,9 @@
 <body <?php body_class(); ?>>
 <div class="hfeed site container">
     <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mild' ); ?></a>
+
 	<header id="masthead" class="site-header row" role="banner">
+
 		<div class="site-branding col-12">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
                 <?php $logo = Mild\the_option( 'theme-options', 'general', 'logo' ); ?>
@@ -34,10 +36,12 @@
             </a>
             <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div><!-- .site-branding -->
+
 		<nav class="main-navigation col-12" role="navigation">
-			<div class="menu-toggle fa fa-bars"> <?php _e( 'Menu', 'mild' ); ?> </div>
+			<div class="menu-toggle"><i class="fa fa-bars"></i> <?php _e( 'Menu', 'mild' ); ?></div>
 			<?php wp_nav_menu( [ 'theme_location' => 'primary' ] ); ?>
 		</nav><!-- .main-navigation -->
+
 	</header><!-- .site-header -->
 
 	<div id="content" class="site-content row">
