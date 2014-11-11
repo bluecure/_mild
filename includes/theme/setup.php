@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme setup
+ * Theme setup.
  *
  * @package Mild
  */

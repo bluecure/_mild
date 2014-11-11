@@ -1,6 +1,8 @@
 <?php
 /**
-* Create new settings page in WordPress admin
+* Settings
+*
+* Create new settings page in WordPress admin.
 *
 * @package Mild
 */
@@ -18,7 +20,9 @@ class Settings {
     private $menu_title;
 
     /**
-     * Creates new settings pages
+     * Construct
+     *
+     * Creates new settings pages.
      *
      * @param string $type
      * @param array  $settings
@@ -26,10 +30,9 @@ class Settings {
      * @param string $menu
      * @param string $menu_title
      */
-    public function __construct( $type, $settings, $title, $menu = false, $menu_title = false  ) {
+    public function __construct( $type, $settings, $title, $menu = false, $menu_title = false ) {
 
-        if ( ! is_admin() )
-            return;
+        if ( ! is_admin() ) return;
 
         // Set variables
         $this->type = $type;
@@ -49,6 +52,8 @@ class Settings {
     
     /**
      * Add Menu
+     *
+     * Adds the appropriate menu.
      *
      * @access public
      * @return null
@@ -73,13 +78,15 @@ class Settings {
                 break;
         }
 
-        // Add assets
-        add_action( 'admin_print_scripts-' . $menu, [ $this, 'assets' ] );
+        // Load scripts
+        add_action( 'admin_print_scripts-' . $menu, [ $this, 'load_scripts' ] );
 
     }
 
     /**
      * Register settings
+     *
+     * Registers all section settings.
      *
      * @access public
      * @return null
@@ -105,7 +112,7 @@ class Settings {
             }
 
             // Register setting
-            register_setting( $setting_id, $setting_id, [ $this, 'sanitize_settings' ] );
+            register_setting( $setting_id, $setting_id );
 
         }
 
@@ -113,6 +120,8 @@ class Settings {
 
     /**
      * Register Page
+     *
+     * Registers the page content and section settings.
      *
      * @access public
      * @return null
@@ -151,7 +160,7 @@ class Settings {
     /**
      * Section Description
      *
-     * Displays the sections description
+     * Displays the sections description.
      *
      * @access public
      * @param array $section
@@ -164,14 +173,13 @@ class Settings {
                 echo "<p>{$setting['description']}</p>";
             }
         }
-
     
     }
 
     /**
      * Add Field
      *
-     * Displays the settings description
+     * Adds the appropriate field type.
      *
      * @access public
      * @param  array $field
@@ -188,6 +196,14 @@ class Settings {
                 $this->textarea( $field );
                 break;
 
+            case 'editor':
+                $this->editor( $field );
+                break;
+
+            case 'select':
+                $this->select( $field );
+                break;
+
             case 'upload':
                 $this->upload( $field );
                 break;
@@ -202,7 +218,7 @@ class Settings {
     /**
      * Text
      *
-     * Generates a text field
+     * Generates a text field.
      *
      * @access private
      * @param  array $field
@@ -213,6 +229,7 @@ class Settings {
         $options = get_option( $field['section'] ); ?>
 
         <input name="<?php echo $this->field_name( $field ); ?>" value="<?php echo ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>" type="text">
+
         <?php if ( isset( $field['description'] ) ) : ?>
             <p><?php echo $field['description']; ?></p>
         <?php endif;
@@ -222,7 +239,7 @@ class Settings {
     /**
      * Textarea
      *
-     * Generates a textarea
+     * Generates a textarea.
      *
      * @access private
      * @param  array $field
@@ -233,6 +250,56 @@ class Settings {
         $options = get_option( $field['section'] ); ?>
 
         <textarea name="<?php echo $this->field_name( $field ); ?>" cols="50" rows="10"><?php echo ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?></textarea>
+
+        <?php if ( isset( $field['description'] ) ) : ?>
+            <p><?php echo $field['description']; ?></p>
+        <?php endif;
+
+    }
+
+    /**
+     * Editor
+     *
+     * Generates a WordPress editor.
+     *
+     * @access private
+     * @param  array $field
+     * @return null
+     */
+    private function editor( $field ) { 
+
+        $options = get_option( $field['section'] );
+        $content = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : '';
+        
+        wp_editor( $content, $field['id'], [ 'textarea_name' => $this->field_name( $field ) ] );
+        
+        if ( isset( $field['description'] ) ) : ?>
+            <p><?php echo $field['description']; ?></p>
+        <?php endif;
+
+    }
+
+    /**
+     * Select
+     *
+     * Generates a select box.
+     *
+     * @access private
+     * @param  array $field
+     * @return null
+     */
+    private function select( $field ) { 
+
+        $options = get_option( $field['section'] );
+        $option = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>
+        
+        <select name="<?php echo $this->field_name( $field ); ?>">
+           <option><?php echo __( '-- select --', 'Mild' ); ?></option>
+            <?php foreach( $field['choices'] as $value => $label ) : ?>
+                <option value="<?php echo $value; ?>" <?php selected( $option, $value ); ?>><?php echo $label; ?></option>
+            <?php endforeach; ?>            
+        </select>
+
         <?php if ( isset( $field['description'] ) ) : ?>
             <p><?php echo $field['description']; ?></p>
         <?php endif;
@@ -242,10 +309,10 @@ class Settings {
     /**
      * Upload
      *
-     * Generates a textarea
+     * Generates a upload field.
      *
      * @access private
-     * @param  array   $field
+     * @param  array $field
      * @return null
      */
     private function upload( $field ) { 
@@ -255,8 +322,10 @@ class Settings {
 
             <div class="upload">
                 <p><img src="<?php echo $file; ?>" class="upload-image <?php echo ( ! $file ) ? 'hidden': ''; ?>" alt="<?php echo $file; ?>"></p>
+
                 <input type="hidden" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $file; ?>" class="upload-file">
                 <button class="button upload-select" type="button"><?php _e( 'Select', 'mild' ); ?></button>
+    
                 <?php if ( isset( $field['description'] ) ) : ?>
                     <p><?php echo $field['description']; ?></p>
                 <?php endif; ?>
@@ -265,21 +334,21 @@ class Settings {
     <?php }
 
     /**
-     * Assets
+     * Load Scripts
      *
-     * Loads assets
+     * Loads all scripts.
      *
      * @access public
      * @return null
      */
-    public function assets() {
+    public function load_scripts() {
 
         wp_enqueue_media();
 
         add_action( 'admin_print_footer_scripts', function() { ?>
 
         <script>
-            (function ($) {
+            (function( $ ) {
                 var Settings = {
                     init: function () {
                         // Handle upload
@@ -299,7 +368,7 @@ class Settings {
                     }
                 };
                 Settings.init();
-            } (jQuery));
+            })( jQuery );
         </script>
 
     <?php });
@@ -307,27 +376,9 @@ class Settings {
     }
 
     /**
-     * Sanitize Settings
-     *
-     * Perform sanitization of settings
-     *
-     * @access public
-     * @return string  $tab
-     */
-    public function sanitize_settings( $settings ) { 
-
-        foreach( $settings as $id => $val ) {
-            $settings[$id] = trim( $val );
-        }
-
-        return $settings;
-
-    }
-
-    /**
      * Get Tab
      *
-     * Gets the current tab
+     * Gets the current tab.
      *
      * @access private
      * @return string  $tab
@@ -341,7 +392,7 @@ class Settings {
     /**
      * Field Name
      *
-     * Generates a field name
+     * Generates a field name.
      *
      * @access private
      * @param  string  $id
@@ -356,7 +407,7 @@ class Settings {
     /**
      * Setting Name
      *
-     * Generates a settings name
+     * Generates a settings name.
      *
      * @access public 
      * @param  string  $name
@@ -372,7 +423,7 @@ class Settings {
     /**
      * Get Settings
      *
-     * Gets the all settings within a section
+     * Gets the all settings within a section.
      *
      * @access public
      * @param string $name
@@ -388,7 +439,7 @@ class Settings {
     /**
      * Get Setting
      *
-     * Gets a setting value
+     * Gets a setting value.
      *
      * @access public
      * @param string  $name

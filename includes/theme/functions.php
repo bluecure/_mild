@@ -14,7 +14,7 @@
 namespace Mild;
 
 /**
- * Helper function to get options
+ * Helper function to get options.
  *
  * @param string $name
  * @param string $section
@@ -27,7 +27,7 @@ function the_section( $name, $section ) {
 }
 
 /**
- * Helper function to get a options value
+ * Helper function to get a options value.
  *
  * @param string  $name
  * @param string  $section
@@ -41,7 +41,7 @@ function the_option( $name, $section, $field ) {
 }
 
 /**
- * Get and check user role
+ * Get and check user role.
  *
  * @param string $role
  * @return boolean
@@ -52,7 +52,7 @@ function is_user( $role ) {
 }
 
 /**
- * Check whether current page is a blog page
+ * Check whether current page is a blog page.
  *
  * @return boolean
  */

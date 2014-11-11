@@ -6,6 +6,7 @@
  */
 ?>
 <aside class="site-secondary widget-area col-4" role="complementary">
+
     <?php if ( ! dynamic_sidebar( 'Sidebar' ) ) : ?>
 
         <div id="search" class="widget widget_search">
@@ -28,5 +29,6 @@
             </ul>
         </div>
 
-    <?php endif; // end sidebar widget area ?>
+    <?php endif; ?>
+
 </aside><!-- .site-secondary -->

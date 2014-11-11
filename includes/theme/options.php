@@ -1,11 +1,11 @@
 <?php
 /**
- * Add all theme options
+ * Add all theme options.
  *
  * @package Mild
  */
 
-add_action( 'init', function () {
+add_action( 'init', function() {
 
     // Create options array
     $theme_options = [
@@ -31,7 +31,7 @@ add_action( 'init', function () {
                 ], [
                     'id'          => 'javascript',
                     'label'       => __( 'JavaScript', 'mild' ),
-                    'description' => __( 'i.e. Google Analytics with script tags.', 'mild' ),
+                    'description' => __( 'i.e. Google Analytics without script tags.', 'mild' ),
                     'type'        => 'textarea'
                 ]
             ]
@@ -73,7 +73,7 @@ add_action( 'init', function () {
         ]
     ];
 
-    // Register theme options.
+    // Register theme options
     new Mild\Settings( 'theme', $theme_options, __( 'Theme Options', 'mild' ) );
 
 });

@@ -26,12 +26,12 @@
 	<header id="masthead" class="site-header row" role="banner">
 
 		<div class="site-branding col-12">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                 <?php $logo = Mild\the_option( 'theme-options', 'general', 'logo' ); ?>
                 <?php if ( $logo ) : ?>
-                    <img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
+                    <img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo">
                 <?php else: ?>
-                    <h1><?php bloginfo( 'name' ); ?></h1>
+                    <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
                 <?php endif; ?>
             </a>
             <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>

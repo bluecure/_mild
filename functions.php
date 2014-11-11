@@ -1,6 +1,6 @@
 <?php
 /**
- * Mild includes
+ * Mild includes.
  *
  * @package Mild
  */

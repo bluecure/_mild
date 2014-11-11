@@ -1,6 +1,8 @@
 <?php
 /**
-* Create new post types
+* Post Types
+*
+* Create new post types.
 *
 * @package Mild
 */
@@ -14,7 +16,9 @@ class Post_Types {
     public $labels = [];
 
     /**
-     * Creates new post types
+     * Construct
+     *
+     * Creates new post types.
      *
      * @param array $post_types
      */
@@ -29,7 +33,9 @@ class Post_Types {
     }
 
     /**
-     * Register new post type
+     * Register
+     *
+     * Register new post types.
      *
      * @access public
      * @return null
@@ -55,7 +61,9 @@ class Post_Types {
     }
 
     /**
-     * Setup default options
+     * Default Options
+     *
+     * Setup the default options.
      *
      * @access private
      * @return array
@@ -72,7 +80,9 @@ class Post_Types {
     }
 
     /**
-     * Setup default labels
+     * Default Labels
+     *
+     * Setup the default labels.
      *
      * @access private
      * @return array

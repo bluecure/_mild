@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mild\n"
-"POT-Creation-Date: 2014-10-17 16:59+1000\n"
-"PO-Revision-Date: 2014-10-17 16:59+1000\n"
+"POT-Creation-Date: 2014-11-11 18:31+1000\n"
+"PO-Revision-Date: 2014-11-11 18:31+1000\n"
 "Last-Translator: David Featherston\n"
 "Language-Team: \n"
 "Language: en_AU\n"
@@ -92,32 +92,32 @@ msgstr ""
 msgid "Chats"
 msgstr ""
 
-#: archive.php:64 sidebar.php:16
+#: archive.php:64 sidebar.php:17
 msgid "Archives"
 msgstr ""
 
-#: comments.php:25 comments.php:42
+#: comments.php:24 comments.php:41
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:26 comments.php:43
+#: comments.php:25 comments.php:42
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:27 comments.php:44
+#: comments.php:26 comments.php:43
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:54
+#: comments.php:50
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:15
+#: footer.php:19
 #, php-format
 msgid "&copy; %s - %s"
 msgstr ""
 
-#: footer.php:16
+#: footer.php:20
 msgid "To Top"
 msgstr ""
 
@@ -125,15 +125,19 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:38
+#: header.php:41
 msgid "Menu"
 msgstr ""
 
-#: includes/helpers/settings.php:259 helpers/settings.php:259
+#: includes/helpers/settings.php:297 helpers/settings.php:297
+msgid "-- select --"
+msgstr ""
+
+#: includes/helpers/settings.php:327 helpers/settings.php:327
 msgid "Select"
 msgstr ""
 
-#: includes/helpers/settings.php:292 helpers/settings.php:292
+#: includes/helpers/settings.php:361 helpers/settings.php:361
 msgid "Select a file"
 msgstr ""
 
@@ -162,7 +166,7 @@ msgid "JavaScript"
 msgstr ""
 
 #: includes/theme/options.php:34 theme/options.php:34
-msgid "i.e. Google Analytics with script tags."
+msgid "i.e. Google Analytics without script tags."
 msgstr ""
 
 #: includes/theme/options.php:40 theme/options.php:40
@@ -213,54 +217,54 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: includes/theme/template.php:55 theme/template.php:55
+#: includes/theme/template.php:57 theme/template.php:57
 msgid "Home"
 msgstr ""
 
-#: includes/theme/template.php:132 theme/template.php:132
+#: includes/theme/template.php:137 theme/template.php:137
 msgid "Posts navigation"
 msgstr ""
 
-#: includes/theme/template.php:136 theme/template.php:136
+#: includes/theme/template.php:141 theme/template.php:141
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: includes/theme/template.php:140 theme/template.php:140
+#: includes/theme/template.php:145 theme/template.php:145
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: includes/theme/template.php:163 theme/template.php:163
+#: includes/theme/template.php:168 theme/template.php:168
 msgid "Post navigation"
 msgstr ""
 
-#: includes/theme/template.php:217 includes/theme/template.php:221
-#: theme/template.php:217 theme/template.php:221
+#: includes/theme/template.php:222 includes/theme/template.php:226
+#: theme/template.php:222 theme/template.php:226
 msgid ", "
 msgstr ""
 
-#: includes/theme/template.php:219 theme/template.php:219
+#: includes/theme/template.php:224 theme/template.php:224
 #, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
-#: includes/theme/template.php:223 theme/template.php:223
+#: includes/theme/template.php:228 theme/template.php:228
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
-#: includes/theme/template.php:229 theme/template.php:229
+#: includes/theme/template.php:234 theme/template.php:234
 msgid "Leave a comment"
 msgstr ""
 
-#: includes/theme/template.php:229 theme/template.php:229
+#: includes/theme/template.php:234 theme/template.php:234
 msgid "1 Comment"
 msgstr ""
 
-#: includes/theme/template.php:229 theme/template.php:229
+#: includes/theme/template.php:234 theme/template.php:234
 msgid "% Comments"
 msgstr ""
 
-#: includes/theme/template.php:233 theme/template.php:233
+#: includes/theme/template.php:238 theme/template.php:238
 msgid "Edit"
 msgstr ""
 
@@ -273,29 +277,29 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: partials/content-none.php:11
+#: partials/content-none.php:12
 msgid "Nothing Found"
 msgstr ""
 
-#: partials/content-none.php:16
+#: partials/content-none.php:18
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: partials/content-none.php:20
+#: partials/content-none.php:22
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: partials/content-none.php:25
+#: partials/content-none.php:27
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: partials/content-page.php:17 partials/content-single.php:22
+#: partials/content-page.php:19 partials/content-single.php:22
 #: partials/content.php:35
 msgid "Pages:"
 msgstr ""
@@ -310,6 +314,14 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: sidebar.php:23
+#: searchform.php:10
+msgid "Search for"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search..."
+msgstr ""
+
+#: sidebar.php:24
 msgid "Meta"
 msgstr ""

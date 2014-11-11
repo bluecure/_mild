@@ -12,11 +12,11 @@
     border-radius: style('radius');
     &:hover {
         color: color('white');
-        box-shadow: 0 -0.05em 0.1em rgba(255, 255, 255, 0.25) inset, -0.1em -0.15em 0.1em rgba(0, 0, 0, 0.2) inset;
+        box-shadow: 0 -0.075em 0.1em rgba(255, 255, 255, 0.25) inset;
     }
     &:active, &:focus {
         color: color('white');
-        box-shadow: 0 -0.05em 0.25em rgba(255, 255, 255, 0.25) inset, -0.1em -0.15em 0.3em rgba(0, 0, 0, 0.2) inset;
+        box-shadow: 0 -0.075em 0.1em rgba(255, 255, 255, 0.3) inset, 0 -0.1em 0.25em rgba(0, 0, 0, 0.15) inset;
     }
 }
 
@@ -63,7 +63,6 @@
     font-size: 2.5em;
 }
 
-
 /* Tabs */
 .tabs {
     margin-bottom: layout('margin');
@@ -96,7 +95,7 @@
 
 /* Accordion */
 .accordion {
-    padding: layout('padding');
+    margin: 0.5em 0;
     .fa {
         padding: 0.2em 0.5em;
         font-size: 0.75em;
@@ -112,7 +111,6 @@
     }
     .accordion-content {
         display: none;
-        margin-bottom: layout('margin');
     }
 }
 

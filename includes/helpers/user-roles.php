@@ -1,6 +1,8 @@
 <?php
 /**
-* Create new user role
+* User Roles
+*
+* Create new user roles.
 *
 * @package Mild
 */
@@ -13,7 +15,9 @@ class User_Roles {
     public $roles = [];
 
     /**
-     * Creates new roles
+     * Construct
+     *
+     * Creates new roles.
      *
      * @param array $roles
      */
@@ -28,12 +32,14 @@ class User_Roles {
     }
 
     /**
-     * Adds the new user role
+     * Register
      *
-     * @access public
+     * Add new user roles.
+     *
+     * @access private
      * @return null
      */
-    public function register() {
+    private function register() {
 
         foreach ( $this->roles as $role ) {
             
@@ -49,7 +55,9 @@ class User_Roles {
     }
 
     /**
-     * Setup default capabilities
+     * Default Capabilities
+     *
+     * Setup the default capabilities.
      *
      * @access private
      * @return array

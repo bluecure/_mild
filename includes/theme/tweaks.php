@@ -19,7 +19,7 @@ add_filter( 'widget_text', 'do_shortcode' );
 * Clean up auto p's for shortcodes.
 */
 remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 12 );
+add_filter( 'the_content', 'wpautop' , 11 );
 
 /**
  * Enable core buttons.

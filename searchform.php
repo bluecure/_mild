@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying search forms in mild
+ * The template for displaying search forms in mild.
  *
  * @package Mild
  */

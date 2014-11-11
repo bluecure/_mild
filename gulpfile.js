@@ -23,6 +23,12 @@ var path = {
 // Default task
 gulp.task( 'default', ['watch'] );
 
+// Run tasks when a file changes
+gulp.task('watch', function() {
+	gulp.watch( [ path.styleCompile, path.styleWatch ], [ 'styles' ] );
+	gulp.watch( [ path.scriptWatch ], [ 'scripts' ] );
+});
+
 // Styles task
 gulp.task('styles', function() {
   return gulp.src( path.styleCompile )
@@ -42,10 +48,4 @@ gulp.task('scripts', function() {
     .pipe( concat( 'script.min.js' ) )
     .pipe( uglify( { outSourceMap: true } ) )
     .pipe( gulp.dest( path.scripts ) );
-});
-
-// Rerun tasks when a file changes
-gulp.task('watch', function() {
-	gulp.watch( [ path.styleCompile, path.styleWatch ], [ 'styles' ] );
-	gulp.watch( [ path.scriptWatch ], [ 'scripts' ] );
 });

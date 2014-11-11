@@ -17,7 +17,7 @@
 namespace Mild;
 
 /**
- * Displays pagination links
+ * Displays pagination links.
  *
  * @return void
  */
@@ -43,7 +43,7 @@ function pagination() {
 }
 
 /**
- * Display breadcrumbs
+ * Display breadcrumbs.
  *
  * @return void
  */
@@ -71,7 +71,7 @@ function breadcrumbs() {
 }
 
 /**
- * Display sub page menu
+ * Display sub page menu.
  *
  * @return void
  */
@@ -97,7 +97,7 @@ function page_menu() {
 }
 
 /**
- * Display latest posts
+ * Display latest posts.
  *
  * @return void
  */

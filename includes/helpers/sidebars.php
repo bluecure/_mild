@@ -1,6 +1,8 @@
 <?php
 /**
-* Create new sidebars i.e. widgets areas
+* Sidebars
+*
+* Create new sidebars i.e. widgets areas.
 *
 * @package Mild
 */
@@ -13,7 +15,9 @@ class Sidebars {
     public $sidebars = [];
 
     /**
-     * Creates new sidebars
+     * Construct
+     *
+     * Creates new sidebars.
      *
      * @param array $sidebars
      */
@@ -28,12 +32,14 @@ class Sidebars {
     }
 
     /**
-     * Adds the new sidebar
+     * Register
      *
-     * @access public
+     * Register the new sidebars.
+     *
+     * @access private
      * @return null
      */
-    public function register() {
+    private function register() {
 
         foreach ( $this->sidebars as $sidebar ) {
             
@@ -55,7 +61,9 @@ class Sidebars {
     }
     
     /**
-     * Setup default options
+     * Default Options
+     *
+     * Setup the default options.
      *
      * @access private
      * @return array

@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer.
  *
- * Contains the closing of the #content div and all content after
+ * Contains the closing of the #content div and all content after.
  *
  * @package Mild
  */
@@ -20,7 +20,7 @@
 			<a href="#" class="to-top"><i class="fa fa-angle-up"></i> <?php _e( 'To Top', 'mild' ); ?></a>
 		</div><!-- .site-info -->
 
-	</footer><!-- site-footer -->
+	</footer><!-- .site-footer -->
 	
 </div><!-- .site -->
 

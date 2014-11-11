@@ -23,6 +23,8 @@ if ( isset( $general['app-icon'] ) ) : ?>
 <?php endif;
 
 /* JavaScript */
-if ( isset( $general['javascript'] ) ) {
-    echo $general['javascript'];
-}
+if ( isset( $general['javascript'] ) ) : ?>
+    <script>
+    	<?php echo $general['javascript']; ?>
+    </script>
+<?php endif;

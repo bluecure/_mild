@@ -1,6 +1,8 @@
 <?php
 /**
-* Create new taxonomies
+* Taxonomies
+*
+* Create new taxonomies.
 *
 * @package Mild
 */
@@ -14,6 +16,8 @@ class Taxonomies {
     public $labels = [];
 
     /**
+     * Construct
+     *
      * Creates a new taxonomy
      *
      * @param array $taxonomies
@@ -29,12 +33,14 @@ class Taxonomies {
     }
 
     /**
-     * Register new taxonomy
+     * Register
      *
-     * @access public
+     * Register new taxonomies.
+     *
+     * @access private
      * @return null
      */
-    public function register() {
+    private function register() {
 
         foreach ( $this->taxonomies as $taxonomy ) {
             
@@ -61,7 +67,9 @@ class Taxonomies {
     }
 
     /**
-     * Setup default options
+     * Default Options
+     *
+     * Setup the default options.
      *
      * @access private
      * @return array
@@ -80,7 +88,9 @@ class Taxonomies {
     }
 
     /**
-     * Setup default labels
+     * Default Labels
+     *
+     * Setup the default labels.
      *
      * @access private
      * @return array
