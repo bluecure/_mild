@@ -1,0 +1,44 @@
+/**
+ * Theme Settings js.
+ *
+ * Contains all of the JavaScript to handel theme settings functions.
+ */
+
+(function( $ ) {
+
+	var Settings = {
+        init: function () {
+            // Handle upload
+            $( '.mild-settings' ).on( 'click', '.upload-select', this.selectUpload );
+            // Handle removing upload
+            $( '.mild-settings' ).on( 'click', '.upload-remove', this.removeUpload );
+        },
+        // Launch media manager
+        selectUpload : function( e ) {
+            e.preventDefault();
+            var upload  = $( this ).parents( '.upload' ),
+                frame = wp.media({ 
+                    multiple: false 
+                }).open();
+            // Load upload into setting
+            frame.on( 'select', function() {
+                var file = frame.state().get( 'selection' ).toJSON()[0],
+                    uploadImg = upload.find( '.upload-image' );
+                uploadImg.addClass( 'show' ).find( 'img' ).attr( { 
+                    'src': file.url, 
+                    'alt': file.url 
+                } );
+                upload.find( '.upload-file' ).val( file.url );
+
+            });
+        },
+        // Remove upload file
+        removeUpload : function() {
+            var upload  = $( this ).parents( '.upload' );
+            upload.find( '.upload-image' ).removeClass( 'show' ).addClass( 'hide' );
+            upload.find( '.upload-file' ).val( '' );
+        }
+    };
+    Settings.init();
+
+})( jQuery );

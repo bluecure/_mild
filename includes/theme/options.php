@@ -24,7 +24,7 @@ add_action( 'init', function() {
                     'description' => '32px X 32px',
                     'type'        => 'upload'
                 ], [
-                    'id'          => 'app-icon',
+                    'id'          => 'appicon',
                     'label'       => __( 'App Icon', 'mild' ),
                     'description' => '192px X 192px',
                     'type'        => 'upload'

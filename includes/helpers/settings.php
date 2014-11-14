@@ -48,6 +48,9 @@ class Settings {
         // Add admin menu
         add_action( 'admin_menu', [ $this, 'add_menu' ] );
 
+        // Add admin assets
+        add_action( 'admin_enqueue_scripts', [ $this, 'load_assets' ] );
+
     }
     
     /**
@@ -62,24 +65,21 @@ class Settings {
         
         switch ( $this->type ) {
             case 'menu':
-                $menu = add_menu_page( $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
+                $this->page = add_menu_page( $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
                 break;
 
             case 'theme':
-                $menu = add_theme_page( $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
+                $this->page = add_theme_page( $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
                 break;
 
             case 'option':
-                $menu = add_options_page( $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
+                $this->page = add_options_page( $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
                 break;
 
             case 'submenu':
-                $menu = add_submenu_page( $this->menu, $this->title, $this->menu_title, 'manage_options', $this->title_clean,  [ $this, 'register_page' ] );
+                $this->page = add_submenu_page( $this->menu, $this->title, $this->menu_title, 'manage_options', $this->title_clean,  [ $this, 'register_page' ] );
                 break;
         }
-
-        // Load scripts
-        add_action( 'admin_print_scripts-' . $menu, [ $this, 'load_scripts' ] );
 
     }
 
@@ -170,7 +170,7 @@ class Settings {
         
         foreach( $this->settings as $setting ) {
             if ( $setting['id'] === $section['id'] ) { 
-                echo "<p>{$setting['description']}</p>";
+                echo "<p class='section-descripion'>{$setting['description']}</p>";
             }
         }
     
@@ -204,6 +204,14 @@ class Settings {
                 $this->select( $field );
                 break;
 
+            case 'radio':
+                $this->radio( $field );
+                break;
+
+            case 'checkbox':
+                $this->checkbox( $field );
+                break;
+
             case 'upload':
                 $this->upload( $field );
                 break;
@@ -231,7 +239,7 @@ class Settings {
         <input name="<?php echo $this->field_name( $field ); ?>" value="<?php echo ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>" type="text">
 
         <?php if ( isset( $field['description'] ) ) : ?>
-            <p><?php echo $field['description']; ?></p>
+            <p class="setting-description"><?php echo $field['description']; ?></p>
         <?php endif;
 
     }
@@ -252,7 +260,7 @@ class Settings {
         <textarea name="<?php echo $this->field_name( $field ); ?>" cols="50" rows="10"><?php echo ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?></textarea>
 
         <?php if ( isset( $field['description'] ) ) : ?>
-            <p><?php echo $field['description']; ?></p>
+            <p class="setting-description"><?php echo $field['description']; ?></p>
         <?php endif;
 
     }
@@ -274,7 +282,7 @@ class Settings {
         wp_editor( $content, $field['id'], [ 'textarea_name' => $this->field_name( $field ) ] );
         
         if ( isset( $field['description'] ) ) : ?>
-            <p><?php echo $field['description']; ?></p>
+            <p class="setting-description"><?php echo $field['description']; ?></p>
         <?php endif;
 
     }
@@ -301,7 +309,57 @@ class Settings {
         </select>
 
         <?php if ( isset( $field['description'] ) ) : ?>
-            <p><?php echo $field['description']; ?></p>
+            <p class="setting-description"><?php echo $field['description']; ?></p>
+        <?php endif;
+
+    }
+
+    /**
+     * Radio
+     *
+     * Generates a list of radio buttons.
+     *
+     * @access private
+     * @param  array $field
+     * @return null
+     */
+    private function radio( $field ) { 
+
+        $options = get_option( $field['section'] );
+        $option = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>
+        
+        <?php foreach( $field['choices'] as $value => $label ) : ?>
+            <label name="<?php echo $this->field_name( $field ); ?>"><?php echo $label; ?></label>
+            <input type="radio" name="<?php echo $this->field_name( $field ); ?>" id="<?php echo $this->field_name( $field ); ?>" value="<?php echo $value; ?>" <?php checked( $option, $value ); ?>>
+        <?php endforeach; ?>
+
+        <?php if ( isset( $field['description'] ) ) : ?>
+            <p class="setting-description"><?php echo $field['description']; ?></p>
+        <?php endif;
+
+    }
+
+    /**
+     * Checkbox
+     *
+     * Generates a list of checkboxs.
+     *
+     * @access private
+     * @param  array $field
+     * @return null
+     */
+    private function checkbox( $field ) { 
+
+        $options = get_option( $field['section'] );
+        $option = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>
+
+        <?php $i = 1; foreach( $field['choices'] as $value => $label ) : ?>
+            <label name="<?php echo $this->field_name( $field ); ?>"><?php echo $label; ?></label>
+            <input type="checkbox" name="<?php echo $this->field_name( $field ) . "[{$i}]"; ?>" id="<?php echo $this->field_name( $field ); ?>" value="<?php echo $value; ?>" <?php checked( $option[$i], $value ); ?>>
+        <?php $i++; endforeach; ?>
+
+        <?php if ( isset( $field['description'] ) ) : ?>
+            <p class="setting-description"><?php echo $field['description']; ?></p>
         <?php endif;
 
     }
@@ -321,57 +379,41 @@ class Settings {
         $file = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>
 
             <div class="upload">
-                <p><img src="<?php echo $file; ?>" class="upload-image <?php echo ( ! $file ) ? 'hidden': ''; ?>" alt="<?php echo $file; ?>"></p>
+                <div class="upload-image <?php echo ( ! $file ) ? 'hide': ''; ?>">
+                    <img src="<?php echo $file; ?>" alt="<?php echo $file; ?>">
+                    <i class="upload-remove dashicons dashicons-no-alt"></i>
+                </div>
 
                 <input type="hidden" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $file; ?>" class="upload-file">
                 <button class="button upload-select" type="button"><?php _e( 'Select', 'mild' ); ?></button>
     
                 <?php if ( isset( $field['description'] ) ) : ?>
-                    <p><?php echo $field['description']; ?></p>
+                    <p class="setting-description"><?php echo $field['description']; ?></p>
                 <?php endif; ?>
             </div>
 
     <?php }
 
     /**
-     * Load Scripts
+     * Load Assets
      *
-     * Loads all scripts.
+     * Loads all assets.
      *
      * @access public
+     * @param  string $hook
      * @return null
      */
-    public function load_scripts() {
+    public function load_assets( $hook ) {
 
+        if ( $this->page !== $hook )
+            return;
+
+        // Load settings css
+        wp_enqueue_style( 'mild-settings-style', get_template_directory_uri() . '/assets/admin/styles/settings.css', [], '0.1.0' );
+        // Load media assets
         wp_enqueue_media();
-
-        add_action( 'admin_print_footer_scripts', function() { ?>
-
-        <script>
-            (function( $ ) {
-                var Settings = {
-                    init: function () {
-                        // Handle upload
-                        $( '.mild-settings' ).on( 'click', '.upload-select', this.selectUpload );
-                    },
-                    // Launch media manager
-                    selectUpload : function( e ) {
-                        e.preventDefault();
-                        var upload  = $( this ).parents( '.upload' ),
-                            frame = wp.media({ title: '<?php _e( 'Select a file', 'mild' ); ?>', multiple: false }).open();
-                        // Load upload into setting
-                        frame.on( 'close', function() {
-                            var file = frame.state().get( 'selection' ).toJSON()[0];
-                            upload.find( '.upload-image' ).attr( { 'src': file.url, 'alt': file.url } ).show();
-                            upload.find( '.upload-file' ).val( file.url );
-                        });
-                    }
-                };
-                Settings.init();
-            })( jQuery );
-        </script>
-
-    <?php });
+        // Load settings js
+        wp_enqueue_script( 'mild-settings-scripts', get_template_directory_uri() . '/assets/admin/scripts/settings.js', ['jquery'], '0.1.0', true );
 
     }
 
@@ -395,7 +437,7 @@ class Settings {
      * Generates a field name.
      *
      * @access private
-     * @param  string  $id
+     * @param  string  $field
      * @return string  $name
      */
     private function field_name( $field ) { 

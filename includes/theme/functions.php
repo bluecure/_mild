@@ -14,29 +14,27 @@
 namespace Mild;
 
 /**
- * Helper function to get options.
+ * Helper function to get theme option section.
  *
- * @param string $name
  * @param string $section
  * @return array $section
  */
-function the_section( $name, $section ) {
+function theme_section( $section ) {
 
-    return Settings::get_settings( $name, $section );
+    return Settings::get_settings( 'theme-options', $section );
     
 }
 
 /**
- * Helper function to get a options value.
+ * Helper function to get a theme options value.
  *
- * @param string  $name
  * @param string  $section
  * @param string  $field
  * @return string $field
  */
-function the_option( $name, $section, $field ) {
+function theme_option( $section, $field ) {
 
-    return Settings::get_setting( $name, $section, $field );
+    return Settings::get_setting( 'theme-options', $section, $field );
 
 }
 
@@ -69,18 +67,18 @@ function is_blog() {
  */
 function is_categorized_blog() {
 	if ( ( $categories = get_transient( 'mild_categories' ) ) === false ) {
-		// Create an array of all the categories that are attached to posts.
+		// Create an array of all the categories that are attached to posts
 		$categories = get_categories( [
 			'fields'     => 'ids',
 			'hide_empty' => 1,
 			'number'     => 2
         ] );
 
-		// Count the number of categories that are attached to the posts.
+		// Count the number of categories that are attached to the posts
 		$categories = count( $categories );
 		set_transient( 'mild_categories', $categories );
 	}
-	// If this blog has more than 1 category return true.
+	// If this blog has more than 1 category return true
 	if ( $categories > 1 ) {
 		return true;
 	} else {

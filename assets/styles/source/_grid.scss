@@ -43,7 +43,8 @@
         margin: 0 0 ( layout('margin') / 2 ) 0;
     }
     [class*="md-"] {
-        float: left;
+        vertical-align: top;
+        display: inline-block;
     }
     @for $i from 1 through 12 {
         .md-#{$i} {

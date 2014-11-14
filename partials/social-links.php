@@ -4,7 +4,7 @@
  *
  * @package Mild
  */
-$social = Mild\the_section( 'theme-options', 'social' ); ?>
+$social = Mild\theme_section( 'social' ); ?>
 
 <div class="social-links">
 	<?php
