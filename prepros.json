@@ -199,7 +199,7 @@
     "watch": false,
     "liveRefresh": true,
     "liveRefreshDelay": 0,
-    "filterPatterns": "node_modules,includes,gulpfile.js,README.md",
+    "filterPatterns": "node_modules,admin,gulpfile.js,README.md",
     "useCustomServer": false,
     "customServerUrl": "",
     "cssPath": "",
