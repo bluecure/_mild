@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mild\n"
-"POT-Creation-Date: 2014-11-14 18:27+1000\n"
-"PO-Revision-Date: 2014-11-14 18:27+1000\n"
+"POT-Creation-Date: 2014-11-19 17:40+1000\n"
+"PO-Revision-Date: 2014-11-19 17:40+1000\n"
 "Last-Translator: David Featherston\n"
 "Language-Team: \n"
 "Language: en_AU\n"
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Galleries"
 msgstr ""
 
-#: archive.php:43 includes/theme/controls.php:20 theme/controls.php:20
+#: archive.php:43
 msgid "Images"
 msgstr ""
 
@@ -129,124 +129,12 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: includes/helpers/settings.php:305 helpers/settings.php:305
+#: includes/helpers/settings.php:311 helpers/settings.php:311
 msgid "-- select --"
 msgstr ""
 
-#: includes/helpers/settings.php:388 helpers/settings.php:388
+#: includes/helpers/settings.php:383 helpers/settings.php:383
 msgid "Select"
-msgstr ""
-
-#: includes/theme/controls.php:14 theme/controls.php:14
-msgid "Visual"
-msgstr ""
-
-#: includes/theme/controls.php:15 theme/controls.php:15
-msgid "Here you can change your logo favicon and so on."
-msgstr ""
-
-#: includes/theme/controls.php:21 theme/controls.php:21
-msgid "Your sites images."
-msgstr ""
-
-#: includes/theme/controls.php:26 includes/theme/options.php:19
-#: theme/controls.php:26 theme/options.php:19
-msgid "Logo"
-msgstr ""
-
-#: includes/theme/controls.php:30 includes/theme/options.php:23
-#: theme/controls.php:30 theme/options.php:23
-msgid "Favicon"
-msgstr ""
-
-#: includes/theme/controls.php:35 includes/theme/options.php:28
-#: theme/controls.php:35 theme/options.php:28
-msgid "App Icon"
-msgstr ""
-
-#: includes/theme/controls.php:42 theme/controls.php:42
-msgid "Background Colors"
-msgstr ""
-
-#: includes/theme/controls.php:43 theme/controls.php:43
-msgid "Here you can change your sites background colors."
-msgstr ""
-
-#: includes/theme/controls.php:56 theme/controls.php:56
-msgid "Content"
-msgstr ""
-
-#: includes/theme/controls.php:57 theme/controls.php:57
-msgid "Here you can change social link and add custom code."
-msgstr ""
-
-#: includes/theme/controls.php:62 theme/controls.php:62
-msgid "Social Links."
-msgstr ""
-
-#: includes/theme/controls.php:63 theme/controls.php:63
-msgid "Your sites social links."
-msgstr ""
-
-#: includes/theme/controls.php:68 includes/theme/options.php:45
-#: theme/controls.php:68 theme/options.php:45
-msgid "Facebook Url"
-msgstr ""
-
-#: includes/theme/controls.php:72 includes/theme/options.php:49
-#: theme/controls.php:72 theme/options.php:49
-msgid "Twitter Url"
-msgstr ""
-
-#: includes/theme/controls.php:76 includes/theme/options.php:53
-#: theme/controls.php:76 theme/options.php:53
-msgid "Google Plus Url"
-msgstr ""
-
-#: includes/theme/controls.php:80 includes/theme/options.php:57
-#: theme/controls.php:80 theme/options.php:57
-msgid "LinkedIn Url"
-msgstr ""
-
-#: includes/theme/controls.php:84 includes/theme/options.php:61
-#: theme/controls.php:84 theme/options.php:61
-msgid "Instagram Url"
-msgstr ""
-
-#: includes/theme/controls.php:88 includes/theme/options.php:65
-#: theme/controls.php:88 theme/options.php:65
-msgid "Flickr Url"
-msgstr ""
-
-#: includes/theme/controls.php:92 includes/theme/options.php:69
-#: theme/controls.php:92 theme/options.php:69
-msgid "Youtube Url"
-msgstr ""
-
-#: includes/theme/controls.php:98 theme/controls.php:98
-msgid "Custom Code"
-msgstr ""
-
-#: includes/theme/controls.php:99 theme/controls.php:99
-msgid "Your sites custom CSS and JavaScript."
-msgstr ""
-
-#: includes/theme/controls.php:104 theme/controls.php:104
-msgid "CSS"
-msgstr ""
-
-#: includes/theme/controls.php:105 theme/controls.php:105
-msgid "i.e. CSS without style tags."
-msgstr ""
-
-#: includes/theme/controls.php:109 includes/theme/options.php:33
-#: theme/controls.php:109 theme/options.php:33
-msgid "JavaScript"
-msgstr ""
-
-#: includes/theme/controls.php:110 includes/theme/options.php:34
-#: theme/controls.php:110 theme/options.php:34
-msgid "i.e. Google Analytics without script tags."
 msgstr ""
 
 #: includes/theme/options.php:14 theme/options.php:14
@@ -257,15 +145,71 @@ msgstr ""
 msgid "Main theme options."
 msgstr ""
 
-#: includes/theme/options.php:40 theme/options.php:40
+#: includes/theme/options.php:19 theme/options.php:19
+msgid "Logo"
+msgstr ""
+
+#: includes/theme/options.php:23 theme/options.php:23
+msgid "Favicon"
+msgstr ""
+
+#: includes/theme/options.php:28 theme/options.php:28
+msgid "App Icon"
+msgstr ""
+
+#: includes/theme/options.php:33 theme/options.php:33
+msgid "CSS"
+msgstr ""
+
+#: includes/theme/options.php:34 theme/options.php:34
+msgid "i.e. Custom CSS without style tags."
+msgstr ""
+
+#: includes/theme/options.php:38 theme/options.php:38
+msgid "JavaScript"
+msgstr ""
+
+#: includes/theme/options.php:39 theme/options.php:39
+msgid "i.e. Google Analytics without script tags."
+msgstr ""
+
+#: includes/theme/options.php:45 theme/options.php:45
 msgid "Social"
 msgstr ""
 
-#: includes/theme/options.php:41 theme/options.php:41
+#: includes/theme/options.php:46 theme/options.php:46
 msgid "Social website links."
 msgstr ""
 
-#: includes/theme/options.php:77 theme/options.php:77
+#: includes/theme/options.php:50 theme/options.php:50
+msgid "Facebook Url"
+msgstr ""
+
+#: includes/theme/options.php:54 theme/options.php:54
+msgid "Twitter Url"
+msgstr ""
+
+#: includes/theme/options.php:58 theme/options.php:58
+msgid "Google Plus Url"
+msgstr ""
+
+#: includes/theme/options.php:62 theme/options.php:62
+msgid "LinkedIn Url"
+msgstr ""
+
+#: includes/theme/options.php:66 theme/options.php:66
+msgid "Instagram Url"
+msgstr ""
+
+#: includes/theme/options.php:70 theme/options.php:70
+msgid "Flickr Url"
+msgstr ""
+
+#: includes/theme/options.php:74 theme/options.php:74
+msgid "Youtube Url"
+msgstr ""
+
+#: includes/theme/options.php:82 theme/options.php:82
 msgid "Theme Options"
 msgstr ""
 
@@ -273,7 +217,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/theme/setup.php:80 theme/setup.php:80
+#: includes/theme/setup.php:83 theme/setup.php:83
 msgid "Sidebar"
 msgstr ""
 

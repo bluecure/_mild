@@ -56,7 +56,7 @@ class Settings {
     /**
      * Add Menu
      *
-     * Adds the appropriate menu.
+     * Adds the appropriate menu type.
      *
      * @access public
      * @return null
@@ -80,6 +80,28 @@ class Settings {
                 $this->page = add_submenu_page( $this->menu, $this->title, $this->menu_title, 'manage_options', $this->title_clean,  [ $this, 'register_page' ] );
                 break;
         }
+
+    }
+
+    /**
+     * Load Assets
+     *
+     * Loads all assets.
+     *
+     * @access public
+     * @param  string $hook
+     * @return null
+     */
+    public function load_assets( $hook ) {
+
+        if ( $this->page !== $hook ) return;
+
+        // Load settings css
+        wp_enqueue_style( 'mild-settings-style', get_template_directory_uri() . '/assets/admin/styles/settings.css', [], '0.1.0' );
+        // Load media assets
+        wp_enqueue_media();
+        // Load settings js
+        wp_enqueue_script( 'mild-settings-scripts', get_template_directory_uri() . '/assets/admin/scripts/settings.js', ['jquery'], '0.1.0', true );
 
     }
 
@@ -134,7 +156,7 @@ class Settings {
 
             <h2 class="nav-tab-wrapper">
                 <?php foreach( $this->settings as $section ) : ?>
-                    <a href="?page=<?php echo $this->title_clean; ?>&tab=<?php echo $section['id']; ?>" class="nav-tab <?php echo ( $section['id'] === $this->get_tab() ) ? 'nav-tab-active' : ''; ?>">
+                    <a href="?page=<?php echo $this->title_clean; ?>&amp;tab=<?php echo $section['id']; ?>" class="nav-tab <?php echo ( $section['id'] === $this->current_tab() ) ? 'nav-tab-active' : ''; ?>">
                         <?php echo $section['title']; ?>
                     </a>
                 <?php endforeach; ?>
@@ -143,7 +165,7 @@ class Settings {
             <form action="options.php" method="POST" enctype="post">
                 <?php
                     foreach( $this->settings as $section ) {
-                        if ( $section['id'] === $this->get_tab() ) {
+                        if ( $section['id'] === $this->current_tab() ) {
                             $setting_name = $this->setting_name( $this->title_clean, $section['id'] );
                             settings_fields( $setting_name );
                             do_settings_sections( $setting_name );
@@ -232,15 +254,11 @@ class Settings {
      * @param  array $field
      * @return null
      */
-    private function text( $field ) { 
+    private function text( $field ) { ?>
 
-        $options = get_option( $field['section'] ); ?>
+        <input name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $this->field_value( $field ); ?>" type="text">
 
-        <input name="<?php echo $this->field_name( $field ); ?>" value="<?php echo ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>" type="text">
-
-        <?php if ( isset( $field['description'] ) ) : ?>
-            <p class="setting-description"><?php echo $field['description']; ?></p>
-        <?php endif;
+        <?php $this->field_description( $field );
 
     }
 
@@ -253,15 +271,11 @@ class Settings {
      * @param  array $field
      * @return null
      */
-    private function textarea( $field ) { 
+    private function textarea( $field ) { ?>
 
-        $options = get_option( $field['section'] ); ?>
+        <textarea name="<?php echo $this->field_name( $field ); ?>" cols="50" rows="10"><?php echo $this->field_value( $field ); ?></textarea>
 
-        <textarea name="<?php echo $this->field_name( $field ); ?>" cols="50" rows="10"><?php echo ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?></textarea>
-
-        <?php if ( isset( $field['description'] ) ) : ?>
-            <p class="setting-description"><?php echo $field['description']; ?></p>
-        <?php endif;
+        <?php $this->field_description( $field );
 
     }
 
@@ -275,15 +289,10 @@ class Settings {
      * @return null
      */
     private function editor( $field ) { 
-
-        $options = get_option( $field['section'] );
-        $content = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : '';
         
-        wp_editor( $content, $field['id'], [ 'textarea_name' => $this->field_name( $field ) ] );
+        wp_editor( $this->field_value( $field ), $field['id'], [ 'textarea_name' => $this->field_name( $field ) ] );
         
-        if ( isset( $field['description'] ) ) : ?>
-            <p class="setting-description"><?php echo $field['description']; ?></p>
-        <?php endif;
+        $this->field_description( $field );
 
     }
 
@@ -296,21 +305,16 @@ class Settings {
      * @param  array $field
      * @return null
      */
-    private function select( $field ) { 
-
-        $options = get_option( $field['section'] );
-        $option = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>
+    private function select( $field ) { ?>
         
         <select name="<?php echo $this->field_name( $field ); ?>">
            <option><?php echo __( '-- select --', 'Mild' ); ?></option>
             <?php foreach( $field['choices'] as $value => $label ) : ?>
-                <option value="<?php echo $value; ?>" <?php selected( $option, $value ); ?>><?php echo $label; ?></option>
+                <option value="<?php echo $value; ?>" <?php selected( $this->field_value( $field ), $value ); ?>><?php echo $label; ?></option>
             <?php endforeach; ?>            
         </select>
 
-        <?php if ( isset( $field['description'] ) ) : ?>
-            <p class="setting-description"><?php echo $field['description']; ?></p>
-        <?php endif;
+        <?php $this->field_description( $field );
 
     }
 
@@ -324,18 +328,13 @@ class Settings {
      * @return null
      */
     private function radio( $field ) { 
-
-        $options = get_option( $field['section'] );
-        $option = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>
         
-        <?php foreach( $field['choices'] as $value => $label ) : ?>
+        foreach( $field['choices'] as $value => $label ) : ?>
             <label name="<?php echo $this->field_name( $field ); ?>"><?php echo $label; ?></label>
-            <input type="radio" name="<?php echo $this->field_name( $field ); ?>" id="<?php echo $this->field_name( $field ); ?>" value="<?php echo $value; ?>" <?php checked( $option, $value ); ?>>
-        <?php endforeach; ?>
-
-        <?php if ( isset( $field['description'] ) ) : ?>
-            <p class="setting-description"><?php echo $field['description']; ?></p>
-        <?php endif;
+            <input type="radio" name="<?php echo $this->field_name( $field ); ?>" id="<?php echo $this->field_name( $field ); ?>" value="<?php echo $value; ?>" <?php checked( $this->field_value( $field ), $value ); ?>>
+        <?php endforeach; 
+        
+        $this->field_description( $field );
 
     }
 
@@ -350,24 +349,21 @@ class Settings {
      */
     private function checkbox( $field ) { 
 
-        $options = get_option( $field['section'] );
-        $option = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>
+        $option = $this->field_value( $field ); ?>
 
         <?php $i = 1; foreach( $field['choices'] as $value => $label ) : ?>
             <label name="<?php echo $this->field_name( $field ); ?>"><?php echo $label; ?></label>
             <input type="checkbox" name="<?php echo $this->field_name( $field ) . "[{$i}]"; ?>" id="<?php echo $this->field_name( $field ); ?>" value="<?php echo $value; ?>" <?php checked( $option[$i], $value ); ?>>
-        <?php $i++; endforeach; ?>
-
-        <?php if ( isset( $field['description'] ) ) : ?>
-            <p class="setting-description"><?php echo $field['description']; ?></p>
-        <?php endif;
+        <?php $i++; endforeach;
+        
+        $this->field_description( $field );
 
     }
 
     /**
      * Upload
      *
-     * Generates a upload field.
+     * Generates an upload field.
      *
      * @access private
      * @param  array $field
@@ -375,59 +371,52 @@ class Settings {
      */
     private function upload( $field ) { 
 
-        $options = get_option( $field['section'] );
-        $file = ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : ''; ?>
+        $option = $this->field_value( $field ); ?>
 
             <div class="upload">
-                <div class="upload-image <?php echo ( ! $file ) ? 'hide': ''; ?>">
-                    <img src="<?php echo $file; ?>" alt="<?php echo $file; ?>">
+                <div class="upload-image <?php echo ( ! $option ) ? 'hide': ''; ?>">
+                    <img src="<?php echo $option; ?>" alt="<?php echo $option; ?>">
                     <i class="upload-remove dashicons dashicons-no-alt"></i>
                 </div>
 
-                <input type="hidden" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $file; ?>" class="upload-file">
+                <input type="hidden" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $option; ?>" class="upload-file">
                 <button class="button upload-select" type="button"><?php _e( 'Select', 'mild' ); ?></button>
     
-                <?php if ( isset( $field['description'] ) ) : ?>
-                    <p class="setting-description"><?php echo $field['description']; ?></p>
-                <?php endif; ?>
+                <?php $this->field_description( $field ); ?>
             </div>
 
     <?php }
 
     /**
-     * Load Assets
+     * Field Description
      *
-     * Loads all assets.
+     * Displays the fields description.
      *
-     * @access public
-     * @param  string $hook
+     * @access private
+     * @param array $field
      * @return null
      */
-    public function load_assets( $hook ) {
-
-        if ( $this->page !== $hook )
-            return;
-
-        // Load settings css
-        wp_enqueue_style( 'mild-settings-style', get_template_directory_uri() . '/assets/admin/styles/settings.css', [], '0.1.0' );
-        // Load media assets
-        wp_enqueue_media();
-        // Load settings js
-        wp_enqueue_script( 'mild-settings-scripts', get_template_directory_uri() . '/assets/admin/scripts/settings.js', ['jquery'], '0.1.0', true );
-
+    private function field_description( $field ) {
+        
+        if ( isset( $field['description'] ) ) : ?>
+            <p class="setting-description"><?php echo $field['description']; ?></p>
+        <?php endif;
+    
     }
 
     /**
-     * Get Tab
+     * Feild Value
      *
-     * Gets the current tab.
+     * Gets the current fields value.
      *
      * @access private
-     * @return string  $tab
+     * @param array $field
+     * @return string $option
      */
-    private function get_tab() { 
+    private function field_value( $field ) { 
 
-        return ( isset( $_GET['tab'] ) ) ? $_GET['tab'] : $this->settings[0]['id'];
+        $options = get_option( $field['section'] );
+        return ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : '';
 
     }
 
@@ -437,12 +426,26 @@ class Settings {
      * Generates a field name.
      *
      * @access private
-     * @param  string  $field
-     * @return string  $name
+     * @param  string $field
+     * @return string $name
      */
     private function field_name( $field ) { 
 
         return $field['section'] . '[' . $field['id'] . ']';
+
+    }
+
+    /**
+     * Current Tab
+     *
+     * Gets the current tab.
+     *
+     * @access private
+     * @return string $tab
+     */
+    private function current_tab() { 
+
+        return ( isset( $_GET['tab'] ) ) ? $_GET['tab'] : $this->settings[0]['id'];
 
     }
 
@@ -452,9 +455,9 @@ class Settings {
      * Generates a settings name.
      *
      * @access public 
-     * @param  string  $name
-     * @param  string  $id
-     * @return string  $name
+     * @param  string $name
+     * @param  string $id
+     * @return string $name
      */
     public static function setting_name( $name, $id ) { 
 
@@ -491,7 +494,7 @@ class Settings {
      */
     public static function get_setting( $name, $id, $field ) {
 
-        $setting = get_option( self::setting_name( $name, $id ), false );
+        $setting = get_option( self::setting_name( $name, $id ), '' );
         if ( $setting && isset( $setting[$field] ) ) {
             $setting = $setting[$field];
         }

@@ -16,7 +16,7 @@
     max-width: 25em;
     max-height: 20em;
     padding: 0.15em;
-    background-color: #fff;
+    background-color: #f5f5f5;
     box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.1);
 }
 .mild-settings .upload-remove {
@@ -28,7 +28,7 @@
     border-radius: 50%;
     background-color: #FF4545;
 }
-.mild-settings .button {
+.mild-settings .upload-select {
 	display: block;
 }
 

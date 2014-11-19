@@ -6,12 +6,10 @@
  */
 
 // Get General Settings
-$general = Mild\theme_section( 'general' ); ?>
+$general = Mild\theme_section( 'general' );
 
-<!-- Icons -->
-<?php
 /* App Icon */
-if ( isset( $general['app-icon'] ) ) : ?>
+if ( isset( $general['appicon'] ) ) : ?>
 	<link rel="icon" sizes="192x192" href="<?php echo $general['appicon']; ?>">
 	<link rel="apple-touch-icon" href="<?php echo $general['appicon']; ?>">
 	<meta name="msapplication-TileImage" content="<?php echo $general['appicon']; ?>">
@@ -22,9 +20,12 @@ if ( isset( $general['app-icon'] ) ) : ?>
 	<link rel="shortcut icon" href="<?php echo $general['favicon']; ?>">
 <?php endif;
 
+/* CSS */
+if ( isset( $general['css'] ) ) : ?>
+    <style><?php echo $general['css']; ?></style>
+<?php endif;
+
 /* JavaScript */
 if ( isset( $general['javascript'] ) ) : ?>
-    <script>
-    	<?php echo $general['javascript']; ?>
-    </script>
+    <script><?php echo $general['javascript']; ?></script>
 <?php endif;

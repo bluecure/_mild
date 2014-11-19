@@ -65,7 +65,10 @@ add_action( 'after_setup_theme', function() {
 
     // Register taxonomies
     new Mild\Taxonomies( [
-        [ 'name' => __( 'Genre', 'mild' ), 'post_types' => [ __( 'Book', 'mild' ) ] ]
+        [ 
+            'name' => __( 'Genre', 'mild' ), 
+            'post_types' => [ __( 'Book', 'mild' ) ] 
+        ]
     ] );
     
 }); */

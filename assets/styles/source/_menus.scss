@@ -49,18 +49,22 @@
 
 /* Secondary Navigation */
 .secondary-navigation {
-    padding: 0;
-    margin: 0;
-    list-style: none;
     a {
-        padding-right: 0.5em;
-        border-right: 1px solid rgba(0, 0, 0, 0.7);
+        padding-right: 0.75em;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
     }
     .menu-item {
         float: left;
         padding: 0 0.25em;
-        &:last-child a {
-            border-right: none;
+        &:after {
+          content: '|';
+        }
+        &:last-child:after {
+            display: none;
         }
     }
 }

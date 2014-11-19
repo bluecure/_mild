@@ -14,11 +14,9 @@ body {
 /* Media Queries */
 @media screen and (max-width: break('small')) {
 
-    .site-footer {
+    .site-footer, 
+    .site-info {
         text-align: center;
-        .text-right {
-            text-align: center;
-        }
     }
 
 }

@@ -2,8 +2,8 @@
 /**
  * Custom functions for this theme including:
  *
- * the_section()         | Get a sections settings
- * the_option()          | Get a settings option
+ * theme_section()       | Get a sections settings
+ * theme_option()        | Get a settings option
  * is_user()             | Checks user role
  * is_blog()             | Checks if is blog page
  * is_categorized_blog() | Check for multiple categories

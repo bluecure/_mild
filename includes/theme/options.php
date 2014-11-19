@@ -29,6 +29,11 @@ add_action( 'init', function() {
                     'description' => '192px X 192px',
                     'type'        => 'upload'
                 ], [
+                    'id'          => 'css',
+                    'label'       => __( 'CSS', 'mild' ),
+                    'description' => __( 'i.e. Custom CSS without style tags.', 'mild' ),
+                    'type'        => 'textarea'
+                ], [
                     'id'          => 'javascript',
                     'label'       => __( 'JavaScript', 'mild' ),
                     'description' => __( 'i.e. Google Analytics without script tags.', 'mild' ),
