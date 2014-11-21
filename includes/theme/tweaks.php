@@ -61,23 +61,6 @@ add_filter( 'logout_url', function( $logout_url, $redirect = null ) {
 });
 
 /**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- */
-add_filter( 'wp_page_menu_args', function( $args ) {
-    $args['show_home'] = true;
-    return $args;
-});
-
-/**
- * Add extra classes to the body.
- */
-add_filter('body_class', function( $classes ) {
-    if ( is_multi_author() )
-		$classes[] = 'group-blog';
-    return $classes;
-});
-
-/**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  *
  * @param string $title Default title text for current view.

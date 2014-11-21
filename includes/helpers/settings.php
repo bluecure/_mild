@@ -328,12 +328,13 @@ class Settings {
      * @return null
      */
     private function radio( $field ) { 
-        
+
         foreach( $field['choices'] as $value => $label ) : ?>
-            <label name="<?php echo $this->field_name( $field ); ?>"><?php echo $label; ?></label>
-            <input type="radio" name="<?php echo $this->field_name( $field ); ?>" id="<?php echo $this->field_name( $field ); ?>" value="<?php echo $value; ?>" <?php checked( $this->field_value( $field ), $value ); ?>>
+            <label><?php echo $label; ?>
+                <input type="radio" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $value; ?>" <?php checked( $this->field_value( $field ), $value ); ?>>
+            </label>
         <?php endforeach; 
-        
+
         $this->field_description( $field );
 
     }
@@ -352,10 +353,11 @@ class Settings {
         $option = $this->field_value( $field ); ?>
 
         <?php $i = 1; foreach( $field['choices'] as $value => $label ) : ?>
-            <label name="<?php echo $this->field_name( $field ); ?>"><?php echo $label; ?></label>
-            <input type="checkbox" name="<?php echo $this->field_name( $field ) . "[{$i}]"; ?>" id="<?php echo $this->field_name( $field ); ?>" value="<?php echo $value; ?>" <?php checked( $option[$i], $value ); ?>>
+            <label><?php echo $label; ?>
+                <input type="checkbox" name="<?php echo $this->field_name( $field ) . "[{$i}]"; ?>" value="<?php echo $value; ?>" <?php checked( $option[$i], $value ); ?>>
+            </label>
         <?php $i++; endforeach;
-        
+
         $this->field_description( $field );
 
     }
@@ -397,11 +399,11 @@ class Settings {
      * @return null
      */
     private function field_description( $field ) {
-        
+
         if ( isset( $field['description'] ) ) : ?>
             <p class="setting-description"><?php echo $field['description']; ?></p>
         <?php endif;
-    
+
     }
 
     /**
