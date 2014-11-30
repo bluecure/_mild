@@ -46,7 +46,7 @@ if ( post_password_required() ) return; ?>
 
 	<?php endif; ?><!-- have_comments() -->
 
-	<?php if ( ! comments_open() && get_comments_number() != '0' && post_typemildupports( get_post_type(), 'comments' ) ) : ?>
+	<?php if ( ! comments_open() && get_comments_number() != '0' && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'mild' ); ?></p>
 	<?php endif; ?>
 

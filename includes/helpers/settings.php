@@ -308,7 +308,7 @@ class Settings {
     private function select( $field ) { ?>
         
         <select name="<?php echo $this->field_name( $field ); ?>">
-           <option><?php echo __( '-- select --', 'Mild' ); ?></option>
+           <option value=""><?php echo __( '-- select --', 'mild' ); ?></option>
             <?php foreach( $field['choices'] as $value => $label ) : ?>
                 <option value="<?php echo $value; ?>" <?php selected( $this->field_value( $field ), $value ); ?>><?php echo $label; ?></option>
             <?php endforeach; ?>            
@@ -352,7 +352,8 @@ class Settings {
 
         $option = $this->field_value( $field ); ?>
 
-        <?php $i = 1; foreach( $field['choices'] as $value => $label ) : ?>
+        <?php $i = 1; foreach( $field['choices'] as $value => $label ) : 
+            if ( ! isset( $option[$i] ) ) $option[$i] = false; ?>
             <label><?php echo $label; ?>
                 <input type="checkbox" name="<?php echo $this->field_name( $field ) . "[{$i}]"; ?>" value="<?php echo $value; ?>" <?php checked( $option[$i], $value ); ?>>
             </label>
@@ -407,6 +408,21 @@ class Settings {
     }
 
     /**
+     * Field Name
+     *
+     * Generates a field name.
+     *
+     * @access private
+     * @param  string $field
+     * @return string $name
+     */
+    private function field_name( $field ) { 
+
+        return $field['section'] . '[' . $field['id'] . ']';
+
+    }
+
+    /**
      * Feild Value
      *
      * Gets the current fields value.
@@ -419,21 +435,6 @@ class Settings {
 
         $options = get_option( $field['section'] );
         return ( isset( $options[$field['id']] ) ) ? $options[$field['id']] : '';
-
-    }
-
-    /**
-     * Field Name
-     *
-     * Generates a field name.
-     *
-     * @access private
-     * @param  string $field
-     * @return string $name
-     */
-    private function field_name( $field ) { 
-
-        return $field['section'] . '[' . $field['id'] . ']';
 
     }
 

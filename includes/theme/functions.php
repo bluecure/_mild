@@ -90,6 +90,9 @@ function is_categorized_blog() {
  * Flush out the transients used in categorized_blog.
  */
 function category_transient_flusher() {
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
 	delete_transient( 'mild_categories' );
 }
 add_action( 'edit_category', 'Mild\category_transient_flusher' );

@@ -14,7 +14,7 @@
             $( '.mild-settings' ).on( 'click', '.upload-remove', this.removeUpload );
         },
         // Launch media manager
-        selectUpload : function( e ) {
+        selectUpload: function( e ) {
             e.preventDefault();
             var upload  = $( this ).parents( '.upload' ),
                 frame = wp.media({ 
@@ -29,11 +29,10 @@
                     'alt': file.url 
                 } );
                 upload.find( '.upload-file' ).val( file.url );
-
             });
         },
         // Remove upload file
-        removeUpload : function() {
+        removeUpload: function() {
             var upload  = $( this ).parents( '.upload' );
             upload.find( '.upload-image' ).removeClass( 'show' ).addClass( 'hide' );
             upload.find( '.upload-file' ).val( '' );

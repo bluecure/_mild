@@ -108,6 +108,9 @@
         line-height: 1;
         cursor: pointer;
         border-bottom: 1px solid color('silver');
+        a {
+            display: block;    
+        }
     }
     .accordion-content {
         display: none;
