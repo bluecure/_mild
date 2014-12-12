@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mild\n"
-"POT-Creation-Date: 2014-12-01 09:50+1000\n"
-"PO-Revision-Date: 2014-12-01 09:50+1000\n"
+"POT-Creation-Date: 2014-12-12 17:19+1000\n"
+"PO-Revision-Date: 2014-12-12 17:19+1000\n"
 "Last-Translator: David Featherston\n"
 "Language-Team: \n"
 "Language: en_AU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
@@ -34,66 +34,6 @@ msgstr ""
 #: ../404.php:44
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
-
-#: ../archive.php:25
-#, php-format
-msgid "Author: %s"
-msgstr ""
-
-#: ../archive.php:28
-#, php-format
-msgid "Day: %s"
-msgstr ""
-
-#: ../archive.php:31
-#, php-format
-msgid "Month: %s"
-msgstr ""
-
-#: ../archive.php:34
-#, php-format
-msgid "Year: %s"
-msgstr ""
-
-#: ../archive.php:37
-msgid "Asides"
-msgstr ""
-
-#: ../archive.php:40
-msgid "Galleries"
-msgstr ""
-
-#: ../archive.php:43
-msgid "Images"
-msgstr ""
-
-#: ../archive.php:46
-msgid "Videos"
-msgstr ""
-
-#: ../archive.php:49
-msgid "Quotes"
-msgstr ""
-
-#: ../archive.php:52
-msgid "Links"
-msgstr ""
-
-#: ../archive.php:55
-msgid "Statuses"
-msgstr ""
-
-#: ../archive.php:58
-msgid "Audios"
-msgstr ""
-
-#: ../archive.php:61
-msgid "Chats"
-msgstr ""
-
-#: ../archive.php:64 ../sidebar.php:17
-msgid "Archives"
 msgstr ""
 
 #: ../comments.php:24 ../comments.php:41
@@ -121,11 +61,11 @@ msgstr ""
 msgid "To Top"
 msgstr ""
 
-#: ../header.php:24
+#: ../header.php:23
 msgid "Skip to content"
 msgstr ""
 
-#: ../header.php:41
+#: ../header.php:40
 msgid "Menu"
 msgstr ""
 
@@ -135,6 +75,56 @@ msgstr ""
 
 #: ../includes/helpers/settings.php:386 helpers/settings.php:386
 msgid "Select"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:31 theme/fallbacks.php:31
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:56 theme/fallbacks.php:56
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:58 theme/fallbacks.php:58
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:60 theme/fallbacks.php:60
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:62 theme/fallbacks.php:62
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:64 theme/fallbacks.php:64
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:66 theme/fallbacks.php:66
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:86 theme/fallbacks.php:86
+#, php-format
+msgid "Archives: %s"
+msgstr ""
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: ../includes/theme/fallbacks.php:90 theme/fallbacks.php:90
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:92 ../sidebar.php:17 theme/fallbacks.php:92
+msgid "Archives"
 msgstr ""
 
 #: ../includes/theme/options.php:14 theme/options.php:14
@@ -213,11 +203,11 @@ msgstr ""
 msgid "Theme Options"
 msgstr ""
 
-#: ../includes/theme/setup.php:46 theme/setup.php:46
+#: ../includes/theme/setup.php:49 theme/setup.php:49
 msgid "Primary Menu"
 msgstr ""
 
-#: ../includes/theme/setup.php:83 theme/setup.php:83
+#: ../includes/theme/setup.php:86 theme/setup.php:86
 msgid "Sidebar"
 msgstr ""
 
@@ -274,11 +264,6 @@ msgstr ""
 
 #: ../includes/theme/tweaks.php:53 theme/tweaks.php:53
 msgid "Read More..."
-msgstr ""
-
-#: ../includes/theme/tweaks.php:86 theme/tweaks.php:86
-#, php-format
-msgid "Page %s"
 msgstr ""
 
 #: ../partials/content-none.php:12

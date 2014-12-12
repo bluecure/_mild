@@ -45,7 +45,7 @@ class User_Roles {
             
             // Set params
             $role_name = sanitize_title_with_dashes ( $role['name'] );
-            $capabilities = wp_parse_args( $role['capabilities'], $this->default_capabilities() );
+            $capabilities = ( isset( $role['capabilities'] ) ) ? wp_parse_args( $role['capabilities'], $this->default_capabilities() ) : $this->default_capabilities();
 
             // Register user role
             add_role( $role_name, $role['name'], $capabilities );

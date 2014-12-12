@@ -22,6 +22,9 @@ add_action( 'after_setup_theme', function() {
 
     // Add default posts and comments RSS feed links to head
     add_theme_support( 'automatic-feed-links' );
+    
+    // Add theme suport for the title tag
+    add_theme_support( 'title-tag' );
 
     // Add theme suport for woocommerce
     add_theme_support( 'woocommerce' );

@@ -182,4 +182,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
         color: color('black');
         box-shadow: 0 -0.075em 0.1em rgba(255, 255, 255, 0.3) inset, 0 -0.1em 0.25em rgba(0, 0, 0, 0.15) inset;
     }
+    &:visited {
+        color: lighten(color('black'), 10%);
+    }
 }

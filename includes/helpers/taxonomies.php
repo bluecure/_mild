@@ -43,25 +43,26 @@ class Taxonomies {
     private function register() {
 
         foreach ( $this->taxonomies as $taxonomy ) {
-            
+
             // Set labels
             $this->labels['single'] = $taxonomy['name'];
-            $this->labels['plural'] = ( $taxonomy['plural'] ) ? $taxonomy['plural'] : $this->labels['single'] . 's' ;
+            $this->labels['plural'] = ( isset( $taxonomy['plural'] ) ) ? $taxonomy['plural'] : $this->labels['single'] . 's' ;
 
             // Setup post types
             $post_types = [];
             foreach ( $taxonomy['post_types'] as $type ) {
                 $post_types[] = sanitize_title_with_dashes( $type );
             }
-            
+
             // Setup options
             $taxonomy_name = sanitize_title_with_dashes( $this->labels['single'] );
-            $options = wp_parse_args( $taxonomy['options'], $this->default_options() );
-            $options['labels'] = wp_parse_args( $taxonomy['labels'], $this->default_labels() );
-            
+
+            $options = ( isset( $taxonomy['options'] ) ) ? wp_parse_args( $taxonomy['options'], $this->default_options() ) : $this->default_options();
+            $options['labels'] = ( isset( $taxonomy['labels'] ) ) ? wp_parse_args( $taxonomy['labels'], $this->default_options() ) : $this->default_labels();
+
             // Register taxonomy
-            register_taxonomy( $taxonomy_name, $post_types, $options );
-            
+            register_taxonomy( sanitize_title_with_dashes( $this->labels['single'] ), $post_types, $options );
+
         }
 
     }

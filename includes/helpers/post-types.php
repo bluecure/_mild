@@ -46,15 +46,14 @@ class Post_Types {
             
             // Set labels
             $this->labels['single'] = $type['name'];
-            $this->labels['plural'] = ( $type['plural'] ) ? $type['plural'] : $this->labels['single'] . 's' ;
+            $this->labels['plural'] = ( isset( $type['plural'] ) ) ? $type['plural'] : $this->labels['single'] . 's' ;
 
             // Set options
-            $type_name = sanitize_title_with_dashes( $type['name'] );
-            $options = wp_parse_args( $type['options'], $this->default_options() );
-            $options['labels'] = wp_parse_args( $type['labels'], $this->default_labels() );
+            $options = ( isset( $type['options'] ) ) ? wp_parse_args( $type['options'], $this->default_options() ) : $this->default_options();
+            $options['labels'] = ( isset( $type['labels'] ) ) ? wp_parse_args( $type['labels'], $this->default_options() ) : $this->default_labels();
 
             // Register post type
-            register_post_type( $type_name, $options );
+            register_post_type( sanitize_title_with_dashes( $type['name'] ), $options );
             
         }
 

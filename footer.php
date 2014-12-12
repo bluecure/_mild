@@ -10,7 +10,7 @@
 
 	</div><!-- .site-content -->
 
-	<footer class="site-footer row row-thin" role="contentinfo">
+	<footer id="colophon" class="site-footer row row-thin" role="contentinfo">
 
 		<div class="site-social col-6 md-6">
 			<?php get_template_part( 'partials/social', 'links' ); ?>
