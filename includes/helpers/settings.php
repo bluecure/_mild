@@ -97,11 +97,11 @@ class Settings {
         if ( $this->page !== $hook ) return;
 
         // Load settings css
-        wp_enqueue_style( 'mild-settings-style', get_template_directory_uri() . '/assets/admin/styles/settings.css', [], '0.1.0' );
+        wp_enqueue_style( 'mild-settings-style', get_template_directory_uri() . '/assets/admin/styles/settings.css', ['wp-color-picker'], '1.0.0' );
         // Load media assets
         wp_enqueue_media();
         // Load settings js
-        wp_enqueue_script( 'mild-settings-scripts', get_template_directory_uri() . '/assets/admin/scripts/settings.js', ['jquery'], '0.1.0', true );
+        wp_enqueue_script( 'mild-settings-scripts', get_template_directory_uri() . '/assets/admin/scripts/settings.js', ['jquery', 'wp-color-picker'], '1.0.0', true );
 
     }
 
@@ -237,6 +237,10 @@ class Settings {
             case 'upload':
                 $this->upload( $field );
                 break;
+            
+            case 'color':
+                $this->color( $field );
+                break;
 
             default:
                 $this->text( $field );
@@ -256,7 +260,7 @@ class Settings {
      */
     private function text( $field ) { ?>
 
-        <input name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $this->field_value( $field ); ?>" type="text">
+        <input type="text" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $this->field_value( $field ); ?>">
 
         <?php $this->field_description( $field );
 
@@ -389,6 +393,23 @@ class Settings {
             </div>
 
     <?php }
+
+    /**
+     * Color
+     *
+     * Generates a color picker.
+     *
+     * @access private
+     * @param  array $field
+     * @return null
+     */
+    private function color( $field ) { ?>
+
+        <input type="text" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $this->field_value( $field ); ?>" class="color-picker">
+
+        <?php $this->field_description( $field );
+
+    }
 
     /**
      * Field Description

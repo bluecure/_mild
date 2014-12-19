@@ -1,7 +1,7 @@
 {
     "name": "mild",
     "title": "Mild",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "main": "gulpfile.js",
     "repository": "https://github.com/lambry/mild",
     "devDependencies": {

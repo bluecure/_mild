@@ -1,7 +1,7 @@
 /**
  * Theme Settings js.
  *
- * Contains all of the JavaScript to handel theme settings functions.
+ * Contains all of the JavaScript to handle theme settings functions.
  */
 
 (function( $ ) {
@@ -12,6 +12,8 @@
             $( '.mild-settings' ).on( 'click', '.upload-select', this.selectUpload );
             // Handle removing upload
             $( '.mild-settings' ).on( 'click', '.upload-remove', this.removeUpload );
+            // Load color picker
+            $( '.color-picker' ).wpColorPicker();
         },
         // Launch media manager
         selectUpload: function( e ) {

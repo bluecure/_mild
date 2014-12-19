@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mild\n"
-"POT-Creation-Date: 2014-12-12 17:19+1000\n"
-"PO-Revision-Date: 2014-12-12 17:19+1000\n"
+"POT-Creation-Date: 2014-12-19 09:07+1000\n"
+"PO-Revision-Date: 2014-12-19 09:07+1000\n"
 "Last-Translator: David Featherston\n"
 "Language-Team: \n"
 "Language: en_AU\n"
@@ -69,11 +69,11 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: ../includes/helpers/settings.php:311 helpers/settings.php:311
+#: ../includes/helpers/settings.php:315 helpers/settings.php:315
 msgid "-- select --"
 msgstr ""
 
-#: ../includes/helpers/settings.php:386 helpers/settings.php:386
+#: ../includes/helpers/settings.php:390 helpers/settings.php:390
 msgid "Select"
 msgstr ""
 
@@ -112,18 +112,18 @@ msgstr ""
 msgid "Day: %s"
 msgstr ""
 
-#: ../includes/theme/fallbacks.php:86 theme/fallbacks.php:86
+#: ../includes/theme/fallbacks.php:88 theme/fallbacks.php:88
 #, php-format
 msgid "Archives: %s"
 msgstr ""
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: ../includes/theme/fallbacks.php:90 theme/fallbacks.php:90
+#: ../includes/theme/fallbacks.php:92 theme/fallbacks.php:92
 #, php-format
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: ../includes/theme/fallbacks.php:92 ../sidebar.php:17 theme/fallbacks.php:92
+#: ../includes/theme/fallbacks.php:94 ../sidebar.php:17 theme/fallbacks.php:94
 msgid "Archives"
 msgstr ""
 

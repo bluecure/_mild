@@ -113,7 +113,7 @@ class Taxonomies {
             'search_items'               => 'Search ' . $this->labels['plural'],
             'add_or_remove_items'        => 'Add or remove ' . strtolower( $this->labels['plural'] ),
             'choose_from_most_used'      => 'Choose from the most used ' . strtolower( $this->labels['plural'] ),
-            'separate_items_with_commas' => 'Separate  ' . $this->labels['single'] . ' with commas'
+            'separate_items_with_commas' => 'Separate  ' . strtolower( $this->labels['single'] ) . ' with commas'
         ];
     
     }

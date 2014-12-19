@@ -173,6 +173,14 @@
       "parents": [
         "b5e3f5b9"
       ]
+    },
+    "00943fab": {
+      "id": "00943fab",
+      "pid": "022c9b59",
+      "path": "assets\\scripts\\vendor\\magnific-popup.js",
+      "parents": [
+        "39584041"
+      ]
     }
   },
   "images": {
@@ -188,7 +196,7 @@
     }
   },
   "config": {
-    "watch": false,
+    "watch": true,
     "liveRefresh": true,
     "liveRefreshDelay": 0,
     "filterPatterns": "node_modules,admin,gulpfile.js,README.md",

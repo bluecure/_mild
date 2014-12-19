@@ -4,7 +4,7 @@ Theme URI: https://github.com/lambry/mild
 Author: David Featherston
 Author URI: https://github.com/lambry/mild
 Description: WordPress Starter Theme.
-Version: 0.1.0
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mild
@@ -13,18 +13,18 @@ Text Domain: mild
 /* =Imports
 -------------------------------------------------------------- */
 
-@import 'source/_variables.scss';
-@import 'source/_functions.scss';
-@import 'vendor/_normalize.scss';
-@import 'vendor/_font-awesome.scss';
-@import 'vendor/_magnific-popup.scss';
-@import 'source/_grid.scss';
-@import 'source/_global.scss';
-@import 'source/_typography.scss';
-@import 'source/_content.scss';
-@import 'source/_menus.scss';
-@import 'source/_social.scss';
-@import 'source/_shortcodes.scss';
-@import 'source/_plugins.scss';
-@import 'source/_main.scss';
-@import 'source/_helpers.scss';
+@import 'source/variables';
+@import 'source/functions';
+@import 'vendor/normalize';
+@import 'vendor/font-awesome';
+@import 'vendor/magnific-popup';
+@import 'source/grid';
+@import 'source/global';
+@import 'source/typography';
+@import 'source/content';
+@import 'source/menus';
+@import 'source/social';
+@import 'source/shortcodes';
+@import 'source/plugins';
+@import 'source/main';
+@import 'source/helpers';

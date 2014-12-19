@@ -151,9 +151,9 @@
         position: relative;
     }
     label {
-        position: absolute;
         top: 0.3em;
         left: 0.3em;
+        position: absolute;
         transition: all style('transition');
     }
     .is-hidden {
