@@ -17,6 +17,9 @@ html {
 }
 
 /* Elements */
+p {
+    margin-bottom: layout('margin');    
+}
 hr {
 	background-color: color('silver');
 	margin-bottom: layout('margin');
@@ -26,7 +29,6 @@ hr {
 }
 ul, ol {
     margin: 0 0 layout('margin') layout('margin');
-    padding: 0 0 0 layout('padding');
     list-style-position: inside;
 }
 ul {
@@ -50,35 +52,11 @@ dd {
 b, strong {
 	font-weight: font('bold');
 }
-dfn, cite, em, i {
-	font-style: italic;
-}
 blockquote {
 	margin: 0 layout('margin');
 }
-address {
-	margin: 0 0 layout('margin');
-}
-pre {
-	background: color('silver');
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	line-height: 1.6;
-	margin-bottom: layout('margin');
-	max-width: 100%;
-	overflow: auto;
-	padding: layout('padding');
-}
-code, kbd, tt, var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
-abbr, acronym {
-	border-bottom: 1px dotted color('grey');
-	cursor: help;
-}
-mark, ins {
-	background: darken(color('white'), 2.5%);
-	text-decoration: none;
+dfn, cite, em, i {
+	font-style: italic;
 }
 sup, sub {
 	font-size: 75%;
@@ -109,6 +87,33 @@ img {
 a img {
     border: none;
 }
+embed, iframe, object {
+	max-width: 100%;
+}
+address {
+	margin: 0 0 layout('margin');
+}
+pre {
+	background: color('silver');
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	line-height: 1.6;
+	margin-bottom: layout('margin');
+	max-width: 100%;
+	overflow: auto;
+	padding: layout('padding');
+}
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted color('grey');
+	cursor: help;
+}
+mark, ins {
+	background: darken(color('white'), 2.5%);
+	text-decoration: none;
+}
 
 /* Tables */
 table {
@@ -128,7 +133,7 @@ table {
     }
 }
 
-/* Form Elements */
+/* Forms */
 button, input, select, textarea {
     font-size: 100%;
     margin: 0 0 0.5em 0;

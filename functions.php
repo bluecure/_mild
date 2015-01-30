@@ -15,8 +15,7 @@ $mild_includes = [
     'theme/setup.php',
     'theme/tweaks.php',
     'theme/functions.php',
-    'theme/template.php',
-    'theme/fallbacks.php'
+    'theme/template.php'
 ];
 
 foreach( $mild_includes as $include ) {

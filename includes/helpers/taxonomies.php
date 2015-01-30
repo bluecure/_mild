@@ -55,8 +55,6 @@ class Taxonomies {
             }
 
             // Setup options
-            $taxonomy_name = sanitize_title_with_dashes( $this->labels['single'] );
-
             $options = ( isset( $taxonomy['options'] ) ) ? wp_parse_args( $taxonomy['options'], $this->default_options() ) : $this->default_options();
             $options['labels'] = ( isset( $taxonomy['labels'] ) ) ? wp_parse_args( $taxonomy['labels'], $this->default_options() ) : $this->default_labels();
 

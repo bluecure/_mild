@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Search Results page.
+ * The template for displaying the search results page.
  *
  * @package Mild
  */

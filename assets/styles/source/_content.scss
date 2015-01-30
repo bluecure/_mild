@@ -19,7 +19,7 @@
 
 /* Articles */
 .page-content, .entry-content, .entry-summary {
-	margin: 0 0 layout('margin') 0;
+	margin: 0 0 layout('margin');
 }
 .article-excerpt {
     @extend .clear;
@@ -137,14 +137,24 @@ img.wp-smiley {
 .navigation {
     margin: 0 0 layout('margin');
     overflow: hidden;
+    .nav-previous a:before, .nav-next a:after {
+        padding: 0.1em 0.5em;
+        font-family: font('icon');
+    }
     .nav-previous {
         float: left;
         width: 50%;
+        a:before {
+            content: '\f104';
+        }
     }
     .nav-next {
         float: right;
         text-align: right;
         width: 50%;
+        a:after {
+            content: '\f105';
+        }
     }
 }
 
@@ -162,6 +172,9 @@ img.wp-smiley {
     list-style: none outside none;
     margin-top: layout('margin');
     padding-left: layout('padding');
+}
+.comment-content a {
+	word-wrap: break-word;
 }
 .comment-respond {
     padding: 0.25em 0.75em;

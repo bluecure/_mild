@@ -22,7 +22,6 @@ get_header(); ?>
 
                     <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-                    <?php if ( Mild\is_categorized_blog() ) : // Show if there are multiple categories ?>
                     <div class="widget widget_categories">
                         <h2 class="widget-title"><?php _e( 'Most Used Categories', 'mild' ); ?></h2>
                         <ul>
@@ -37,7 +36,6 @@ get_header(); ?>
                         ?>
                         </ul>
                     </div><!-- .widget -->
-                    <?php endif; ?>
 
                     <?php
                         /* translators: %1$s: smiley */

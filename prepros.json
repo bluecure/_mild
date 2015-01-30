@@ -196,7 +196,7 @@
     }
   },
   "config": {
-    "watch": true,
+    "watch": false,
     "liveRefresh": true,
     "liveRefreshDelay": 0,
     "filterPatterns": "node_modules,admin,gulpfile.js,README.md",

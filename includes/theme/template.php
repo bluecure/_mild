@@ -5,9 +5,7 @@
  * pagination()  | Displays pagination
  * breadcrumbs() | Displays breadcrumbs
  * page_menu()   | Displays page menu
- * posts_menu()  | Displays posts menu
- * paging_nav()  | Displays paging nav
- * post_nav()    | Displays post nav
+ * post_menu()   | Displays post menu
  * posted_on()   | Displays posted on
  * entry_meta()  | Displays entry meta data
  *
@@ -43,7 +41,7 @@ function pagination() {
 }
 
 /**
- * Display breadcrumbs.
+ * Display the breadcrumbs.
  *
  * @return void
  */
@@ -67,11 +65,11 @@ function breadcrumbs() {
 	    </li>
    </ul><!-- .breadcrumbs -->
 
-<?php
+    <?php
 }
 
 /**
- * Display sub page menu.
+ * Display a sub page menu.
  *
  * @return void
  */
@@ -93,15 +91,15 @@ function page_menu() {
         <?php wp_list_pages( $args ); ?>
 	</ul>
 
-<?php
+    <?php
 }
 
 /**
- * Display latest posts.
+ * Displays the latest posts.
  *
  * @return void
  */
-function posts_menu() {
+function post_menu() {
 
     global $post;
 	$args = [
@@ -122,59 +120,6 @@ function posts_menu() {
 		</ul>
 
 	<?php endif;
-}
-
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @return void
- */
-function paging_nav() {
-
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 )
-		return;	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'mild' ); ?></h1>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			    <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'mild' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			    <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'mild' ) ); ?></div>
-			<?php endif; ?>
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-
-	<?php
-}
-
-/**
- * Display navigation to next/previous post when applicable.
- *
- * @return void
- */
-function post_nav() {
-
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next = get_adjacent_post( false, '', false );
-
-	if ( ! $next && ! $previous )
-		return;	?>
-
-	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'mild' ); ?></h1>
-		<div class="nav-links">
-			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'mild' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'mild' ) );
-			?>
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-
-	<?php
 }
 
 /**
@@ -207,7 +152,7 @@ function posted_on() {
 
 	<span class="posted-on"><?php echo $posted_on; ?></span><span class="byline"><?php echo $byline; ?></span>
 
-<?php
+    <?php
 }
 
 /**
@@ -220,7 +165,7 @@ function entry_meta() {
     // Show post categories and tags
 	if ( get_post_type() === 'post' ) {
 		$categories_list = get_the_category_list( __( ', ', 'mild' ) );
-		if ( $categories_list && is_categorized_blog() ) {
+		if ( $categories_list ) {
             printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'mild' ) . '</span>', $categories_list );
 		}
 		$tags_list = get_the_tag_list( '', __( ', ', 'mild' ) );

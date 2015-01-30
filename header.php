@@ -1,8 +1,6 @@
 <?php
 /**
- * The Header file for this theme.
- *
- * Displays all of the <head> section and everything up till <div id="content">
+ * The header file for this theme.
  *
  * @package Mild
  */

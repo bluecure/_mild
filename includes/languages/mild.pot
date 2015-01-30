@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mild\n"
-"POT-Creation-Date: 2014-12-19 09:07+1000\n"
-"PO-Revision-Date: 2014-12-19 09:07+1000\n"
+"POT-Creation-Date: 2015-01-30 11:58+1000\n"
+"PO-Revision-Date: 2015-01-30 11:58+1000\n"
 "Last-Translator: David Featherston\n"
 "Language-Team: \n"
 "Language: en_AU\n"
@@ -26,46 +26,46 @@ msgid ""
 "below or a search?"
 msgstr ""
 
-#: ../404.php:27
+#: ../404.php:26
 msgid "Most Used Categories"
 msgstr ""
 
 #. translators: %1$s: smiley
-#: ../404.php:44
+#: ../404.php:42
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: ../comments.php:24 ../comments.php:41
+#: ../comments.php:22 ../comments.php:39
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:25 ../comments.php:42
+#: ../comments.php:23 ../comments.php:40
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: ../comments.php:26 ../comments.php:43
+#: ../comments.php:24 ../comments.php:41
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: ../comments.php:50
+#: ../comments.php:48
 msgid "Comments are closed."
 msgstr ""
 
-#: ../footer.php:19
+#: ../footer.php:20
 #, php-format
 msgid "&copy; %s - %s"
 msgstr ""
 
-#: ../footer.php:20
+#: ../footer.php:21
 msgid "To Top"
 msgstr ""
 
-#: ../header.php:23
+#: ../header.php:21
 msgid "Skip to content"
 msgstr ""
 
-#: ../header.php:40
+#: ../header.php:38
 msgid "Menu"
 msgstr ""
 
@@ -75,56 +75,6 @@ msgstr ""
 
 #: ../includes/helpers/settings.php:390 helpers/settings.php:390
 msgid "Select"
-msgstr ""
-
-#: ../includes/theme/fallbacks.php:31 theme/fallbacks.php:31
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: ../includes/theme/fallbacks.php:56 theme/fallbacks.php:56
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: ../includes/theme/fallbacks.php:58 theme/fallbacks.php:58
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: ../includes/theme/fallbacks.php:60 theme/fallbacks.php:60
-#, php-format
-msgid "Author: %s"
-msgstr ""
-
-#: ../includes/theme/fallbacks.php:62 theme/fallbacks.php:62
-#, php-format
-msgid "Year: %s"
-msgstr ""
-
-#: ../includes/theme/fallbacks.php:64 theme/fallbacks.php:64
-#, php-format
-msgid "Month: %s"
-msgstr ""
-
-#: ../includes/theme/fallbacks.php:66 theme/fallbacks.php:66
-#, php-format
-msgid "Day: %s"
-msgstr ""
-
-#: ../includes/theme/fallbacks.php:88 theme/fallbacks.php:88
-#, php-format
-msgid "Archives: %s"
-msgstr ""
-
-#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: ../includes/theme/fallbacks.php:92 theme/fallbacks.php:92
-#, php-format
-msgid "%1$s: %2$s"
-msgstr ""
-
-#: ../includes/theme/fallbacks.php:94 ../sidebar.php:17 theme/fallbacks.php:94
-msgid "Archives"
 msgstr ""
 
 #: ../includes/theme/options.php:14 theme/options.php:14
@@ -211,54 +161,38 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: ../includes/theme/template.php:57 theme/template.php:57
+#: ../includes/theme/template.php:55 theme/template.php:55
 msgid "Home"
 msgstr ""
 
-#: ../includes/theme/template.php:137 theme/template.php:137
-msgid "Posts navigation"
-msgstr ""
-
-#: ../includes/theme/template.php:141 theme/template.php:141
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
-
-#: ../includes/theme/template.php:145 theme/template.php:145
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: ../includes/theme/template.php:168 theme/template.php:168
-msgid "Post navigation"
-msgstr ""
-
-#: ../includes/theme/template.php:222 ../includes/theme/template.php:226
-#: theme/template.php:222 theme/template.php:226
+#: ../includes/theme/template.php:167 ../includes/theme/template.php:171
+#: theme/template.php:167 theme/template.php:171
 msgid ", "
 msgstr ""
 
-#: ../includes/theme/template.php:224 theme/template.php:224
+#: ../includes/theme/template.php:169 theme/template.php:169
 #, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
-#: ../includes/theme/template.php:228 theme/template.php:228
+#: ../includes/theme/template.php:173 theme/template.php:173
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
-#: ../includes/theme/template.php:234 theme/template.php:234
+#: ../includes/theme/template.php:179 theme/template.php:179
 msgid "Leave a comment"
 msgstr ""
 
-#: ../includes/theme/template.php:234 theme/template.php:234
+#: ../includes/theme/template.php:179 theme/template.php:179
 msgid "1 Comment"
 msgstr ""
 
-#: ../includes/theme/template.php:234 theme/template.php:234
+#: ../includes/theme/template.php:179 theme/template.php:179
 msgid "% Comments"
 msgstr ""
 
-#: ../includes/theme/template.php:238 theme/template.php:238
+#: ../includes/theme/template.php:183 theme/template.php:183
 msgid "Edit"
 msgstr ""
 
@@ -309,6 +243,10 @@ msgstr ""
 
 #: ../searchform.php:11
 msgid "Search..."
+msgstr ""
+
+#: ../sidebar.php:17
+msgid "Archives"
 msgstr ""
 
 #: ../sidebar.php:24

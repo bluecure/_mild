@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying all single posts.
  *
  * @package Mild
  */
@@ -14,7 +14,7 @@ get_header(); ?>
 
 				<?php get_template_part( 'partials/content', 'single' ); ?>
 
-				<?php Mild\post_nav(); ?>
+				<?php the_post_navigation(); ?>
 
 				<?php
 					// Load up the comment template

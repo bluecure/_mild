@@ -4,9 +4,9 @@
  *
  * theme_section()       | Get a sections settings
  * theme_option()        | Get a settings option
+ * get_type()            | Gets custom posts
  * is_user()             | Checks user role
  * is_blog()             | Checks if is blog page
- * is_categorized_blog() | Check for multiple categories
  *
  * @package Mild
  */
@@ -39,6 +39,22 @@ function theme_option( $section, $field ) {
 }
 
 /**
+ * Gets a list of posts by post type.
+ *
+ * @param string  $type
+ * @param string  $limit
+ * @return object $posts
+ */
+function get_type( $type = 'post', $limit = -1 ) {
+
+    return get_posts( [ 
+    	'post_type' => $type,
+    	'posts_per_page' => $limit
+    ] );
+
+}
+
+/**
  * Get and check user role.
  *
  * @param string $role
@@ -59,41 +75,3 @@ function is_blog() {
     $post_type = get_post_type( $post );
     return ( ( is_home() || is_archive() || is_single() ) && ( $post_type === 'post') ) ? true : false;
 }
-
-/**
- * Check if a blog has more than 1 category.
- *
- * @return boolean
- */
-function is_categorized_blog() {
-	if ( ( $categories = get_transient( 'mild_categories' ) ) === false ) {
-		// Create an array of all the categories that are attached to posts
-		$categories = get_categories( [
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			'number'     => 2
-        ] );
-
-		// Count the number of categories that are attached to the posts
-		$categories = count( $categories );
-		set_transient( 'mild_categories', $categories );
-	}
-	// If this blog has more than 1 category return true
-	if ( $categories > 1 ) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
-/**
- * Flush out the transients used in categorized_blog.
- */
-function category_transient_flusher() {
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-        return;
-    }
-	delete_transient( 'mild_categories' );
-}
-add_action( 'edit_category', 'Mild\category_transient_flusher' );
-add_action( 'save_post',     'Mild\category_transient_flusher' );
