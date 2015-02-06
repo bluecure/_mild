@@ -1,9 +1,8 @@
 /* =Menu
 ----------------------------------------------- */
 
-.main-navigation {
+.primary-navigation {
     display: block;
-    float: left;
     width: 100%;
     a {
         display: block;
@@ -15,9 +14,10 @@
         margin: 0;
         padding-left: 0;
     }
-    .menu-item {
-        float: left;
+    .menu-item,
+    .page_item {
         position: relative;
+        display: inline-block;
         &:hover > a, 
         &.current_page_item > a, 
         &.current-menu-item > a {
@@ -58,7 +58,7 @@
         list-style: none;
     }
     .menu-item {
-        float: left;
+        display: inline-block;
         padding: 0 0.25em;
         &:after {
           content: '|';
@@ -82,15 +82,13 @@
     .menu-toggle {
         display: block;
     }
-    .main-navigation .menu {
+    .primary-navigation .menu {
         display: none;
-        float: none;
         width: 100%;
         a {
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         .menu-item {
-            float: none;
             width: 100%;
             &:hover ul {
                 display: none;
@@ -116,7 +114,7 @@
 }
 
 @media screen and (min-width: break('medium')) {
-    .main-navigation .menu {
+    .primary-navigation .menu {
         display: block !important;
     }
 }

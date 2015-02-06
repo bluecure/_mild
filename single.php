@@ -14,7 +14,10 @@ get_header(); ?>
 
 				<?php get_template_part( 'partials/content', 'single' ); ?>
 
-				<?php the_post_navigation(); ?>
+				<?php the_post_navigation( [ 
+					'prev_text' => '<i class="fa fa-angle-double-left"></i> %title',
+					'next_text' => '%title <i class="fa fa-angle-double-right"></i>' 
+				] ); ?>
 
 				<?php
 					// Load up the comment template

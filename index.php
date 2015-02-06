@@ -1,8 +1,6 @@
 <?php
 /**
- * The main template file.
- *
- * Used to display a page when nothing more specific matches a query.
+ * The template for displaying anything.
  *
  * @package Mild
  */
@@ -20,7 +18,10 @@ get_header(); ?>
 
 				<?php endwhile; ?><!-- have_posts() -->
 
-				<?php Mild\pagination(); ?>
+				<?php the_posts_pagination( [ 
+					'prev_text' => '<i class="fa fa-angle-double-left"></i>',
+					'next_text' => '<i class="fa fa-angle-double-right"></i>' 
+				] ); ?>
 
 			<?php else : ?>
 

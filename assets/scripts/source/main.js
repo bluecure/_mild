@@ -4,7 +4,7 @@
 
     // Main menu
     var menuToggle = $( '.menu-toggle' ),
-        mainMenu = $( '.main-navigation .menu' );
+        mainMenu = $( '.primary-navigation .menu' );
     menuToggle.on( 'click', function() {
         mainMenu.slideToggle();
     });

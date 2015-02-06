@@ -1,0 +1,35 @@
+/* =Comments
+----------------------------------------------- */
+
+.comments-area {
+    background-color: darken(color('white'), 2.5%);
+    font-size: 0.9em;
+    padding: 0.2em 0.75em;
+    a {
+        word-wrap: break-word;
+    }
+}
+.comment {
+    list-style: none outside none;
+    margin-top: layout('margin');
+    .children {
+        padding-left: layout('padding');
+    }
+}
+comment-list {
+    padding-left: 0;
+}
+.comment-respond {
+    padding: 0.25em 0.75em;
+    label {
+        display: inline-block;
+        padding-right: 0.5em;
+        width: 5em;
+    }
+}
+.form-allowed-tags code {
+    font-size: 0.9em;
+}
+.bypostauthor {
+    text-decoration: underline;
+}

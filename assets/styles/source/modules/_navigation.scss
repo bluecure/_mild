@@ -1,0 +1,64 @@
+/* =Navigation
+----------------------------------------------- */
+
+/* Navigation */
+.navigation {
+    margin: 0 0 layout('margin');
+    overflow: hidden;
+    .nav-previous {
+        float: left;
+        width: 50%;
+    }
+    .nav-next {
+        float: right;
+        text-align: right;
+        width: 50%;
+    }
+}
+
+/* Pagination */
+.pagination {
+    padding: 0;
+    margin: layout('margin') 0;
+    list-style-type: none;
+    .page-numbers {
+        display: inline-block;
+        color: color('grey');
+        margin: 0.2em 0.1em;
+        padding: 0.2em 0.5em;
+        border-radius: style('radius');
+        &:hover {
+            background-color: color('silver');
+        }
+    }
+    .current {
+        color: color('white');
+        background-color: color('blue');
+        &:hover {
+            background-color: lighten(color('blue'), 5%);
+        }
+    }
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    padding: 0;
+    margin: layout('margin') 0;
+    font-size: 0.8em;
+    .breadcrumb {
+        display: inline-block;
+        position: relative;
+        list-style: none;
+        padding: 0.25em 0.5em;
+        &:after {
+            content: '/';
+            font-size: 0.8em;
+            position: absolute;
+            bottom: 18%;
+            right: 0;
+        }
+        &:last-child:after {
+            content: '';
+        }
+    }
+}

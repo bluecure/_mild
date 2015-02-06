@@ -1,0 +1,49 @@
+/* =Classes
+----------------------------------------------- */
+
+/* Alignment */
+.alignleft, .align-left {
+    display: inline;
+    float: left;
+    margin: 0 2.5em 1em 0;
+}
+.alignright, .align-right {
+    display: inline;
+    float: right;
+    margin: 0 0 1em 2.5em;
+}
+.aligncenter, .align-center {
+    clear: both;
+    display: block;
+    margin: 0 auto 1em auto;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+
+/* Responsive iframes */
+.fluid-iframe {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+.fluid-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

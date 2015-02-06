@@ -1,0 +1,47 @@
+/* =Posts
+----------------------------------------------- */
+
+.hentry {
+	margin: 0 0 layout('margin');
+}
+.sticky {
+    font-size: 1.1em;
+}
+.single, .group-blog {
+    .byline {
+	    display: inline;
+    }
+}
+.page-links {
+	clear: both;
+	margin: 0 0 layout('margin');
+}
+
+/* Articles */
+.page-content, .entry-content, .entry-summary {
+	margin: 0 0 layout('margin');
+}
+.article-excerpt {
+    @extend .clear;
+    border-bottom: 1px solid color('silver');
+    margin-bottom: layout('margin');
+    padding-bottom: layout('padding');
+}
+
+/* Blog */
+.blog .entry-title {
+    font-size: 1.5em;
+}
+.entry-meta, .entry-footer, .updated, a.more {
+    font-size: 0.8em;
+    font-style: italic;
+    color: lighten(color('grey'), 5%);
+    span {
+        padding-right: 0.5em;
+    }
+}
+
+/* Widgets */
+.widget {
+    margin: 0 0 layout('margin');
+}

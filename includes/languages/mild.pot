@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mild\n"
-"POT-Creation-Date: 2015-01-30 11:58+1000\n"
-"PO-Revision-Date: 2015-01-30 11:58+1000\n"
+"POT-Creation-Date: 2015-02-06 13:04+1000\n"
+"PO-Revision-Date: 2015-02-06 13:04+1000\n"
 "Last-Translator: David Featherston\n"
 "Language-Team: \n"
 "Language: en_AU\n"
@@ -52,12 +52,12 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../footer.php:20
+#: ../footer.php:18
 #, php-format
 msgid "&copy; %s - %s"
 msgstr ""
 
-#: ../footer.php:21
+#: ../footer.php:19
 msgid "To Top"
 msgstr ""
 
@@ -161,38 +161,38 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: ../includes/theme/template.php:55 theme/template.php:55
+#: ../includes/theme/template.php:28 theme/template.php:28
 msgid "Home"
 msgstr ""
 
-#: ../includes/theme/template.php:167 ../includes/theme/template.php:171
-#: theme/template.php:167 theme/template.php:171
+#: ../includes/theme/template.php:140 ../includes/theme/template.php:144
+#: theme/template.php:140 theme/template.php:144
 msgid ", "
 msgstr ""
 
-#: ../includes/theme/template.php:169 theme/template.php:169
+#: ../includes/theme/template.php:142 theme/template.php:142
 #, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
-#: ../includes/theme/template.php:173 theme/template.php:173
+#: ../includes/theme/template.php:146 theme/template.php:146
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
-#: ../includes/theme/template.php:179 theme/template.php:179
+#: ../includes/theme/template.php:152 theme/template.php:152
 msgid "Leave a comment"
 msgstr ""
 
-#: ../includes/theme/template.php:179 theme/template.php:179
+#: ../includes/theme/template.php:152 theme/template.php:152
 msgid "1 Comment"
 msgstr ""
 
-#: ../includes/theme/template.php:179 theme/template.php:179
+#: ../includes/theme/template.php:152 theme/template.php:152
 msgid "% Comments"
 msgstr ""
 
-#: ../includes/theme/template.php:183 theme/template.php:183
+#: ../includes/theme/template.php:156 theme/template.php:156
 msgid "Edit"
 msgstr ""
 

@@ -11,8 +11,8 @@ Note: This is a work in progress and can break at anytime.
 * Base styles
 * Helpers
 * Normalize (3.0.2)
-* Font Awesome (4.2.0)
-* Magnific Popup (0.9.9)
+* Font Awesome (4.3.0)
+* Magnific Popup (1.0.0)
 
 ###Setting up theme:
 1. Update the theme details in `assets/styes/styles.scss`

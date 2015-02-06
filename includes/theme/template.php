@@ -2,7 +2,6 @@
 /**
  * Template tags for this theme.
  *
- * pagination()  | Displays pagination
  * breadcrumbs() | Displays breadcrumbs
  * page_menu()   | Displays page menu
  * post_menu()   | Displays post menu
@@ -13,32 +12,6 @@
  */
 
 namespace Mild;
-
-/**
- * Displays pagination links.
- *
- * @return void
- */
-function pagination() {
-
-	global $wp_query;
-
-	$args = [
-		'base'      => str_replace( 999999, '%#%', esc_url( get_pagenum_link( 999999 ) ) ),
-		'format'    => '?paged=%#%',
-		'current'   => max( 1, get_query_var('paged') ),
-		'total'     => $wp_query->max_num_pages,
-		'prev_next' => True,
-		'prev_text' => '<i class="fa fa-angle-double-left"></i>',
-		'next_text' => '<i class="fa fa-angle-double-right"></i>'
-	]; ?>
-
-	<nav class="pagination" role="navigation">
-	    <?php echo paginate_links( $args ); ?>
-	</nav>
-
-<?php
-}
 
 /**
  * Display the breadcrumbs.
