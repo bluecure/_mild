@@ -42,7 +42,7 @@ class Sidebars {
     private function register() {
 
         foreach ( $this->sidebars as $sidebar ) {
-            
+
             // Set options
             $options = wp_parse_args( $sidebar, $this->default_options() );
 
@@ -55,11 +55,11 @@ class Sidebars {
                 'before_title'  => '<' .$options['header']. ' class="widget-title">',
                 'after_title'   => '</' .$options['header']. '>'
             ] );
-            
+
         }
 
     }
-    
+
     /**
      * Default Options
      *
@@ -69,7 +69,7 @@ class Sidebars {
      * @return array
      */
     private function default_options() {
-        
+
         return [
             'name'    => 'Sidebar',
             'header'  => 'h3',

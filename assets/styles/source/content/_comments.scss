@@ -2,7 +2,6 @@
 ----------------------------------------------- */
 
 .comments-area {
-    background-color: darken(color('white'), 2.5%);
     font-size: 0.9em;
     padding: 0.2em 0.75em;
     a {
@@ -16,8 +15,8 @@
         padding-left: layout('padding');
     }
 }
-comment-list {
-    padding-left: 0;
+.comment-list {
+    padding-left: 0.25em;
 }
 .comment-respond {
     padding: 0.25em 0.75em;
@@ -29,7 +28,4 @@ comment-list {
 }
 .form-allowed-tags code {
     font-size: 0.9em;
-}
-.bypostauthor {
-    text-decoration: underline;
 }

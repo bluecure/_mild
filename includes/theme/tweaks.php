@@ -59,12 +59,3 @@ add_filter( 'excerpt_more', function( $more ) {
 add_filter( 'logout_url', function( $logout_url, $redirect = null ) {
     return $logout_url . '&amp;redirect_to=' . urlencode( home_url()  );
 });
-
-/**
- * Sets the authordata global on author archives.
- */
-add_action( 'wp', function() {
-    global $wp_query;
-    if ( $wp_query->is_author() && isset( $wp_query->post ) )
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-});

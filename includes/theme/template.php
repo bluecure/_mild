@@ -39,6 +39,7 @@ function breadcrumbs() {
    </ul><!-- .breadcrumbs -->
 
     <?php
+
 }
 
 /**
@@ -65,6 +66,7 @@ function page_menu() {
 	</ul>
 
     <?php
+
 }
 
 /**
@@ -93,6 +95,7 @@ function post_menu() {
 		</ul>
 
 	<?php endif;
+
 }
 
 /**
@@ -126,6 +129,7 @@ function posted_on() {
 	<span class="posted-on"><?php echo $posted_on; ?></span><span class="byline"><?php echo $byline; ?></span>
 
     <?php
+
 }
 
 /**

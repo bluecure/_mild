@@ -21,7 +21,7 @@
 .col {
     float: left;
     min-height: 1px;
-    padding: layout('padding');
+    padding: layout('padding') (layout('padding') * 2);
     &-thin {
         padding: 0 layout('padding');
     }
@@ -40,6 +40,7 @@
     [class*="col-"] {
         float: none;
         width: 100%;
+        padding: layout('padding');
         margin: 0 0 ( layout('margin') / 2 ) 0;
     }
     [class*="md-"] {

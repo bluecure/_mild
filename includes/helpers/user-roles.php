@@ -42,14 +42,14 @@ class User_Roles {
     private function register() {
 
         foreach ( $this->roles as $role ) {
-            
+
             // Set params
             $role_name = sanitize_title_with_dashes ( $role['name'] );
             $capabilities = ( isset( $role['capabilities'] ) ) ? wp_parse_args( $role['capabilities'], $this->default_capabilities() ) : $this->default_capabilities();
 
             // Register user role
             add_role( $role_name, $role['name'], $capabilities );
-            
+
         }
 
     }
@@ -63,7 +63,7 @@ class User_Roles {
      * @return array
      */
     private function default_capabilities() {
-        
+
         return [
             'read'                   => true,
             'publish_posts'          => false,

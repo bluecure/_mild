@@ -34,7 +34,7 @@
             <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div><!-- .site-branding -->
 
-		<nav class="primary-navigation col-12" role="navigation">
+		<nav class="primary-navigation col-12 col-thin" role="navigation">
 			<div class="menu-toggle"><i class="fa fa-bars"></i> <?php _e( 'Menu', 'mild' ); ?></div>
 			<?php wp_nav_menu( [ 'theme_location' => 'primary' ] ); ?>
 		</nav><!-- .main-navigation -->

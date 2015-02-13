@@ -54,14 +54,6 @@
         "39584041"
       ]
     },
-    "b0c2f655": {
-      "id": "b0c2f655",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_functions.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
     "52fc0020": {
       "id": "52fc0020",
       "pid": "022c9b59",
@@ -86,82 +78,10 @@
         "b5e3f5b9"
       ]
     },
-    "fe5bc24c": {
-      "id": "fe5bc24c",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_grid.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
-    "f5202326": {
-      "id": "f5202326",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_global.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
-    "6e63e313": {
-      "id": "6e63e313",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_typography.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
-    "2b22a873": {
-      "id": "2b22a873",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_content.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
-    "c7fde82c": {
-      "id": "c7fde82c",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_menus.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
-    "77f0e821": {
-      "id": "77f0e821",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_social.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
-    "0682e979": {
-      "id": "0682e979",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_shortcodes.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
-    "d2c8ad85": {
-      "id": "d2c8ad85",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_plugins.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
     "2d8b37b0": {
       "id": "2d8b37b0",
       "pid": "022c9b59",
       "path": "assets\\styles\\source\\_main.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
-    "774f67ea": {
-      "id": "774f67ea",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_helpers.scss",
       "parents": [
         "b5e3f5b9"
       ]

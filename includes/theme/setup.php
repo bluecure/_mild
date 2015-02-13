@@ -22,7 +22,7 @@ add_action( 'after_setup_theme', function() {
 
     // Add default posts and comments RSS feed links to head
     add_theme_support( 'automatic-feed-links' );
-    
+
     // Add theme suport for the title tag
     add_theme_support( 'title-tag' );
 
@@ -55,7 +55,7 @@ add_action( 'after_setup_theme', function() {
  * Register post types, taxonomies and roles.
  */
 /* add_action( 'init', function () {
-    
+
     // Register user roles
     new Mild\User_Roles( [
         [ 'name' => __( 'Customer', 'mild' ) ]
@@ -73,7 +73,7 @@ add_action( 'after_setup_theme', function() {
             'post_types' => [ __( 'Book', 'mild' ) ] 
         ]
     ] );
-    
+
 }); */
 
 /**
@@ -100,5 +100,5 @@ add_action( 'wp_enqueue_scripts', function() {
     // Load comment script
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
-    
+
 });

@@ -44,7 +44,7 @@ class Settings {
 
         // Register settings
         add_action( 'admin_init', [ $this, 'register_settings' ] );
-        
+
         // Add admin menu
         add_action( 'admin_menu', [ $this, 'add_menu' ] );
 
@@ -52,7 +52,7 @@ class Settings {
         add_action( 'admin_enqueue_scripts', [ $this, 'load_assets' ] );
 
     }
-    
+
     /**
      * Add Menu
      *
@@ -62,7 +62,7 @@ class Settings {
      * @return null
      */
     public function add_menu() {
-        
+
         switch ( $this->type ) {
             case 'menu':
                 $this->page = add_menu_page( $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
@@ -149,7 +149,7 @@ class Settings {
      * @return null
      */
     public function register_page() { ?>
-        
+
         <div id="<?php echo $this->title_clean; ?>" class="wrap mild-settings">
             <h2><?php echo $this->title; ?></h2>
             <?php settings_errors(); ?>
@@ -161,7 +161,7 @@ class Settings {
                     </a>
                 <?php endforeach; ?>
             </h2>
-            
+
             <form action="options.php" method="POST" enctype="post">
                 <?php
                     foreach( $this->settings as $section ) {
@@ -189,13 +189,13 @@ class Settings {
      * @return null
      */
     public function section_description( $section ) {
-        
+
         foreach( $this->settings as $setting ) {
             if ( $setting['id'] === $section['id'] ) { 
                 echo "<p class='section-descripion'>{$setting['description']}</p>";
             }
         }
-    
+
     }
 
     /**
@@ -208,7 +208,7 @@ class Settings {
      * @return null
      */
     public function add_field( $field ) {
-        
+
         switch ( $field['type'] ) {
             case 'text':
                 $this->text( $field );
@@ -237,7 +237,7 @@ class Settings {
             case 'upload':
                 $this->upload( $field );
                 break;
-            
+
             case 'color':
                 $this->color( $field );
                 break;
@@ -293,9 +293,9 @@ class Settings {
      * @return null
      */
     private function editor( $field ) { 
-        
+
         wp_editor( $this->field_value( $field ), $field['id'], [ 'textarea_name' => $this->field_name( $field ) ] );
-        
+
         $this->field_description( $field );
 
     }
@@ -310,7 +310,7 @@ class Settings {
      * @return null
      */
     private function select( $field ) { ?>
-        
+
         <select name="<?php echo $this->field_name( $field ); ?>">
            <option value=""><?php echo __( '-- select --', 'mild' ); ?></option>
             <?php foreach( $field['choices'] as $value => $label ) : ?>

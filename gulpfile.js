@@ -15,7 +15,7 @@ var uglify = require('gulp-uglify');
 var path = {
     styles: 'assets/styles/',
     styleCompile: 'assets/styles/style.scss',
-    styleWatch: 'assets/styles/**/*.scss',
+    styleWatch: [ 'assets/styles/**/*.scss', 'assets/styles/**/**/*.scss' ],
     scripts: 'assets/scripts/',
     scriptWatch: [ 'assets/scripts/vendor/*.js',  'assets/scripts/source/*.js' ]
 };

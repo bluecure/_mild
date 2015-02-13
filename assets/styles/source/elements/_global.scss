@@ -27,28 +27,6 @@ hr {
 	border: 0;
     clear: both;
 }
-ul, ol {
-    margin: 0 0 layout('margin') layout('margin');
-    list-style-position: inside;
-}
-ul {
-    list-style: disc;
-}
-ol {
-    list-style: decimal;
-}
-li > {
-    ul, ol {
-        margin-bottom: 0;
-        margin-left: layout('margin');
-    }
-}
-dt {
-	font-weight: bold;
-}
-dd {
-	margin: 0 layout('margin') layout('margin');
-}
 b, strong {
 	font-weight: font('bold');
 }
@@ -58,27 +36,11 @@ blockquote {
 dfn, cite, em, i {
 	font-style: italic;
 }
-sup, sub {
-	font-size: 75%;
-	height: 0;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-sup {
-	bottom: 1ex;
-}
-sub {
-	top: 0.5ex;
-}
 small {
 	font-size: 0.75em;
 }
 big {
 	font-size: 1.25em;
-}
-figure {
-	margin: 0;
 }
 img {
     height: auto;
@@ -113,22 +75,4 @@ abbr, acronym {
 mark, ins {
 	background: darken(color('white'), 2.5%);
 	text-decoration: none;
-}
-
-/* Tables */
-table {
-    margin: 0 0 layout('margin');
-    width: 100%;
-    th {
-        font-weight: bold;
-    }
-    th, td {
-        padding: 0.75em;
-    }
-    tr {
-        background-color: darken(color('white'), 5%);
-    }
-    tr:nth-child(odd) {
-        background-color: darken(color('white'), 2.5%)
-    }
 }

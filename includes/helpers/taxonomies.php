@@ -56,7 +56,7 @@ class Taxonomies {
 
             // Setup options
             $options = ( isset( $taxonomy['options'] ) ) ? wp_parse_args( $taxonomy['options'], $this->default_options() ) : $this->default_options();
-            $options['labels'] = ( isset( $taxonomy['labels'] ) ) ? wp_parse_args( $taxonomy['labels'], $this->default_options() ) : $this->default_labels();
+            $options['labels'] = ( isset( $taxonomy['labels'] ) ) ? wp_parse_args( $taxonomy['labels'], $this->default_labels() ) : $this->default_labels();
 
             // Register taxonomy
             register_taxonomy( sanitize_title_with_dashes( $this->labels['single'] ), $post_types, $options );
@@ -74,7 +74,7 @@ class Taxonomies {
      * @return array
      */
     private function default_options() {
-        
+
         return [
             'hierarchical'      => true,
             'public'            => true,
@@ -95,7 +95,7 @@ class Taxonomies {
      * @return array
      */
     private function default_labels() {
-        
+
         return [
             'name'                       => $this->labels['plural'],
             'singular_name'              => $this->labels['single'],
@@ -113,7 +113,7 @@ class Taxonomies {
             'choose_from_most_used'      => 'Choose from the most used ' . strtolower( $this->labels['plural'] ),
             'separate_items_with_commas' => 'Separate  ' . strtolower( $this->labels['single'] ) . ' with commas'
         ];
-    
+
     }
 
 }

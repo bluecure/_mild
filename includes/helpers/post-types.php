@@ -43,18 +43,18 @@ class Post_Types {
     public function register() {
 
         foreach ( $this->post_types as $type ) {
-            
+
             // Set labels
             $this->labels['single'] = $type['name'];
             $this->labels['plural'] = ( isset( $type['plural'] ) ) ? $type['plural'] : $this->labels['single'] . 's' ;
 
             // Set options
             $options = ( isset( $type['options'] ) ) ? wp_parse_args( $type['options'], $this->default_options() ) : $this->default_options();
-            $options['labels'] = ( isset( $type['labels'] ) ) ? wp_parse_args( $type['labels'], $this->default_options() ) : $this->default_labels();
+            $options['labels'] = ( isset( $type['labels'] ) ) ? wp_parse_args( $type['labels'], $this->default_labels() ) : $this->default_labels();
 
             // Register post type
             register_post_type( sanitize_title_with_dashes( $type['name'] ), $options );
-            
+
         }
 
     }
@@ -87,7 +87,7 @@ class Post_Types {
      * @return array
      */
     private function default_labels() {
-        
+
         return [
             'name'               => $this->labels['plural'],
             'singular_name'      => $this->labels['single'],
@@ -104,7 +104,7 @@ class Post_Types {
             'parent_item_colon'  => 'Parent ' . $this->labels['single'] . ':',
             'menu_name'          => $this->labels['plural'],
         ];
-    
+
     }
 
 }

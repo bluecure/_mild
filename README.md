@@ -15,7 +15,7 @@ Note: This is a work in progress and can break at anytime.
 * Magnific Popup (1.0.0)
 
 ###Setting up theme:
-1. Update the theme details in `assets/styes/styles.scss`
+1. Update the theme details in `assets/styles/style.scss`
 2. Update screenshot.png
 
 ###Using Gulp:

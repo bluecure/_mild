@@ -22,7 +22,7 @@ namespace Mild;
 function theme_section( $section ) {
 
     return Settings::get_settings( 'theme-options', $section );
-    
+
 }
 
 /**
@@ -61,8 +61,10 @@ function get_type( $type = 'post', $limit = -1 ) {
  * @return boolean
  */
 function is_user( $role ) {
+
 	$user = wp_get_current_user();
 	return ( in_array( $role, $user->roles ) );
+
 }
 
 /**
@@ -71,7 +73,9 @@ function is_user( $role ) {
  * @return boolean
  */
 function is_blog() {
+
     global $post;
     $post_type = get_post_type( $post );
     return ( ( is_home() || is_archive() || is_single() ) && ( $post_type === 'post') ) ? true : false;
+
 }
