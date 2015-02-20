@@ -73,6 +73,10 @@ add_action( 'init', function() {
                     'id'    => 'youtube',
                     'label' => __( 'Youtube Url', 'mild' ),
                     'type'  => 'text'
+                ], [
+                    'id'    => 'vimeo',
+                    'label' => __( 'Vimeo Url', 'mild' ),
+                    'type'  => 'text'
                 ]
             ]
         ]

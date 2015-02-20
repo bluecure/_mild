@@ -28,9 +28,6 @@ Text Domain: mild
 @import 'source/elements/forms';
 @import 'source/elements/typography';
 
-/* Layout */
-@import 'source/layout/grid';
-
 /* Content */
 @import 'source/content/comments';
 @import 'source/content/media';
@@ -45,9 +42,10 @@ Text Domain: mild
 @import 'source/plugins/plugins';
 @import 'source/plugins/shortcodes';
 
+/* Layout */
+@import 'source/layout/grid';
+@import 'source/layout/main';
+
 /* Utilities */
 @import 'source/utilities/classes';
 @import 'source/utilities/helpers';
-
-/* Theme Styles */
-@import 'source/main';

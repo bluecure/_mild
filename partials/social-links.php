@@ -15,5 +15,6 @@ $social = Mild\theme_section( 'social' ); ?>
 		if ( ! empty( $social['flickr'] ) ) echo "<a href='{$social['flickr']}' class='fa fa-flickr' target='_blank'></a>";
 		if ( ! empty( $social['instagram'] ) ) echo "<a href='{$social['instagram']}' class='fa fa-instagram' target='_blank'></a>";
 		if ( ! empty( $social['youtube'] ) ) echo "<a href='{$social['youtube']}' class='fa fa-youtube' target='_blank'></a>";
+		if ( ! empty( $social['vimeo'] ) ) echo "<a href='{$social['vimeo']}' class='fa fa-vimeo-square' target='_blank'></a>";
 	?>
 </div>

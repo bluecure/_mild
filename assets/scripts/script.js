@@ -4,4 +4,5 @@
 
 // @prepros-append source/fixes.js
 // @prepros-append vendor/magnific-popup.js
+// @prepros-append source/global.js
 // @prepros-append source/main.js

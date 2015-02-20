@@ -78,14 +78,6 @@
         "b5e3f5b9"
       ]
     },
-    "2d8b37b0": {
-      "id": "2d8b37b0",
-      "pid": "022c9b59",
-      "path": "assets\\styles\\source\\_main.scss",
-      "parents": [
-        "b5e3f5b9"
-      ]
-    },
     "0d28d4c4": {
       "id": "0d28d4c4",
       "pid": "022c9b59",
@@ -100,6 +92,142 @@
       "path": "assets\\scripts\\vendor\\magnific-popup.js",
       "parents": [
         "39584041"
+      ]
+    },
+    "2c874615": {
+      "id": "2c874615",
+      "pid": "022c9b59",
+      "path": "assets\\scripts\\source\\global.js",
+      "parents": [
+        "39584041"
+      ]
+    },
+    "0e5506dd": {
+      "id": "0e5506dd",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\utilities\\_functions.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "13ce66a5": {
+      "id": "13ce66a5",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\elements\\_global.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "e0da2e4e": {
+      "id": "e0da2e4e",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\elements\\_grouped.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "8dba242e": {
+      "id": "8dba242e",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\elements\\_forms.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "ab13567c": {
+      "id": "ab13567c",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\elements\\_typography.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "70bc7493": {
+      "id": "70bc7493",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\layout\\_grid.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "7d635d92": {
+      "id": "7d635d92",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\content\\_comments.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "412b3512": {
+      "id": "412b3512",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\content\\_media.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "0451916c": {
+      "id": "0451916c",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\content\\_posts.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "18af37f0": {
+      "id": "18af37f0",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\modules\\_menus.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "8ae09e91": {
+      "id": "8ae09e91",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\modules\\_navigation.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "5a57a50c": {
+      "id": "5a57a50c",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\modules\\_social.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "68f347e7": {
+      "id": "68f347e7",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\plugins\\_plugins.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "b7adddca": {
+      "id": "b7adddca",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\plugins\\_shortcodes.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "d6b0f7ea": {
+      "id": "d6b0f7ea",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\utilities\\_classes.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
+    },
+    "71c5d195": {
+      "id": "71c5d195",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\utilities\\_helpers.scss",
+      "parents": [
+        "b5e3f5b9"
       ]
     }
   },

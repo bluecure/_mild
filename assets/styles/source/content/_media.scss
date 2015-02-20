@@ -12,9 +12,9 @@ img.wp-smiley {
 
 /* Captions */
 .wp-caption {
-	border: 1px solid color('silver');
-	margin-bottom: layout('margin');
 	max-width: 100%;
+    margin-bottom: layout('margin');
+    border: 1px solid color('silver');
     background-color: lighten(color('silver'), 2.5%);
     img[class*="wp-image-"] {
         display: block;

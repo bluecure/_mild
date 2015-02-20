@@ -11,10 +11,10 @@ $mild_includes = [
     'helpers/post-types.php',
     'helpers/taxonomies.php',
     'helpers/user-roles.php',
+    'theme/functions.php',
     'theme/options.php',
     'theme/setup.php',
     'theme/tweaks.php',
-    'theme/functions.php',
     'theme/template.php'
 ];
 
