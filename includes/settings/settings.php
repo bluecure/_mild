@@ -11,13 +11,14 @@ namespace Mild;
 
 class Settings {
 
-    // Variables
+    /* Variables */
     private $type;
     private $settings;
     private $title;
     private $title_clean;
     private $menu;
     private $menu_title;
+    private $page;
 
     /**
      * Construct
@@ -97,11 +98,11 @@ class Settings {
         if ( $this->page !== $hook ) return;
 
         // Load settings css
-        wp_enqueue_style( 'mild-settings-style', get_template_directory_uri() . '/assets/admin/styles/settings.css', ['wp-color-picker'], '1.0.0' );
+        wp_enqueue_style( 'mild-settings-style', get_template_directory_uri() . '/includes/settings/assets/styles/settings.css', ['wp-color-picker'], '1.0.0' );
         // Load media assets
         wp_enqueue_media();
         // Load settings js
-        wp_enqueue_script( 'mild-settings-scripts', get_template_directory_uri() . '/assets/admin/scripts/settings.js', ['jquery', 'wp-color-picker'], '1.0.0', true );
+        wp_enqueue_script( 'mild-settings-scripts', get_template_directory_uri() . '/includes/settings/assets/scripts/settings.js', ['jquery', 'wp-color-picker'], '1.0.0', true );
 
     }
 
@@ -192,7 +193,7 @@ class Settings {
 
         foreach( $this->settings as $setting ) {
             if ( $setting['id'] === $section['id'] ) { 
-                echo "<p class='section-descripion'>{$setting['description']}</p>";
+                echo "<p class='section-description'>{$setting['description']}</p>";
             }
         }
 
@@ -346,7 +347,7 @@ class Settings {
     /**
      * Checkbox
      *
-     * Generates a list of checkboxs.
+     * Generates a list of checkboxes.
      *
      * @access private
      * @param  array $field

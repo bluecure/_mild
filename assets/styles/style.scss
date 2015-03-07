@@ -5,6 +5,7 @@ Author: David Featherston
 Author URI: https://github.com/lambry/mild
 Description: WordPress Starter Theme.
 Version: 1.0.0
+Tags: white, one-column, right-sidebar, responsive-layout, theme-options, custom-menu, featured-images, post-formats, translation-ready
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mild
@@ -23,10 +24,10 @@ Text Domain: mild
 @import 'vendor/magnific-popup';
 
 /* Elements */
+@import 'source/elements/typography';
 @import 'source/elements/global';
 @import 'source/elements/grouped';
 @import 'source/elements/forms';
-@import 'source/elements/typography';
 
 /* Content */
 @import 'source/content/comments';

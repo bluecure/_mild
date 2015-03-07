@@ -28,14 +28,14 @@
         padding: 0.2em 0.5em;
         border-radius: style('radius');
         &:hover {
-            background-color: color('silver');
+            background-color: rgba(0, 0, 0, 0.1);
         }
     }
     .current {
         color: color('white');
-        background-color: color('blue');
+        background-color: rgba(0, 0, 0, 0.3);
         &:hover {
-            background-color: lighten(color('blue'), 5%);
+            background-color: rgba(0, 0, 0, 0.35);
         }
     }
 }

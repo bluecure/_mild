@@ -8,10 +8,11 @@
 
 	var Settings = {
         init: function () {
+            var wrapper = $( '.mild-settings' );
             // Handle upload
-            $( '.mild-settings' ).on( 'click', '.upload-select', this.selectUpload );
+            wrapper.on( 'click', '.upload-select', this.selectUpload );
             // Handle removing upload
-            $( '.mild-settings' ).on( 'click', '.upload-remove', this.removeUpload );
+            wrapper.on( 'click', '.upload-remove', this.removeUpload );
             // Load color picker
             $( '.color-picker' ).wpColorPicker();
         },

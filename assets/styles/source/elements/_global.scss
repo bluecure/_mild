@@ -18,7 +18,7 @@ html {
 
 /* Elements */
 p {
-    margin-bottom: layout('margin');    
+    margin: 0.5em 0 layout('margin');    
 }
 hr {
 	background-color: color('silver');
@@ -31,7 +31,16 @@ b, strong {
 	font-weight: font('bold');
 }
 blockquote {
+	position: relative;
+	font-style: italic;
+	font-weight: font('bold');
 	margin: 0 layout('margin');
+	&:before {
+		left: -1.5em;
+		position: absolute;
+		font-family: font('icon');
+		content: '\f10d';
+	}
 }
 dfn, cite, em, i {
 	font-style: italic;

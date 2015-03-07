@@ -11,7 +11,7 @@ namespace Mild;
 
 class Post_Types {
 
-    // Variables
+    /* Variables */
     public $post_types = [];
     public $labels = [];
 
@@ -65,7 +65,7 @@ class Post_Types {
      * Setup the default options.
      *
      * @access private
-     * @return array
+     * @return array $default_options
      */
     private function default_options() {
         
@@ -84,7 +84,7 @@ class Post_Types {
      * Setup the default labels.
      *
      * @access private
-     * @return array
+     * @return array $default_labels
      */
     private function default_labels() {
 

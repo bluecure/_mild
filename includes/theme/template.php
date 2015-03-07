@@ -2,6 +2,7 @@
 /**
  * Template tags for this theme.
  *
+ * site_title()  | Display site title
  * breadcrumbs() | Displays breadcrumbs
  * page_menu()   | Displays page menu
  * post_menu()   | Displays post menu
@@ -14,9 +15,30 @@
 namespace Mild;
 
 /**
+ * Gets the site title or image.
+ *
+ * @return null
+ */
+function site_title() { 
+
+	$logo = theme_option( 'general', 'logo' );  ?>
+
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+	    <?php if ( $logo ) : ?>
+	        <img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo">
+	    <?php else: ?>
+	        <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+	    <?php endif; ?>
+    </a>
+
+    <?php
+
+}
+
+/**
  * Display the breadcrumbs.
  *
- * @return void
+ * @return null
  */
 function breadcrumbs() {
 
@@ -26,13 +48,13 @@ function breadcrumbs() {
 
 	<ul class="breadcrumbs" role="navigation">
         <li class="breadcrumb"><a href="<?php echo site_url(); ?>"><?php _e( 'Home', 'mild'); ?></a></li>
-        <?php if ( $parents ) :
-            $breadcrumbs = array_reverse( $parents );
-            foreach ( $breadcrumbs as $item ) : ?>
-                <li class="breadcrumb">
-                    <a href="<?php echo get_permalink( $item ); ?>"><?php echo get_the_title( $item ); ?></a>
-                </li>
-        <?php endforeach; endif; ?>
+            <?php if ( $parents ) :
+                $breadcrumbs = array_reverse( $parents );
+                foreach ( $breadcrumbs as $item ) : ?>
+                    <li class="breadcrumb">
+                        <a href="<?php echo get_permalink( $item ); ?>"><?php echo get_the_title( $item ); ?></a>
+                    </li>
+            <?php endforeach; endif; ?>
 	    <li class="breadcrumb">
 	        <?php echo get_the_title( $post->ID ); ?>
 	    </li>
@@ -45,7 +67,7 @@ function breadcrumbs() {
 /**
  * Display a sub page menu.
  *
- * @return void
+ * @return null
  */
 function page_menu() {
 
@@ -72,7 +94,7 @@ function page_menu() {
 /**
  * Displays the latest posts.
  *
- * @return void
+ * @return null
  */
 function post_menu() {
 
@@ -101,7 +123,7 @@ function post_menu() {
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
- * @return void
+ * @return null
  */
 function posted_on() {
 
@@ -135,7 +157,7 @@ function posted_on() {
 /**
  * Output relevant entry meta data.
  *
- * @return void
+ * @return null
  */
 function entry_meta() {
 

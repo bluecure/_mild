@@ -23,21 +23,14 @@
 	<header id="masthead" class="site-header row" role="banner">
 
 		<div class="site-branding col-12">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                <?php $logo = Mild\theme_option( 'general', 'logo' ); ?>
-                <?php if ( $logo ) : ?>
-                    <img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo">
-                <?php else: ?>
-                    <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-                <?php endif; ?>
-            </a>
+            <?php Mild\site_title(); ?>
             <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div><!-- .site-branding -->
 
-		<nav class="primary-navigation col-12 col-thin" role="navigation">
+		<nav class="primary-navigation col-12" role="navigation">
 			<div class="menu-toggle"><i class="fa fa-bars"></i> <?php _e( 'Menu', 'mild' ); ?></div>
 			<?php wp_nav_menu( [ 'theme_location' => 'primary' ] ); ?>
-		</nav><!-- .main-navigation -->
+		</nav><!-- .primary-navigation -->
 
 	</header><!-- .site-header -->
 

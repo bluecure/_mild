@@ -1,5 +1,6 @@
 /* =Typography
 ----------------------------------------------- */
+
 body, button, input, select, textarea {
     color: color('grey');
     font-family: font('primary');
@@ -30,11 +31,6 @@ h5 {
 }
 h6 {
     font-size: 1em;
-}
-
-/* General */
-p {
-    margin: 0.5em 0 1em;
 }
 
 /* Links */

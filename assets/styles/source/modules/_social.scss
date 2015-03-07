@@ -4,15 +4,16 @@
 .social-links {
     font-size: 1.25em;
     a {
-        width: 2em;
-        height: 2em;
+        width: 1.5em;
+        height: 1.5em;
         margin: 0.25em;
-        padding: 0.5em;
+        padding: 0 0.25em;
         text-align: center;
     }
 }
 .social-tiles {
     a {
+        padding: 0.25em;
         color: color('white');
         &:hover {
             color: darken(color('white'), 5%);

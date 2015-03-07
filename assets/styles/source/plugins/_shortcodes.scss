@@ -27,7 +27,7 @@
 .panel {
     color: color('white');
     padding: 1em 2em;
-    margin: 0.5em 0 2em 0;
+    margin: 0.5em 0 layout('margin') 0;
     background-color: color('silver');
     border: 1px solid rgba(0, 0, 0, 0.1);
 }

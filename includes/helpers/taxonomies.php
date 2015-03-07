@@ -11,14 +11,14 @@ namespace Mild;
 
 class Taxonomies {
 
-    // Variables
+    /* Variables */
     public $taxonomies = [];
     public $labels = [];
 
     /**
      * Construct
      *
-     * Creates a new taxonomy
+     * Creates a new taxonomy.
      *
      * @param array $taxonomies
      */
@@ -71,7 +71,7 @@ class Taxonomies {
      * Setup the default options.
      *
      * @access private
-     * @return array
+     * @return array $default_options
      */
     private function default_options() {
 
@@ -92,7 +92,7 @@ class Taxonomies {
      * Setup the default labels.
      *
      * @access private
-     * @return array
+     * @return array $default_labels
      */
     private function default_labels() {
 

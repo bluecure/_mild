@@ -229,6 +229,14 @@
       "parents": [
         "b5e3f5b9"
       ]
+    },
+    "28515e77": {
+      "id": "28515e77",
+      "pid": "022c9b59",
+      "path": "assets\\styles\\source\\layout\\_main.scss",
+      "parents": [
+        "b5e3f5b9"
+      ]
     }
   },
   "images": {
@@ -247,7 +255,7 @@
     "watch": false,
     "liveRefresh": true,
     "liveRefreshDelay": 0,
-    "filterPatterns": "node_modules,admin,gulpfile.js,README.md",
+    "filterPatterns": "includes,node_modules,gulpfile.js,README.md",
     "useCustomServer": false,
     "customServerUrl": "",
     "cssPath": "",

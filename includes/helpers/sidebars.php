@@ -11,7 +11,7 @@ namespace Mild;
 
 class Sidebars {
 
-    // Variables
+    /* Variables */
     public $sidebars = [];
 
     /**
@@ -66,7 +66,7 @@ class Sidebars {
      * Setup the default options.
      *
      * @access private
-     * @return array
+     * @return array $default_options
      */
     private function default_options() {
 

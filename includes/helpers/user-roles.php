@@ -11,7 +11,7 @@ namespace Mild;
 
 class User_Roles {
 
-    // Variables
+    /* Variables */
     public $roles = [];
 
     /**
@@ -60,7 +60,7 @@ class User_Roles {
      * Setup the default capabilities.
      *
      * @access private
-     * @return array
+     * @return array $default_capabilities
      */
     private function default_capabilities() {
 

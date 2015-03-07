@@ -3,24 +3,19 @@
 
 .container {
     max-width: layout('width');
-    padding: layout('padding');
+    padding: 0 layout('padding');
     margin: 0 auto;
     position: relative;
-    &-thin {
-        padding: 0 layout('padding');
-    }
 }
 .row {
     @extend .clear;
     width: 100%;
-    margin: 0 auto layout('margin');
-    &-thin {
-        margin-bottom: 0;
-    }
+    margin: 0 auto;
 }
 .col {
-    float: left;
-    min-height: 1px;
+    margin-right: -4px;
+    vertical-align: top;
+    display: inline-block;
     padding: layout('padding') (layout('padding') * 2);
     &-thin {
         padding: 0 layout('padding');
@@ -37,29 +32,23 @@
 
 /* Media Queries */
 @media screen and (max-width: break('medium')) {
+
     [class*="col-"] {
-        float: none;
         width: 100%;
         padding: layout('padding');
-        margin: 0 0 ( layout('margin') / 2 ) 0;
-    }
-    [class*="md-"] {
-        margin-right: -4px;
-        vertical-align: top;
-        display: inline-block;
     }
     @for $i from 1 through 12 {
         .md-#{$i} {
             width: ((100 / 12) * $i) * 1%;
         }
     }
+
 }
+
 @media screen and (max-width: break('small')) {
+
     [class*="md-"] {
-        float: none;
         width: 100%;
     }
-    .container {
-        padding: layout('padding') 0;
-    }
+
 }

@@ -14,8 +14,8 @@ img.wp-smiley {
 .wp-caption {
 	max-width: 100%;
     margin-bottom: layout('margin');
-    border: 1px solid color('silver');
-    background-color: lighten(color('silver'), 2.5%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: color('white');
     img[class*="wp-image-"] {
         display: block;
         margin: 1.2% auto 0;
@@ -32,8 +32,8 @@ img.wp-smiley {
     margin-bottom: layout('margin');
 }
 .gallery-item {
-    margin-right: -4px;
-    padding-right: 0.25em;
+    margin: 0 -4px 0 0;
+    padding-right: layout('padding');
     text-align: center;
     display: inline-block;
     vertical-align: top;
@@ -44,6 +44,9 @@ img.wp-smiley {
     }
 }
 .gallery-caption {
-    padding: 0.1em;
-    border: 1px solid color('silver');
+    padding: 0.25em 0.25em 0.5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    > br {
+        display: none;
+    }
 }
