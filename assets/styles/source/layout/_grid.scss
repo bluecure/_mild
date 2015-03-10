@@ -2,53 +2,52 @@
 ----------------------------------------------- */
 
 .container {
-    max-width: layout('width');
-    padding: 0 layout('padding');
-    margin: 0 auto;
-    position: relative;
+	max-width: layout('width');
+	padding: 0 layout('padding');
+	margin: 0 auto;
+	position: relative;
 }
 .row {
-    @extend .clear;
-    width: 100%;
-    margin: 0 auto;
+	@extend .clear;
+	width: 100%;
+	margin: 0 auto;
 }
 .col {
-    margin-right: -4px;
-    vertical-align: top;
-    display: inline-block;
-    padding: layout('padding') (layout('padding') * 2);
-    &-thin {
-        padding: 0 layout('padding');
-    }
+	margin-right: -4px;
+	vertical-align: top;
+	display: inline-block;
+	padding: layout('padding') (layout('padding') * 2);
+	&-thin {
+		padding: 0 layout('padding');
+	}
 }
 [class*="col-"] {
-    @extend .col;
+	@extend .col;
 }
 @for $i from 1 through 12 {
-    .col-#{$i} {
-        width: ((100 / 12) * $i) * 1%;
-    }
+	.col-#{$i} {
+		width: ((100 / 12) * $i) * 1%;
+	}
 }
 
 /* Media Queries */
 @media screen and (max-width: break('medium')) {
 
-    [class*="col-"] {
-        width: 100%;
-        padding: layout('padding');
-    }
-    @for $i from 1 through 12 {
-        .md-#{$i} {
-            width: ((100 / 12) * $i) * 1%;
-        }
-    }
+	[class*="col-"] {
+		width: 100%;
+		padding: layout('padding');
+	}
+	@for $i from 1 through 12 {
+		.md-#{$i} {
+			width: ((100 / 12) * $i) * 1%;
+		}
+	}
 
 }
-
 @media screen and (max-width: break('small')) {
 
-    [class*="md-"] {
-        width: 100%;
-    }
+	[class*="md-"] {
+		width: 100%;
+	}
 
 }

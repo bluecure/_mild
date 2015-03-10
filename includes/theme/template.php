@@ -17,21 +17,24 @@ namespace Mild;
 /**
  * Gets the site title or image.
  *
+ * @param bool $description
  * @return null
  */
-function site_title() { 
+function site_title( $description = false ) {
 
-	$logo = theme_option( 'general', 'logo' );  ?>
+	$logo = theme_option( 'general', 'logo' ); ?>
 
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-	    <?php if ( $logo ) : ?>
-	        <img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo">
-	    <?php else: ?>
-	        <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-	    <?php endif; ?>
-    </a>
+		<?php if ( $logo ) : ?>
+			<img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo">
+		<?php else: ?>
+			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+		<?php endif; ?>
+	</a>
 
-    <?php
+	<?php if ( $description ) : ?>
+		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	<?php endif;
 
 }
 
@@ -47,20 +50,20 @@ function breadcrumbs() {
 	$parents = get_post_ancestors( $post->ID ); ?>
 
 	<ul class="breadcrumbs" role="navigation">
-        <li class="breadcrumb"><a href="<?php echo site_url(); ?>"><?php _e( 'Home', 'mild'); ?></a></li>
-            <?php if ( $parents ) :
-                $breadcrumbs = array_reverse( $parents );
-                foreach ( $breadcrumbs as $item ) : ?>
-                    <li class="breadcrumb">
-                        <a href="<?php echo get_permalink( $item ); ?>"><?php echo get_the_title( $item ); ?></a>
-                    </li>
-            <?php endforeach; endif; ?>
-	    <li class="breadcrumb">
-	        <?php echo get_the_title( $post->ID ); ?>
-	    </li>
-   </ul><!-- .breadcrumbs -->
+		<li class="breadcrumb"><a href="<?php echo site_url(); ?>"><?php _e( 'Home', 'mild' ); ?></a></li>
+		<?php if ( $parents ) :
+			$breadcrumbs = array_reverse( $parents );
+			foreach ( $breadcrumbs as $item ) : ?>
+				<li class="breadcrumb">
+					<a href="<?php echo get_permalink( $item ); ?>"><?php echo get_the_title( $item ); ?></a>
+				</li>
+			<?php endforeach; endif; ?>
+		<li class="breadcrumb">
+			<?php echo get_the_title( $post->ID ); ?>
+		</li>
+	</ul><!-- .breadcrumbs -->
 
-    <?php
+<?php
 
 }
 
@@ -84,10 +87,10 @@ function page_menu() {
 	]; ?>
 
 	<ul class="side-menu" role="navigation">
-        <?php wp_list_pages( $args ); ?>
-	</ul>
+		<?php wp_list_pages( $args ); ?>
+	</ul><!-- .side-menu -->
 
-    <?php
+<?php
 
 }
 
@@ -98,7 +101,7 @@ function page_menu() {
  */
 function post_menu() {
 
-    global $post;
+	global $post;
 	$args = [
 		'posts_per_page' => 10,
 		'orderby'        => 'post_date',
@@ -111,10 +114,10 @@ function post_menu() {
 	if ( $posts ) : ?>
 
 		<ul class="side-menu" role="navigation">
-		    <?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
+			<?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
 				<li class="post_item"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach; wp_reset_postdata(); ?>
-		</ul>
+		</ul><!-- .side-menu -->
 
 	<?php endif;
 
@@ -128,8 +131,9 @@ function post_menu() {
 function posted_on() {
 
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> - <time class="updated" datetime="%3$s">%4$s</time>';
+	}
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -138,19 +142,16 @@ function posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'mild' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	$posted_on = sprintf( _x( '<i class="fa fa-clock-o"></i> %s', 'post date', 'mild' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' );
 
-	$byline = sprintf(
-		_x( 'by %s', 'post author', 'mild' ),
+	$byline = sprintf( _x( '<i class="fa fa-user"></i> %s', 'post author', 'mild' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	); ?>
 
 	<span class="posted-on"><?php echo $posted_on; ?></span><span class="byline"><?php echo $byline; ?></span>
 
-    <?php
+<?php
 
 }
 
@@ -161,21 +162,26 @@ function posted_on() {
  */
 function entry_meta() {
 
-    // Show post categories and tags
+	// Show post categories and tags
 	if ( get_post_type() === 'post' ) {
 		$categories_list = get_the_category_list( __( ', ', 'mild' ) );
 		if ( $categories_list ) {
-            printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'mild' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . __( '<i class="fa fa-folder-open-o"></i> %1$s', 'mild' ) . '</span>', $categories_list );
 		}
 		$tags_list = get_the_tag_list( '', __( ', ', 'mild' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'mild' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . __( '<i class="fa fa-tags"></i> %1$s', 'mild' ) . '</span>', $tags_list );
 		}
 	}
-    // Show comments link
+
+	// Show comments link
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) { ?>
-	    <span class="comments-link">
-		    <?php comments_popup_link( __( 'Leave a comment', 'mild' ), __( '1 Comment', 'mild' ), __( '% Comments', 'mild' ) ); ?>
+		<span class="comments-link">
+		    <?php comments_popup_link(
+				__( '<i class="fa fa-comments"></i> Leave a comment', 'mild' ),
+				__( '<i class="fa fa-comments"></i> 1 Comment', 'mild' ),
+				__( '<i class="fa fa-comments"></i> % Comments', 'mild' )
+			); ?>
 		</span>
 	<?php }
 

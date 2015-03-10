@@ -2,21 +2,21 @@
 -------------------------------------------------------------- */
 
 body {
-    background-color: color('white');
+	background-color: color('white');
 }
 
 /* Site Info */
 .site-info {
-    font-size: 0.75em;
-    text-align: right;
+	font-size: 0.75em;
+	text-align: right;
 }
 
 /* Media Queries */
 @media screen and (max-width: break('small')) {
 
-    .site-footer, 
-    .site-info {
-        text-align: center;
-    }
+	.site-footer,
+	.site-info {
+		text-align: center;
+	}
 
 }

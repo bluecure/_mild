@@ -1,15 +1,15 @@
 {
-    "name": "mild",
-    "title": "Mild",
-    "version": "1.0.0",
-    "main": "gulpfile.js",
-    "repository": "https://github.com/lambry/mild",
-    "devDependencies": {
-        "gulp": "*",
-        "gulp-autoprefixer": "*",
-        "gulp-jshint": "*",
-        "gulp-concat": "*",
-        "gulp-uglify": "*",
-        "gulp-ruby-sass": "*"
-    }
+	"name": "mild",
+	"title": "Mild",
+	"version": "1.0.0",
+	"main": "gulpfile.js",
+	"repository": "https://github.com/lambry/mild",
+	"devDependencies": {
+		"gulp": "*",
+		"gulp-autoprefixer": "*",
+		"gulp-jshint": "*",
+		"gulp-concat": "*",
+		"gulp-uglify": "*",
+		"gulp-ruby-sass": "*"
+	}
 }

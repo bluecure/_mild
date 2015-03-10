@@ -2,51 +2,51 @@
 ----------------------------------------------- */
 
 embed, iframe, object {
-    max-width: 100%;
+	max-width: 100%;
 }
 img.wp-smiley {
-    border: none;
-    margin: 0 0.5em;
-    padding: 0;
+	border: none;
+	margin: 0 0.5em;
+	padding: 0;
 }
 
 /* Captions */
 .wp-caption {
 	max-width: 100%;
-    margin-bottom: layout('margin');
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: color('white');
-    img[class*="wp-image-"] {
-        display: block;
-        margin: 1.2% auto 0;
-        max-width: 98%;
-    }
+	margin-bottom: layout('margin');
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: color('white');
+	img[class*="wp-image-"] {
+		display: block;
+		margin: 1.2% auto 0;
+		max-width: 98%;
+	}
 }
 .wp-caption-text {
-    padding: 0.3em 0.5em;
-    text-align: center;
+	padding: 0.3em 0.5em;
+	text-align: center;
 }
 
 /* Gallery */
 .gallery {
-    margin-bottom: layout('margin');
+	margin-bottom: layout('margin');
 }
 .gallery-item {
-    margin: 0 -4px 0 0;
-    padding-right: layout('padding');
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
+	margin: 0 -4px 0 0;
+	padding-right: layout('padding');
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
 }
 @for $i from 1 through 10 {
-    .gallery-columns-#{$i} .gallery-item {
-        max-width: (100 / $i) * 1%;
-    }
+	.gallery-columns-#{$i} .gallery-item {
+		max-width: (100 / $i) * 1%;
+	}
 }
 .gallery-caption {
-    padding: 0.25em 0.25em 0.5em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    > br {
-        display: none;
-    }
+	padding: 0.25em 0.25em 0.5em;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	> br {
+		display: none;
+	}
 }

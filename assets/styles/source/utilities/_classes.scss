@@ -3,61 +3,61 @@
 
 /* Sizing */
 .small {
-    font-size: 0.75em;
+	font-size: 0.75em;
 }
 .medium {
-    font-size: 1em;
+	font-size: 1em;
 }
 .large {
-    font-size: 1.5em;
+	font-size: 1.5em;
 }
 .huge {
-    font-size: 2.5em;
+	font-size: 2.5em;
 }
 
 /* Alignment */
 .alignleft, .align-left {
-    display: inline;
-    float: left;
-    margin: 0 2.5em 1em 0;
+	display: inline;
+	float: left;
+	margin: 0 2.5em 1em 0;
 }
 .alignright, .align-right {
-    display: inline;
-    float: right;
-    margin: 0 0 1em 2.5em;
+	display: inline;
+	float: right;
+	margin: 0 0 1em 2.5em;
 }
 .aligncenter, .align-center {
-    clear: both;
-    display: block;
-    margin: 0 auto 1em auto;
+	clear: both;
+	display: block;
+	margin: 0 auto 1em auto;
 }
 .float-left {
-    float: left;
+	float: left;
 }
 .float-right {
-    float: right;
+	float: right;
 }
 .text-left {
-    text-align: left;
+	text-align: left;
 }
 .text-right {
-    text-align: right;
+	text-align: right;
 }
 .text-center {
-    text-align: center;
+	text-align: center;
 }
 
 /* Responsive iframes */
 .fluid-iframe {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    height: 0;
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 }

@@ -3,56 +3,56 @@
 
 /* Site Layout */
 $layout: (
-    'width':   1140px,
-    'margin':  1.5em,
-    'padding': 1em
+	'width': 1140px,
+	'margin': 1.5em,
+	'padding': 1em
 );
 
 /* Site Font */
 $font: (
-    'primary': Arial,
-    'icon':    'FontAwesome',
-    'size':    15px,
-    'height':  1.4,
-    'normal':  400,
-    'bold':    700
+	'primary': Arial,
+	'icon': 'FontAwesome',
+	'size': 15px,
+	'height': 1.4,
+	'normal': 400,
+	'bold': 700
 );
 
 /* Site Styles */
 $style: (
-    'radius': 3px,
-    'transition': 0.2s ease
+	'radius': 3px,
+	'transition': 0.2s ease
 );
 
 /* Site Break Points */
 $break: (
-    'large':  80em,
-    'medium': 60em,
-    'small':  40em
+	'large': 80em,
+	'medium': 60em,
+	'small': 40em
 );
 
 /* Site Colors */
 $color: (
-    'blue':   #1882f4,
-    'green':  #00b429,
-    'orange': #d65015,
-    'yellow': #ebdc2f,
-    'red':    #d31f16,
-    'silver': #DDDDDD,
-    'grey':   #434343,
-    'black':  #222222,
-    'white':  #FFFFFF
+	'blue': #1882f4,
+	'green': #00b429,
+	'orange': #d65015,
+	'yellow': #ebdc2f,
+	'red': #d31f16,
+	'silver': #DDDDDD,
+	'grey': #434343,
+	'black': #222222,
+	'white': #FFFFFF
 );
 
 /* Social Colors */
 $social: (
-    'facebook':     #3b5998,
-    'twitter':      #55acee,
-    'google-plus':  #dd4b39,
-    'linkedin':     #0976b4,
-    'pinterest':    #cc2127,
-    'flickr':       #ff0084,
-    'instagram':    #3f729b,
-    'youtube':      #e52d27,
-    'vimeo-square': #1ab7ea
+	'facebook': #3b5998,
+	'twitter': #55acee,
+	'google-plus': #dd4b39,
+	'linkedin': #0976b4,
+	'pinterest': #cc2127,
+	'flickr': #ff0084,
+	'instagram': #3f729b,
+	'youtube': #e52d27,
+	'vimeo-square': #1ab7ea
 );

@@ -3,16 +3,16 @@
 
 /* Misc*/
 .no-margin {
-    margin: 0;
+	margin: 0;
 }
 .no-padding {
-    padding: 0;
+	padding: 0;
 }
 .hide {
-    display: none;
+	display: none;
 }
 .hidden {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 /* Screen reader text */
@@ -22,24 +22,24 @@
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-    &:hover, &:active, &:focus {
-        background-color: darken(color('white'), 2.5%);
-        border-radius: style('radius');
-        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-        clip: auto !important;
-        color: color('blue');
-        display: block;
-        font-size: 14px;
-        font-weight: bold;
-        height: auto;
-        left: 5px;
-        line-height: normal;
-        padding: 15px 23px 14px;
-        text-decoration: none;
-        top: 5px;
-        width: auto;
-	    z-index: 100000
-    }
+	&:hover, &:active, &:focus {
+		background-color: darken(color('white'), 2.5%);
+		border-radius: style('radius');
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: color('blue');
+		display: block;
+		font-size: 14px;
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000
+	}
 }
 
 /* Clearing */

@@ -11,14 +11,14 @@
 	<header class="entry-header">
 		<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		<?php if ( get_post_type() == 'post' ) : ?>
-		<div class="entry-meta">
-			<?php Mild\posted_on(); ?>
-		</div><!-- .entry-meta -->
+			<div class="entry-meta">
+				<?php Mild\posted_on(); ?>
+			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-	    <?php the_post_thumbnail( 'thumbnail', [ 'class' => 'alignleft' ] ); ?>
+		<?php the_post_thumbnail( 'thumbnail', [ 'class' => 'alignleft' ] ); ?>
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 

@@ -9,37 +9,37 @@ if ( post_password_required() ) return; ?>
 
 <div id="comments" class="comments-area">
 
-	<?php if ( have_comments() ) : ?>
+	<?php if (have_comments()) : ?>
+
 		<h3 class="comments-title">
-			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'mild' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			<?php printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'mild' ),
+				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
-		</h3>
+		</h3><!-- .comments-title -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Check for comments ?>
-            <nav id="comment-nav-above" class="comment-navigation" role="navigation">
-	            <h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'mild' ); ?></h2>
+			<nav id="comment-nav-above" class="comment-navigation" role="navigation">
+				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'mild' ); ?></h2>
 				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'mild' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'mild' ) ); ?></div>
-            </nav><!-- #comment-nav-above -->
+			</nav><!-- .comment-navigation -->
 		<?php endif; ?>
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( [
-					'style'      => 'ol',
-					'short_ping' => true,
-                ] );
-			?>
-		</ol><!-- .comment-list -->
+			<ol class="comment-list">
+				<?php
+					wp_list_comments( [
+						'style' => 'ol',
+						'short_ping' => true,
+					] );
+				?>
+			</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Check for comments ?>
-		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'mild' ); ?></h2>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'mild' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'mild' ) ); ?></div>
-		</nav><!-- #comment-nav-below -->
+			<nav id="comment-nav-below" class="comment-navigation" role="navigation">
+				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'mild' ); ?></h2>
+				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'mild' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'mild' ) ); ?></div>
+			</nav><!-- .comment-navigation -->
 		<?php endif; ?>
 
 	<?php endif; ?><!-- have_comments() -->

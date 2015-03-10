@@ -8,7 +8,7 @@ $social = Mild\theme_section( 'social' ); ?>
 
 <div class="social-links">
 	<?php
-        if ( ! empty( $social['facebook'] ) ) echo "<a href='{$social['facebook']}' class='fa fa-facebook' target='_blank'></a>";
+		if ( ! empty( $social['facebook'] ) ) echo "<a href='{$social['facebook']}' class='fa fa-facebook' target='_blank'></a>";
 		if ( ! empty( $social['twitter'] ) ) echo "<a href='{$social['twitter']}' class='fa fa-twitter' target='_blank'></a>";
 		if ( ! empty( $social['google-plus'] ) ) echo "<a href='{$social['google-plus']}' class='fa fa-google-plus' target='_blank'></a>";
 		if ( ! empty( $social['linkedin'] ) ) echo "<a href='{$social['linkedin']}' class='fa fa-linkedin' target='_blank'></a>";

@@ -18,9 +18,9 @@ get_header(); ?>
 
 				<?php endwhile; ?><!-- have_posts() -->
 
-				<?php the_posts_pagination( [ 
+				<?php the_posts_pagination( [
 					'prev_text' => '<i class="fa fa-angle-double-left"></i>',
-					'next_text' => '<i class="fa fa-angle-double-right"></i>' 
+					'next_text' => '<i class="fa fa-angle-double-right"></i>'
 				] ); ?>
 
 			<?php else : ?>
@@ -31,7 +31,7 @@ get_header(); ?>
 
 		</main><!-- .site-main -->
 	</section><!-- .site-primary -->
-    
-    <?php get_sidebar(); ?>    
-    
+
+	<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

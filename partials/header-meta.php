@@ -16,16 +16,16 @@ if ( isset( $general['appicon'] ) ) : ?>
 <?php endif;
 
 /* Favicon */
- if ( isset( $general['favicon'] ) ) : ?>
+if ( isset( $general['favicon'] ) ) : ?>
 	<link rel="shortcut icon" href="<?php echo $general['favicon']; ?>">
 <?php endif;
 
 /* CSS */
 if ( isset( $general['css'] ) ) : ?>
-    <style><?php echo $general['css']; ?></style>
+	<style><?php echo $general['css']; ?></style>
 <?php endif;
 
 /* JavaScript */
 if ( isset( $general['javascript'] ) ) : ?>
-    <script><?php echo $general['javascript']; ?></script>
+	<script><?php echo $general['javascript']; ?></script>
 <?php endif;

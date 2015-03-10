@@ -3,20 +3,20 @@
 
 /* Lists */
 ul, ol {
-    margin: 0 0 layout('margin') layout('margin');
-    list-style-position: inside;
+	padding: 0;
+	margin: 0 0 layout('margin') layout('margin');
+	list-style-position: inside;
 }
 ul {
-    list-style: disc;
+	list-style: disc;
 }
 ol {
-    list-style: decimal;
+	list-style: decimal;
 }
 li > {
-    ul, ol {
-        margin-bottom: 0;
-        margin-left: layout('margin');
-    }
+	ul, ol {
+		margin-bottom: 0;
+	}
 }
 dt {
 	font-weight: bold;
@@ -27,18 +27,18 @@ dd {
 
 /* Tables */
 table {
-    margin: 0 0 layout('margin');
-    width: 100%;
-    th {
-        font-weight: bold;
-    }
-    th, td {
-        padding: 0.75em;
-    }
-    tr {
-        background-color: darken(color('white'), 5%);
-    }
-    tr:nth-child(odd) {
-        background-color: darken(color('white'), 2.5%)
-    }
+	margin: 0 0 layout('margin');
+	width: 100%;
+	th {
+		font-weight: bold;
+	}
+	th, td {
+		padding: 0.75em;
+	}
+	tr {
+		background-color: darken(color('white'), 5%);
+	}
+	tr:nth-child(odd) {
+		background-color: darken(color('white'), 2.5%)
+	}
 }

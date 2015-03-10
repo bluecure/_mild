@@ -2,35 +2,35 @@
 -------------------------------------------------------------- */
 
 .social-links {
-    font-size: 1.25em;
-    a {
-        width: 1.5em;
-        height: 1.5em;
-        margin: 0.25em;
-        padding: 0 0.25em;
-        text-align: center;
-    }
+	font-size: 1.25em;
+	a {
+		width: 1.5em;
+		height: 1.5em;
+		margin: 0.25em;
+		padding: 0 0.25em;
+		text-align: center;
+	}
 }
 .social-tiles {
-    a {
-        padding: 0.25em;
-        color: color('white');
-        &:hover {
-            color: darken(color('white'), 5%);
-        }
-    }
-    /* Background Colors */
-    @each $name, $value in $social {
-        .fa-#{$name} {
-            background-color: $value;
-        }
-    }
+	a {
+		padding: 0.25em;
+		color: color('white');
+		&:hover {
+			color: darken(color('white'), 5%);
+		}
+	}
+	/* Background Colors */
+	@each $name, $value in $social {
+		.fa-#{$name} {
+			background-color: $value;
+		}
+	}
 }
 .social-hovers {
-    /* Hover Colors */
-    @each $name, $value in $social {
-        .fa-#{$name}:hover {
-            color: $value;
-        }
-    }
+	/* Hover Colors */
+	@each $name, $value in $social {
+		.fa-#{$name}:hover {
+			color: $value;
+		}
+	}
 }

@@ -3,25 +3,21 @@
 
 /* Layout */
 @function layout($attr) {
-    @return map-get($layout, $attr);
+	@return map-get($layout, $attr);
 }
-
 /* Font */
 @function font($attr) {
-    @return map-get($font, $attr);
+	@return map-get($font, $attr);
 }
-
 /* Color */
 @function color($attr) {
-    @return map-get($color, $attr);
+	@return map-get($color, $attr);
 }
-
 /* Style */
 @function style($attr) {
-    @return map-get($style, $attr);
+	@return map-get($style, $attr);
 }
-
 /* Break */
 @function break($attr) {
-    @return map-get($break, $attr);
+	@return map-get($break, $attr);
 }

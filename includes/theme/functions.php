@@ -21,36 +21,36 @@ namespace Mild;
  */
 function theme_section( $section ) {
 
-    return Settings::get_settings( 'theme-options', $section );
+	return Settings::get_settings( 'theme-options', $section );
 
 }
 
 /**
  * Helper function to get a theme options value.
  *
- * @param string  $section
- * @param string  $field
+ * @param string $section
+ * @param string $field
  * @return string $field
  */
 function theme_option( $section, $field ) {
 
-    return Settings::get_setting( 'theme-options', $section, $field );
+	return Settings::get_setting( 'theme-options', $section, $field );
 
 }
 
 /**
  * Gets a list of posts by post type.
  *
- * @param string  $type
- * @param string  $limit
+ * @param string $type
+ * @param int $limit
  * @return object $posts
  */
 function get_type( $type = 'post', $limit = -1 ) {
 
-    return get_posts( [ 
-    	'post_type' => $type,
-    	'posts_per_page' => $limit
-    ] );
+	return get_posts( [
+		'post_type'      => $type,
+		'posts_per_page' => $limit
+	] );
 
 }
 
@@ -63,6 +63,7 @@ function get_type( $type = 'post', $limit = -1 ) {
 function is_user( $role ) {
 
 	$user = wp_get_current_user();
+
 	return ( in_array( $role, $user->roles ) );
 
 }
@@ -74,8 +75,9 @@ function is_user( $role ) {
  */
 function is_blog() {
 
-    global $post;
-    $post_type = get_post_type( $post );
-    return ( ( is_home() || is_archive() || is_single() ) && ( $post_type === 'post') ) ? true : false;
+	global $post;
+	$post_type = get_post_type( $post );
+
+	return ( ( is_home() || is_archive() || is_single() ) && ( $post_type === 'post' ) ) ? true : false;
 
 }

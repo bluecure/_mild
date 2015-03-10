@@ -2,30 +2,30 @@
 ----------------------------------------------- */
 
 html {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 *, *:before, *:after {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 ::-moz-selection {
-    background-color: color('black');
-    color: color('white');
+	background-color: color('black');
+	color: color('white');
 }
 ::selection {
-    background-color: color('black');
-    color: color('white');
+	background-color: color('black');
+	color: color('white');
 }
 
 /* Elements */
 p {
-    margin: 0.5em 0 layout('margin');    
+	margin: 0.5em 0 layout('margin');
 }
 hr {
-	background-color: color('silver');
+	background-color: rgba(0, 0, 0, 0.1);
 	margin-bottom: layout('margin');
 	height: 1px;
 	border: 0;
-    clear: both;
+	clear: both;
 }
 b, strong {
 	font-weight: font('bold');
@@ -52,11 +52,11 @@ big {
 	font-size: 1.25em;
 }
 img {
-    height: auto;
-    max-width: 100%;
+	height: auto;
+	max-width: 100%;
 }
 a img {
-    border: none;
+	border: none;
 }
 embed, iframe, object {
 	max-width: 100%;
@@ -65,23 +65,22 @@ address {
 	margin: 0 0 layout('margin');
 }
 pre {
-	background: color('silver');
+	background-color: rgba(0, 0, 0, 0.1);
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
 	line-height: 1.6;
-	margin-bottom: layout('margin');
-	max-width: 100%;
 	overflow: auto;
+	max-width: 100%;
+	margin-bottom: layout('margin');
 	padding: layout('padding');
 }
 code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 abbr, acronym {
-	border-bottom: 1px dotted color('grey');
+	border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
 	cursor: help;
 }
 mark, ins {
-	background: darken(color('white'), 2.5%);
+	background-color: rgba(0, 0, 0, 0.1);
 	text-decoration: none;
 }

@@ -2,44 +2,45 @@
 ----------------------------------------------- */
 
 input, textarea, select {
-    padding: 0.25em;
-    color: color('grey');
-    max-width: 100%;
-    margin: 0 0 0.5em 0;
-    vertical-align: baseline;
-    border-radius: style('radius');
-    border: 1px solid color('silver');
-    &:hover {
-        color: darken(color('grey'), 2.5%);
-        border: 1px solid darken(color('silver'), 2.5%);
-    }
-    &:focus {
-        color: darken(color('grey'), 5%);
-        border: 1px solid darken(color('silver'), 5%);
-    }
+	padding: 0.25em;
+	color: color('grey');
+	max-width: 100%;
+	margin: 0 0 0.5em 0;
+	vertical-align: baseline;
+	background-color: color('white');
+	border: 1px solid color('silver');
+	border-radius: style('radius');
+	&:hover {
+		color: darken(color('grey'), 2.5%);
+		border: 1px solid darken(color('silver'), 2.5%);
+	}
+	&:focus {
+		color: darken(color('grey'), 5%);
+		border: 1px solid darken(color('silver'), 5%);
+	}
 }
 textarea {
-    overflow: auto;
-    vertical-align: top;
+	overflow: auto;
+	vertical-align: top;
 }
 button, input[type="button"], input[type="reset"], input[type="submit"] {
 	line-height: 1;
 	cursor: pointer;
-    color: color('black');
+	color: color('black');
 	padding: 0.4em 0.8em;
-    border-radius: style('radius');
+	border-radius: style('radius');
 	background-color: color('silver');
-    transition: all style('transition');
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    &:hover {
-        color: color('black');
-        box-shadow: 0 -0.075em 0.1em rgba(255, 255, 255, 0.25) inset;
-    }
-    &:focus, &:active {
-        color: color('black');
-        box-shadow: 0 -0.075em 0.1em rgba(255, 255, 255, 0.3) inset, 0 -0.1em 0.25em rgba(0, 0, 0, 0.15) inset;
-    }
-    &:visited {
-        color: lighten(color('black'), 10%);
-    }
+	transition: all style('transition');
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	&:hover {
+		color: color('black');
+		box-shadow: 0 -0.075em 0.1em rgba(255, 255, 255, 0.25) inset;
+	}
+	&:focus, &:active {
+		color: color('black');
+		box-shadow: 0 -0.075em 0.1em rgba(255, 255, 255, 0.3) inset, 0 -0.1em 0.25em rgba(0, 0, 0, 0.15) inset;
+	}
+	&:visited {
+		color: lighten(color('black'), 15%);
+	}
 }
