@@ -15,7 +15,7 @@ if ( ! isset( $content_width ) ) {
 /**
  * Set up defaults, add theme supports and menus.
  */
-add_action( 'after_setup_theme', function () {
+add_action( 'after_setup_theme', function() {
 
 	// Make theme available for translation
 	load_theme_textdomain( 'mild', get_template_directory() . '/includes/languages' );
@@ -55,7 +55,7 @@ add_action( 'after_setup_theme', function () {
 /**
  * Register post types, taxonomies and roles.
  */
-/* add_action( 'init', function () {
+/* add_action( 'init', function() {
 
     // Register user roles
     new Mild\User_Roles( [
@@ -80,7 +80,7 @@ add_action( 'after_setup_theme', function () {
 /**
  * Register widgetized areas.
  */
-add_action( 'widgets_init', function () {
+add_action( 'widgets_init', function() {
 
 	// Register sidebars
 	new Mild\Sidebars( [
@@ -92,7 +92,7 @@ add_action( 'widgets_init', function () {
 /**
  * Enqueue scripts and styles.
  */
-add_action( 'wp_enqueue_scripts', function () {
+add_action( 'wp_enqueue_scripts', function() {
 
 	// Load main css file
 	wp_enqueue_style( 'mild-style', get_stylesheet_uri(), [ ], '1.0.0' );

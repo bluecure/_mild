@@ -44,7 +44,7 @@
 .breadcrumbs {
 	padding: 0;
 	margin: layout('margin') 0;
-	font-size: 0.8em;
+	font-size: 0.75rem;
 	.breadcrumb {
 		display: inline-block;
 		position: relative;
@@ -52,7 +52,7 @@
 		padding: 0.25em 0.5em;
 		&:after {
 			content: '/';
-			font-size: 0.8em;
+			font-size: 0.75rem;
 			position: absolute;
 			bottom: 18%;
 			right: 0;

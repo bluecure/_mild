@@ -5,7 +5,7 @@
  * @package Mild
  */
 
-add_action( 'init', function () {
+add_action( 'init', function() {
 
 	// Create options array
 	$theme_options = [

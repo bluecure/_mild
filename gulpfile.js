@@ -24,13 +24,13 @@ var path = {
 gulp.task( 'default', ['watch'] );
 
 // Run tasks when a file changes
-gulp.task( 'watch', function () {
+gulp.task( 'watch', function() {
 	gulp.watch( [path.styleCompile, path.styleWatch], ['styles'] );
 	gulp.watch( [path.scriptWatch], ['scripts'] );
 } );
 
 // Styles task
-gulp.task( 'styles', function () {
+gulp.task( 'styles', function() {
 	return gulp.src( path.styleCompile )
 		.pipe( sass( {
 			style : 'compact',
@@ -42,7 +42,7 @@ gulp.task( 'styles', function () {
 } );
 
 // Scripts task
-gulp.task( 'scripts', function () {
+gulp.task( 'scripts', function() {
 	return gulp.src( path.scriptWatch )
 		.pipe( jshint() )
 		.pipe( concat( 'script.min.js' ) )

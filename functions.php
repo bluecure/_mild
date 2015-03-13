@@ -6,7 +6,7 @@
  */
 
 $mild_includes = [
-	'settings/settings.php',
+	'helpers/settings.php',
 	'helpers/sidebars.php',
 	'helpers/post-types.php',
 	'helpers/taxonomies.php',

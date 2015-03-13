@@ -4,7 +4,7 @@
  * Contains all of the JavaScript to handle theme settings functions.
  */
 
-(function ( $ ) {
+(function( $ ) {
 
 	var Settings = {
 		init : function() {

@@ -98,11 +98,11 @@ class Settings {
 		if ( $this->page !== $hook ) return;
 
 		// Load settings css
-		wp_enqueue_style( 'mild-settings-style', get_template_directory_uri() . '/includes/settings/assets/styles/settings.css', [ 'wp-color-picker' ], '1.0.0' );
+		wp_enqueue_style( 'mild-settings-style', get_template_directory_uri() . '/assets/admin/styles/settings.css', [ 'wp-color-picker' ], '1.0.0' );
 		// Load media assets
 		wp_enqueue_media();
 		// Load settings js
-		wp_enqueue_script( 'mild-settings-scripts', get_template_directory_uri() . '/includes/settings/assets/scripts/settings.js', [
+		wp_enqueue_script( 'mild-settings-scripts', get_template_directory_uri() . '/assets/admin/scripts/settings.js', [
 			'jquery',
 			'wp-color-picker'
 		], '1.0.0', true );

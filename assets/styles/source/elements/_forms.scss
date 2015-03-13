@@ -2,7 +2,7 @@
 ----------------------------------------------- */
 
 input, textarea, select {
-	padding: 0.25em;
+	padding: 0.5em 0.75em;
 	color: color('grey');
 	max-width: 100%;
 	margin: 0 0 0.5em 0;
@@ -24,10 +24,9 @@ textarea {
 	vertical-align: top;
 }
 button, input[type="button"], input[type="reset"], input[type="submit"] {
-	line-height: 1;
 	cursor: pointer;
 	color: color('black');
-	padding: 0.4em 0.8em;
+	padding: 0.5em layout('padding');
 	border-radius: style('radius');
 	background-color: color('silver');
 	transition: all style('transition');

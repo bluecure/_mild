@@ -22,7 +22,7 @@ p {
 }
 hr {
 	background-color: rgba(0, 0, 0, 0.1);
-	margin-bottom: layout('margin');
+	margin: layout('margin') 0;
 	height: 1px;
 	border: 0;
 	clear: both;
@@ -46,10 +46,10 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 small {
-	font-size: 0.75em;
+	font-size: 0.75rem;
 }
 big {
-	font-size: 1.25em;
+	font-size: 1.25rem;
 }
 img {
 	height: auto;
