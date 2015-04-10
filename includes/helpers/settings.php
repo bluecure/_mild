@@ -511,7 +511,7 @@ class Settings {
 	 */
 	public static function get_settings( $name, $id ) {
 
-		return get_option( self::setting_name( $name, $id ), [ ] );
+		return get_option( self::setting_name( $name, $id ), [] );
 
 	}
 

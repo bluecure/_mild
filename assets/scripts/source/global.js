@@ -1,12 +1,12 @@
 /* =Global js
  ----------------------------------------------- */
-(function ( $ ) {
+(function( $ ) {
 
 	// Main menu
 	var menuToggle = $( '.menu-toggle' ),
 		mainMenu = $( '.primary-navigation .menu' );
 	// Show menu
-	menuToggle.on( 'click', function () {
+	menuToggle.on( 'click', function() {
 		mainMenu.slideToggle();
 	} );
 	// Add submenu buttons
@@ -27,7 +27,7 @@
 	} );
 
 	// Scroll to top
-	$( '.to-top' ).click( function() {
+	$( '.to-top' ).on( 'click', function() {
 		$( 'html, body' ).animate( {
 			scrollTop : 0
 		}, 500 );

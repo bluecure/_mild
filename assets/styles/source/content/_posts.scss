@@ -42,8 +42,9 @@
 .entry-meta, .entry-footer {
 	font-size: 0.75rem;
 	margin-bottom: layout('margin');
-	span {
-		padding-right: layout('padding');
+	> span {
+		display: inline-block;
+		margin: 0 1em 0.5em 0;
 	}
 	.fa {
 		display: inline-block;

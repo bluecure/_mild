@@ -40,8 +40,7 @@ add_action( 'init', function() {
 					'type'        => 'textarea'
 				]
 			]
-		],
-		[
+		], [
 			'id'          => 'social',
 			'title'       => __( 'Social', 'mild' ),
 			'description' => __( 'Social website links.', 'mild' ),

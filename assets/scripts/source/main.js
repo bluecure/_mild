@@ -1,6 +1,6 @@
 /* =Main site js
  ----------------------------------------------- */
-(function ( $ ) {
+(function( $ ) {
 
 	// Gallery modal
 	var gallery = $( '.gallery' );

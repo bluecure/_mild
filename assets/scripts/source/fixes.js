@@ -28,7 +28,7 @@
 		is_ie = navigator.userAgent.toLowerCase().indexOf( 'msie' ) > - 1;
 
 	if ( ( is_webkit || is_opera || is_ie ) && document.getElementById && window.addEventListener ) {
-		window.addEventListener( 'hashchange', function () {
+		window.addEventListener( 'hashchange', function() {
 			var id = location.hash.substring( 1 ),
 				element;
 
