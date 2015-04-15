@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mild\n"
-"POT-Creation-Date: 2015-03-13 16:30+1000\n"
-"PO-Revision-Date: 2015-03-13 16:30+1000\n"
+"POT-Creation-Date: 2015-04-15 16:16+1000\n"
+"PO-Revision-Date: 2015-04-15 16:16+1000\n"
 "Last-Translator: BSO\n"
 "Language-Team: \n"
 "Language: en_AU\n"
@@ -52,12 +52,12 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../footer.php:22
+#: ../footer.php:23
 #, php-format
 msgid "&copy; %s - %s"
 msgstr ""
 
-#: ../footer.php:23
+#: ../footer.php:24
 msgid "To Top"
 msgstr ""
 
@@ -113,47 +113,47 @@ msgstr ""
 msgid "i.e. Google Analytics without script tags."
 msgstr ""
 
-#: ../includes/theme/options.php:46 theme/options.php:46
+#: ../includes/theme/options.php:45 theme/options.php:45
 msgid "Social"
 msgstr ""
 
-#: ../includes/theme/options.php:47 theme/options.php:47
+#: ../includes/theme/options.php:46 theme/options.php:46
 msgid "Social website links."
 msgstr ""
 
-#: ../includes/theme/options.php:51 theme/options.php:51
+#: ../includes/theme/options.php:50 theme/options.php:50
 msgid "Facebook Url"
 msgstr ""
 
-#: ../includes/theme/options.php:55 theme/options.php:55
+#: ../includes/theme/options.php:54 theme/options.php:54
 msgid "Twitter Url"
 msgstr ""
 
-#: ../includes/theme/options.php:59 theme/options.php:59
+#: ../includes/theme/options.php:58 theme/options.php:58
 msgid "Google Plus Url"
 msgstr ""
 
-#: ../includes/theme/options.php:63 theme/options.php:63
+#: ../includes/theme/options.php:62 theme/options.php:62
 msgid "LinkedIn Url"
 msgstr ""
 
-#: ../includes/theme/options.php:67 theme/options.php:67
+#: ../includes/theme/options.php:66 theme/options.php:66
 msgid "Instagram Url"
 msgstr ""
 
-#: ../includes/theme/options.php:71 theme/options.php:71
+#: ../includes/theme/options.php:70 theme/options.php:70
 msgid "Flickr Url"
 msgstr ""
 
-#: ../includes/theme/options.php:75 theme/options.php:75
+#: ../includes/theme/options.php:74 theme/options.php:74
 msgid "Youtube Url"
 msgstr ""
 
-#: ../includes/theme/options.php:79 theme/options.php:79
+#: ../includes/theme/options.php:78 theme/options.php:78
 msgid "Vimeo Url"
 msgstr ""
 
-#: ../includes/theme/options.php:87 theme/options.php:87
+#: ../includes/theme/options.php:86 theme/options.php:86
 msgid "Theme Options"
 msgstr ""
 

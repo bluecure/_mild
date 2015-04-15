@@ -10,6 +10,7 @@
 		"gulp-jshint": "*",
 		"gulp-concat": "*",
 		"gulp-uglify": "*",
-		"gulp-ruby-sass": "*"
+		"gulp-ruby-sass": "*",
+		"gulp-sourcemaps": "*"
 	}
 }

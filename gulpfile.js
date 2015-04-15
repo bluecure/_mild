@@ -7,6 +7,7 @@ var gulp = require( 'gulp' );
 // Plugins
 var concat = require( 'gulp-concat' );
 var sass = require( 'gulp-ruby-sass' );
+var maps = require('gulp-sourcemaps');
 var prefix = require( 'gulp-autoprefixer' );
 var jshint = require( 'gulp-jshint' );
 var uglify = require( 'gulp-uglify' );
@@ -14,10 +15,9 @@ var uglify = require( 'gulp-uglify' );
 // Paths
 var path = {
 	styles : 'assets/styles/',
-	styleCompile : 'assets/styles/style.scss',
-	styleWatch : ['assets/styles/**/*.scss', 'assets/styles/**/**/*.scss'],
+	styleWatch : [ 'assets/styles/style.scss', 'assets/styles/**/*.scss', 'assets/styles/**/**/*.scss' ],
 	scripts : 'assets/scripts/',
-	scriptWatch : ['assets/scripts/vendor/*.js', 'assets/scripts/source/*.js']
+	scriptWatch : [ 'assets/scripts/vendor/*.js', 'assets/scripts/source/*.js' ]
 };
 
 // Default task
@@ -25,19 +25,21 @@ gulp.task( 'default', ['watch'] );
 
 // Run tasks when a file changes
 gulp.task( 'watch', function() {
-	gulp.watch( [path.styleCompile, path.styleWatch], ['styles'] );
-	gulp.watch( [path.scriptWatch], ['scripts'] );
+	gulp.watch( [ path.styleWatch ], [ 'styles' ] );
+	gulp.watch( [ path.scriptWatch ], [ 'scripts' ] );
 } );
 
 // Styles task
 gulp.task( 'styles', function() {
-	return gulp.src( path.styleCompile )
-		.pipe( sass( {
-			style : 'compact',
-			sourcemap : true,
-			cacheLocation : path.styles + 'cache'
-		} ) )
+	return sass( 'assets/styles/style.scss', {
+			style : 'compressed',
+			sourcemap: true,
+			cacheLocation : path.styles + '.sass-cache'
+		} )
 		.pipe( prefix( 'last 3 versions' ) )
+		.pipe( maps.write( '/', {
+			sourceRoot: './'
+		} ) )
 		.pipe( gulp.dest( './' ) );
 } );
 
