@@ -64,17 +64,13 @@ embed, iframe, object {
 address {
 	margin: 0 0 layout('margin');
 }
-pre {
+code, pre {
 	background-color: rgba(0, 0, 0, 0.1);
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	line-height: 1.6;
 	overflow: auto;
 	max-width: 100%;
-	margin-bottom: layout('margin');
 	padding: layout('padding');
-}
-code, kbd, tt, var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	margin-bottom: layout('margin');
+	border-radius: style('radius');
 }
 abbr, acronym {
 	border-bottom: 1px dotted rgba(0, 0, 0, 0.1);

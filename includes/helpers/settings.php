@@ -240,12 +240,20 @@ class Settings {
 				$this->checkbox( $field );
 				break;
 
+			case 'on_off':
+				$this->on_off( $field );
+				break;
+
 			case 'upload':
 				$this->upload( $field );
 				break;
 
 			case 'color':
 				$this->color( $field );
+				break;
+
+			case 'block':
+				$this->block( $field );
 				break;
 
 			default:
@@ -377,6 +385,25 @@ class Settings {
 	}
 
 	/**
+	 * On Off
+	 *
+	 * Generates a single checkbox.
+	 *
+	 * @access private
+	 * @param  array $field
+	 * @return null
+	 */
+	private function on_off( $field ) {
+
+		$option = $this->field_value( $field ); ?>
+		<label>
+			<input type="checkbox" name="<?php echo $this->field_name( $field ); ?>" value="1" <?php checked( $option, '1' ); ?>>
+		</label>
+		<?php $this->field_description( $field );
+
+	}
+
+	/**
 	 * Upload
 	 *
 	 * Generates an upload field.
@@ -421,6 +448,23 @@ class Settings {
 	}
 
 	/**
+	 * Block
+	 *
+	 * Generates a block section.
+	 *
+	 * @access private
+	 * @param  array $field
+	 * @return null
+	 */
+	private function block( $field ) { ?>
+
+		<div class="block">
+			<?php echo $field['content'] ?>
+		</div>
+
+	<?php }
+
+	/**
 	 * Field Description
 	 *
 	 * Displays the fields description.
@@ -453,7 +497,7 @@ class Settings {
 	}
 
 	/**
-	 * Feild Value
+	 * Field Value
 	 *
 	 * Gets the current fields value.
 	 *
