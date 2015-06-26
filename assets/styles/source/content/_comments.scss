@@ -12,7 +12,7 @@
 	list-style: none outside none;
 	margin-top: layout('margin');
 	.children {
-		padding-left: layout('padding');
+		margin-left: layout('margin');
 	}
 }
 .comment-list {

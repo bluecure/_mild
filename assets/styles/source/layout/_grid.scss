@@ -30,6 +30,16 @@
 	}
 }
 
+/* Fix content padding */
+.gapless-grid {
+	[class*="col-"] {
+		padding-left: 0;
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}
+
 /* Media Queries */
 @media screen and (max-width: break('medium')) {
 

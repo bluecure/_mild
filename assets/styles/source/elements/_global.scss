@@ -65,11 +65,12 @@ address {
 	margin: 0 0 layout('margin');
 }
 code, pre {
-	background-color: rgba(0, 0, 0, 0.1);
 	overflow: auto;
 	max-width: 100%;
+	display: block;
 	padding: layout('padding');
-	margin-bottom: layout('margin');
+	margin: 0.5em 0 layout('margin');
+	background-color: rgba(0, 0, 0, 0.1);
 	border-radius: style('radius');
 }
 abbr, acronym {

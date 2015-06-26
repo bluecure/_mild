@@ -2,11 +2,10 @@
 /**
  * Custom functions for this theme including:
  *
- * theme_section()       | Get a sections settings
- * theme_option()        | Get a settings option
- * get_type()            | Gets custom posts
- * is_user()             | Checks user role
- * is_blog()             | Checks if is blog page
+ * theme_section() | Get a sections settings
+ * theme_option()  | Get a settings option
+ * is_user()       | Checks user role
+ * is_blog()       | Checks if is blog page
  *
  * @package Mild
  */
@@ -39,22 +38,6 @@ function theme_option( $section, $field ) {
 }
 
 /**
- * Gets a list of posts by post type.
- *
- * @param string $type
- * @param int $limit
- * @return object $posts
- */
-function get_type( $type = 'post', $limit = -1 ) {
-
-	return get_posts( [
-		'post_type'      => $type,
-		'posts_per_page' => $limit
-	] );
-
-}
-
-/**
  * Get and check user role.
  *
  * @param string $role
@@ -76,8 +59,7 @@ function is_user( $role ) {
 function is_blog() {
 
 	global $post;
-	$post_type = get_post_type( $post );
 
-	return ( ( is_home() || is_archive() || is_single() ) && ( $post_type === 'post' ) ) ? true : false;
+	return ( ( is_home() || is_archive() || is_single() ) && ( $post->post_type === 'post' ) ) ? true : false;
 
 }
