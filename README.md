@@ -11,7 +11,7 @@ Note: This is a work in progress and can break at anytime.
 * Base styles
 * Helpers
 * Normalize (3.0.3)
-* Font Awesome (4.3.0)
+* Font Awesome (4.4.0)
 * Magnific Popup (1.0.0)
 
 ###Setting up theme:

@@ -77,6 +77,10 @@ class Settings {
 				$this->page = add_options_page( $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
 				break;
 
+			case 'management':
+				$this->page = add_management_page( $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
+				break;
+
 			case 'submenu':
 				$this->page = add_submenu_page( $this->menu, $this->title, $this->menu_title, 'manage_options', $this->title_clean, [ $this, 'register_page' ] );
 				break;

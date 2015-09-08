@@ -74,7 +74,7 @@ class Post_Types {
 			'has_archive' => true,
 			'menu_icon'   => 'dashicons-format-aside',
 			'supports'    => [
-				'title', 'editor', 'revisions', 'thumbnail', 'excerpt'
+				'title', 'editor', 'revisions', 'thumbnail', 'excerpt', 'page-attributes'
 			]
 		];
 
