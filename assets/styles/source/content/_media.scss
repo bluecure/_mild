@@ -40,7 +40,7 @@ img.wp-smiley {
 }
 @for $i from 1 through 10 {
 	.gallery-columns-#{$i} .gallery-item {
-		max-width: (100 / $i) * 1%;
+		width: (100 / $i) * 1%;
 	}
 }
 .gallery-caption {
@@ -49,4 +49,22 @@ img.wp-smiley {
 	> br {
 		display: none;
 	}
+}
+
+/* Media Queries */
+@media screen and (max-width: break('medium')) {
+
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} .gallery-item {
+			width: (100 / $i) * 1% * 2;
+		}
+	}
+
+}
+@media screen and (max-width: break('small')) {
+
+	.gallery .gallery-item {
+		width: 50%;
+	}
+
 }
