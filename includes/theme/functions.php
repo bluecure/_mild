@@ -2,64 +2,75 @@
 /**
  * Custom functions for this theme including:
  *
- * theme_section() | Get a sections settings
- * theme_option()  | Get a settings option
- * is_user()       | Checks user role
- * is_blog()       | Checks if is blog page
+ * the_field()         | Display a meta value
+ * get_field()         | Get a meta value
+ * customizer_styles() | Checks and displays custom styles
  *
- * @package Mild
+ * @package Bow
  */
 
-namespace Mild;
+namespace Lambry\Bow;
 
 /**
- * Helper function to get theme option section.
+ * Helper function to display a meta value.
  *
- * @param string $section
- * @return array $section
+ * @param string $key
+ * @param int $id
+ * @return void
  */
-function theme_section( $section ) {
+function the_field( $key, $id = 0 ) {
 
-	return Settings::get_settings( 'theme-options', $section );
+	echo get_field( $key, $id );
 
 }
 
 /**
- * Helper function to get a theme options value.
+ * Helper function to get a meta value.
  *
- * @param string $section
- * @param string $field
- * @return string $field
+ * @param string $key
+ * @param int $id
+ * @return mixed $value
  */
-function theme_option( $section, $field ) {
+function get_field( $key, $id = 0 ) {
 
-	return Settings::get_setting( 'theme-options', $section, $field );
+	if ( ! $id ) {
+		global $post;
+		$id = $post->ID;
+	}
+
+	return get_post_meta( $id, '_' . $key, true );
 
 }
 
 /**
- * Get and check user role.
+ * Checks and displays customizer styles.
  *
- * @param string $role
- * @return boolean
+ * @return void
  */
-function is_user( $role ) {
+function customizer_styles() {
 
-	$user = wp_get_current_user();
+	$styles = '';
+	$mods = [
+		'header_text'  => [ '.site-header', 'color' ],
+		'content_text' => [ '.site-content', 'color' ],
+		'footer_text'  => [ '.site-footer', 'color' ],
+		'header_links' => [ '.site-header a', 'color' ],
+		'content_links'      => [ '.site-content a', 'color' ],
+		'footer_links'       => [ '.site-footer a', 'color' ],
+		'header_background'  => [ '.site-header', 'background-color' ],
+		'content_background' => [ '.site-content', 'background-color' ],
+		'footer_background'  => [ '.site-footer', 'background-color' ]
+	];
 
-	return ( in_array( $role, $user->roles ) );
+	foreach ( $mods as $mod => $option ) {
+		$value = get_theme_mod( $mod, false );
+		if ( $value ) {
+			$styles .= "{$option[0]} { {$option[1]}: {$value}; }";
+		}
+	}
 
-}
-
-/**
- * Check whether current page is a blog page.
- *
- * @return boolean
- */
-function is_blog() {
-
-	global $post;
-
-	return ( ( is_home() || is_archive() || is_single() ) && ( $post->post_type === 'post' ) ) ? true : false;
+	if ( $styles ) {
+		wp_add_inline_style( 'bow-style', $styles );
+	}
 
 }

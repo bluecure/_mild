@@ -4,7 +4,7 @@
 /* Lists */
 ul, ol {
 	padding: 0;
-	margin: 0 0 layout('margin') layout('margin');
+	margin: 0 0 $layout-margin $layout-margin;
 	list-style-position: inside;
 }
 ul {
@@ -22,12 +22,12 @@ dt {
 	font-weight: bold;
 }
 dd {
-	margin: 0 layout('margin') layout('margin');
+	margin: 0 $layout-margin $layout-margin;
 }
 
 /* Tables */
 table {
-	margin: 0 0 layout('margin');
+	margin: 0 0 $layout-margin;
 	width: 100%;
 	th {
 		font-weight: bold;
@@ -36,9 +36,15 @@ table {
 		padding: 0.75em;
 	}
 	tr {
-		background-color: darken(color('white'), 5%);
+		background-color: rgba(0, 0, 0, 0.1);
 	}
 	tr:nth-child(odd) {
-		background-color: darken(color('white'), 2.5%)
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+	thead tr {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	}
+	tfoot tr {
+		border-top: 1px solid rgba(0, 0, 0, 0.05);
 	}
 }

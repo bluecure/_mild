@@ -1,9 +1,9 @@
 {
-	"name": "mild",
-	"title": "Mild",
+	"name": "bow",
+	"title": "Bow",
 	"version": "1.0.0",
 	"main": "gulpfile.js",
-	"repository": "https://github.com/lambry/mild",
+	"repository": "https://github.com/lambry/bow/",
 	"devDependencies": {
 		"gulp": "*",
 		"gulp-autoprefixer": "*",

@@ -2,7 +2,7 @@
 /**
  * The template for displaying the header.
  *
- * @package Mild
+ * @package Bow
  */
 ?>
 <!doctype html>
@@ -18,18 +18,18 @@
 
 <body <?php body_class(); ?>>
 <div class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mild' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'bow' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
 			<div class="row">
 
 				<div class="site-branding col-12">
-					<?php Mild\site_title(); ?>
+					<?php Lambry\Bow\site_title(); ?>
 				</div><!-- .site-branding -->
 
 				<nav class="primary-navigation col-12" role="navigation">
-					<div class="menu-toggle"><i class="fa fa-bars"></i> <?php _e( 'Menu', 'mild' ); ?></div>
+					<div class="primary-toggle"><i class="fa fa-bars"></i> <?php _e( 'Menu', 'bow' ); ?></div>
 					<?php wp_nav_menu( [ 'theme_location' => 'primary' ] ); ?>
 				</nav><!-- .primary-navigation -->
 

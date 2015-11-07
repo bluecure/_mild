@@ -2,7 +2,7 @@
 /**
  * The template for displaying anything.
  *
- * @package Mild
+ * @package Bow
  */
 
 get_header(); ?>

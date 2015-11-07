@@ -2,7 +2,7 @@
 /**
  * The partial used for displaying page content.
  *
- * @package Mild
+ * @package Bow
  */
 ?>
 
@@ -16,14 +16,14 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( [
-				'before' => '<div class="page-links">' . __( 'Pages:', 'mild' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'bow' ),
 				'after'  => '</div>'
 			] );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php Mild\entry_meta(); ?>
+		<?php Lambry\Bow\entry_meta(); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

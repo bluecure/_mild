@@ -2,7 +2,15 @@
  ----------------------------------------------- */
 (function( $ ) {
 
-	// Gallery modal
+	// Default popup
+	var popup = $( '.popup' );
+	if ( popup.length > 0 ) {
+		popup.magnificPopup( {
+			type: 'image'
+		} );
+	}
+
+	// Gallery popup
 	var gallery = $( '.gallery' );
 	if ( gallery.length > 0 ) {
 		gallery.magnificPopup( {

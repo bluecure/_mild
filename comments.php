@@ -2,7 +2,7 @@
 /**
  * The template for displaying comments.
  *
- * @package Mild
+ * @package Bow
  */
 
 if ( post_password_required() ) return; ?>
@@ -12,16 +12,16 @@ if ( post_password_required() ) return; ?>
 	<?php if (have_comments()) : ?>
 
 		<h3 class="comments-title">
-			<?php printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'mild' ),
+			<?php printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bow' ),
 				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h3><!-- .comments-title -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Check for comments ?>
 			<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'mild' ); ?></h2>
-				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'mild' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'mild' ) ); ?></div>
+				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'bow' ); ?></h2>
+				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'bow' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'bow' ) ); ?></div>
 			</nav><!-- .comment-navigation -->
 		<?php endif; ?>
 
@@ -36,16 +36,16 @@ if ( post_password_required() ) return; ?>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Check for comments ?>
 			<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'mild' ); ?></h2>
-				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'mild' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'mild' ) ); ?></div>
+				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'bow' ); ?></h2>
+				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'bow' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'bow' ) ); ?></div>
 			</nav><!-- .comment-navigation -->
 		<?php endif; ?>
 
 	<?php endif; ?><!-- have_comments() -->
 
 	<?php if ( ! comments_open() && get_comments_number() != '0' && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'mild' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'bow' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form(); ?>

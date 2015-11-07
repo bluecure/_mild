@@ -2,7 +2,7 @@
 /**
  * The generic content partial.
  *
- * @package Mild
+ * @package Bow
  */
 ?>
 
@@ -12,12 +12,12 @@
 		<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		<?php if ( get_post_type() === 'post' ) : ?>
 			<div class="entry-meta">
-				<?php Mild\posted_on(); ?>
+				<?php Lambry\Bow\posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() || Mild\is_blog() ) : // Display excerpts for search/blog ?>
+	<?php if ( is_search() || ! get_theme_mod( 'archive_full', false ) ) : // Display excerpts ?>
 		<div class="entry-summary">
 			<?php the_post_thumbnail( 'thumbnail', [ 'class' => 'alignleft' ] ); ?>
 			<?php the_excerpt(); ?>
@@ -26,13 +26,13 @@
 		<div class="entry-content">
 			<?php
 				the_content( sprintf(
-					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'mild' ),
+					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'bow' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				) );
 			?>
 			<?php
 				wp_link_pages( [
-					'before' => '<div class="page-links">' . __( 'Pages:', 'mild' ),
+					'before' => '<div class="page-links">' . __( 'Pages:', 'bow' ),
 					'after'  => '</div>'
 				] );
 			?>
@@ -40,7 +40,7 @@
 	<?php endif; ?>
 
 	<footer class="entry-footer">
-		<?php Mild\entry_meta(); ?>
+		<?php Lambry\Bow\entry_meta(); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

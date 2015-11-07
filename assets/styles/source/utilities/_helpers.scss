@@ -23,11 +23,11 @@
 	width: 1px;
 	overflow: hidden;
 	&:hover, &:active, &:focus {
-		background-color: darken(color('white'), 2.5%);
-		border-radius: style('radius');
+		background-color: darken($color-white, 2.5%);
+		border-radius: $style-radius;
 		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 		clip: auto !important;
-		color: color('blue');
+		color: $color-blue;
 		display: block;
 		font-size: 14px;
 		font-weight: bold;

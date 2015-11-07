@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer.
  *
- * @package Mild
+ * @package Bow
  */
 ?>
 
@@ -20,8 +20,8 @@
 
 				<div class="site-info col-6 md-6">
 					<p>
-						<?php printf( __( '&copy; %d - %s', 'mild' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?>
-						<a href="#" class="to-top"><i class="fa fa-angle-up"></i> <?php _e( 'To Top', 'mild' ); ?></a>
+						<?php printf( __( '&copy; %d - %s', 'bow' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?>
+						<a href="#" class="to-top"><i class="fa fa-angle-up"></i> <?php _e( 'To Top', 'bow' ); ?></a>
 					</p>
 				</div><!-- .site-info -->
 

@@ -4,10 +4,10 @@
  *
  * Create new sidebars i.e. widgets areas.
  *
- * @package Mild
+ * @package Bow
  */
 
-namespace Mild;
+namespace Lambry\Bow;
 
 class Sidebars {
 

@@ -2,7 +2,7 @@
 /**
  * The template for displaying all pages.
  *
- * @package Mild
+ * @package Bow
  */
 
 get_header(); ?>
@@ -25,5 +25,7 @@ get_header(); ?>
 
 		</main><!-- .site-main -->
 	</section><!-- .site-primary -->
+
+	<?php get_template_part( 'partials/section', 'bottom' ); ?>
 
 <?php get_footer(); ?>

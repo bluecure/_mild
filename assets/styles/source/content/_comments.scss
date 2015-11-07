@@ -10,18 +10,18 @@
 }
 .comment {
 	list-style: none outside none;
-	margin-top: layout('margin');
+	margin-top: $layout-margin;
 	.children {
-		margin-left: layout('margin');
+		margin-left: $layout-margin;
 	}
 }
 .comment-list {
 	padding-left: 0.25em;
 }
 .comment-body {
-	padding: layout('padding');
+	padding: $layout-padding;
 	background-color: rgba(0, 0, 0, 0.05);
-	border-radius: style('radius');
+	border-radius: $style-radius;
 	position: relative;
 	&:before {
 		content: '';

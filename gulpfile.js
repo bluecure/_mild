@@ -32,15 +32,15 @@ gulp.task( 'watch', function() {
 // Styles task
 gulp.task( 'styles', function() {
 	return sass( 'assets/styles/style.scss', {
-			style : 'compressed',
-			sourcemap: true,
-			cacheLocation : path.styles + '.sass-cache'
-		} )
-		.pipe( prefix( 'last 3 versions' ) )
-		.pipe( maps.write( '/', {
-			sourceRoot: './'
-		} ) )
-		.pipe( gulp.dest( './' ) );
+		style : 'compressed',
+		sourcemap: true,
+		cacheLocation : path.styles + '.sass-cache'
+	} )
+	.pipe( prefix( 'last 3 versions' ) )
+	.pipe( maps.write( '/', {
+		sourceRoot: './'
+	} ) )
+	.pipe( gulp.dest( './' ) );
 } );
 
 // Scripts task

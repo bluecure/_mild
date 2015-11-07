@@ -7,39 +7,35 @@ html {
 *, *:before, *:after {
 	box-sizing: inherit;
 }
-::-moz-selection {
-	background-color: color('black');
-	color: color('white');
-}
 ::selection {
-	background-color: color('black');
-	color: color('white');
+	background-color: $color-black;
+	color: $color-white;
 }
 
 /* Elements */
 p {
-	margin: 0.5em 0 layout('margin');
+	margin: 0.5em 0 $layout-margin;
 }
 hr {
 	background-color: rgba(0, 0, 0, 0.1);
-	margin: layout('margin') 0;
+	margin: $layout-margin 0;
 	height: 1px;
 	border: 0;
 	clear: both;
 }
 b, strong {
-	font-weight: font('bold');
+	font-weight: $font-bold;
 }
 blockquote {
 	position: relative;
 	font-style: italic;
-	font-weight: font('bold');
-	margin: 0 layout('margin');
+	font-weight: $font-bold;
+	margin: 0 $layout-margin;
+	@extend .fa-quote-left;
 	&:before {
 		left: -1.5em;
 		position: absolute;
-		font-family: font('icon');
-		content: '\f10d';
+		font-family: $font-icon;
 	}
 }
 dfn, cite, em, i {
@@ -62,16 +58,16 @@ embed, iframe, object {
 	max-width: 100%;
 }
 address {
-	margin: 0 0 layout('margin');
+	margin: 0 0 $layout-margin;
 }
 code, pre {
 	overflow: auto;
 	max-width: 100%;
 	display: block;
-	padding: layout('padding');
-	margin: 0.5em 0 layout('margin');
+	padding: $layout-padding;
+	margin: 0.5em 0 $layout-margin;
 	background-color: rgba(0, 0, 0, 0.1);
-	border-radius: style('radius');
+	border-radius: $style-radius;
 }
 abbr, acronym {
 	border-bottom: 1px dotted rgba(0, 0, 0, 0.1);

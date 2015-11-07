@@ -3,7 +3,7 @@
 
 /* Navigation */
 .navigation {
-	margin: 0 0 layout('margin');
+	margin: 0 0 $layout-margin;
 	overflow: hidden;
 	.nav-previous {
 		float: left;
@@ -19,20 +19,20 @@
 /* Pagination */
 .pagination {
 	padding: 0;
-	margin: layout('margin') 0;
+	margin: $layout-margin 0;
 	list-style-type: none;
 	.page-numbers {
 		display: inline-block;
-		color: color('grey');
+		color: $color-grey;
 		margin: 0.2em 0.1em;
 		padding: 0.2em 0.5em;
-		border-radius: style('radius');
+		border-radius: $style-radius;
 		&:hover {
 			background-color: rgba(0, 0, 0, 0.1);
 		}
 	}
 	.current {
-		color: color('white');
+		color: $color-white;
 		background-color: rgba(0, 0, 0, 0.3);
 		&:hover {
 			background-color: rgba(0, 0, 0, 0.35);
@@ -43,7 +43,7 @@
 /* Breadcrumbs */
 .breadcrumbs {
 	padding: 0;
-	margin: layout('margin') 0;
+	margin: $layout-margin 0;
 	font-size: 0.75rem;
 	.breadcrumb {
 		display: inline-block;

@@ -2,10 +2,15 @@
 -------------------------------------------------------------- */
 
 body {
-	background-color: color('white');
+	background-color: $color-white;
 }
 
-/* Site Info */
+/* Site Header */
+.site-title {
+	margin: 0;
+}
+
+/* Site Footer */
 .site-info {
 	font-size: 0.75rem;
 	text-align: right;
@@ -15,7 +20,7 @@ body {
 }
 
 /* Media Queries */
-@media screen and (max-width: break('small')) {
+@media screen and (max-width: $break-small) {
 
 	.site-footer,
 	.site-info {

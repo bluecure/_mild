@@ -14,23 +14,10 @@
 .social-tiles {
 	a {
 		padding: 0.25em;
-		color: color('white');
+		color: $color-white;
+		background-color: $color-blue;
 		&:hover {
-			color: darken(color('white'), 5%);
-		}
-	}
-	/* Background Colors */
-	@each $name, $value in $social {
-		.fa-#{$name} {
-			background-color: $value;
-		}
-	}
-}
-.social-hovers {
-	/* Hover Colors */
-	@each $name, $value in $social {
-		.fa-#{$name}:hover {
-			color: $value;
+			color: darken($color-white, 5%);
 		}
 	}
 }

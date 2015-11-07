@@ -2,27 +2,19 @@
  ----------------------------------------------- */
 (function( $ ) {
 
-	// Main menu
-	var menuToggle = $( '.menu-toggle' ),
-		mainMenu = $( '.primary-navigation .menu' );
-	// Show menu
-	menuToggle.on( 'click', function() {
-		mainMenu.slideToggle();
+	// Primary menu
+	var primaryToggle = $( '.primary-toggle' ),
+		primaryMenu = $( '.primary-navigation .menu' );
+	// Show primary menu
+	primaryToggle.on( 'click', function() {
+		primaryMenu.slideToggle();
 	} );
 	// Add submenu buttons
-	mainMenu.find( '.menu-item-has-children' ).prepend( '<i class="show-submenu fa fa-angle-down"></i>' );
-	// Show submenu
-	mainMenu.on( 'click', '.show-submenu', function() {
-		$( this ).parent( '.menu-item ' ).toggleClass( 'is-open' );
-	} );
-
-	// Mobile search
-	var searchBtn = $( '.search-submit' ),
-		searchField = $( '.search-field' );
-	searchBtn.on( 'click', function( e ) {
-		if ( ! searchField.is( ':visible' ) || ! searchField.val() ) {
-			searchField.fadeToggle( 300 );
-			e.preventDefault();
+	primaryMenu.find( '.menu-item-has-children' ).prepend( '<i class="show-submenu fa fa-angle-down"></i>' );
+	// Show submenu on click
+	primaryMenu.on( 'click', '.show-submenu, .menu-item-has-children > a', function() {
+		if ( $(this).hasClass( 'show-submenu' ) || $(this).attr( 'href' ) === '#' ) {
+			$( this ).parent( '.menu-item ' ).toggleClass( 'is-open' );
 		}
 	} );
 

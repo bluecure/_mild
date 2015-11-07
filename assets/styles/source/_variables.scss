@@ -2,57 +2,35 @@
 -------------------------------------------------------------- */
 
 /* Site Layout */
-$layout: (
-	'width': 1140px,
-	'margin': 1.5em,
-	'padding': 1em
-);
+$layout-width: 1140px;
+$layout-margin: 1.5em;
+$layout-padding: 1em;
+$layout-root: 1rem;
 
 /* Site Font */
-$font: (
-	'primary': Arial,
-	'icon': 'FontAwesome',
-	'size': 16px,
-	'height': 1.4,
-	'normal': 400,
-	'bold': 700
-);
+$font-primary: Arial;
+$font-icon: FontAwesome;
+$font-size: 17px;
+$font-height: 1.5;
+$font-normal: 400;
+$font-bold: 700;
 
 /* Site Styles */
-$style: (
-	'radius': 3px,
-	'transition': 0.2s ease
-);
+$style-radius: 3px;
+$style-transition: 0.2s ease;
 
 /* Site Break Points */
-$break: (
-	'large': 80em,
-	'medium': 60em,
-	'small': 40em
-);
+$break-small: 40em;
+$break-medium: 60em;
+$break-large: 80em;
 
 /* Site Colors */
-$color: (
-	'blue': #1882f4,
-	'green': #00b429,
-	'orange': #d65015,
-	'yellow': #ebdc2f,
-	'red': #d31f16,
-	'silver': #DDDDDD,
-	'grey': #555555,
-	'black': #222222,
-	'white': #FFFFFF
-);
-
-/* Social Colors */
-$social: (
-	'facebook': #3b5998,
-	'twitter': #55acee,
-	'google-plus': #dd4b39,
-	'linkedin': #0976b4,
-	'pinterest': #cc2127,
-	'flickr': #ff0084,
-	'instagram': #3f729b,
-	'youtube': #e52d27,
-	'vimeo-square': #1ab7ea
-);
+$color-blue: #1882f4;
+$color-green: #00b429;
+$color-orange: #d65015;
+$color-yellow: #ebdc2f;
+$color-red: #d31f16;
+$color-silver: #DDDDDD;
+$color-grey: #555555;
+$color-black: #222222;
+$color-white: #FFFFFF;

@@ -2,7 +2,7 @@
 /**
  * The template for displaying archive pages.
  *
- * @package Mild
+ * @package Bow
  */
 
 get_header(); ?>

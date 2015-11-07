@@ -2,7 +2,7 @@
 /**
  * The partial for displaying search content.
  *
- * @package Mild
+ * @package Bow
  */
 ?>
 
@@ -12,7 +12,7 @@
 		<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		<?php if ( get_post_type() == 'post' ) : ?>
 			<div class="entry-meta">
-				<?php Mild\posted_on(); ?>
+				<?php Lambry\Bow\posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -23,7 +23,7 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php Mild\entry_meta(); ?>
+		<?php Lambry\Bow\entry_meta(); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

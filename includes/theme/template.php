@@ -4,15 +4,13 @@
  *
  * site_title()  | Display site title
  * breadcrumbs() | Displays breadcrumbs
- * page_menu()   | Displays page menu
- * post_menu()   | Displays post menu
  * posted_on()   | Displays posted on
  * entry_meta()  | Displays entry meta data
  *
- * @package Mild
+ * @package Bow
  */
 
-namespace Mild;
+namespace Lambry\Bow;
 
 /**
  * Gets the site title or image.
@@ -22,7 +20,7 @@ namespace Mild;
  */
 function site_title( $description = false ) {
 
-	$logo = theme_option( 'general', 'logo' ); ?>
+	$logo = get_theme_mod( 'logo' ); ?>
 
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 		<?php if ( $logo ) : ?>
@@ -50,7 +48,7 @@ function breadcrumbs() {
 	$parents = get_post_ancestors( $post->ID ); ?>
 
 	<ul class="breadcrumbs" role="navigation">
-		<li class="breadcrumb"><a href="<?php echo site_url(); ?>"><?php _e( 'Home', 'mild' ); ?></a></li>
+		<li class="breadcrumb"><a href="<?php echo site_url(); ?>"><?php _e( 'Home', 'bow' ); ?></a></li>
 		<?php if ( $parents ) :
 			$breadcrumbs = array_reverse( $parents );
 			foreach ( $breadcrumbs as $item ) : ?>
@@ -64,62 +62,6 @@ function breadcrumbs() {
 	</ul><!-- .breadcrumbs -->
 
 <?php
-
-}
-
-/**
- * Display a sub page menu.
- *
- * @return null
- */
-function page_menu() {
-
-	global $post;
-	$parent = ( $post->post_parent !== 0 ) ? $post->post_parent : $post->ID;
-
-	$args = [
-		'child_of'    => $parent,
-		'exclude'     => $parent,
-		'sort_column' => 'menu_order',
-		'post_type'   => 'page',
-		'post_status' => 'publish',
-		'title_li'    => ''
-	]; ?>
-
-	<ul class="side-menu" role="navigation">
-		<?php wp_list_pages( $args ); ?>
-	</ul><!-- .side-menu -->
-
-<?php
-
-}
-
-/**
- * Displays the latest posts.
- *
- * @return null
- */
-function post_menu() {
-
-	global $post;
-	$args = [
-		'posts_per_page' => 10,
-		'orderby'        => 'post_date',
-		'order'          => 'DESC',
-		'post_type'      => 'post',
-		'post_status'    => 'publish'
-	];
-	$posts = get_posts( $args );
-
-	if ( $posts ) : ?>
-
-		<ul class="side-menu" role="navigation">
-			<?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
-				<li class="post_item"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-			<?php endforeach; wp_reset_postdata(); ?>
-		</ul><!-- .side-menu -->
-
-	<?php endif;
 
 }
 
@@ -142,10 +84,10 @@ function posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = sprintf( _x( '<i class="fa fa-clock-o"></i> %s', 'post date', 'mild' ),
+	$posted_on = sprintf( _x( '<i class="fa fa-clock-o"></i> %s', 'post date', 'bow' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' );
 
-	$byline = sprintf( _x( '<i class="fa fa-user"></i> %s', 'post author', 'mild' ),
+	$byline = sprintf( _x( '<i class="fa fa-user"></i> %s', 'post author', 'bow' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	); ?>
 
@@ -164,13 +106,13 @@ function entry_meta() {
 
 	// Show post categories and tags
 	if ( get_post_type() === 'post' ) {
-		$categories_list = get_the_category_list( __( ', ', 'mild' ) );
+		$categories_list = get_the_category_list( __( ', ', 'bow' ) );
 		if ( $categories_list ) {
-			printf( '<span class="cat-links">' . __( '<i class="fa fa-folder-open-o"></i> %1$s', 'mild' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . __( '<i class="fa fa-folder-open-o"></i> %1$s', 'bow' ) . '</span>', $categories_list );
 		}
-		$tags_list = get_the_tag_list( '', __( ', ', 'mild' ) );
+		$tags_list = get_the_tag_list( '', __( ', ', 'bow' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( '<i class="fa fa-tags"></i> %1$s', 'mild' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . __( '<i class="fa fa-tags"></i> %1$s', 'bow' ) . '</span>', $tags_list );
 		}
 	}
 
@@ -178,13 +120,13 @@ function entry_meta() {
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) { ?>
 		<span class="comments-link">
 		    <?php comments_popup_link(
-				__( '<i class="fa fa-comments"></i> Leave a comment', 'mild' ),
-				__( '<i class="fa fa-comments"></i> 1 Comment', 'mild' ),
-				__( '<i class="fa fa-comments"></i> % Comments', 'mild' )
+				__( '<i class="fa fa-comments"></i> Leave a comment', 'bow' ),
+				__( '<i class="fa fa-comments"></i> 1 Comment', 'bow' ),
+				__( '<i class="fa fa-comments"></i> % Comments', 'bow' )
 			); ?>
 		</span>
 	<?php }
 
-	edit_post_link( __( 'Edit', 'mild' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', 'bow' ), '<span class="edit-link">', '</span>' );
 
 }

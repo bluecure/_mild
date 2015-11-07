@@ -2,7 +2,7 @@
 /**
  * The template for displaying the search results page.
  *
- * @package Mild
+ * @package Bow
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'mild' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'bow' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<?php while ( have_posts() ) : the_post(); ?>

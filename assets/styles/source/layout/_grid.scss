@@ -2,8 +2,8 @@
 ----------------------------------------------- */
 
 .container {
-	max-width: layout('width');
-	padding: 0 layout('padding');
+	max-width: $layout-width;
+	padding: 0 $layout-root;
 	margin: 0 auto;
 	position: relative;
 }
@@ -16,9 +16,9 @@
 	margin: 0 -2px;
 	vertical-align: top;
 	display: inline-block;
-	padding: layout('padding') (layout('padding') * 2);
+	padding: $layout-root ($layout-root * 2);
 	&-thin {
-		padding: 0 layout('padding');
+		padding: 0 $layout-root;
 	}
 }
 [class*="col-"] {
@@ -30,8 +30,8 @@
 	}
 }
 
-/* Fix content padding */
-.gapless-grid {
+/* Gapless */
+.gapless {
 	[class*="col-"] {
 		padding-left: 0;
 		&:last-child {
@@ -41,11 +41,11 @@
 }
 
 /* Media Queries */
-@media screen and (max-width: break('medium')) {
+@media screen and (max-width: $break-medium) {
 
 	[class*="col-"] {
 		width: 100%;
-		padding: layout('padding');
+		padding: $layout-root;
 	}
 	@for $i from 1 through 12 {
 		.md-#{$i} {
@@ -54,7 +54,7 @@
 	}
 
 }
-@media screen and (max-width: break('small')) {
+@media screen and (max-width: $break-small) {
 
 	[class*="md-"] {
 		width: 100%;

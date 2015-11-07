@@ -1,14 +1,14 @@
 /*!
-Theme Name: Mild
-Theme URI: https://github.com/lambry/mild
-Author: David Featherston
-Author URI: https://github.com/lambry/mild
-Description: WordPress Starter Theme.
+Theme Name: Bow
+Theme URI: https://github.com/lambry/bow/
 Version: 1.0.0
-Tags: white, one-column, right-sidebar, responsive-layout, theme-options, custom-menu, featured-images, post-formats, translation-ready
+Author: Lambry
+Author URI: http://lambry.com/
+Description: WordPress Starter Theme.
+Tags: white, one-column, right-sidebar, responsive-layout, theme-options, custom-menu, custom-colors, featured-images, post-formats, translation-ready
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: mild
+Text Domain: Bow
 */
 
 /* =Imports
@@ -16,7 +16,6 @@ Text Domain: mild
 
 /* Necessities */
 @import 'source/variables';
-@import 'source/utilities/functions';
 
 /* Vendor */
 @import 'vendor/normalize';
@@ -31,6 +30,7 @@ Text Domain: mild
 
 /* Content */
 @import 'source/content/comments';
+@import 'source/content/widgets';
 @import 'source/content/media';
 @import 'source/content/posts';
 
@@ -39,12 +39,9 @@ Text Domain: mild
 @import 'source/modules/navigation';
 @import 'source/modules/social';
 
-/* Plugins */
-@import 'source/plugins/plugins';
-@import 'source/plugins/shortcodes';
-
 /* Layout */
 @import 'source/layout/grid';
+@import 'source/layout/flex';
 @import 'source/layout/main';
 
 /* Utilities */

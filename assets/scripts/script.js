@@ -1,8 +1,7 @@
-/*
-*	Include all JavaScript files here
-*/
+/* =JavaScript includes
+ ----------------------------------------------- */
 
-// @prepros-append source/fixes.js
-// @prepros-append vendor/magnific-popup.js
-// @prepros-append source/global.js
-// @prepros-append source/main.js
+// @codekit-prepend "source/fixes.js";
+// @codekit-prepend "vendor/magnific-popup.js";
+// @codekit-prepend "source/global.js";
+// @codekit-prepend "source/main.js";

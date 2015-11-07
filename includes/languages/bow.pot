@@ -1,0 +1,347 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bow\n"
+"POT-Creation-Date: 2015-11-07 11:35+1100\n"
+"PO-Revision-Date: 2015-03-10 21:05+1000\n"
+"Last-Translator: David Featherston <hello@Lambry.io>\n"
+"Language-Team: \n"
+"Language: en_AU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: ../404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: ../404.php:26
+msgid "Most Used Categories"
+msgstr ""
+
+#: ../404.php:42
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: ../comments.php:22 ../comments.php:39
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:23 ../comments.php:40
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:24 ../comments.php:41
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:48
+msgid "Comments are closed."
+msgstr ""
+
+#: ../footer.php:23
+#, php-format
+msgid "&copy; %d - %s"
+msgstr ""
+
+#: ../footer.php:24
+msgid "To Top"
+msgstr ""
+
+#: ../functions.php:16
+msgid "This theme requires version 4.1 of WordPress and 5.4.0 of PHP."
+msgstr ""
+
+#: ../header.php:21
+msgid "Skip to content"
+msgstr ""
+
+#: ../header.php:32
+msgid "Menu"
+msgstr ""
+
+#: ../includes/helpers/meta-boxes.php:258 helpers/meta-boxes.php:258
+msgid "-- select --"
+msgstr ""
+
+#: ../includes/helpers/meta-boxes.php:356 helpers/meta-boxes.php:356
+msgid "Select"
+msgstr ""
+
+#: ../includes/helpers/meta-boxes.php:423 helpers/meta-boxes.php:423
+msgid "Add New +"
+msgstr ""
+
+#: ../includes/theme/controls.php:16 theme/controls.php:16
+msgid "Visual"
+msgstr ""
+
+#: ../includes/theme/controls.php:17 theme/controls.php:17
+msgid "Here you can change your sites logo and colors."
+msgstr ""
+
+#: ../includes/theme/controls.php:22 theme/controls.php:22
+msgid "Images"
+msgstr ""
+
+#: ../includes/theme/controls.php:23 theme/controls.php:23
+msgid "Here you can change your sites images."
+msgstr ""
+
+#: ../includes/theme/controls.php:28 theme/controls.php:28
+msgid "Logo"
+msgstr ""
+
+#: ../includes/theme/controls.php:34 theme/controls.php:34
+msgid "Text Colors"
+msgstr ""
+
+#: ../includes/theme/controls.php:35 theme/controls.php:35
+msgid "Here you can change your sites text colors."
+msgstr ""
+
+#: ../includes/theme/controls.php:54 theme/controls.php:54
+msgid "Link Colors"
+msgstr ""
+
+#: ../includes/theme/controls.php:55 theme/controls.php:55
+msgid "Here you can change your sites link colors."
+msgstr ""
+
+#: ../includes/theme/controls.php:74 theme/controls.php:74
+msgid "Background Colors"
+msgstr ""
+
+#: ../includes/theme/controls.php:75 theme/controls.php:75
+msgid "Here you can change your sites background colors."
+msgstr ""
+
+#: ../includes/theme/controls.php:96 ../includes/theme/custom-fields.php:34
+#: theme/controls.php:96 theme/custom-fields.php:34
+msgid "Content"
+msgstr ""
+
+#: ../includes/theme/controls.php:97 theme/controls.php:97
+msgid "Here you can add social links and custom code."
+msgstr ""
+
+#: ../includes/theme/controls.php:102 theme/controls.php:102
+msgid "Settings"
+msgstr ""
+
+#: ../includes/theme/controls.php:103 theme/controls.php:103
+msgid "Your sites custom custom settings."
+msgstr ""
+
+#: ../includes/theme/controls.php:108 theme/controls.php:108
+msgid "Complete Archive Content."
+msgstr ""
+
+#: ../includes/theme/controls.php:109 theme/controls.php:109
+msgid "Display complete content on blog and archives pages."
+msgstr ""
+
+#: ../includes/theme/controls.php:115 theme/controls.php:115
+msgid "Social Links"
+msgstr ""
+
+#: ../includes/theme/controls.php:116 theme/controls.php:116
+msgid "Your sites social links."
+msgstr ""
+
+#: ../includes/theme/controls.php:121 theme/controls.php:121
+msgid "Facebook Url"
+msgstr ""
+
+#: ../includes/theme/controls.php:125 theme/controls.php:125
+msgid "Twitter Url"
+msgstr ""
+
+#: ../includes/theme/controls.php:129 theme/controls.php:129
+msgid "Google Plus Url"
+msgstr ""
+
+#: ../includes/theme/controls.php:133 theme/controls.php:133
+msgid "LinkedIn Url"
+msgstr ""
+
+#: ../includes/theme/controls.php:137 theme/controls.php:137
+msgid "Instagram Url"
+msgstr ""
+
+#: ../includes/theme/controls.php:141 theme/controls.php:141
+msgid "Flickr Url"
+msgstr ""
+
+#: ../includes/theme/controls.php:145 theme/controls.php:145
+msgid "Youtube Url"
+msgstr ""
+
+#: ../includes/theme/controls.php:149 theme/controls.php:149
+msgid "Vimeo Url"
+msgstr ""
+
+#: ../includes/theme/controls.php:155 theme/controls.php:155
+msgid "Custom Code"
+msgstr ""
+
+#: ../includes/theme/controls.php:156 theme/controls.php:156
+msgid "Your sites custom CSS and JavaScript."
+msgstr ""
+
+#: ../includes/theme/controls.php:161 theme/controls.php:161
+msgid "CSS"
+msgstr ""
+
+#: ../includes/theme/controls.php:162 theme/controls.php:162
+msgid "i.e. Custom CSS without style tags."
+msgstr ""
+
+#: ../includes/theme/controls.php:166 theme/controls.php:166
+msgid "JavaScript"
+msgstr ""
+
+#: ../includes/theme/controls.php:167 theme/controls.php:167
+msgid "i.e. Google Analytics without script tags."
+msgstr ""
+
+#: ../includes/theme/custom-fields.php:16 theme/custom-fields.php:16
+msgid "Bottom Section"
+msgstr ""
+
+#: ../includes/theme/custom-fields.php:20 theme/custom-fields.php:20
+msgid "Tiles"
+msgstr ""
+
+#: ../includes/theme/custom-fields.php:21 theme/custom-fields.php:21
+msgid "Small blocks of content displayed in a grid layout."
+msgstr ""
+
+#: ../includes/theme/custom-fields.php:26 theme/custom-fields.php:26
+msgid "Title"
+msgstr ""
+
+#: ../includes/theme/custom-fields.php:30 theme/custom-fields.php:30
+msgid "Image"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:29 theme/fallbacks.php:29
+msgid "Favicon"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:35 theme/fallbacks.php:35
+msgid "App Icon"
+msgstr ""
+
+#: ../includes/theme/setup.php:50 theme/setup.php:50
+msgid "Primary Menu"
+msgstr ""
+
+#: ../includes/theme/setup.php:62 theme/setup.php:62
+msgid "Sidebar"
+msgstr ""
+
+#: ../includes/theme/template.php:51 theme/template.php:51
+msgid "Home"
+msgstr ""
+
+#: ../includes/theme/template.php:109 ../includes/theme/template.php:113
+#: theme/template.php:109 theme/template.php:113
+msgid ", "
+msgstr ""
+
+#: ../includes/theme/template.php:111 theme/template.php:111
+#, php-format
+msgid "<i class=\"fa fa-folder-open-o\"></i> %1$s"
+msgstr ""
+
+#: ../includes/theme/template.php:115 theme/template.php:115
+#, php-format
+msgid "<i class=\"fa fa-tags\"></i> %1$s"
+msgstr ""
+
+#: ../includes/theme/template.php:123 theme/template.php:123
+msgid "<i class=\"fa fa-comments\"></i> Leave a comment"
+msgstr ""
+
+#: ../includes/theme/template.php:124 theme/template.php:124
+msgid "<i class=\"fa fa-comments\"></i> 1 Comment"
+msgstr ""
+
+#: ../includes/theme/template.php:125 theme/template.php:125
+msgid "<i class=\"fa fa-comments\"></i> % Comments"
+msgstr ""
+
+#: ../includes/theme/template.php:130 theme/template.php:130
+msgid "Edit"
+msgstr ""
+
+#: ../includes/theme/tweaks.php:38 theme/tweaks.php:38
+msgid "Read More..."
+msgstr ""
+
+#: ../partials/content-none.php:12
+msgid "Nothing Found"
+msgstr ""
+
+#: ../partials/content-none.php:18
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../partials/content-none.php:22
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../partials/content-none.php:27
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../partials/content-page.php:19 ../partials/content-single.php:22
+#: ../partials/content.php:35
+msgid "Pages:"
+msgstr ""
+
+#: ../partials/content.php:29
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../searchform.php:10
+msgid "Search for"
+msgstr ""
+
+#: ../searchform.php:11
+msgid "Search..."
+msgstr ""
+
+#: ../sidebar.php:17
+msgid "Archives"
+msgstr ""
+
+#: ../sidebar.php:24
+msgid "Meta"
+msgstr ""

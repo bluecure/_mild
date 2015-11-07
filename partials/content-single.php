@@ -2,7 +2,7 @@
 /**
  * The partial for displaying a single posts content.
  *
- * @package Mild
+ * @package Bow
  */
 ?>
 
@@ -11,7 +11,7 @@
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		<div class="entry-meta">
-			<?php Mild\posted_on(); ?>
+			<?php Lambry\Bow\posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
@@ -19,14 +19,14 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( [
-				'before' => '<div class="page-links">' . __( 'Pages:', 'mild' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'bow' ),
 				'after'  => '</div>'
 			] );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php Mild\entry_meta(); ?>
+		<?php Lambry\Bow\entry_meta(); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

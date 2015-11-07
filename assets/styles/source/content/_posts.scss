@@ -2,7 +2,7 @@
 ----------------------------------------------- */
 
 .hentry {
-	margin: 0 0 layout('margin');
+	margin: 0 0 $layout-margin;
 }
 .sticky {
 	font-size: 1.1em;
@@ -14,24 +14,25 @@
 }
 .page-links {
 	clear: both;
-	margin: 0 0 layout('margin');
+	margin: 0 0 $layout-margin;
 }
 
 /* Articles */
 .page-content, .entry-content, .entry-summary {
-	margin: 0 0 layout('margin');
+	margin: 0 0 $layout-margin;
 }
 .article-excerpt {
 	@extend .clear;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	margin-bottom: layout('margin');
-	padding-bottom: layout('padding');
+	margin-bottom: $layout-margin;
+	padding-bottom: $layout-padding;
+	&:last-child {
+		padding-bottom: 0;
+		border-bottom: none;
+	}
 }
 
 /* Blog */
-.blog .entry-title {
-	font-size: 1.5rem;
-}
 .bypostauthor {
 	display: block;
 }
@@ -41,18 +42,13 @@
 }
 .entry-meta, .entry-footer {
 	font-size: 0.75rem;
-	margin-bottom: layout('margin');
+	margin-bottom: $layout-margin;
 	> span {
 		display: inline-block;
-		margin: 0 1em 0.5em 0;
+		padding-right: $layout-padding;
 	}
 	.fa {
 		display: inline-block;
 		padding-right: 0.25em;
 	}
-}
-
-/* Widgets */
-.widget {
-	margin: 0 0 layout('margin');
 }
