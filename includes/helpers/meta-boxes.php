@@ -57,7 +57,7 @@ class Meta_Boxes {
 		if ( $hook !== 'post-new.php' && $hook !== 'post.php' ) return;
 
 		// Load settings css
-		wp_enqueue_style( 'bow-meta-style', get_template_directory_uri() . '/assets/admin/styles/meta-boxes.css', [ 'wp-color-picker' ], '1.0.0' );
+		wp_enqueue_style( 'bow-meta-styles', get_template_directory_uri() . '/assets/admin/styles/meta-boxes.css', [ 'wp-color-picker' ], '1.0.0' );
 		// Load media assets
 		wp_enqueue_media();
 		// Load settings js
@@ -536,11 +536,45 @@ class Meta_Boxes {
 			foreach ( $meta_box['fields'] as $field ) {
 
 				$value = ( isset( $_POST[$this->field_name( $field )] ) ) ? $_POST[$this->field_name( $field )] : '';
+
+				if ( is_array( $value ) ) {
+					$value = $this->filter_array( $value );
+				}
+
 				update_post_meta( $post_id, $this->field_name( $field ), $value );
 
 			}
 
 		}
+
+	}
+
+	/**
+	 * Filter Array
+	 *
+	 * Filters out empty repeaters.
+	 *
+	 * @access private
+	 * @param  array $array
+	 * @return array $filtered_array
+	 */
+	private function filter_array( $array ) {
+
+		$filtered_array = [];
+
+		foreach ( $array as $item ) {
+
+			$filtered_items = array_filter( $item, function( $value, $key ) {
+				return $value;
+			}, ARRAY_FILTER_USE_BOTH );
+
+			if ( $filtered_items ) {
+				array_push( $filtered_array, $item );
+			}
+
+		}
+
+		return $filtered_array;
 
 	}
 

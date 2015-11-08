@@ -70,7 +70,7 @@ add_action( 'widgets_init', function() {
 add_action( 'wp_enqueue_scripts', function() {
 
 	// Load main css file
-	wp_enqueue_style( 'bow-style', get_stylesheet_uri(), [], '1.0.0' );
+	wp_enqueue_style( 'bow-styles', get_stylesheet_uri(), [], '1.0.0' );
 	// Add customizer styles
 	Lambry\Bow\customizer_styles();
 	// Load main js file

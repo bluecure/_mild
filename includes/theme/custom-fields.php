@@ -33,24 +33,8 @@ add_action( 'init', function() {
 							'id'    => 'content',
 							'label' => __( 'Content', 'bow' ),
 							'type'  => 'textarea'
-						], [
-							'id'     => 'on_off2',
-							'label'  => __( 'On Off', 'bow' ),
-							'type'   => 'on_off'
 						]
 					]
-				]
-			]
-		], [
-			'id'          => 'test',
-			'context'     => 'side',
-			'priority' => 'default',
-			'title'       => __( 'Test Section', 'bow' ),
-			'fields'      => [
-				[
-					'id'     => 'on_off',
-					'label'  => __( 'On Off', 'bow' ),
-					'type'   => 'on_off'
 				]
 			]
 		]
