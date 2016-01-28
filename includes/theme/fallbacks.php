@@ -8,6 +8,25 @@
 /**
  * Display custom icons, wp_site_icon added in 4.3.
  */
+if ( ! function_exists( 'the_comments_navigation' ) ) :
+
+	function the_comments_navigation() {
+
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'bow' ); ?></h2>
+				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'bow' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'bow' ) ); ?></div>
+			</nav><!-- .comment-navigation -->
+		<?php endif;
+
+	}
+
+endif;
+
+/**
+ * Display custom icons, wp_site_icon added in 4.3.
+ */
 if ( ! function_exists( 'has_site_icon' ) ) :
 
 	/**

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bow\n"
-"POT-Creation-Date: 2015-11-07 11:35+1100\n"
+"POT-Creation-Date: 2016-01-28 21:54+1300\n"
 "PO-Revision-Date: 2015-03-10 21:05+1000\n"
 "Last-Translator: David Featherston <hello@Lambry.io>\n"
 "Language-Team: \n"
@@ -36,19 +36,7 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: ../comments.php:22 ../comments.php:39
-msgid "Comment navigation"
-msgstr ""
-
-#: ../comments.php:23 ../comments.php:40
-msgid "&larr; Older Comments"
-msgstr ""
-
-#: ../comments.php:24 ../comments.php:41
-msgid "Newer Comments &rarr;"
-msgstr ""
-
-#: ../comments.php:48
+#: ../comments.php:34
 msgid "Comments are closed."
 msgstr ""
 
@@ -73,15 +61,15 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: ../includes/helpers/meta-boxes.php:258 helpers/meta-boxes.php:258
+#: ../includes/helpers/meta-boxes.php:262 helpers/meta-boxes.php:262
 msgid "-- select --"
 msgstr ""
 
-#: ../includes/helpers/meta-boxes.php:356 helpers/meta-boxes.php:356
+#: ../includes/helpers/meta-boxes.php:381 helpers/meta-boxes.php:381
 msgid "Select"
 msgstr ""
 
-#: ../includes/helpers/meta-boxes.php:423 helpers/meta-boxes.php:423
+#: ../includes/helpers/meta-boxes.php:448 helpers/meta-boxes.php:448
 msgid "Add New +"
 msgstr ""
 
@@ -238,11 +226,23 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: ../includes/theme/fallbacks.php:29 theme/fallbacks.php:29
+#: ../includes/theme/fallbacks.php:17 theme/fallbacks.php:17
+msgid "Comment navigation"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:18 theme/fallbacks.php:18
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:19 theme/fallbacks.php:19
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../includes/theme/fallbacks.php:48 theme/fallbacks.php:48
 msgid "Favicon"
 msgstr ""
 
-#: ../includes/theme/fallbacks.php:35 theme/fallbacks.php:35
+#: ../includes/theme/fallbacks.php:54 theme/fallbacks.php:54
 msgid "App Icon"
 msgstr ""
 

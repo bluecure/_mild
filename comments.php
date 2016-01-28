@@ -17,30 +17,16 @@ if ( post_password_required() ) return; ?>
 			?>
 		</h3><!-- .comments-title -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Check for comments ?>
-			<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'bow' ); ?></h2>
-				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'bow' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'bow' ) ); ?></div>
-			</nav><!-- .comment-navigation -->
-		<?php endif; ?>
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( [
+					'style' => 'ol',
+					'short_ping' => true,
+				] );
+			?>
+		</ol><!-- .comment-list -->
 
-			<ol class="comment-list">
-				<?php
-					wp_list_comments( [
-						'style' => 'ol',
-						'short_ping' => true,
-					] );
-				?>
-			</ol><!-- .comment-list -->
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Check for comments ?>
-			<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'bow' ); ?></h2>
-				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'bow' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'bow' ) ); ?></div>
-			</nav><!-- .comment-navigation -->
-		<?php endif; ?>
+		<?php the_comments_navigation(); ?>
 
 	<?php endif; ?><!-- have_comments() -->
 

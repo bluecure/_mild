@@ -22,10 +22,7 @@ get_header(); ?>
 
 				<?php endwhile; ?><!-- have_posts() -->
 
-				<?php the_posts_pagination( [
-					'prev_text' => '<i class="fa fa-angle-double-left"></i>',
-					'next_text' => '<i class="fa fa-angle-double-right"></i>'
-				] ); ?>
+				<?php the_posts_pagination(); ?>
 
 			<?php else : ?>
 
