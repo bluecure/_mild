@@ -14,22 +14,10 @@ add_action( 'init', function() {
 		[
 			'id'          => 'visual',
 			'title'       => __( 'Visual', 'bow' ),
-			'description' => __( 'Here you can change your sites logo and colors.', 'bow' ),
+			'description' => __( 'Here you can change your sites colors.', 'bow' ),
 			'priority'    => 1,
 			'sections'    => [
 				[
-					'id'          => 'images',
-					'title'       => __( 'Images', 'bow' ),
-					'description' => __( 'Here you can change your sites images.', 'bow' ),
-					'priority'    => 1,
-					'settings'    => [
-						[
-							'id'    => 'logo',
-							'label' => __( 'Logo', 'bow' ),
-							'type'  => 'image'
-						]
-					]
-				], [
 					'id'          => 'text_colors',
 					'title'       => __( 'Text Colors', 'bow' ),
 					'description' => __( 'Here you can change your sites text colors.', 'bow' ),

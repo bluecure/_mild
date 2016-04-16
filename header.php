@@ -25,7 +25,11 @@
 			<div class="row">
 
 				<div class="site-branding col-12">
-					<?php Lambry\Bow\site_title(); ?>
+					<?php the_custom_logo(); ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<h2 class="site-title"><?php bloginfo( 'name' ); ?></h2>
+					</a>
+					<h4 class="site-description"><?php bloginfo( 'description', 'display' ); ?></h4>
 				</div><!-- .site-branding -->
 
 				<nav class="primary-navigation col-12" role="navigation">

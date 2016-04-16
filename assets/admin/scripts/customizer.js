@@ -6,7 +6,7 @@
 
 (function( $ ) {
 
-	/*** General ***/
+	/*** Text ***/
 	var text = {
 		'blogname'        : '.site-title',
 		'blogdescription' : '.site-description'
@@ -15,23 +15,6 @@
 		wp.customize( id, function( value ) {
 			value.bind( function( to ) {
 				$( select ).text( to );
-			} );
-		} );
-	} );
-
-	/*** Images ***/
-	var images = {
-		'logo' : [ '.site-logo', '.site-branding a' ]
-	};
-	$.each( images, function( id, select ) {
-		wp.customize( id, function( value ) {
-			value.bind( function( to ) {
-				var link = $( select[0] );
-				if ( link.length > 0 ) {
-					link.attr( 'src', to );
-				} else {
-					$( select[1] ).html( '<img src="' + to + '">' );
-				}
 			} );
 		} );
 	} );

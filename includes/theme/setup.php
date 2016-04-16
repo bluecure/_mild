@@ -50,6 +50,13 @@ add_action( 'after_setup_theme', function() {
 		'primary' => __( 'Primary Menu', 'bow' )
 	] );
 
+	// Add support for custom logos
+	add_theme_support( 'custom-logo', [
+		'height'     => 200,
+		'width'      => 400,
+		'flex-width' => true
+	] );
+
 } );
 
 /**
@@ -75,6 +82,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	Lambry\Bow\customizer_styles();
 	// Load main js file
 	wp_enqueue_script( 'bow-scripts', get_template_directory_uri() . '/assets/scripts/script.min.js', [ 'jquery' ], '1.0.0', true );
+
 	// Load comment script
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
