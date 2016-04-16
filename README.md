@@ -2,15 +2,13 @@
 
 Hi, This is `Bow`. `Bow` uses `Sass` as it's preprocessor and `CodeKit` or `Gulp` for compilation, concatenation and so on.
 
-Note: This is a work in progress. 
-
 ###Bow includeds:
 * Standard templates
 * Base styles
 * Helpers
-* Normalize (3.0.3)
-* Font Awesome (4.4.0)
-* Magnific Popup (1.0.0)
+* Normalize (4.1.1)
+* Font Awesome (4.6.1)
+* Magnific Popup (1.1.0)
 
 ###Setting up theme:
 1. Update the theme details in `assets/styes/style.scss`
