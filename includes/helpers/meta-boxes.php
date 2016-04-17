@@ -29,6 +29,9 @@ class Meta_Boxes {
 		$this->meta_boxes = $meta_boxes;
 		$this->post_types = array_map( 'sanitize_title_with_dashes', $post_types );
 
+		// Register sanitizers
+		$this->register_sanitizers();
+
 		// Register meta boxes
 		add_action( 'add_meta_boxes', [ $this, 'register_meta_boxes' ] );
 
@@ -62,6 +65,37 @@ class Meta_Boxes {
 		wp_enqueue_media();
 		// Load settings js
 		wp_enqueue_script( 'bow-meta-scripts', get_template_directory_uri() . '/assets/admin/scripts/meta-boxes.js', [ 'jquery', 'wp-color-picker' ], '1.0.0', true );
+
+	}
+
+	/**
+	 * Register Sanitizers
+	 *
+	 * Register sanitizers for meta boxes.
+	 *
+	 * @access public
+	 * @return null
+	 */
+	public function register_sanitizers() {
+
+		foreach ( $this->meta_boxes as $meta_box ) {
+			foreach ( $meta_box['fields'] as $field ) {
+
+				switch ($field['type']) {
+					case 'checkbox':
+					case 'repeater':
+						register_meta( 'post', $this->field_name( $field ), [ $this, 'sanitize_array' ] );
+						break;
+					case 'editor':
+						// register_meta( 'post', $this->field_name( $field ), 'wp_kses' );
+						break;
+					default:
+						register_meta( 'post', $this->field_name( $field ), 'sanitize_text_field' );
+						break;
+				}
+
+			}
+		}
 
 	}
 
@@ -196,11 +230,10 @@ class Meta_Boxes {
 		<div class="meta-field meta-text">
 			<label><?php echo $field['label']; ?></label>
 			<input type="text" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $this->field_value( $field ); ?>">
+			<?php $this->field_description( $field ); ?>
 		</div>
 
-		<?php $this->field_description( $field );
-
-	}
+	<?php }
 
 	/**
 	 * Textarea
@@ -219,9 +252,7 @@ class Meta_Boxes {
 			<?php $this->field_description( $field ); ?>
 		</div>
 
-		<?php
-
-	}
+	<?php }
 
 	/**
 	 * Editor
@@ -236,13 +267,11 @@ class Meta_Boxes {
 
 		<div class="meta-field meta-editor">
 			<label><?php echo $field['label']; ?></label>
-			<?php wp_editor( $this->field_value( $field ), $field['id'], [ 'textarea_name' => $this->field_name( $field ) ] );
-			$this->field_description( $field ); ?>
+			<?php wp_editor( $this->field_value( $field ), $field['id'], [ 'textarea_name' => $this->field_name( $field ) ] ); ?>
+			<?php $this->field_description( $field ); ?>
 		</div>
 
-		<?php
-
-	}
+	<?php }
 
 	/**
 	 * Select
@@ -268,12 +297,9 @@ class Meta_Boxes {
 			</select>
 
 			<?php $this->field_description( $field ); ?>
-
 		</div>
 
-		<?php
-
-	}
+	<?php }
 
 	/**
 	 * Radio
@@ -287,20 +313,15 @@ class Meta_Boxes {
 	private function radio( $field ) { ?>
 
 		<div class="meta-field meta-radio">
-
 			<?php foreach ( $field['choices'] as $value => $label ) : ?>
 				<label><?php echo $label; ?>
 					<input type="radio" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $value; ?>" <?php checked( $this->field_value( $field ), $value ); ?>>
 				</label>
-			<?php endforeach;
-
-			$this->field_description( $field ); ?>
-
+			<?php endforeach; ?>
+			<?php $this->field_description( $field ); ?>
 		</div>
 
-		<?php
-
-	}
+	<?php }
 
 	/**
 	 * Checkbox
@@ -316,23 +337,17 @@ class Meta_Boxes {
 		$option = $this->field_value( $field ); ?>
 
 		<div class="meta-field meta-checkbox">
-
-			<?php $i = 1;
-				foreach ( $field['choices'] as $value => $label ) :
-				if ( ! isset( $option[$i] ) ) $option[$i] = false; ?>
-				<label><?php echo $label; ?>
-					<input type="checkbox" name="<?php echo $this->field_name( $field ) . "[{$i}]"; ?>"
-						   value="<?php echo $value; ?>" <?php checked( $option[$i], $value ); ?>>
-				</label>
-			<?php $i++; endforeach;
-
-			$this->field_description( $field ); ?>
-
+			<?php $i = 0; foreach ( $field['choices'] as $value => $label ) :
+			    $checked = ( is_array( $option ) && in_array( $value, $option ) ) ? true : false; ?>
+			    <label><?php echo $label; ?>
+			        <input type="checkbox" name="<?php echo $this->field_name( $field ) . "[{$i}]"; ?>"
+			               value="<?php echo $value; ?>" <?php checked( true, $checked ); ?>>
+			    </label>
+			<?php $i++; endforeach; ?>
+			<?php $this->field_description( $field ); ?>
 		</div>
 
-		<?php
-
-	}
+	<?php }
 
 	/**
 	 * On Off
@@ -347,13 +362,14 @@ class Meta_Boxes {
 
 		$option = $this->field_value( $field ); ?>
 
-		<label><?php echo $field['label']; ?>
-			<input type="checkbox" name="<?php echo $this->field_name( $field ); ?>" value="1" <?php checked( $option, '1' ); ?>>
-		</label>
+		<div class="meta-field meta-on-off">
+			<label><?php echo $field['label']; ?>
+				<input type="checkbox" name="<?php echo $this->field_name( $field ); ?>" value="1" <?php checked( $option, '1' ); ?>>
+			</label>
+			<?php $this->field_description( $field ); ?>
+		</div>
 
-		<?php $this->field_description( $field );
-
-	}
+	<?php }
 
 	/**
 	 * Upload
@@ -401,11 +417,10 @@ class Meta_Boxes {
 		<div class="meta-field meta-text">
 			<label><?php echo $field['label']; ?></label>
 			<input type="text" name="<?php echo $this->field_name( $field ); ?>" value="<?php echo $this->field_value( $field ); ?>" class="color-picker">
+			<?php $this->field_description( $field ); ?>
 		</div>
 
-		<?php $this->field_description( $field );
-
-	}
+	<?php }
 
 	/**
 	 * Repeater
@@ -449,9 +464,7 @@ class Meta_Boxes {
 			</button>
 		</div>
 
-		<?php
-
-	}
+	<?php }
 
 	/**
 	 * Field Description
@@ -537,7 +550,7 @@ class Meta_Boxes {
 
 				$value = ( isset( $_POST[$this->field_name( $field )] ) ) ? $_POST[$this->field_name( $field )] : '';
 
-				if ( is_array( $value ) ) {
+				if ( $field['type'] === 'repeater' && is_array( $value ) ) {
 					$value = $this->filter_array( $value );
 				}
 
@@ -546,6 +559,31 @@ class Meta_Boxes {
 			}
 
 		}
+
+	}
+
+	/**
+	 * Sanitize Array
+	 *
+	 * Sanitizes a meta array.
+	 *
+	 * @access public
+	 * @param  array $array
+	 * @return array $array
+	 */
+	public function sanitize_array( $array ) {
+
+		if ( ! is_array( $array ) ) {
+			return sanitize_text_field( $array );
+		}
+
+		array_walk_recursive( $array, function( &$value, $key ) {
+			if ( ! is_array( $value ) ) {
+				$value = sanitize_text_field( $value );
+			}
+		});
+
+		return $array;
 
 	}
 

@@ -10,10 +10,10 @@
  */
 function bow_theme_check() {
 
-    if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) || version_compare( phpversion(), '5.4.0', '<' ) ) {
+    if ( version_compare( $GLOBALS['wp_version'], '4.3', '<' ) || version_compare( phpversion(), '5.4.0', '<' ) ) {
         // Add notice
         function bow_theme_notice() { ?>
-            <div class="update-nag"><?php _e( 'This theme requires version 4.1 of WordPress and 5.4.0 of PHP.', 'bow' ); ?></div>
+            <div class="update-nag"><?php _e( 'This theme requires version 4.3+ of WordPress and 5.4.0+ of PHP.', 'bow' ); ?></div>
         <?php }
         add_action( 'admin_notices', 'bow_theme_notice' );
         // Revert to previous theme

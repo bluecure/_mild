@@ -1,4 +1,4 @@
-/* 
+/*
  * Gulp File
  */
 
@@ -6,10 +6,10 @@ var gulp = require( 'gulp' );
 
 // Plugins
 var concat = require( 'gulp-concat' );
-var sass = require( 'gulp-ruby-sass' );
-var maps = require('gulp-sourcemaps');
+var sass = require( 'gulp-sass' );
+var map = require('gulp-sourcemaps');
 var prefix = require( 'gulp-autoprefixer' );
-var jshint = require( 'gulp-jshint' );
+var eslint = require('gulp-eslint');
 var uglify = require( 'gulp-uglify' );
 
 // Paths
@@ -31,23 +31,21 @@ gulp.task( 'watch', function() {
 
 // Styles task
 gulp.task( 'styles', function() {
-	return sass( 'assets/styles/style.scss', {
-		style : 'compressed',
-		sourcemap: true,
-		cacheLocation : path.styles + '.sass-cache'
-	} )
-	.pipe( prefix( 'last 3 versions' ) )
-	.pipe( maps.write( '/', {
-		sourceRoot: './'
-	} ) )
-	.pipe( gulp.dest( './' ) );
+	return gulp.src( 'assets/styles/style.scss' )
+		.pipe( map.init() )
+		.pipe( sass( { outputStyle: 'compressed' } ) )
+		.pipe( prefix( 'last 3 versions' ) )
+		.pipe( map.write( './' ) )
+		.pipe( gulp.dest( './' ) );
 } );
 
 // Scripts task
 gulp.task( 'scripts', function() {
 	return gulp.src( path.scriptWatch )
-		.pipe( jshint() )
+		.pipe( map.init() )
+		.pipe( eslint() )
 		.pipe( concat( 'script.min.js' ) )
-		.pipe( uglify( { outSourceMap : true } ) )
+		.pipe( uglify() )
+		.pipe( map.write( '/' ) )
 		.pipe( gulp.dest( path.scripts ) );
 } );
