@@ -14,7 +14,7 @@ var uglify = require( 'gulp-uglify' );
 
 // Paths
 var path = {
-	styles : 'assets/styles/',
+	styles : 'assets/styles/style.scss',
 	styleWatch : [ 'assets/styles/style.scss', 'assets/styles/**/*.scss', 'assets/styles/**/**/*.scss' ],
 	scripts : 'assets/scripts/',
 	scriptWatch : [ 'assets/scripts/vendor/*.js', 'assets/scripts/source/*.js' ]
@@ -31,7 +31,7 @@ gulp.task( 'watch', function() {
 
 // Styles task
 gulp.task( 'styles', function() {
-	return gulp.src( 'assets/styles/style.scss' )
+	return gulp.src( path.styles )
 		.pipe( map.init() )
 		.pipe( sass( { outputStyle: 'compressed' } ) )
 		.pipe( prefix( 'last 3 versions' ) )

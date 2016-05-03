@@ -14,7 +14,7 @@ get_header(); ?>
 
 				<header class="page-header">
 					<h1 class="page-title"><?php the_archive_title(); ?></h1>
-					<div class="taxonomy-description"><?php the_archive_description(); ?></div>
+					<div class="archive-description"><?php the_archive_description(); ?></div>
 				</header><!-- .page-header -->
 
 				<?php while ( have_posts() ) : the_post(); ?>
