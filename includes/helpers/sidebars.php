@@ -7,7 +7,7 @@
  * @package Bow
  */
 
-namespace Lambry\Bow;
+namespace Lambry\Bow\Helpers;
 
 class Sidebars {
 

@@ -16,8 +16,9 @@ Hi, This is `Bow`. `Bow` uses `Sass` as it's preprocessor and `CodeKit` or `Gulp
 
 ###Using Gulp:
 1. Install Gulp and plugins: `$ npm install`
-2. Run gulp: `$ gulp`
+2. Update the hostName variable for Browsersync
+3. Run gulp: `$ gulp`
 
 ###Using CodeKit:
-1. Rename the theme in `config.codekit` (under: projectAttributes -> displayValue)
-2. Open theme folder in CodeKit
+1. Open theme folder in CodeKit
+2. Update the External Server Address under Browser Refreshing

@@ -5,7 +5,7 @@
  * @package Bow
  */
 
-namespace Lambry\Bow;
+use Lambry\Bow\Helpers\Customizer\Customizer as Customizer;
 
 add_action( 'init', function() {
 
@@ -13,15 +13,15 @@ add_action( 'init', function() {
 	$controls = [
 		[
 			'id'          => 'visual',
-			'title'       => __( 'Visual', 'bow' ),
-			'description' => __( 'Here you can change your sites colors.', 'bow' ),
-			'priority'    => 1,
+			'title'       => __( 'Visuals', 'bow' ),
+			'description' => __( 'Your sites visual options.', 'bow' ),
+			'priority'    => 21,
 			'sections'    => [
 				[
 					'id'          => 'text_colors',
 					'title'       => __( 'Text Colors', 'bow' ),
-					'description' => __( 'Here you can change your sites text colors.', 'bow' ),
-					'priority'    => 2,
+					'description' => __( 'Your sites text colors.', 'bow' ),
+					'priority'    => 1,
 					'settings'    => [
 						[
 							'id'    => 'header_text',
@@ -40,8 +40,8 @@ add_action( 'init', function() {
 				], [
 					'id'          => 'link_colors',
 					'title'       => __( 'Link Colors', 'bow' ),
-					'description' => __( 'Here you can change your sites link colors.', 'bow' ),
-					'priority'    => 3,
+					'description' => __( 'Your sites link colors.', 'bow' ),
+					'priority'    => 2,
 					'settings'    => [
 						[
 							'id'    => 'header_links',
@@ -60,8 +60,8 @@ add_action( 'init', function() {
 				], [
 					'id'          => 'background_colors',
 					'title'       => __( 'Background Colors', 'bow' ),
-					'description' => __( 'Here you can change your sites background colors.', 'bow' ),
-					'priority'    => 4,
+					'description' => __( 'Your sites background colors.', 'bow' ),
+					'priority'    => 3,
 					'settings'    => [
 						[
 							'id'    => 'header_background',
@@ -82,23 +82,10 @@ add_action( 'init', function() {
 		], [
 			'id'          => 'content',
 			'title'       => __( 'Content', 'bow' ),
-			'description' => __( 'Here you can add social links and custom code.', 'bow' ),
-			'priority'    => 2,
+			'description' => __( 'You sites content options.', 'bow' ),
+			'priority'    => 22,
 			'sections'    => [
 				[
-					'id'          => 'settings',
-					'title'       => __( 'Settings', 'bow' ),
-					'description' => __( 'Your sites custom custom settings.', 'bow' ),
-					'priority'    => 1,
-					'settings'    => [
-						[
-							'id'          => 'archive_full',
-							'label'       => __( 'Complete Archive Content.', 'bow' ),
-							'description' => __( 'Display complete content on blog and archives pages.', 'bow' ),
-							'type'        => 'checkbox'
-						]
-					]
-				], [
 					'id'          => 'social',
 					'title'       => __( 'Social Links', 'bow' ),
 					'description' => __( 'Your sites social links.', 'bow' ),
@@ -156,6 +143,19 @@ add_action( 'init', function() {
 							'type'        => 'textarea'
 						]
 					]
+				]
+			]
+		], [
+			'id'          => 'settings',
+			'title'       => __( 'Settings', 'bow' ),
+			'description' => __( 'Your sites custom settings.', 'bow' ),
+			'priority'    => 23,
+			'settings'    => [
+				[
+					'id'          => 'archive_full',
+					'label'       => __( 'Complete Archive Content.', 'bow' ),
+					'description' => __( 'Display complete content on blog and archives pages instead of excerpts.', 'bow' ),
+					'type'        => 'checkbox'
 				]
 			]
 		]

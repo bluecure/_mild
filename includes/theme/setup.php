@@ -5,6 +5,9 @@
  * @package Bow
  */
 
+use Lambry\Bow\Theme\Functions;
+use Lambry\Bow\Helpers\Sidebars;
+
 /**
  * Set the content width.
  */
@@ -65,7 +68,7 @@ add_action( 'after_setup_theme', function() {
 add_action( 'widgets_init', function() {
 
 	// Register sidebars
-	new Lambry\Bow\Sidebars( [
+	new Sidebars( [
 		[ 'name' => __( 'Sidebar', 'bow' ) ]
 	] );
 
@@ -79,7 +82,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Load main css file
 	wp_enqueue_style( 'bow-styles', get_stylesheet_uri(), [], '1.0.0' );
 	// Add customizer styles
-	Lambry\Bow\customizer_styles();
+	Functions::customizer_styles();
 	// Load main js file
 	wp_enqueue_script( 'bow-scripts', get_template_directory_uri() . '/assets/scripts/script.min.js', [ 'jquery' ], '1.0.0', true );
 

@@ -5,7 +5,9 @@
  * @package Bow
  */
 
-$tiles = Lambry\Bow\get_field( 'bottom_tiles' );
+use Lambry\Bow\Theme\Functions;
+
+$tiles = Functions::get_field( 'bottom_tiles' );
 
 if ( $tiles ) : ?>
 

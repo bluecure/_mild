@@ -41,7 +41,6 @@
 	list-style-type: none;
 	.page-numbers {
 		display: inline-block;
-		color: $color-grey;
 		margin: 0.2em 0.1em;
 		padding: 0.2em 0.5em;
 		border-radius: $style-radius;
@@ -79,4 +78,10 @@
 			content: '';
 		}
 	}
+}
+
+/* To Top */
+.to-top {
+	font-size: 1.25em;
+	margin-left: 0.75em;
 }

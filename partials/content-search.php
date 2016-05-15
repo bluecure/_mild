@@ -4,7 +4,8 @@
  *
  * @package Bow
  */
-?>
+
+use Lambry\Bow\Theme\Template; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'article-excerpt' ); ?>>
 
@@ -12,7 +13,7 @@
 		<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		<?php if ( get_post_type() == 'post' ) : ?>
 			<div class="entry-meta">
-				<?php Lambry\Bow\posted_on(); ?>
+				<?php Template::posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -23,7 +24,7 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php Lambry\Bow\entry_meta(); ?>
+		<?php Template::entry_meta(); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

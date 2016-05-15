@@ -27,14 +27,19 @@ add_action( 'after_switch_theme', 'bow_theme_check' );
  * Bow includes.
  */
 $bow_includes = [
-    'helpers/customizer.php',
-    'helpers/meta-boxes.php',
+    'helpers/customizer/controls.php',
+    'helpers/customizer/register.php',
+    'helpers/customizer/customizer.php',
+    'helpers/meta-boxes/utilities.php',
+    'helpers/meta-boxes/fields.php',
+    'helpers/meta-boxes/register.php',
+    'helpers/meta-boxes/meta-boxes.php',
     'helpers/sidebars.php',
     'theme/functions.php',
     'theme/setup.php',
-    'theme/controls.php',
-    'theme/custom-fields.php',
     'theme/tweaks.php',
+    'theme/customizer.php',
+    'theme/meta-boxes.php',
     'theme/template.php',
     'theme/fallbacks.php'
 ];

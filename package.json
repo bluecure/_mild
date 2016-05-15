@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "repository": "https://github.com/lambry/bow/",
   "devDependencies": {
+    "browser-sync": "^2.12.8",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",

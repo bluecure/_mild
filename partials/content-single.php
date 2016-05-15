@@ -4,14 +4,15 @@
  *
  * @package Bow
  */
-?>
+
+use Lambry\Bow\Theme\Template; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		<div class="entry-meta">
-			<?php Lambry\Bow\posted_on(); ?>
+			<?php Template::posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
@@ -26,7 +27,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php Lambry\Bow\entry_meta(); ?>
+		<?php Template::entry_meta(); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

@@ -19,10 +19,8 @@
 				</div><!-- .site-social -->
 
 				<div class="site-info col-6 md-6">
-					<p>
-						<?php printf( __( '&copy; %d - %s', 'bow' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?>
-						<a href="#" class="to-top"><i class="fa fa-angle-up"></i> <?php _e( 'To Top', 'bow' ); ?></a>
-					</p>
+					<?php printf( __( '&copy; %d - %s', 'bow' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?>
+					<a href="#" class="to-top"><i class="fa fa-angle-up"></i></a>
 				</div><!-- .site-info -->
 
 			</div><!-- .row -->

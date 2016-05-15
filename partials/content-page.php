@@ -4,7 +4,8 @@
  *
  * @package Bow
  */
-?>
+
+use Lambry\Bow\Theme\Template; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -23,7 +24,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php Lambry\Bow\entry_meta(); ?>
+		<?php Template::entry_meta(); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

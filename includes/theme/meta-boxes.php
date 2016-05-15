@@ -5,11 +5,11 @@
  * @package Bow
  */
 
-namespace Lambry\Bow;
+use Lambry\Bow\Helpers\Meta_Boxes\Meta_Boxes as Meta_Boxes;
 
 add_action( 'init', function() {
 
-	// Create meta box array
+	// Create array
 	$meta_boxes = [
 		[
 			'id'          => 'section_bottom',
