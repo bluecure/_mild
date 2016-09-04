@@ -11,25 +11,6 @@ namespace Lambry\Bow\Helpers\Meta_Boxes;
 
 class Fields {
 
-    /**
-    * Field Name
-    *
-    * Generates a field name.
-    *
-    * @access public
-    * @param  string $field
-    * @return string $name
-    */
-    public function field_name( $field ) {
-
-        if ( isset( $field['repeater'] ) ) {
-            return '_' . $field['repeater']['id'] . '[' . $field['repeater']['inc'] . ']' . '[' . $field['id'] . ']';
-        } else {
-            return '_' . $field['id'];
-        }
-
-    }
-
 	/**
 	 * Add Field
 	 *
@@ -336,6 +317,25 @@ class Fields {
 		</div>
 
 	<?php }
+
+    /**
+    * Field Name
+    *
+    * Generates a field name.
+    *
+    * @access public
+    * @param  string $field
+    * @return string $name
+    */
+    public function field_name( $field ) {
+
+        if ( isset( $field['repeater'] ) ) {
+            return '_' . $field['repeater']['id'] . '[' . $field['repeater']['inc'] . ']' . '[' . $field['id'] . ']';
+        } else {
+            return '_' . $field['id'];
+        }
+
+    }
 
 	/**
 	 * Field Description

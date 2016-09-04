@@ -1,14 +1,6 @@
 #Bow
 
-Hi, This is `Bow`. `Bow` uses `Sass` as it's preprocessor and `CodeKit` or `Gulp` for compilation, concatenation and so on.
-
-###Bow includeds:
-* Standard templates
-* Base styles
-* Helpers
-* Normalize (4.1.1)
-* Font Awesome (4.6.1)
-* Magnific Popup (1.1.0)
+Hi, This is `Bow`. `Bow` uses `Sass` as it's preprocessor and `Gulp` or `CodeKit` for compilation, concatenation and so on.
 
 ###Setting up theme:
 1. Update the theme details in `assets/styes/style.scss`
@@ -16,7 +8,7 @@ Hi, This is `Bow`. `Bow` uses `Sass` as it's preprocessor and `CodeKit` or `Gulp
 
 ###Using Gulp:
 1. Install Gulp and plugins: `$ npm install`
-2. Update the hostName variable for Browsersync
+2. Update hostName in the gulpfile.js file
 3. Run gulp: `$ gulp`
 
 ###Using CodeKit:

@@ -64,12 +64,16 @@ class Register {
 				switch ( $field['type'] ) {
 					case 'checkbox':
 					case 'repeater':
-						register_meta( 'post', $this->fields->field_name( $field ), [ $this->utilities, 'sanitize_array' ] );
+						register_meta( 'post', $this->fields->field_name( $field ), [
+							'sanitize_callback' => [ $this->utilities, 'sanitize_array' ]
+						] );
 						break;
 					case 'editor':
 						break;
 					default:
-						register_meta( 'post', $this->fields->field_name( $field ), 'wp_strip_all_tags' );
+						register_meta( 'post', $this->fields->field_name( $field ), [
+							'sanitize_callback' => 'wp_strip_all_tags'
+						] );
 						break;
 				}
 
