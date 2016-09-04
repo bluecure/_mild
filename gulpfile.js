@@ -7,10 +7,9 @@ var gulp = require( 'gulp' );
 // Plugins
 var browserSync = require('browser-sync').create();
 var concat = require( 'gulp-concat' );
-var sass = require( 'gulp-sass' );
 var map = require('gulp-sourcemaps');
+var sass = require( 'gulp-sass' );
 var prefix = require( 'gulp-autoprefixer' );
-var eslint = require('gulp-eslint');
 var uglify = require( 'gulp-uglify' );
 
 // Proxy / Host name
@@ -29,9 +28,9 @@ gulp.task( 'default', ['start'] );
 
 // Start browserSync and run tasks when a file changes
 gulp.task( 'start', function() {
-	browserSync.init({
+	browserSync.init( {
 		proxy: hostName
-	});
+	} );
 	gulp.watch( [ path.styleWatch ], [ 'styles' ] );
 	gulp.watch( [ path.scriptWatch ], [ 'scripts' ] );
 } );
@@ -51,7 +50,6 @@ gulp.task( 'styles', function() {
 gulp.task( 'scripts', function() {
 	return gulp.src( path.scriptWatch )
 		.pipe( map.init() )
-		.pipe( eslint() )
 		.pipe( concat( 'script.min.js' ) )
 		.pipe( uglify() )
 		.pipe( map.write( '/' ) )
