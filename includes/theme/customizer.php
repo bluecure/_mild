@@ -86,6 +86,24 @@ add_action( 'init', function() {
 			'priority'    => 22,
 			'sections'    => [
 				[
+				   'id'          => 'settings',
+				   'title'       => __( 'Settings', 'bow' ),
+				   'description' => __( 'Your sites custom settings.', 'bow' ),
+				   'priority'    => 1,
+				   'settings'    => [
+					   [
+						   'id'          => 'display_tagline',
+						   'label'       => __( 'Display Tagline', 'bow' ),
+						   'description' => __( 'Display tagline in sites header.', 'bow' ),
+						   'type'        => 'checkbox'
+					   ], [
+						   'id'          => 'archive_full',
+						   'label'       => __( 'Complete Archive Content', 'bow' ),
+						   'description' => __( 'Display complete content on blog and archives pages.', 'bow' ),
+						   'type'        => 'checkbox'
+					   ]
+				   ]
+			   ], [
 					'id'          => 'social',
 					'title'       => __( 'Social Links', 'bow' ),
 					'description' => __( 'Your sites social links.', 'bow' ),
@@ -128,15 +146,10 @@ add_action( 'init', function() {
 				], [
 					'id'          => 'custom_code',
 					'title'       => __( 'Custom Code', 'bow' ),
-					'description' => __( 'Your sites custom CSS and JavaScript.', 'bow' ),
+					'description' => __( 'Your sites custom JavaScript.', 'bow' ),
 					'priority'    => 3,
 					'settings'    => [
 						[
-							'id'          => 'css',
-							'label'       => __( 'CSS', 'bow' ),
-							'description' => __( 'i.e. Custom CSS without style tags.', 'bow' ),
-							'type'        => 'textarea'
-						], [
 							'id'          => 'javascript',
 							'label'       => __( 'JavaScript', 'bow' ),
 							'description' => __( 'i.e. Google Analytics without script tags.', 'bow' ),
@@ -145,23 +158,10 @@ add_action( 'init', function() {
 					]
 				]
 			]
-		], [
-			'id'          => 'settings',
-			'title'       => __( 'Settings', 'bow' ),
-			'description' => __( 'Your sites custom settings.', 'bow' ),
-			'priority'    => 23,
-			'settings'    => [
-				[
-					'id'          => 'archive_full',
-					'label'       => __( 'Complete Archive Content.', 'bow' ),
-					'description' => __( 'Display complete content on blog and archives pages instead of excerpts.', 'bow' ),
-					'type'        => 'checkbox'
-				]
-			]
 		]
 	];
 
 	// Register customizer controls
-	new Customizer( $controls );
+	$customizer = new Customizer( $controls );
 
 } );

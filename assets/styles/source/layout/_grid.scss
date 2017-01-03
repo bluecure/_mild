@@ -41,7 +41,7 @@
 }
 
 /* Media Queries */
-@media screen and (max-width: $break-medium) {
+@include max(medium) {
 
 	[class*="col-"] {
 		width: 100%;
@@ -54,7 +54,7 @@
 	}
 
 }
-@media screen and (max-width: $break-small) {
+@include max(small) {
 
 	[class*="md-"] {
 		width: 100%;

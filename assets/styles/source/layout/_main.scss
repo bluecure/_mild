@@ -10,6 +10,11 @@ body {
 	margin: 0;
 }
 
+/* Bottom Section */
+.section-bottom {
+	margin-bottom: $layout-margin;
+}
+
 /* Site Footer */
 .site-info {
 	font-size: 0.75rem;
@@ -17,7 +22,7 @@ body {
 }
 
 /* Media Queries */
-@media screen and (max-width: $break-small) {
+@include max(small) {
 
 	.site-footer,
 	.site-info {

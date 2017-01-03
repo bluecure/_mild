@@ -35,6 +35,9 @@ add_action( 'after_setup_theme', function() {
 	// Enable support for Page excerpts
 	add_post_type_support( 'page', 'excerpt' );
 
+	// Add theme support for selective refresh for widgets
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 	// Add theme support for WooCommerce
 	add_theme_support( 'woocommerce' );
 
@@ -68,7 +71,7 @@ add_action( 'after_setup_theme', function() {
 add_action( 'widgets_init', function() {
 
 	// Register sidebars
-	new Sidebars( [
+	$sidebars = new Sidebars( [
 		[ 'name' => __( 'Sidebar', 'bow' ) ]
 	] );
 
@@ -81,14 +84,16 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	// Load main css file
 	wp_enqueue_style( 'bow-styles', get_stylesheet_uri(), [], '1.0.0' );
-	// Add customizer styles
-	Functions::customizer_styles();
 	// Load main js file
 	wp_enqueue_script( 'bow-scripts', get_template_directory_uri() . '/assets/scripts/script.min.js', [ 'jquery' ], '1.0.0', true );
-
 	// Load comment script
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 } );
+
+/**
+ * Add customizer styles
+ */
+add_action( 'wp_enqueue_scripts', [ Functions::class, 'customizer_styles' ] );

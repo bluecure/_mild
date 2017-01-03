@@ -5,6 +5,7 @@
  * @package Bow
  */
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -29,7 +30,9 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<h2 class="site-title"><?php bloginfo( 'name' ); ?></h2>
 					</a>
-					<h4 class="site-description"><?php bloginfo( 'description', 'display' ); ?></h4>
+					<?php if (get_theme_mod( 'display_tagline', true ) || is_customize_preview()) : ?>
+						<h4 class="site-description"><?php bloginfo( 'description', 'display' ); ?></h4>
+					<?php endif; ?>
 				</div><!-- .site-branding -->
 
 				<nav class="primary-navigation col-12" role="navigation">

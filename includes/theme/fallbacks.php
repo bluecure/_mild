@@ -24,18 +24,18 @@ if ( ! function_exists( 'the_custom_logo' ) ) :
 	/**
 	* Add logo fallback to customizer.
 	*/
-   add_action( 'customize_register', function( $customizer ) {
+	add_action( 'customize_register', function( $customizer ) {
 
-	   $customizer->add_setting( 'logo', [
-		   'sanitize_callback' => 'wp_strip_all_tags'
-	   ] );
+		$customizer->add_setting( 'logo', [
+			'sanitize_callback' => 'wp_strip_all_tags'
+		] );
 
-	   $customizer->add_control( new WP_Customize_Image_Control( $customizer, 'logo', [
-		   'settings'    => 'logo',
-		   'section'     => 'title_tagline',
-		   'label'       => __( 'Site Logo', 'bow' )
-	   ] ) );
+		$customizer->add_control( new WP_Customize_Image_Control( $customizer, 'logo', [
+			'settings'    => 'logo',
+			'section'     => 'title_tagline',
+			'label'       => __( 'Site Logo', 'bow' )
+		] ) );
 
-   } );
+	} );
 
 endif;

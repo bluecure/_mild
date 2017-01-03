@@ -5,6 +5,7 @@
  * @package Bow
  */
 ?>
+
 <aside class="site-secondary widget-area col-4" role="complementary">
 
 	<?php if ( ! dynamic_sidebar( 'Sidebar' ) ) : ?>

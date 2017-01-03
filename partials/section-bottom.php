@@ -11,7 +11,7 @@ $tiles = Functions::get_field( 'bottom_tiles' );
 
 if ( $tiles ) : ?>
 
-	<section class="bottom-section tiles row">
+	<section class="section-bottom tiles row">
 		<?php foreach ( $tiles as $tile ) : ?>
 			<div class="tile col-4 md-6">
 				<?php if ( $tile['image'] ) : ?>

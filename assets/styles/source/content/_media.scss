@@ -60,7 +60,7 @@ img.wp-smiley {
 }
 
 /* Media Queries */
-@media screen and (max-width: $break-small) {
+@include max(small) {
 
 	.gallery {
 		.gallery-item {

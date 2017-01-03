@@ -48,8 +48,9 @@ class Sidebars {
 
 			// Register sidebar
 			register_sidebar( [
-				'name'          => $options['name'],
+				'name'          => esc_html( $options['name'] ),
 				'id'            => sanitize_title_with_dashes( $options['name'] ),
+				'description'   => esc_html( $options['description'] ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s ' . $options['classes'] . '">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<' . $options['header'] . ' class="widget-title">',
@@ -71,9 +72,10 @@ class Sidebars {
 	private function default_options() {
 
 		return [
-			'name'    => 'Sidebar',
-			'header'  => 'h3',
-			'classes' => ''
+			'name'        => 'Sidebar',
+			'description' => '',
+			'header'      => 'h3',
+			'classes'     => ''
 		];
 
 	}

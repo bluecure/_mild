@@ -31,7 +31,7 @@ class Customizer {
 			$customizer->get_setting( 'blogname' )->transport = 'postMessage';
 			$customizer->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-			new Register( $customizer, $this->controls );
+			$register = new Register( $customizer, $this->controls );
 
 		} );
 

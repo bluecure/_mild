@@ -28,4 +28,4 @@ get_header(); ?>
 
 	<?php get_template_part( 'partials/section', 'bottom' ); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

@@ -10,7 +10,7 @@ use Lambry\Bow\Helpers\Meta_Boxes\Meta_Boxes as Meta_Boxes;
 add_action( 'init', function() {
 
 	// Create array
-	$meta_boxes = [
+	$fields = [
 		[
 			'id'          => 'section_bottom',
 			'title'       => __( 'Bottom Section', 'bow' ),
@@ -41,6 +41,6 @@ add_action( 'init', function() {
 	];
 
 	// Register meta boxes
-	new Meta_Boxes( $meta_boxes );
+	$meta_boxes = new Meta_Boxes( $fields );
 
 } );

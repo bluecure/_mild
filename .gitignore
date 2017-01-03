@@ -30,5 +30,6 @@ cache
 .svn
 .CVS
 .idea
+.tags
 .sass-cache
 .codekit-cache

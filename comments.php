@@ -12,8 +12,10 @@ if ( post_password_required() ) return; ?>
 	<?php if (have_comments()) : ?>
 
 		<h3 class="comments-title">
-			<?php printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bow' ),
-				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			<?php
+				printf(
+					_nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bow' ), number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>'
+				);
 			?>
 		</h3><!-- .comments-title -->
 

@@ -97,7 +97,7 @@
 }
 
 /* Media Queries */
-@media screen and (max-width: $break-medium) {
+@include max(medium) {
 
 	.primary-toggle {
 		display: block;
@@ -144,7 +144,8 @@
 	}
 
 }
-@media screen and (min-width: $break-medium) {
+
+@include min(medium) {
 
 	.primary-navigation .menu {
 		display: block !important;

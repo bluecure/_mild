@@ -22,7 +22,7 @@ class Meta_Boxes {
 	public function __construct( $meta_boxes, $post_types = [ 'page' ] ) {
 
 		// Register meta boxes
-		new Register( $meta_boxes, $post_types );
+		$register = new Register( $meta_boxes, $post_types );
 
 		// Add admin assets
 		add_action( 'admin_enqueue_scripts', [ $this, 'load_assets' ] );

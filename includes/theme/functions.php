@@ -50,7 +50,7 @@ class Functions {
 
 	/**
 	 * Customizer Styles
-	 * 
+	 *
 	 * Checks and displays customizer styles.
 	 *
 	 * @access public
