@@ -1,0 +1,18 @@
+/* =Mixins
+-------------------------------------------------------------- */
+
+/* PX to Rem function */
+@function rem($pixels) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @return $pixels / $font-size * 1rem;
+}
+
+/* Compute a CSS calc function betweens to values */
+@function between($to, $from, $toWidth, $fromWidth) {
+    $slope: ($to - $from) / ($toWidth - $fromWidth);
+    $base: $from - $slope * $fromWidth;
+
+    @return calc(#{$base} + #{100vw * $slope});
+}

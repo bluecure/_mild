@@ -5,12 +5,19 @@
   "main": "gulpfile.js",
   "repository": "https://github.com/lambry/bow/",
   "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-env": "^1.2.1",
     "browser-sync": "^2.12.8",
+    "eslint": "^3.19.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
-    "gulp-sass": "^2.2.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^2.0.0"
+    "gulp-eslint": "^3.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-stylelint": "^3.9.0",
+    "gulp-uglify": "^2.0.0",
+    "stylelint": "^7.10.1"
   }
 }

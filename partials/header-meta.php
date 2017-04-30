@@ -6,9 +6,9 @@
  */
 
 // Get theme mods
-$javascript = get_theme_mod( 'javascript' );
+$javascript = get_theme_mod('javascript');
 
 /* JavaScript */
-if ( $javascript ) : ?>
-	<script><?php echo $javascript; ?></script>
+if ($javascript) : ?>
+    <script><?php echo $javascript; ?></script>
 <?php endif;

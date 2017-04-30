@@ -2,24 +2,24 @@
 ----------------------------------------------- */
 
 .widget {
-	margin: 0 0 $layout-margin * 1.5;
-	&-title {
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	}
-	ul {
-		list-style-type: none;
-		margin-left: 0.5rem;
-	}
-	li {
-		position: relative;
-		padding-left: 1em;
-		@extend .fa-angle-double-right;
-		&:before {
-			font-family: $font-icon;
-			position: absolute;
-			left: 0;
-		}
-	}
+    margin: 0 0 $layout-margin * 1.5;
+    &-title {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    ul {
+        list-style-type: none;
+        margin-left: 0.5rem;
+    }
+    li {
+        position: relative;
+        padding-left: 1em;
+        @extend .fa-angle-double-right;
+        &:before {
+            font-family: $font-icon;
+            position: absolute;
+            left: 0;
+        }
+    }
 }
 
 /* Search */
@@ -29,26 +29,26 @@
 
 /* Recent Posts */
 .widget_recent_entries {
-	.post-date {
-		font-size: 0.8em;
-		font-style: italic;
-	}
+    .post-date {
+        font-size: 0.8em;
+        font-style: italic;
+    }
 }
 
 /* Calendar */
 .widget_calendar {
-	caption {
-		margin-bottom: 0.5em;
-	}
-	#next {
-		text-align: right;
-	}
+    caption {
+        margin-bottom: 0.5em;
+    }
+    #next {
+        text-align: right;
+    }
 }
 
 /* Tag Cloud */
 .widget_tag_cloud {
-	a {
-		display: inline-block;
-		margin: 0 0.25rem 0.5rem 0;
-	}
+    a {
+        display: inline-block;
+        margin: 0 0.25rem 0.5rem 0;
+    }
 }

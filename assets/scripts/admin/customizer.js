@@ -4,20 +4,20 @@
  * Contains handlers to make the Theme Customizer preview reload changes asynchronously.
  */
 
-(function( $ ) {
+(function($) {
 
 	/*** Text ***/
 	var text = {
 		'blogname'        : '.site-title',
 		'blogdescription' : '.site-description'
 	};
-	$.each( text, function( id, select ) {
-		wp.customize( id, function( value ) {
-			value.bind( function( to ) {
-				$( select ).text( to );
-			} );
-		} );
-	} );
+	$.each(text, function(id, select) {
+		wp.customize(id, function(value) {
+			value.bind(function(to) {
+				$(select).text(to);
+			});
+		});
+	});
 
 	/*** Colors ***/
 	var colors = {
@@ -31,14 +31,14 @@
 		'content_background' : [ '.site-content', 'background-color' ],
 		'footer_background'  : [ '.site-footer', 'background-color' ]
 	};
-	$.each( colors, function( id, select ) {
-		wp.customize( id, function( value ) {
-			value.bind( function( to ) {
+	$.each(colors, function(id, select) {
+		wp.customize(id, function(value) {
+			value.bind(function(to) {
 				to = to || '';
-				$( select[0] ).css( select[1], to );
-			} );
-		} );
-	} );
+				$(select[0]).css(select[1], to);
+			});
+		});
+	});
 
 	/*** Social ***/
 	var social = {
@@ -51,19 +51,19 @@
 		'youtube'     : 'fa-youtube',
 		'vimeo'       : 'fa-vimeo-square'
 	};
-	$.each( social, function( id, select ) {
-		wp.customize( id, function( value ) {
-			value.bind( function( to ) {
-				var link = $( '.' + select );
-				if ( ! to && link.length > 0 ) {
+	$.each(social, function(id, select) {
+		wp.customize(id, function(value) {
+			value.bind(function(to) {
+				var link = $('.' + select);
+				if (! to && link.length > 0) {
 					link.remove();
-				} else if ( link.length > 0 ) {
-					link.attr( 'href', to );
+				} else if (link.length > 0) {
+					link.attr('href', to);
 				} else {
-					$( '.site-social .social-links' ).append( '<a href="' + to + '" class="fa ' + select + '" target="_blank"></a>' );
+					$('.site-social .social-links').append('<a href="' + to + '" class="fa ' + select + '" target="_blank"></a>');
 				}
-			} );
-		} );
-	} );
+			});
+		});
+	});
 
-})( jQuery );
+})(jQuery);

@@ -7,18 +7,36 @@
 		"uuidString": "41BB1ACB-C2E2-4456-9005-94D93C522C18"
 		}
 	],
-"creatorBuild": "25479",
+"creatorBuild": "25813",
 "files": {
+	"\/.babelrc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.babelrc",
+		"oF": 0
+		},
 	"\/.editorconfig": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/.editorconfig",
 		"oF": 0
 		},
+	"\/.eslintrc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.eslintrc",
+		"oF": 0
+		},
 	"\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/.gitignore",
+		"oF": 0
+		},
+	"\/.stylelintrc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.stylelintrc",
 		"oF": 0
 		},
 	"\/.tags": {
@@ -38,43 +56,6 @@
 		"oA": 0,
 		"oAP": "\/archive.php",
 		"oF": 0
-		},
-	"\/assets\/admin\/scripts\/controls.js": {
-		"ft": 64,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/assets\/admin\/scripts\/min\/controls-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/assets\/admin\/scripts\/customizer.js": {
-		"ft": 64,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/assets\/admin\/scripts\/min\/customizer-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/assets\/admin\/scripts\/meta-boxes.js": {
-		"ft": 64,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/assets\/admin\/scripts\/min\/meta-boxes-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/assets\/admin\/styles\/meta-boxes.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 2,
-		"oAP": "\/assets\/admin\/styles\/meta-boxes-min.css",
-		"oF": 0,
-		"oS": 0
 		},
 	"\/assets\/fonts\/fontawesome-webfont.eot": {
 		"ft": 8192,
@@ -116,6 +97,24 @@
 		"oAP": "\/assets\/fonts\/FontAwesome.otf",
 		"oF": 0
 		},
+	"\/assets\/scripts\/admin\/controls.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/scripts\/admin\/min\/controls-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/scripts\/admin\/customizer.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/scripts\/admin\/min\/customizer-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/assets\/scripts\/script.js": {
 		"ft": 64,
 		"mi": 0,
@@ -140,29 +139,20 @@
 		"oAP": "\/assets\/scripts\/script.min.js.map",
 		"oF": 0
 		},
-	"\/assets\/scripts\/source\/fixes.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/assets\/scripts\/source\/min\/fixes-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/assets\/scripts\/source\/global.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/assets\/scripts\/source\/min\/global-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
 	"\/assets\/scripts\/source\/main.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/assets\/scripts\/source\/min\/main-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/scripts\/source\/menus.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/assets\/scripts\/source\/min\/menus-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -175,6 +165,19 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
+		},
+	"\/assets\/styles\/source\/_functions.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/assets\/styles\/css\/_functions.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
 		},
 	"\/assets\/styles\/source\/_mixins.scss": {
 		"aP": 0,
@@ -306,19 +309,6 @@
 		"oS": 3,
 		"uL": 1
 		},
-	"\/assets\/styles\/source\/layout\/_flex.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 1,
-		"oA": 1,
-		"oAP": "\/assets\/styles\/source\/css\/_flex.css",
-		"oF": 0,
-		"oS": 3,
-		"uL": 1
-		},
 	"\/assets\/styles\/source\/layout\/_grid.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -384,6 +374,19 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"\/assets\/styles\/source\/utilities\/_animations.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/assets\/styles\/source\/css\/_animations.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"\/assets\/styles\/source\/utilities\/_classes.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -410,6 +413,22 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"\/assets\/styles\/style.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/assets\/styles\/style-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/assets\/styles\/style.css.map": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/styles\/style.css.map",
+		"oF": 0
+		},
 	"\/assets\/styles\/style.scss": {
 		"aP": 1,
 		"bl": 0,
@@ -418,8 +437,21 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 0,
-		"oAP": "\/style.css",
+		"oAP": "\/assets\/styles\/style.css",
 		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/assets\/styles\/vendor\/_flexboxgrid.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/assets\/styles\/css\/_flexboxgrid.css",
+		"oF": 0,
 		"oS": 3,
 		"uL": 1
 		},
@@ -513,30 +545,6 @@
 		"oAP": "\/includes\/helpers\/customizer\/register.php",
 		"oF": 0
 		},
-	"\/includes\/helpers\/meta-boxes\/fields.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/includes\/helpers\/meta-boxes\/fields.php",
-		"oF": 0
-		},
-	"\/includes\/helpers\/meta-boxes\/meta-boxes.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/includes\/helpers\/meta-boxes\/meta-boxes.php",
-		"oF": 0
-		},
-	"\/includes\/helpers\/meta-boxes\/register.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/includes\/helpers\/meta-boxes\/register.php",
-		"oF": 0
-		},
-	"\/includes\/helpers\/meta-boxes\/utilities.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/includes\/helpers\/meta-boxes\/utilities.php",
-		"oF": 0
-		},
 	"\/includes\/helpers\/sidebars.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -565,18 +573,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/includes\/theme\/fallbacks.php",
-		"oF": 0
-		},
-	"\/includes\/theme\/functions.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/includes\/theme\/functions.php",
-		"oF": 0
-		},
-	"\/includes\/theme\/meta-boxes.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/includes\/theme\/meta-boxes.php",
 		"oF": 0
 		},
 	"\/includes\/theme\/setup.php": {
@@ -608,6 +604,14 @@
 		"oA": 2,
 		"oAP": "\/LICENSE",
 		"oF": 0
+		},
+	"\/manifest.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/manifest-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		},
 	"\/node_modules": {
 		"ft": 65536,
@@ -665,12 +669,6 @@
 		"oAP": "\/partials\/header-meta.php",
 		"oF": 0
 		},
-	"\/partials\/section-bottom.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/partials\/section-bottom.php",
-		"oF": 0
-		},
 	"\/partials\/social-links.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -711,7 +709,10 @@
 		"oA": 0,
 		"oAP": "\/screenshot.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/search.php": {
 		"ft": 8192,
@@ -747,10 +748,10 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/style.css.map": {
+	"\/yarn.lock": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/style.css.map",
+		"oAP": "\/yarn.lock",
 		"oF": 0
 		}
 	},
@@ -1410,6 +1411,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
@@ -1428,6 +1433,10 @@
 			},
 		"no-class-assign": {
 			"active": 1,
+			"optionString": ""
+			},
+		"no-compare-neg-zero": {
+			"active": 0,
 			"optionString": ""
 			},
 		"no-cond-assign": {
@@ -1630,6 +1639,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-multi-assign": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-multi-spaces": {
 			"active": 0,
 			"optionString": "{'exceptions': {'Property': true, 'BinaryExpression': false, 'VariableDeclarator': false, 'ImportDeclaration': false}}"
@@ -1707,6 +1720,10 @@
 			"optionString": ""
 			},
 		"no-proto": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-prototype-builtins": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -1906,6 +1923,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
+			},
 		"object-curly-newline": {
 			"active": 0,
 			"optionString": "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
@@ -1950,9 +1971,17 @@
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
 			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
 		"prefer-numeric-literals": {
 			"active": 0,
 			"optionString": ""
+			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
 			},
 		"prefer-rest-params": {
 			"active": 0,
@@ -2047,6 +2076,10 @@
 			"optionString": ""
 			},
 		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},
@@ -2493,7 +2526,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"quality": 100
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
@@ -2516,14 +2550,6 @@
 		"autoOutputPathStyle": 0,
 		"orderOutput": 0,
 		"outputStyle": 1
-		},
-	"languageDefaultsJSX": {
-		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*.js",
-		"autoOutputPathRelativePath": "",
-		"autoOutputPathReplace1": "jsx",
-		"autoOutputPathReplace2": "js",
-		"autoOutputPathStyle": 0
 		},
 	"languageDefaultsKIT": {
 		"autoOutputAction": 0,
@@ -2586,7 +2612,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"optimizerType": 1,
+		"quality": 100
 		},
 	"languageDefaultsPUG": {
 		"autoOutputAction": 0,

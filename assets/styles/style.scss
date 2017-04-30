@@ -1,25 +1,14 @@
-/*!
-Theme Name: Bow
-Theme URI: https://github.com/lambry/bow/
-Version: 1.0.0
-Author: Lambry
-Author URI: http://lambry.com/
-Description: WordPress Starter Theme.
-Tags: white, one-column, right-sidebar, responsive-layout, theme-options, custom-menu, custom-colors, featured-images, post-formats, translation-ready
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: Bow
-*/
-
 /* =Imports
 -------------------------------------------------------------- */
 
 /* Necessities */
 @import 'source/variables';
+@import 'source/functions';
 @import 'source/mixins';
 
 /* Vendor */
 @import 'vendor/normalize';
+@import 'vendor/flexboxgrid';
 @import 'vendor/font-awesome';
 @import 'vendor/magnific-popup';
 
@@ -42,9 +31,9 @@ Text Domain: Bow
 
 /* Layout */
 @import 'source/layout/grid';
-@import 'source/layout/flex';
 @import 'source/layout/main';
 
 /* Utilities */
+@import 'source/utilities/animations';
 @import 'source/utilities/classes';
 @import 'source/utilities/helpers';

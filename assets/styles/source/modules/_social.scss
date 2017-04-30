@@ -2,22 +2,23 @@
 -------------------------------------------------------------- */
 
 .social-links {
-	font-size: 1.25rem;
-	a {
-		height: 1em;
-		width: 1.5em;
-		margin: 0.25em;
-		padding: 0 0.25em;
-		text-align: center;
-	}
+    font-size: 1.25rem;
+    a {
+        height: 1em;
+        width: 1.5em;
+        margin: 0.25em;
+        padding: 0 0.25em;
+        text-align: center;
+    }
 }
+
 .social-tiles {
-	a {
-		padding: 0.25em;
-		color: $color-white;
-		background-color: $color-blue;
-		&:hover {
-			color: darken($color-white, 5%);
-		}
-	}
+    a {
+        padding: 0.25em;
+        color: $color-white;
+        background-color: $color-blue;
+        &:hover {
+            color: darken($color-white, 5%);
+        }
+    }
 }

@@ -1,74 +1,74 @@
 /* =Media
 ----------------------------------------------- */
 
-embed, iframe, object {
-	max-width: 100%;
+embed,
+iframe,
+object {
+    max-width: 100%;
 }
-img.wp-smiley {
-	border: none;
-	margin: 0 0.5em;
-	padding: 0;
+.wp-smiley {
+    border: none;
+    margin: 0 0.5em;
+    padding: 0;
 }
 
 /* Captions */
 .wp-caption {
-	max-width: 100%;
-	margin-bottom: $layout-margin;
-	img[class*="wp-image-"] {
-		display: block;
-		margin: 1.2% auto 0;
-		max-width: 98%;
-	}
-	> br {
-		display: none;
-	}
+    max-width: 100%;
+    margin-bottom: $layout-margin;
+    img[class*='wp-image-'] {
+        display: block;
+        margin: 1.2% auto 0;
+        max-width: 98%;
+    }
+    > br {
+        display: none;
+    }
 }
 .wp-caption-text {
-	padding: $layout-padding / 2;
-	text-align: center;
+    padding: $layout-padding / 2;
+    text-align: center;
 }
 
 /* Gallery */
 .gallery {
-	margin-bottom: $layout-margin;
-}
-.gallery-item {
-	margin: 0 -2px $layout-margin / 1.5;
-	padding-right: $layout-padding;
-	text-align: center;
-	display: inline-block;
-	vertical-align: top;
+    margin-bottom: $layout-margin;
+    &-item {
+        margin: 0 -2px $layout-margin / 1.5;
+        padding-right: $layout-padding;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+    }
+    &-caption {
+        padding: 0.25em 0.25em 0.5em;
+        > br {
+            display: none;
+        }
+    }
 }
 @for $i from 1 through 10 {
-	.gallery-columns-#{$i} .gallery-item {
-		width: (100 / $i) * 1%;
-	}
-}
-.gallery-caption {
-	padding: 0.25em 0.25em 0.5em;
-	> br {
-		display: none;
-	}
+    .gallery-columns-#{$i} .gallery-item {
+        width: (100 / $i) * 1%;
+    }
 }
 
 /* Image Style */
 .wp-caption,
 .gallery-item img {
-	padding: 0.1em;
-	background-color: $color-white;
-	border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.1em;
+    background-color: $color-white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Media Queries */
-@include max(small) {
-
-	.gallery {
-		.gallery-item {
-			width: 50%;
-		}
-		&-columns-1 .gallery-item {
-			width: 100%;
-		}
-	}
-
+@include to(small) {
+    .gallery {
+        .gallery-item {
+            width: 50%;
+        }
+        &-columns-1 .gallery-item {
+            width: 100%;
+        }
+    }
 }

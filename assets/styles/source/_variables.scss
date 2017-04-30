@@ -1,15 +1,15 @@
 /* =Variables
 -------------------------------------------------------------- */
 
+
 /* Site Layout */
 $layout-width: 1140px;
-$layout-margin: 1.5em;
-$layout-padding: 1em;
-$layout-root: 1rem;
+$layout-margin: 1.5rem;
+$layout-padding: 1rem;
 
 /* Site Font */
-$font-primary: Arial;
-$font-icon: FontAwesome;
+$font-primary: 'Arial';
+$font-icon: 'FontAwesome';
 $font-size: 17px;
 $font-height: 1.5;
 $font-normal: 400;
@@ -17,12 +17,14 @@ $font-bold: 700;
 
 /* Site Styles */
 $style-radius: 3px;
-$style-transition: 0.2s ease;
+$style-transition-duration: 0.2s;
+$style-transition-easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+$style-transition: $style-transition-duration $style-transition-easing;
 
 /* Site Break Points */
-$break-small: 40em;
-$break-medium: 60em;
-$break-large: 80em;
+$break-small: 48em;
+$break-medium: 64em;
+$break-large: 75em;
 
 /* Site Colors */
 $color-blue: #1882f4;

@@ -3,155 +3,201 @@
 
 /* Primary Navigation */
 .primary-navigation {
-	a {
-		display: block;
-		text-decoration: none;
-		padding: 0.5em 0.75em;
-	}
-	ul {
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-	}
-	.menu-item,
-	.page_item {
-		position: relative;
-		display: inline-block;
-		&:hover > a,
-		&.current_page_item > a,
-		&.current-menu-item > a {
-			background-color: rgba(0, 0, 0, 0.1);
-		}
-		&:hover > ul {
-			display: block;
-		}
-	}
-	.sub-menu,
-	.children {
-		background-color: $color-white;
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-		display: none;
-		float: left;
-		position: absolute;
-		left: 0;
-		top: 100%;
-		z-index: 9999;
-		.sub-menu,
-		.children {
-			left: 100%;
-			top: 0;
-		}
-		.menu-item {
-			display: block;
-		}
-		a {
-			width: 200px;
-			color: $color-grey;
-			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-		}
-	}
-	.show-submenu {
-		position: absolute;
-		right: 0;
-		top: 0;
-		cursor: pointer;
-		font-size: 1.5rem;
-		padding: 0.3em 0.75em;
-		transition: transform $style-transition;
-	}
-	.is-open {
-		> .show-submenu {
-			transform: rotate(180deg);
-		}
-		> .sub-menu {
-			display: block;
-		}
-	}
+    a {
+        display: block;
+        text-decoration: none;
+        padding: 0.5em 0.75em;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+    .menu-item,
+    .page_item {
+        position: relative;
+        display: inline-block;
+        &:hover > a,
+        &.current_page_item > a,
+        &.current-menu-item > a {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        &:hover > ul {
+            display: block;
+        }
+    }
+    .sub-menu,
+    .children {
+        background-color: $color-white;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        display: none;
+        float: left;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 9999;
+        .sub-menu,
+        .children {
+            left: 100%;
+            top: 0;
+        }
+        .menu-item {
+            display: block;
+        }
+        a {
+            width: 200px;
+            color: $color-grey;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    }
+    .show-submenu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        font-size: 1.5rem;
+        padding: 0.3em 0.75em;
+        transition: transform $style-transition;
+    }
+    .is-open {
+        > .show-submenu {
+            transform: rotate(180deg);
+        }
+        > .sub-menu {
+            display: block;
+        }
+    }
 }
+
 .primary-toggle {
-	cursor: pointer;
-	display: none;
-	font-size: 1.5rem;
+    display: none;
+    height: 2em;
+    width: 2em;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    padding-top: 1rem;
+    color: $color-black;
+    transform: translateY(-50%);
+    transition: all $style-transition;
+    i {
+        height: 3px;
+        width: 100%;
+        display: block;
+        position: relative;
+        border-radius: 2px;
+        transition: all 0.2s ease;
+        background-color: currentColor;
+        &::before,
+        &::after {
+            content: '';
+            height: 3px;
+            width: 100%;
+            position: absolute;
+            border-radius: 2px;
+            background-color: currentColor;
+            transition: all 0.1s linear;
+        }
+        &::before {
+            transform: translateY(-0.5em);
+        }
+        &::after {
+            transform: translateY(0.5em);
+        }
+    }
+    &:hover {
+        color: lighten($color-black, 15%);
+    }
+    &-open > i {
+        background-color: transparent;
+        border-bottom-color: transparent;
+        &::before,
+        &::after {
+            border-bottom-color: rgba(0, 0, 0, 0.25);
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
 }
 
 /* Secondary Navigation */
 .secondary-navigation {
-	a {
-		padding-right: 0.75em;
-	}
-	ul {
-		padding: 0;
-		margin: 0;
-		list-style: none;
-	}
-	.menu-item {
-		display: inline-block;
-		padding: 0 0.25em;
-		&:after {
-			content: '|';
-		}
-		&:last-child:after {
-			display: none;
-		}
-	}
+    a {
+        padding-right: 0.75em;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .menu-item {
+        display: inline-block;
+        padding: 0 0.25em;
+        &:not(:last-child)::after {
+            content: '|';
+        }
+    }
 }
 
 /* Media Queries */
-@include max(medium) {
-
-	.primary-toggle {
-		display: block;
-	}
-	.primary-navigation .menu {
-		display: none;
-		width: 100%;
-		a {
-			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-		}
-		.menu-item, .page_item {
-			width: 100%;
-			&:not(.is-open):hover ul {
-				display: none;
-			}
-			&:last-child {
-				border-bottom: none;
-			}
-			&-has-children > a {
-				padding-right: 3em;
-			}
-		}
-		.sub-menu,
-		.children {
-			float: none;
-			font-size: 0.9rem;
-			position: relative;
-			box-shadow: none;
-			a {
-				width: 100%;
-				padding-left: 1.5em;
-			}
-			.sub-menu,
-			.children {
-				left: 0;
-				a {
-					padding-left: 2.5em;
-				}
-			}
-		}
-		.show-submenu {
-			display: block;
-		}
-	}
-
+@include to(medium) {
+    .primary-toggle {
+        display: block;
+    }
+    .primary-navigation .menu {
+        display: none;
+        width: 100%;
+        padding-top: $layout-padding;
+        a {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .menu-item,
+        .page_item {
+            width: 100%;
+            &:not(.is-open):hover ul {
+                display: none;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+            &-has-children > a {
+                padding-right: 3em;
+            }
+        }
+        .sub-menu,
+        .children {
+            width: 100%;
+            font-size: 0.9rem;
+            position: relative;
+            box-shadow: none;
+            a {
+                width: 100%;
+                padding-left: 1.5em;
+            }
+            .sub-menu,
+            .children {
+                left: 0;
+                a {
+                    padding-left: 2.5em;
+                }
+            }
+        }
+        .show-submenu {
+            display: block;
+        }
+    }
 }
 
-@include min(medium) {
-
-	.primary-navigation .menu {
-		display: block !important;
-		.show-submenu {
-			display: none;
-		}
-	}
-
+@include from(medium) {
+    .primary-navigation .menu {
+        display: block !important;
+        .show-submenu {
+            display: none;
+        }
+    }
 }

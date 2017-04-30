@@ -1,0 +1,40 @@
+/* =Animations
+----------------------------------------------- */
+
+.transition {
+    position: relative;
+    transition: all $style-transition;
+}
+
+.fadeOut {
+    opacity: 0;
+    transform: translateY(1em);
+}
+
+.fadeIn {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(0.5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(0.5rem);
+    }
+}

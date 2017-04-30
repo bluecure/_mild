@@ -1,47 +1,61 @@
 /* =Typography
 ----------------------------------------------- */
 
-html, body {
-	color: $color-grey;
-	font-family: $font-primary;
-	font-size: $font-size;
-	font-weight: $font-normal;
-	line-height: $font-height;
+html,
+body {
+    color: $color-grey;
+    font-family: $font-primary;
+    font-size: $font-size;
+    font-weight: $font-normal;
+    line-height: $font-height;
 }
 
+
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
-	margin: 0.25em 0 0.75em 0;
-	font-weight: $font-bold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0.25em 0 0.75em 0;
+    font-weight: $font-bold;
 }
+
 h1 {
-	font-size: 2rem;
+    font-size: 2rem;
 }
 h2 {
-	font-size: 1.8rem;
+    font-size: 1.8rem;
 }
 h3 {
-	font-size: 1.6rem;
+    font-size: 1.6rem;
 }
 h4 {
-	font-size: 1.4rem;
+    font-size: 1.4rem;
 }
 h5 {
-	font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 h6 {
-	font-size: 1rem;
+    font-size: 1rem;
 }
+
 
 /* Links */
 a {
-	color: $color-blue;
-	text-decoration: none;
-	transition: all $style-transition;
-	&:visited {
-		color: darken($color-blue, 5%);
-	}
-	&:hover, &:focus, &:active {
-		color: darken($color-blue, 10%);
-	}
+    color: $color-blue;
+    text-decoration: none;
+    transition: all $style-transition;
+    &:visited {
+        color: darken($color-blue, 5%);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($color-blue, 10%);
+    }
+    &[href^='http']:empty::before {
+        content: attr(href);
+    }
 }

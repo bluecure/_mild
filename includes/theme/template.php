@@ -101,7 +101,7 @@ class Template {
 		}
 
 		// Show comments link
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) { ?>
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 			<span class="comments-link"><i class="fa fa-comments"></i>
 			    <?php comments_popup_link(
 					__( 'Leave a comment', 'bow' ),
@@ -109,10 +109,46 @@ class Template {
 					__( '% Comments', 'bow' )
 				); ?>
 			</span>
-		<?php }
+		<?php endif;
 
 		edit_post_link( __( 'Edit', 'bow' ), '<span class="edit-link">', '</span>' );
 
 	}
+
+    /**
+     * Customizer Styles
+     *
+     * Checks and displays customizer styles.
+     *
+     * @access public
+     * @return void
+     */
+    public static function customizer_styles() {
+
+        $styles = '';
+        $mods = [
+            'header_text'  => [ '.site-header', 'color' ],
+            'content_text' => [ '.site-content', 'color' ],
+            'footer_text'  => [ '.site-footer', 'color' ],
+            'header_links' => [ '.site-header a', 'color' ],
+            'content_links'      => [ '.site-content a', 'color' ],
+            'footer_links'       => [ '.site-footer a', 'color' ],
+            'header_background'  => [ '.site-header', 'background-color' ],
+            'content_background' => [ '.site-content', 'background-color' ],
+            'footer_background'  => [ '.site-footer', 'background-color' ]
+        ];
+
+        foreach ($mods as $mod => $option) {
+            $value = get_theme_mod($mod, false);
+            if ($value) {
+                $styles .= "{$option[0]} { {$option[1]}: {$value}; }";
+            }
+        }
+
+        if ($styles) {
+            wp_add_inline_style('bow-styles', $styles);
+        }
+
+    }
 
 }

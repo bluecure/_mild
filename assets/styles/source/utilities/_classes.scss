@@ -3,61 +3,66 @@
 
 /* Sizing */
 .small {
-	font-size: 0.75rem;
+    font-size: 0.75rem;
 }
 .medium {
-	font-size: 1rem;
+    font-size: 1.25rem;
 }
 .large {
-	font-size: 1.5rem;
-}
-.huge {
-	font-size: 2.5rem;
+    font-size: 1.75rem;
 }
 
 /* Alignment */
-.alignleft, .align-left {
-	display: inline;
-	float: left;
-	margin: 0 2.5em 1em 0;
+.alignleft,
+.align-left {
+    float: left;
+    margin: 0 2.5em 1em 0;
 }
-.alignright, .align-right {
-	display: inline;
-	float: right;
-	margin: 0 0 1em 2.5em;
+.alignright,
+.align-right {
+    float: right;
+    margin: 0 0 1em 2.5em;
 }
-.aligncenter, .align-center {
-	clear: both;
-	display: block;
-	margin: 0 auto 1em auto;
+.aligncenter,
+.align-center {
+    clear: both;
+    display: block;
+    margin: 0 auto 1em auto;
 }
 .float-left {
-	float: left;
+    float: left;
 }
 .float-right {
-	float: right;
+    float: right;
 }
 .text-left {
-	text-align: left;
+    text-align: left;
 }
 .text-right {
-	text-align: right;
+    text-align: right;
 }
 .text-center {
-	text-align: center;
+    text-align: center;
+}
+
+/* Misc */
+.truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 /* Responsive iframes */
 .fluid-iframe {
-	position: relative;
-	padding-bottom: 56.25%;
-	padding-top: 25px;
-	height: 0;
-	iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }

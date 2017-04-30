@@ -2,58 +2,60 @@
 ----------------------------------------------- */
 
 .comments-area {
-	font-size: 0.9rem;
-	padding: 0.25em 0;
-	a {
-		word-wrap: break-word;
-	}
+    padding: 0.25em 0;
+    a {
+        word-wrap: break-word;
+    }
 }
 .comment {
-	list-style: none outside none;
-	margin-top: $layout-margin;
-	.children {
-		margin-left: $layout-margin;
-	}
+    list-style: none outside none;
+    margin-top: $layout-margin;
+    .children {
+        margin-left: $layout-margin;
+    }
 }
 .comment-list {
-	padding-left: 0.25em;
+    font-size: 0.9rem;
+    padding-left: 0.25em;
 }
 .comment-body {
-	padding: $layout-padding;
-	background-color: rgba(0, 0, 0, 0.05);
-	border-radius: $style-radius;
-	position: relative;
-	&:before {
-		content: '';
-		border-style: solid;
-		border-width: 1em;
-		position: absolute;
-		left: -1.95em;
-		bottom: 40%;
-		border-color: transparent rgba(0, 0, 0, 0.05) transparent transparent;
-	}
+    padding: $layout-padding;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: $style-radius;
+    position: relative;
+    &:before {
+        content: '';
+        border-style: solid;
+        border-width: 1em;
+        position: absolute;
+        left: -1.95em;
+        bottom: 40%;
+        border-color: transparent rgba(0, 0, 0, 0.05) transparent transparent;
+    }
 }
 
 /* Form */
 .comment-form {
-	> p {
-		margin-bottom: 0.5rem;
-	}
+    > p {
+        margin-bottom: 0.5rem;
+    }
 }
 .comment-respond {
-	padding: 0.25em 0.75em;
-	label {
-		display: block;
-		width: 100%;
-		padding-right: 0.5em;
-	}
-	input[type=text], input[type=email], input[type=url] {
-		min-width: 50%;
-	}
-	textarea {
-		min-width: 75%;
-	}
+    padding: 0.25em 0;
+    label {
+        display: block;
+        width: 100%;
+        padding-right: 0.5em;
+    }
+    input[type=text],
+    input[type=email],
+    input[type=url] {
+        min-width: 50%;
+    }
+    textarea {
+        min-width: 75%;
+    }
 }
 .form-allowed-tags code {
-	font-size: 0.9rem;
+    font-size: 0.9rem;
 }

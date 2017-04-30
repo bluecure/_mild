@@ -1,63 +1,17 @@
 /* =Grid
 ----------------------------------------------- */
 
-.container {
-	max-width: $layout-width;
-	padding: 0 $layout-root;
-	margin: 0 auto;
-	position: relative;
+.container,
+.container-fluid {
+    max-width: $layout-width;
+    margin: 0 auto;
+    position: relative;
 }
 .row {
-	@extend .clear;
-	width: 100%;
-	margin: 0 auto;
+    padding: $layout-padding 0;
+    margin: 0 -1.5rem;
 }
-.col {
-	margin: 0 -2px;
-	vertical-align: top;
-	display: inline-block;
-	padding: $layout-root ($layout-root * 2);
-	&-thin {
-		padding: 0 $layout-root;
-	}
-}
-[class*="col-"] {
-	@extend .col;
-}
-@for $i from 1 through 12 {
-	.col-#{$i} {
-		width: ((100 / 12) * $i) * 1%;
-	}
-}
-
-/* Gapless */
-.gapless {
-	[class*="col-"] {
-		padding-left: 0;
-		&:last-child {
-			padding-right: 0;
-		}
-	}
-}
-
-/* Media Queries */
-@include max(medium) {
-
-	[class*="col-"] {
-		width: 100%;
-		padding: $layout-root;
-	}
-	@for $i from 1 through 12 {
-		.md-#{$i} {
-			width: ((100 / 12) * $i) * 1%;
-		}
-	}
-
-}
-@include max(small) {
-
-	[class*="md-"] {
-		width: 100%;
-	}
-
+[class*='col-'] {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }

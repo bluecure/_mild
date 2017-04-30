@@ -1,0 +1,10 @@
+{
+  "name": "Bow",
+  "short_name": "Bow",
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "default_locale": "en",
+  "description": "Bow WordPress Theme.",
+  "background_color": "#ffffff",
+  "theme_color": "#222222"
+}

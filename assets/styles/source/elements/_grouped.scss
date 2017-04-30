@@ -2,49 +2,52 @@
 ----------------------------------------------- */
 
 /* Lists */
-ul, ol {
-	padding: 0;
-	margin: 0 0 $layout-margin $layout-margin;
-	list-style-position: inside;
+ul,
+ol {
+    padding: 0;
+    margin: 0 0 $layout-margin $layout-margin;
+    list-style-position: inside;
 }
 ul {
-	list-style: disc;
+    list-style: disc;
 }
 ol {
-	list-style: decimal;
+    list-style: decimal;
 }
 li > {
-	ul, ol {
-		margin-bottom: 0;
-	}
+    ul,
+    ol {
+        margin-bottom: 0;
+    }
 }
 dt {
-	font-weight: bold;
+    font-weight: bold;
 }
 dd {
-	margin: 0 $layout-margin $layout-margin;
+    margin: 0 $layout-margin $layout-margin;
 }
 
 /* Tables */
 table {
-	margin: 0 0 $layout-margin;
-	width: 100%;
-	th {
-		font-weight: bold;
-	}
-	th, td {
-		padding: 0.75em;
-	}
-	tr {
-		background-color: rgba(0, 0, 0, 0.1);
-	}
-	tr:nth-child(odd) {
-		background-color: rgba(0, 0, 0, 0.05);
-	}
-	thead tr {
-		border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-	}
-	tfoot tr {
-		border-top: 1px solid rgba(0, 0, 0, 0.05);
-	}
+    margin: 0 0 $layout-margin;
+    width: 100%;
+    th {
+        font-weight: bold;
+    }
+    th,
+    td {
+        padding: 0.75em;
+    }
+    tr {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    tr:nth-child(odd) {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    thead tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    tfoot tr {
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
 }
