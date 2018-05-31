@@ -162,7 +162,7 @@
             &:not(.is-open):hover ul {
                 display: none;
             }
-            &:last-child {
+            &:last-child a {
                 border-bottom: none;
             }
             &-has-children > a {

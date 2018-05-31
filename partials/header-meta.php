@@ -4,8 +4,11 @@
  *
  * @package Bow
  */
+?>
 
-// Get theme mods
+<link rel="manifest" href="<?php echo get_template_directory_uri() . '/manifest.json'; ?>">
+
+<?php // Get theme mods
 $javascript = get_theme_mod('javascript');
 
 /* JavaScript */
